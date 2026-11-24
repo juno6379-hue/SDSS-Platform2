@@ -1,0 +1,1015 @@
+{
+  "edges": [
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 1000,
+        "quote": "{\n \"extent\": {\n  \"ymin\": -11.007615375999933,\n  \"zmin\": 0,\n  \"xmin\": 94.971949936000044,\n  \"ymax\": 6.076740869000048,\n  \"zmax\": 0,\n  \"xmax\": 141.02004854300003,\n  \"mmax\": 0,\n  \"mmin\": 0,\n  \"spatialReference\": {\n   \"falseM\": -100000,\n   \"xyTolerance\": 8.983152841195215E-9,\n   \"mUnits\": 10000,\n   \"zUnits\": 10000,\n   \"latestWkid\": 4326,\n   \"zTolerance\": 0.001,\n   \"wkid\": 4326,\n   \"xyUnits\": 999999999.99999988,\n   \"mTolerance\": 0.001,\n   \"falseX\": -400,\n   \"falseY\": -400,\n   \"falseZ\": -100000\n  }\n },\n \"maxRecordCount\": 2000,\n \"datesInUnknownTimezone\": false,\n \"ownershipBasedAccessControlForFeatures\": {\"allowOthersToQuery\": true},\n \"type\": \"Feature Layer\",\n \"maxSelectionCount\": 2000,\n \"subtypes\": [],\n \"relationships\": [],\n \"cimVersion\": \"3.7.0\",\n \"isDataArchived\": false,\n \"id\": 0,\n \"archivingInfo\": {\n  \"startArchivingMoment\": -1,\n  \"supportsQueryWithHistoricMoment\": false\n },\n \"spatialReference\": {\n  \"falseM\": -100000,\n  \"xyTolerance\": 8.983152841195215E-9,\n  \"mUnits\": 10000,\n  \"zUnits\": 10",
+        "source_id": "klhk-landcover-2025",
+        "start": 0,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-57e4ade43f80932b08594248953319cc5d7be80a4a23896ee90b68ee4b37fa70",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 2000,
+        "quote": "000,\n  \"latestWkid\": 4326,\n  \"zTolerance\": 0.001,\n  \"wkid\": 4326,\n  \"xyUnits\": 999999999.99999988,\n  \"mTolerance\": 0.001,\n  \"falseX\": -400,\n  \"falseY\": -400,\n  \"falseZ\": -100000\n },\n \"subtypeFieldName\": null,\n \"supportsStatistics\": true,\n \"hasLastEditTime\": true,\n \"standardMaxRecordCount\": 4000,\n \"isDataVersioned\": false,\n \"hasGeometryProperties\": true,\n \"supportsAdvancedQueries\": true,\n \"parentLayer\": null,\n \"subLayers\": [],\n \"currentVersion\": 12.1,\n \"referenceScale\": 0,\n \"canScaleSymbols\": false,\n \"hasZ\": true,\n \"name\": \"PL2025_AR_50K\",\n \"displayField\": \"KDPPUM\",\n \"fields\": [\n  {\n   \"nullable\": false,\n   \"domain\": null,\n   \"name\": \"OBJECTID\",\n   \"alias\": \"OBJECTID\",\n   \"type\": \"esriFieldTypeOID\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"KDPPUM\",\n   \"length\": 50,\n   \"alias\": \"Kode PUM Provinsi\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"PL2025_ID_50K\",\n   \"alias\": \"ID Penutupan Lahan Tahun 2025\",\n   \"type\": \"esriFi",
+        "source_id": "klhk-landcover-2025",
+        "start": 1000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-11b0b4146684c7b5f4dd95db524d8214ffc7785b63650d170c43ed8990410e71",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 3000,
+        "quote": "eldTypeInteger\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"LUAS_HA\",\n   \"alias\": \"Luas\",\n   \"type\": \"esriFieldTypeDouble\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"NAMOBJ\",\n   \"length\": 250,\n   \"alias\": \"Nama Objek\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"FCODE\",\n   \"length\": 50,\n   \"alias\": \"Feature Code\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"LCODE\",\n   \"length\": 8,\n   \"alias\": \"Layer Code\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"SRS_ID\",\n   \"length\": 50,\n   \"alias\": \"Spatial Reference\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"METADATA\",\n   \"length\": 50,\n   \"alias\": \"Metadata\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"REMARK\",\n   \"length\": 250,\n   \"alias\": \"Catatan\",\n   \"type\": \"",
+        "source_id": "klhk-landcover-2025",
+        "start": 2000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-b4c385a99d0cbcfe440916a8b43218dc53e9a49fd90ce8477779f543340e8031",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 4000,
+        "quote": "esriFieldTypeString\"\n  }\n ],\n \"maxRecordCountFactor\": 1,\n \"dateFieldsTimeReference\": null,\n \"hasM\": true,\n \"preferredTimeReference\": null,\n \"useStandardizedQueries\": true,\n \"sourceSpatialReference\": {\n  \"falseM\": -100000,\n  \"xyTolerance\": 8.983152841195215E-9,\n  \"mUnits\": 10000,\n  \"zUnits\": 10000,\n  \"latestWkid\": 4326,\n  \"zTolerance\": 0.001,\n  \"wkid\": 4326,\n  \"xyUnits\": 999999999.99999988,\n  \"mTolerance\": 0.001,\n  \"falseX\": -400,\n  \"falseY\": -400,\n  \"falseZ\": -100000\n },\n \"description\": \"IGT Penutupan Lahan Kawasan Hutan tahun 2025 skala 1:50.000 adalah hasil update peta IGT Penutupan Lahan Kawasan Hutan tahun 2024 dengan menggunakan mosaik citra landsat tahun 2025 (akuisisi citra landsat pada periode Januari s.d Desember 2025). Penutupan Lahan dikelaskan ke dalam 23 kelas penutupan lahan sesuai dengan Peraturan Direktur Jenderal Planologi Kehutanan Nomor P.1/VII-IPSDH/2015 tentang Pedoman Pemantauan Penutupan Lahan dan Surat Keputusan Direktur Jenderal Planologi Kehutanan Nomor 17 Tah",
+        "source_id": "klhk-landcover-2025",
+        "start": 3000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-62ecb647aa02a1acfa08da309e84d102f4e41ec80b3aa940376d194c6f805a94",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 5000,
+        "quote": "un 2025 tentang Petunjuk Teknis Penafsiran Citra Satelit Resolusi Menengah untuk Pemutakhiran Penutupan Lahan Nasional. Dasar Peraturan : Peraturan Menteri Lingkungan Hidup dan Kehutanan Nomor 7 Tahun 2021 tentang Perencanaan Kehutanan, Perubahan Peruntukan Kawasan Hutan dan Perubahan Fungsi Kawasan Hutan, serta Penggunaan Kawasan. Hasil Penjaminan Kualitas :Berdasarkan hasil penjaminan kualitas/Quality Assurance (QA) IGT kualitas data dan kelengkapan metadata maka IGT Penutupan Lahan Kawasan Hutan Tahun 2025 skala 1:50.000 mendapatkan rata-rata nilai 99,38 dan metadata lengkap, serta sudah mencakup seluruh 38 provinsi di Indonesia sehingga tidak terdapat omission (kekurangan data) dan commission (kelebihan data). Berdasarkan penilaian tersebut maka IGT masuk dalam kategori B. \",\n \"canModifyLayer\": true,\n \"supportedSpatialRelationships\": [\n  \"esriSpatialRelIntersects\",\n  \"esriSpatialRelContains\",\n  \"esriSpatialRelCrosses\",\n  \"esriSpatialRelEnvelopeIntersects\",\n  \"esriSpatialRelIndexInt",
+        "source_id": "klhk-landcover-2025",
+        "start": 4000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-2a5a1bad5e380f4f352242e807d93547018aaa7b99571970fd86fe320c51b90a",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 6000,
+        "quote": "ersects\",\n  \"esriSpatialRelOverlaps\",\n  \"esriSpatialRelTouches\",\n  \"esriSpatialRelWithin\",\n  \"esriSpatialRelRelation\"\n ],\n \"geometryProperties\": {\n  \"shapeAreaFieldName\": \"Shape_Area\",\n  \"shapeLengthFieldName\": \"Shape_Length\",\n  \"units\": \"esriDecimalDegrees\",\n  \"mapUnits\": {\"uwkid\": 9102}\n },\n \"standardMaxRecordCountNoGeometry\": 32000,\n \"indexes\": null,\n \"htmlPopupType\": \"esriServerHTMLPopupTypeAsHTMLText\",\n \"minScale\": 0,\n \"supportsDynamicLegends\": true,\n \"hasAttachments\": false,\n \"advancedQueryCapabilities\": {\n  \"supportsStatistics\": true,\n  \"supportsSqlExpression\": true,\n  \"supportsQueryWithResultType\": true,\n  \"supportsTrueCurve\": false,\n  \"supportsOrderBy\": true,\n  \"supportsQueryRelatedPagination\": true,\n  \"supportsSqlFormat\": false,\n  \"useStandardizedQueries\": true,\n  \"supportsLod\": false,\n  \"supportsQueryWithDistance\": true,\n  \"supportsQueryWithCacheHint\": false,\n  \"supportsCountDistinct\": true,\n  \"supportsCurrentUserQueries\": true,\n  \"supportsAdvancedQueryRelated\": true,\n  \"sup",
+        "source_id": "klhk-landcover-2025",
+        "start": 5000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-eac0dbcf33e44ada54b231206d3f8b411a3241cbd49965485d789e3c41350d7f",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 7000,
+        "quote": "portsReturningQueryExtent\": true,\n  \"supportsQueryWithLodSR\": false,\n  \"supportsPagination\": true,\n  \"supportsMaxRecordCountFactor\": false,\n  \"supportsDistinct\": true,\n  \"supportsTimeRelation\": true,\n  \"supportsQueryAnalytic\": false,\n  \"supportsPercentileStatistics\": true,\n  \"supportsHavingClause\": true\n },\n \"subtypeField\": null,\n \"serviceItemId\": \"a138cdbb7b4347ec946ee4adf46721e8\",\n \"supportsCoordinatesQuantization\": true,\n \"capabilities\": \"Map,Query\",\n \"maxScale\": 0,\n \"supportsExceedsLimitStatistics\": true,\n \"defaultVisibility\": true,\n \"hasMetadata\": true,\n \"tileMaxRecordCount\": 4000,\n \"typeIdField\": null,\n \"defaultSubtypeCode\": null,\n \"supportedQueryFormats\": \"JSON, geoJSON, PBF\",\n \"hasLabels\": false,\n \"drawingInfo\": {\n  \"renderer\": {\n   \"uniqueValueGroups\": [{\n    \"heading\": \"\",\n    \"classes\": [\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        96,\n        230,\n        99,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      ",
+        "source_id": "klhk-landcover-2025",
+        "start": 6000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-688f375b25b1ebbab53a2ca6c2c6813a6036c043907cf88223a7a617d91e36a4",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 8000,
+        "quote": "},\n      \"values\": [[\"2001\"]],\n      \"description\": \"Hutan Lahan Kering Primer\",\n      \"label\": \"Hutan Lahan Kering Primer\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        114,\n        255,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2002\"]],\n      \"description\": \"Hutan Lahan Kering Sekunder\",\n      \"label\": \"Hutan Lahan Kering Sekunder\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABR0lEQVR4nO3VwWlDUQxE0Sx+Fanug+sKuDq1kWzDwwxJEESCc5YGP3szutddj8832lzP949ff+mux8vPn0Pf6n4vvXWlP9H1B/77re730ltX26/wevLb5vz8w1vd731/68eTnzrne9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5Ziofq",
+        "source_id": "klhk-landcover-2025",
+        "start": 7000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-9cc1f7519b7f41534b48dd60fb9154c217499fc1612d2fc47ea0e0023c005471",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 9000,
+        "quote": "Hyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4AkjheUWF6uLzAAAAAElFTkSuQmCC\",\n       \"yoffset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"6361dff80d0181a60b6a7e11a7c9704d\",\n       \"height\": 63\n      },\n      \"values\": [[\"2005\"]],\n      \"description\": \"Hutan Rawa Primer\",\n      \"label\": \"Hutan Rawa Primer\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABTUlEQVR4nO3VUYrCABAEUYWcOAfJlXthv5YBG10KzEC9f9ugjnWceeQhzHE9P3/R+eIruG66Re+1raM9BPUA396i99rWwb2Nfj/Q+fPdds7XP7bovb9bb5/8Xc/5vNlfgycPs/KFlS+s/FJWfrDy4baIPU8eZuULK19Y+aWs/GDlw20Re548zMoXVr6w8ktZ+cHKh9si9jx5mJUvrHxh5Zey8oOVD7dF7HnyMCtfWPnCyi9l5QcrH26L2PPkYVa+sPKFlV/Kyg9WPtwWsefJw6x8YeULK7+UlR+sfLgtYs+Th1n5wsoXVn4pKz9Y+XBbxJ4nD7PyhZUvrPxSVn6w8uG2iD1PHmblCytfWPmlrPxg5cNtEXuePMzKF1a+sPJLWfnByofbIvY8eZiVL6x8YeWXsv",
+        "source_id": "klhk-landcover-2025",
+        "start": 8000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-43e28075e7710f35bd63db63f5364c8ef4c1c10ff875007e2ea46716d54a47ad",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 10000,
+        "quote": "KDlQ+3Rex58jArX1j5wsovZeUHKx9ui9j7Ac0n0W5/WzNuAAAAAElFTkSuQmCC\",\n       \"yoffset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"9fd7c0133de606f4ede3b6d5f7c25778\",\n       \"height\": 63\n      },\n      \"values\": [[\"20051\"]],\n      \"description\": \"Hutan Rawa Sekunder\",\n      \"label\": \"Hutan Rawa Sekunder\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        142,\n        167,\n        4,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2004\"]],\n      \"description\": \"Hutan Mangrove Primer\",\n      \"label\": \"Hutan Mangrove Primer\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        193,\n        167,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20041\"]],\n      \"description\": \"",
+        "source_id": "klhk-landcover-2025",
+        "start": 9000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-697d8db8400bdf85a7de2ab6f7e474c3f0cebccbd6ac765b58c24064a91a2f0f",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 11000,
+        "quote": "Hutan Mangrove Sekunder\",\n      \"label\": \"Hutan Mangrove Sekunder\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        235,\n        192,\n        167,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2007\"]],\n      \"description\": \"Semak/Belukar\",\n      \"label\": \"Semak/Belukar\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABSElEQVR4nO3VwWlDUQxE0Sx+C+4nbaRCt6F+fhHJNjzMkARBJDhnafCzN6N73fX8fKPN9Xj/+PWX7nq+/Pwx9K3u99JbV/oTXX/gv9/qfi+9dbX9Cq8nv23Ojz+81f3e97d+PPmpc76HnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9Uvmadhi/Vfs0cUFLFcgAAAABJRU5ErkJggg==\",\n       \"y",
+        "source_id": "klhk-landcover-2025",
+        "start": 10000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-c77d3282908da8583c3212068255d71ed85c9adf2cb72f196ef6c49ee9a5fc75",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 12000,
+        "quote": "offset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"d4519bcd3bd1abcdb1d25fb97c73dfef\",\n       \"height\": 63\n      },\n      \"values\": [[\"20071\"]],\n      \"description\": \"Semak/Belukar Rawa\",\n      \"label\": \"Semak/Belukar Rawa\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        213,\n        255,\n        2,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"3000\"]],\n      \"description\": \"Savana\",\n      \"label\": \"Savana\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        211,\n        229,\n        152,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2006\"]],\n      \"description\": \"Hutan Tanaman Industri ( HTI )\",\n      \"label\": \"Hutan Tanaman Industri ( HTI )\"\n     },\n     {\n      \"sy",
+        "source_id": "klhk-landcover-2025",
+        "start": 11000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-54c4ba44050aed5e265c9b4db5c460dcbe40eb3566dbd695e759d07ee4d641e8",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 13000,
+        "quote": "mbol\": {\n       \"outline\": null,\n       \"color\": [\n        229,\n        210,\n        152,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2010\"]],\n      \"description\": \"Perkebunan\",\n      \"label\": \"Perkebunan\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        246,\n        254,\n        167,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20091\"]],\n      \"description\": \"Pertanian Lahan Kering\",\n      \"label\": \"Pertanian Lahan Kering\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        237,\n        245,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20092\"]],\n      \"description\": \"Pertanian Lahan Kering Bercampur dgn Semak\",\n      \"label\": \"Pertanian Lahan Kering Bercampur dgn Semak\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n",
+        "source_id": "klhk-landcover-2025",
+        "start": 12000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-12731719a5f2e6406ea0be9bc60a1aa5197a923030495449c9b80d27e8708924",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 14000,
+        "quote": "       \"color\": [\n        114,\n        142,\n        167,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [\n       [\"20122\"],\n       [\"6000\"]\n      ],\n      \"description\": \"Transmigrasi; Transmigrasi\",\n      \"label\": \"Transmigrasi; Transmigrasi\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": {\n        \"color\": [\n         0,\n         0,\n         0,\n         255\n        ],\n        \"width\": 1\n       },\n       \"color\": [\n        0,\n        0,\n        0,\n        0\n       ],\n       \"size\": 4,\n       \"yoffset\": 0,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"style\": \"esriSMSCircle\",\n       \"type\": \"esriSMS\"\n      },\n      \"values\": [[\"20093\"]],\n      \"description\": \"Sawah\",\n      \"label\": \"Sawah\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        124,\n        244,\n        244,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20094\"]],\n      \"d",
+        "source_id": "klhk-landcover-2025",
+        "start": 13000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-c7212e33999a947f7f4da28e40a2b12e6acafbc373ef571235e248a4f986e12e",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 15000,
+        "quote": "escription\": \"Tambak\",\n      \"label\": \"Tambak\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": {\n        \"color\": [\n         0,\n         0,\n         0,\n         255\n        ],\n        \"width\": 1\n       },\n       \"color\": [\n        0,\n        0,\n        0,\n        0\n       ],\n       \"size\": 4,\n       \"yoffset\": 0,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"style\": \"esriSMSCircle\",\n       \"type\": \"esriSMS\"\n      },\n      \"values\": [[\"2014\"]],\n      \"description\": \"Tanah Terbuka\",\n      \"label\": \"Tanah Terbuka\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        167,\n        4,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20141\"]],\n      \"description\": \"Pertambangan\",\n      \"label\": \"Pertambangan\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        78,\n        78,\n        78,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esr",
+        "source_id": "klhk-landcover-2025",
+        "start": 14000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-af67033bbeabb85e4b8fb4b67fb7ddbc9585fb97a87f6af8db547508d26f4344",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 16000,
+        "quote": "iSFS\"\n      },\n      \"values\": [[\"2012\"]],\n      \"description\": \"Permukiman\",\n      \"label\": \"Permukiman\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        212,\n        252,\n        247,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"5001\"]],\n      \"description\": \"Tubuh Air\",\n      \"label\": \"Tubuh Air\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        214,\n        0,\n        115,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20121\"]],\n      \"description\": \"Pelabuhan Udara/Laut\",\n      \"label\": \"Pelabuhan Udara/Laut\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpM",
+        "source_id": "klhk-landcover-2025",
+        "start": 15000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-e787825ce160eedaf7f6d415d06967909d5fef4992e62b31718be8b260a36aec",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 17000,
+        "quote": "PlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC\",\n       \"yoffset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"89aa3821aff9eacfb4606ca25efc3ff3\",\n       \"height\": 63\n      },\n      \"values\": [\n       [\"5011\"],\n       [\"50011\"]\n      ],\n      \"description\": \"Rawa; rawa\",\n      \"label\": \"Rawa; rawa\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        209,\n        209,\n        209,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2500\"]],\n      \"description\": \"Awan\",\n      \"label\": \"Awan\"\n     }\n ",
+        "source_id": "klhk-landcover-2025",
+        "start": 16000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-ac034e86b9e7be9401b41f8bb8a77c4c5c2cf8600b31c56766b02e118fc1024f",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 18000,
+        "quote": "   ]\n   }],\n   \"field1\": \"PL2025_ID_50K\",\n   \"authoringInfo\": {\"colorRamp\": {\n    \"colorRamps\": [\n     {\n      \"toColor\": [\n       252,\n       179,\n       245,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       179,\n       245,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       179,\n       252,\n       188,\n       255\n      ],\n      \"fromColor\": [\n       179,\n       252,\n       188,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       209,\n       182,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       209,\n       182,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       197,\n       224,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       197,\n       224,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n   ",
+        "source_id": "klhk-landcover-2025",
+        "start": 17000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-fd3211f853461cc53281488cb8110198556111e10097c09127a16fad0970395e",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 19000,
+        "quote": "   \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       210,\n       252,\n       235,\n       255\n      ],\n      \"fromColor\": [\n       210,\n       252,\n       235,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       190,\n       184,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       190,\n       184,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       204,\n       224,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       204,\n       224,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       244,\n       252,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       244,\n       252,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {",
+        "source_id": "klhk-landcover-2025",
+        "start": 18000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-9b3b7109ea09f9cc64a7667afbbb105e35603361cf7e5a3792fccb232cbe4518",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 20000,
+        "quote": "\n      \"toColor\": [\n       252,\n       248,\n       210,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       248,\n       210,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       220,\n       252,\n       204,\n       255\n      ],\n      \"fromColor\": [\n       220,\n       252,\n       204,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       219,\n       207,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       219,\n       207,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       204,\n       245,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       204,\n       245,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       218,\n       2",
+        "source_id": "klhk-landcover-2025",
+        "start": 19000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-03f2e16472a6e4a020caf3af99877168fbdda4cb1be8306fd742138b734e83f9",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 21000,
+        "quote": "15,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       218,\n       215,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       188,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       188,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       182,\n       202,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       182,\n       202,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       230,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       230,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       248,\n       204,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       ",
+        "source_id": "klhk-landcover-2025",
+        "start": 20000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-9cf719bcc977ad51c5de72bc7b42f1adb14935bcdc1550f49dbe5e264af1bb7b",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 22000,
+        "quote": "248,\n       204,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       229,\n       182,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       229,\n       182,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       184,\n       223,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       184,\n       223,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       179,\n       252,\n       251,\n       255\n      ],\n      \"fromColor\": [\n       179,\n       252,\n       251,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       179,\n       199,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       179,\n       199,\n       255\n      ],\n   ",
+        "source_id": "klhk-landcover-2025",
+        "start": 21000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-d31b0febb85edc9a3b4f5ce0016e3283c860ee0b8d4dfd480bdfee16a21dbeed",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 23000,
+        "quote": "   \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       197,\n       199,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       197,\n       199,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       205,\n       252,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       205,\n       252,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     }\n    ],\n    \"type\": \"multipart\"\n   }},\n   \"uniqueValueInfos\": [\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       96,\n       230,\n       99,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Lahan Kering Primer\",\n     \"value\": \"2001\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       114,\n       255,\n       0,\n       255\n      ],\n      \"style\": \"esriS",
+        "source_id": "klhk-landcover-2025",
+        "start": 22000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-66c374efa01230316a5c7f9e54cda98165397e6e6cef6a524a3bd8a7c0b6f0ad",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 24000,
+        "quote": "FSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Lahan Kering Sekunder\",\n     \"value\": \"2002\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABR0lEQVR4nO3VwWlDUQxE0Sx+Fanug+sKuDq1kWzDwwxJEESCc5YGP3szutddj8832lzP949ff+mux8vPn0Pf6n4vvXWlP9H1B/77re730ltX26/wevLb5vz8w1vd731/68eTnzrne9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4AkjheUWF6uLzAAAAAElFTkSuQmCC\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"6361dff80d0181a60b6a7e11a7c9704d\",\n      \"height\": 63\n     },\n     \"label\": \"Hutan Rawa ",
+        "source_id": "klhk-landcover-2025",
+        "start": 23000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-27bcd4d950d01d4deeeb1eb65e57727e24c4c99be35b7a3b36790400ebdc2c6b",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 25000,
+        "quote": "Primer\",\n     \"value\": \"2005\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABTUlEQVR4nO3VUYrCABAEUYWcOAfJlXthv5YBG10KzEC9f9ugjnWceeQhzHE9P3/R+eIruG66Re+1raM9BPUA396i99rWwb2Nfj/Q+fPdds7XP7bovb9bb5/8Xc/5vNlfgycPs/KFlS+s/FJWfrDy4baIPU8eZuULK19Y+aWs/GDlw20Re548zMoXVr6w8ktZ+cHKh9si9jx5mJUvrHxh5Zey8oOVD7dF7HnyMCtfWPnCyi9l5QcrH26L2PPkYVa+sPKFlV/Kyg9WPtwWsefJw6x8YeULK7+UlR+sfLgtYs+Th1n5wsoXVn4pKz9Y+XBbxJ4nD7PyhZUvrPxSVn6w8uG2iD1PHmblCytfWPmlrPxg5cNtEXuePMzKF1a+sPJLWfnByofbIvY8eZiVL6x8YeWXsvKDlQ+3Rex58jArX1j5wsovZeUHKx9ui9j7Ac0n0W5/WzNuAAAAAElFTkSuQmCC\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"9fd7c0133de606f4ede3b6d5f7c25778\",\n      \"height\": 63\n     },\n     \"label\": \"Hutan Rawa Sekunder\",\n     \"value\": \"20051\"\n    },\n    {\n     \"symbol\": {\n      \"",
+        "source_id": "klhk-landcover-2025",
+        "start": 24000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-2f00a190aee95b4526c5474da789f7cdfe5c4767be99c0d016de4c8112399f10",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 26000,
+        "quote": "outline\": null,\n      \"color\": [\n       142,\n       167,\n       4,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Mangrove Primer\",\n     \"value\": \"2004\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       193,\n       167,\n       0,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Mangrove Sekunder\",\n     \"value\": \"20041\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       235,\n       192,\n       167,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Semak/Belukar\",\n     \"value\": \"2007\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABSElEQVR4nO3VwWlDUQxE0Sx+C+4nbaRCt6F+fhHJNjzMkARBJDhnafCzN6N73fX8fKPN9Xj/+PWX7nq+/Pwx9K3u99JbV/oTXX/gv9/qfi+9dbX9Cq8nv23Ojz+81f3e97d+PPmpc76HnQaTb6bygc",
+        "source_id": "klhk-landcover-2025",
+        "start": 25000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-6fb2395e948858c4002f93a0adacd8987444a152eb4199b1235bdaf956b1e64f",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 27000,
+        "quote": "oHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9Uvmadhi/Vfs0cUFLFcgAAAABJRU5ErkJggg==\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"d4519bcd3bd1abcdb1d25fb97c73dfef\",\n      \"height\": 63\n     },\n     \"label\": \"Semak/Belukar Rawa\",\n     \"value\": \"20071\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       213,\n       255,\n       2,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Savana\",\n     \"value\": \"3000\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       211,\n       229,\n       152,\n       255\n      ],\n      \"style\"",
+        "source_id": "klhk-landcover-2025",
+        "start": 26000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-950c13cbd4d572c08298d07eda9bc0b965f535cc8f8b0a327d54d0299be09c69",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 28000,
+        "quote": ": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Tanaman Industri ( HTI )\",\n     \"value\": \"2006\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       229,\n       210,\n       152,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Perkebunan\",\n     \"value\": \"2010\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       246,\n       254,\n       167,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pertanian Lahan Kering\",\n     \"value\": \"20091\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       237,\n       245,\n       0,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pertanian Lahan Kering Bercampur dgn Semak\",\n     \"value\": \"20092\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       114,\n       142,\n       167,\n       255\n      ",
+        "source_id": "klhk-landcover-2025",
+        "start": 27000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-4468b313bdfcadf2a66c4072166312faf1a595cd6d5d1c20499aa5528a27132e",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 29000,
+        "quote": "],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Transmigrasi; Transmigrasi\",\n     \"value\": \"20122\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       114,\n       142,\n       167,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Transmigrasi; Transmigrasi\",\n     \"value\": \"6000\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": {\n       \"color\": [\n        0,\n        0,\n        0,\n        255\n       ],\n       \"width\": 1\n      },\n      \"color\": [\n       0,\n       0,\n       0,\n       0\n      ],\n      \"size\": 4,\n      \"yoffset\": 0,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"style\": \"esriSMSCircle\",\n      \"type\": \"esriSMS\"\n     },\n     \"label\": \"Sawah\",\n     \"value\": \"20093\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       124,\n       244,\n       244,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Tambak\",\n   ",
+        "source_id": "klhk-landcover-2025",
+        "start": 28000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-c664a035c119d2c13f087ddd63449e96d0931aa5e6591bda4637775221de808f",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 30000,
+        "quote": "  \"value\": \"20094\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": {\n       \"color\": [\n        0,\n        0,\n        0,\n        255\n       ],\n       \"width\": 1\n      },\n      \"color\": [\n       0,\n       0,\n       0,\n       0\n      ],\n      \"size\": 4,\n      \"yoffset\": 0,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"style\": \"esriSMSCircle\",\n      \"type\": \"esriSMS\"\n     },\n     \"label\": \"Tanah Terbuka\",\n     \"value\": \"2014\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       167,\n       4,\n       0,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pertambangan\",\n     \"value\": \"20141\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       78,\n       78,\n       78,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Permukiman\",\n     \"value\": \"2012\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       212,\n       252,\n       247",
+        "source_id": "klhk-landcover-2025",
+        "start": 29000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-8a81f4349ccc33c35c88910c61da592511a07053637c7ff022d31b5610fe0072",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 31000,
+        "quote": ",\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Tubuh Air\",\n     \"value\": \"5001\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       214,\n       0,\n       115,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pelabuhan Udara/Laut\",\n     \"value\": \"20121\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC\",\n      \"y",
+        "source_id": "klhk-landcover-2025",
+        "start": 30000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-175af45cef640a92b65fc4ab82d02dcdbde043561f7ea9d4495e67142c500fae",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 32000,
+        "quote": "offset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"89aa3821aff9eacfb4606ca25efc3ff3\",\n      \"height\": 63\n     },\n     \"label\": \"Rawa; rawa\",\n     \"value\": \"5011\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n ",
+        "source_id": "klhk-landcover-2025",
+        "start": 31000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-57286a5fa31d506db53421135b46d1918f80edf4c141f19756d798c1849a8090",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    },
+    {
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 32780,
+        "quote": "     \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"89aa3821aff9eacfb4606ca25efc3ff3\",\n      \"height\": 63\n     },\n     \"label\": \"Rawa; rawa\",\n     \"value\": \"50011\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       209,\n       209,\n       209,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Awan\",\n     \"value\": \"2500\"\n    }\n   ],\n   \"type\": \"uniqueValue\",\n   \"fieldDelimiter\": \",\"\n  },\n  \"scaleSymbols\": true,\n  \"transparency\": 0,\n  \"labelingInfo\": null\n },\n \"geometryField\": {},\n \"copyrightText\": \"Direktorat Inventarisasi dan Pemantauan Sumber Daya Hutan, Direktorat Jenderal Planologi Kehutanan, Kementerian Kehutanan\",\n \"geometryType\": \"esriGeometryPolygon\"\n}",
+        "source_id": "klhk-landcover-2025",
+        "start": 32000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "relation": "CITES",
+      "source": "chunk-fe266e575486272c7ef280c8c7e9e4e9c44f51e3840e9ac85bbf8337ea9fcc3d",
+      "target": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+    }
+  ],
+  "institution_authority_certified": false,
+  "nodes": [
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 1000,
+        "quote": "{\n \"extent\": {\n  \"ymin\": -11.007615375999933,\n  \"zmin\": 0,\n  \"xmin\": 94.971949936000044,\n  \"ymax\": 6.076740869000048,\n  \"zmax\": 0,\n  \"xmax\": 141.02004854300003,\n  \"mmax\": 0,\n  \"mmin\": 0,\n  \"spatialReference\": {\n   \"falseM\": -100000,\n   \"xyTolerance\": 8.983152841195215E-9,\n   \"mUnits\": 10000,\n   \"zUnits\": 10000,\n   \"latestWkid\": 4326,\n   \"zTolerance\": 0.001,\n   \"wkid\": 4326,\n   \"xyUnits\": 999999999.99999988,\n   \"mTolerance\": 0.001,\n   \"falseX\": -400,\n   \"falseY\": -400,\n   \"falseZ\": -100000\n  }\n },\n \"maxRecordCount\": 2000,\n \"datesInUnknownTimezone\": false,\n \"ownershipBasedAccessControlForFeatures\": {\"allowOthersToQuery\": true},\n \"type\": \"Feature Layer\",\n \"maxSelectionCount\": 2000,\n \"subtypes\": [],\n \"relationships\": [],\n \"cimVersion\": \"3.7.0\",\n \"isDataArchived\": false,\n \"id\": 0,\n \"archivingInfo\": {\n  \"startArchivingMoment\": -1,\n  \"supportsQueryWithHistoricMoment\": false\n },\n \"spatialReference\": {\n  \"falseM\": -100000,\n  \"xyTolerance\": 8.983152841195215E-9,\n  \"mUnits\": 10000,\n  \"zUnits\": 10",
+        "source_id": "klhk-landcover-2025",
+        "start": 0,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+      "kind": "Document"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 1000,
+        "quote": "{\n \"extent\": {\n  \"ymin\": -11.007615375999933,\n  \"zmin\": 0,\n  \"xmin\": 94.971949936000044,\n  \"ymax\": 6.076740869000048,\n  \"zmax\": 0,\n  \"xmax\": 141.02004854300003,\n  \"mmax\": 0,\n  \"mmin\": 0,\n  \"spatialReference\": {\n   \"falseM\": -100000,\n   \"xyTolerance\": 8.983152841195215E-9,\n   \"mUnits\": 10000,\n   \"zUnits\": 10000,\n   \"latestWkid\": 4326,\n   \"zTolerance\": 0.001,\n   \"wkid\": 4326,\n   \"xyUnits\": 999999999.99999988,\n   \"mTolerance\": 0.001,\n   \"falseX\": -400,\n   \"falseY\": -400,\n   \"falseZ\": -100000\n  }\n },\n \"maxRecordCount\": 2000,\n \"datesInUnknownTimezone\": false,\n \"ownershipBasedAccessControlForFeatures\": {\"allowOthersToQuery\": true},\n \"type\": \"Feature Layer\",\n \"maxSelectionCount\": 2000,\n \"subtypes\": [],\n \"relationships\": [],\n \"cimVersion\": \"3.7.0\",\n \"isDataArchived\": false,\n \"id\": 0,\n \"archivingInfo\": {\n  \"startArchivingMoment\": -1,\n  \"supportsQueryWithHistoricMoment\": false\n },\n \"spatialReference\": {\n  \"falseM\": -100000,\n  \"xyTolerance\": 8.983152841195215E-9,\n  \"mUnits\": 10000,\n  \"zUnits\": 10",
+        "source_id": "klhk-landcover-2025",
+        "start": 0,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-57e4ade43f80932b08594248953319cc5d7be80a4a23896ee90b68ee4b37fa70",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 2000,
+        "quote": "000,\n  \"latestWkid\": 4326,\n  \"zTolerance\": 0.001,\n  \"wkid\": 4326,\n  \"xyUnits\": 999999999.99999988,\n  \"mTolerance\": 0.001,\n  \"falseX\": -400,\n  \"falseY\": -400,\n  \"falseZ\": -100000\n },\n \"subtypeFieldName\": null,\n \"supportsStatistics\": true,\n \"hasLastEditTime\": true,\n \"standardMaxRecordCount\": 4000,\n \"isDataVersioned\": false,\n \"hasGeometryProperties\": true,\n \"supportsAdvancedQueries\": true,\n \"parentLayer\": null,\n \"subLayers\": [],\n \"currentVersion\": 12.1,\n \"referenceScale\": 0,\n \"canScaleSymbols\": false,\n \"hasZ\": true,\n \"name\": \"PL2025_AR_50K\",\n \"displayField\": \"KDPPUM\",\n \"fields\": [\n  {\n   \"nullable\": false,\n   \"domain\": null,\n   \"name\": \"OBJECTID\",\n   \"alias\": \"OBJECTID\",\n   \"type\": \"esriFieldTypeOID\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"KDPPUM\",\n   \"length\": 50,\n   \"alias\": \"Kode PUM Provinsi\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"PL2025_ID_50K\",\n   \"alias\": \"ID Penutupan Lahan Tahun 2025\",\n   \"type\": \"esriFi",
+        "source_id": "klhk-landcover-2025",
+        "start": 1000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-11b0b4146684c7b5f4dd95db524d8214ffc7785b63650d170c43ed8990410e71",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 3000,
+        "quote": "eldTypeInteger\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"LUAS_HA\",\n   \"alias\": \"Luas\",\n   \"type\": \"esriFieldTypeDouble\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"NAMOBJ\",\n   \"length\": 250,\n   \"alias\": \"Nama Objek\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"FCODE\",\n   \"length\": 50,\n   \"alias\": \"Feature Code\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"LCODE\",\n   \"length\": 8,\n   \"alias\": \"Layer Code\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"SRS_ID\",\n   \"length\": 50,\n   \"alias\": \"Spatial Reference\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"METADATA\",\n   \"length\": 50,\n   \"alias\": \"Metadata\",\n   \"type\": \"esriFieldTypeString\"\n  },\n  {\n   \"nullable\": true,\n   \"domain\": null,\n   \"name\": \"REMARK\",\n   \"length\": 250,\n   \"alias\": \"Catatan\",\n   \"type\": \"",
+        "source_id": "klhk-landcover-2025",
+        "start": 2000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-b4c385a99d0cbcfe440916a8b43218dc53e9a49fd90ce8477779f543340e8031",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 4000,
+        "quote": "esriFieldTypeString\"\n  }\n ],\n \"maxRecordCountFactor\": 1,\n \"dateFieldsTimeReference\": null,\n \"hasM\": true,\n \"preferredTimeReference\": null,\n \"useStandardizedQueries\": true,\n \"sourceSpatialReference\": {\n  \"falseM\": -100000,\n  \"xyTolerance\": 8.983152841195215E-9,\n  \"mUnits\": 10000,\n  \"zUnits\": 10000,\n  \"latestWkid\": 4326,\n  \"zTolerance\": 0.001,\n  \"wkid\": 4326,\n  \"xyUnits\": 999999999.99999988,\n  \"mTolerance\": 0.001,\n  \"falseX\": -400,\n  \"falseY\": -400,\n  \"falseZ\": -100000\n },\n \"description\": \"IGT Penutupan Lahan Kawasan Hutan tahun 2025 skala 1:50.000 adalah hasil update peta IGT Penutupan Lahan Kawasan Hutan tahun 2024 dengan menggunakan mosaik citra landsat tahun 2025 (akuisisi citra landsat pada periode Januari s.d Desember 2025). Penutupan Lahan dikelaskan ke dalam 23 kelas penutupan lahan sesuai dengan Peraturan Direktur Jenderal Planologi Kehutanan Nomor P.1/VII-IPSDH/2015 tentang Pedoman Pemantauan Penutupan Lahan dan Surat Keputusan Direktur Jenderal Planologi Kehutanan Nomor 17 Tah",
+        "source_id": "klhk-landcover-2025",
+        "start": 3000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-62ecb647aa02a1acfa08da309e84d102f4e41ec80b3aa940376d194c6f805a94",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 5000,
+        "quote": "un 2025 tentang Petunjuk Teknis Penafsiran Citra Satelit Resolusi Menengah untuk Pemutakhiran Penutupan Lahan Nasional. Dasar Peraturan : Peraturan Menteri Lingkungan Hidup dan Kehutanan Nomor 7 Tahun 2021 tentang Perencanaan Kehutanan, Perubahan Peruntukan Kawasan Hutan dan Perubahan Fungsi Kawasan Hutan, serta Penggunaan Kawasan. Hasil Penjaminan Kualitas :Berdasarkan hasil penjaminan kualitas/Quality Assurance (QA) IGT kualitas data dan kelengkapan metadata maka IGT Penutupan Lahan Kawasan Hutan Tahun 2025 skala 1:50.000 mendapatkan rata-rata nilai 99,38 dan metadata lengkap, serta sudah mencakup seluruh 38 provinsi di Indonesia sehingga tidak terdapat omission (kekurangan data) dan commission (kelebihan data). Berdasarkan penilaian tersebut maka IGT masuk dalam kategori B. \",\n \"canModifyLayer\": true,\n \"supportedSpatialRelationships\": [\n  \"esriSpatialRelIntersects\",\n  \"esriSpatialRelContains\",\n  \"esriSpatialRelCrosses\",\n  \"esriSpatialRelEnvelopeIntersects\",\n  \"esriSpatialRelIndexInt",
+        "source_id": "klhk-landcover-2025",
+        "start": 4000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-2a5a1bad5e380f4f352242e807d93547018aaa7b99571970fd86fe320c51b90a",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 6000,
+        "quote": "ersects\",\n  \"esriSpatialRelOverlaps\",\n  \"esriSpatialRelTouches\",\n  \"esriSpatialRelWithin\",\n  \"esriSpatialRelRelation\"\n ],\n \"geometryProperties\": {\n  \"shapeAreaFieldName\": \"Shape_Area\",\n  \"shapeLengthFieldName\": \"Shape_Length\",\n  \"units\": \"esriDecimalDegrees\",\n  \"mapUnits\": {\"uwkid\": 9102}\n },\n \"standardMaxRecordCountNoGeometry\": 32000,\n \"indexes\": null,\n \"htmlPopupType\": \"esriServerHTMLPopupTypeAsHTMLText\",\n \"minScale\": 0,\n \"supportsDynamicLegends\": true,\n \"hasAttachments\": false,\n \"advancedQueryCapabilities\": {\n  \"supportsStatistics\": true,\n  \"supportsSqlExpression\": true,\n  \"supportsQueryWithResultType\": true,\n  \"supportsTrueCurve\": false,\n  \"supportsOrderBy\": true,\n  \"supportsQueryRelatedPagination\": true,\n  \"supportsSqlFormat\": false,\n  \"useStandardizedQueries\": true,\n  \"supportsLod\": false,\n  \"supportsQueryWithDistance\": true,\n  \"supportsQueryWithCacheHint\": false,\n  \"supportsCountDistinct\": true,\n  \"supportsCurrentUserQueries\": true,\n  \"supportsAdvancedQueryRelated\": true,\n  \"sup",
+        "source_id": "klhk-landcover-2025",
+        "start": 5000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-eac0dbcf33e44ada54b231206d3f8b411a3241cbd49965485d789e3c41350d7f",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 7000,
+        "quote": "portsReturningQueryExtent\": true,\n  \"supportsQueryWithLodSR\": false,\n  \"supportsPagination\": true,\n  \"supportsMaxRecordCountFactor\": false,\n  \"supportsDistinct\": true,\n  \"supportsTimeRelation\": true,\n  \"supportsQueryAnalytic\": false,\n  \"supportsPercentileStatistics\": true,\n  \"supportsHavingClause\": true\n },\n \"subtypeField\": null,\n \"serviceItemId\": \"a138cdbb7b4347ec946ee4adf46721e8\",\n \"supportsCoordinatesQuantization\": true,\n \"capabilities\": \"Map,Query\",\n \"maxScale\": 0,\n \"supportsExceedsLimitStatistics\": true,\n \"defaultVisibility\": true,\n \"hasMetadata\": true,\n \"tileMaxRecordCount\": 4000,\n \"typeIdField\": null,\n \"defaultSubtypeCode\": null,\n \"supportedQueryFormats\": \"JSON, geoJSON, PBF\",\n \"hasLabels\": false,\n \"drawingInfo\": {\n  \"renderer\": {\n   \"uniqueValueGroups\": [{\n    \"heading\": \"\",\n    \"classes\": [\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        96,\n        230,\n        99,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      ",
+        "source_id": "klhk-landcover-2025",
+        "start": 6000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-688f375b25b1ebbab53a2ca6c2c6813a6036c043907cf88223a7a617d91e36a4",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 8000,
+        "quote": "},\n      \"values\": [[\"2001\"]],\n      \"description\": \"Hutan Lahan Kering Primer\",\n      \"label\": \"Hutan Lahan Kering Primer\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        114,\n        255,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2002\"]],\n      \"description\": \"Hutan Lahan Kering Sekunder\",\n      \"label\": \"Hutan Lahan Kering Sekunder\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABR0lEQVR4nO3VwWlDUQxE0Sx+Fanug+sKuDq1kWzDwwxJEESCc5YGP3szutddj8832lzP949ff+mux8vPn0Pf6n4vvXWlP9H1B/77re730ltX26/wevLb5vz8w1vd731/68eTnzrne9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5Ziofq",
+        "source_id": "klhk-landcover-2025",
+        "start": 7000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-9cc1f7519b7f41534b48dd60fb9154c217499fc1612d2fc47ea0e0023c005471",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 9000,
+        "quote": "Hyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4AkjheUWF6uLzAAAAAElFTkSuQmCC\",\n       \"yoffset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"6361dff80d0181a60b6a7e11a7c9704d\",\n       \"height\": 63\n      },\n      \"values\": [[\"2005\"]],\n      \"description\": \"Hutan Rawa Primer\",\n      \"label\": \"Hutan Rawa Primer\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABTUlEQVR4nO3VUYrCABAEUYWcOAfJlXthv5YBG10KzEC9f9ugjnWceeQhzHE9P3/R+eIruG66Re+1raM9BPUA396i99rWwb2Nfj/Q+fPdds7XP7bovb9bb5/8Xc/5vNlfgycPs/KFlS+s/FJWfrDy4baIPU8eZuULK19Y+aWs/GDlw20Re548zMoXVr6w8ktZ+cHKh9si9jx5mJUvrHxh5Zey8oOVD7dF7HnyMCtfWPnCyi9l5QcrH26L2PPkYVa+sPKFlV/Kyg9WPtwWsefJw6x8YeULK7+UlR+sfLgtYs+Th1n5wsoXVn4pKz9Y+XBbxJ4nD7PyhZUvrPxSVn6w8uG2iD1PHmblCytfWPmlrPxg5cNtEXuePMzKF1a+sPJLWfnByofbIvY8eZiVL6x8YeWXsv",
+        "source_id": "klhk-landcover-2025",
+        "start": 8000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-43e28075e7710f35bd63db63f5364c8ef4c1c10ff875007e2ea46716d54a47ad",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 10000,
+        "quote": "KDlQ+3Rex58jArX1j5wsovZeUHKx9ui9j7Ac0n0W5/WzNuAAAAAElFTkSuQmCC\",\n       \"yoffset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"9fd7c0133de606f4ede3b6d5f7c25778\",\n       \"height\": 63\n      },\n      \"values\": [[\"20051\"]],\n      \"description\": \"Hutan Rawa Sekunder\",\n      \"label\": \"Hutan Rawa Sekunder\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        142,\n        167,\n        4,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2004\"]],\n      \"description\": \"Hutan Mangrove Primer\",\n      \"label\": \"Hutan Mangrove Primer\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        193,\n        167,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20041\"]],\n      \"description\": \"",
+        "source_id": "klhk-landcover-2025",
+        "start": 9000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-697d8db8400bdf85a7de2ab6f7e474c3f0cebccbd6ac765b58c24064a91a2f0f",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 11000,
+        "quote": "Hutan Mangrove Sekunder\",\n      \"label\": \"Hutan Mangrove Sekunder\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        235,\n        192,\n        167,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2007\"]],\n      \"description\": \"Semak/Belukar\",\n      \"label\": \"Semak/Belukar\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABSElEQVR4nO3VwWlDUQxE0Sx+C+4nbaRCt6F+fhHJNjzMkARBJDhnafCzN6N73fX8fKPN9Xj/+PWX7nq+/Pwx9K3u99JbV/oTXX/gv9/qfi+9dbX9Cq8nv23Ojz+81f3e97d+PPmpc76HnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9Uvmadhi/Vfs0cUFLFcgAAAABJRU5ErkJggg==\",\n       \"y",
+        "source_id": "klhk-landcover-2025",
+        "start": 10000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-c77d3282908da8583c3212068255d71ed85c9adf2cb72f196ef6c49ee9a5fc75",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 12000,
+        "quote": "offset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"d4519bcd3bd1abcdb1d25fb97c73dfef\",\n       \"height\": 63\n      },\n      \"values\": [[\"20071\"]],\n      \"description\": \"Semak/Belukar Rawa\",\n      \"label\": \"Semak/Belukar Rawa\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        213,\n        255,\n        2,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"3000\"]],\n      \"description\": \"Savana\",\n      \"label\": \"Savana\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        211,\n        229,\n        152,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2006\"]],\n      \"description\": \"Hutan Tanaman Industri ( HTI )\",\n      \"label\": \"Hutan Tanaman Industri ( HTI )\"\n     },\n     {\n      \"sy",
+        "source_id": "klhk-landcover-2025",
+        "start": 11000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-54c4ba44050aed5e265c9b4db5c460dcbe40eb3566dbd695e759d07ee4d641e8",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 13000,
+        "quote": "mbol\": {\n       \"outline\": null,\n       \"color\": [\n        229,\n        210,\n        152,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2010\"]],\n      \"description\": \"Perkebunan\",\n      \"label\": \"Perkebunan\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        246,\n        254,\n        167,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20091\"]],\n      \"description\": \"Pertanian Lahan Kering\",\n      \"label\": \"Pertanian Lahan Kering\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        237,\n        245,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20092\"]],\n      \"description\": \"Pertanian Lahan Kering Bercampur dgn Semak\",\n      \"label\": \"Pertanian Lahan Kering Bercampur dgn Semak\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n",
+        "source_id": "klhk-landcover-2025",
+        "start": 12000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-12731719a5f2e6406ea0be9bc60a1aa5197a923030495449c9b80d27e8708924",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 14000,
+        "quote": "       \"color\": [\n        114,\n        142,\n        167,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [\n       [\"20122\"],\n       [\"6000\"]\n      ],\n      \"description\": \"Transmigrasi; Transmigrasi\",\n      \"label\": \"Transmigrasi; Transmigrasi\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": {\n        \"color\": [\n         0,\n         0,\n         0,\n         255\n        ],\n        \"width\": 1\n       },\n       \"color\": [\n        0,\n        0,\n        0,\n        0\n       ],\n       \"size\": 4,\n       \"yoffset\": 0,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"style\": \"esriSMSCircle\",\n       \"type\": \"esriSMS\"\n      },\n      \"values\": [[\"20093\"]],\n      \"description\": \"Sawah\",\n      \"label\": \"Sawah\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        124,\n        244,\n        244,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20094\"]],\n      \"d",
+        "source_id": "klhk-landcover-2025",
+        "start": 13000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-c7212e33999a947f7f4da28e40a2b12e6acafbc373ef571235e248a4f986e12e",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 15000,
+        "quote": "escription\": \"Tambak\",\n      \"label\": \"Tambak\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": {\n        \"color\": [\n         0,\n         0,\n         0,\n         255\n        ],\n        \"width\": 1\n       },\n       \"color\": [\n        0,\n        0,\n        0,\n        0\n       ],\n       \"size\": 4,\n       \"yoffset\": 0,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"style\": \"esriSMSCircle\",\n       \"type\": \"esriSMS\"\n      },\n      \"values\": [[\"2014\"]],\n      \"description\": \"Tanah Terbuka\",\n      \"label\": \"Tanah Terbuka\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        167,\n        4,\n        0,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20141\"]],\n      \"description\": \"Pertambangan\",\n      \"label\": \"Pertambangan\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        78,\n        78,\n        78,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esr",
+        "source_id": "klhk-landcover-2025",
+        "start": 14000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-af67033bbeabb85e4b8fb4b67fb7ddbc9585fb97a87f6af8db547508d26f4344",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 16000,
+        "quote": "iSFS\"\n      },\n      \"values\": [[\"2012\"]],\n      \"description\": \"Permukiman\",\n      \"label\": \"Permukiman\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        212,\n        252,\n        247,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"5001\"]],\n      \"description\": \"Tubuh Air\",\n      \"label\": \"Tubuh Air\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        214,\n        0,\n        115,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"20121\"]],\n      \"description\": \"Pelabuhan Udara/Laut\",\n      \"label\": \"Pelabuhan Udara/Laut\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpM",
+        "source_id": "klhk-landcover-2025",
+        "start": 15000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-e787825ce160eedaf7f6d415d06967909d5fef4992e62b31718be8b260a36aec",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 17000,
+        "quote": "PlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC\",\n       \"yoffset\": 0,\n       \"width\": 63,\n       \"xoffset\": 0,\n       \"angle\": 0,\n       \"xscale\": 1,\n       \"type\": \"esriPFS\",\n       \"yscale\": 1,\n       \"contentType\": \"image/png\",\n       \"url\": \"89aa3821aff9eacfb4606ca25efc3ff3\",\n       \"height\": 63\n      },\n      \"values\": [\n       [\"5011\"],\n       [\"50011\"]\n      ],\n      \"description\": \"Rawa; rawa\",\n      \"label\": \"Rawa; rawa\"\n     },\n     {\n      \"symbol\": {\n       \"outline\": null,\n       \"color\": [\n        209,\n        209,\n        209,\n        255\n       ],\n       \"style\": \"esriSFSSolid\",\n       \"type\": \"esriSFS\"\n      },\n      \"values\": [[\"2500\"]],\n      \"description\": \"Awan\",\n      \"label\": \"Awan\"\n     }\n ",
+        "source_id": "klhk-landcover-2025",
+        "start": 16000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-ac034e86b9e7be9401b41f8bb8a77c4c5c2cf8600b31c56766b02e118fc1024f",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 18000,
+        "quote": "   ]\n   }],\n   \"field1\": \"PL2025_ID_50K\",\n   \"authoringInfo\": {\"colorRamp\": {\n    \"colorRamps\": [\n     {\n      \"toColor\": [\n       252,\n       179,\n       245,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       179,\n       245,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       179,\n       252,\n       188,\n       255\n      ],\n      \"fromColor\": [\n       179,\n       252,\n       188,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       209,\n       182,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       209,\n       182,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       197,\n       224,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       197,\n       224,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n   ",
+        "source_id": "klhk-landcover-2025",
+        "start": 17000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-fd3211f853461cc53281488cb8110198556111e10097c09127a16fad0970395e",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 19000,
+        "quote": "   \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       210,\n       252,\n       235,\n       255\n      ],\n      \"fromColor\": [\n       210,\n       252,\n       235,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       190,\n       184,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       190,\n       184,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       204,\n       224,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       204,\n       224,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       244,\n       252,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       244,\n       252,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {",
+        "source_id": "klhk-landcover-2025",
+        "start": 18000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-9b3b7109ea09f9cc64a7667afbbb105e35603361cf7e5a3792fccb232cbe4518",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 20000,
+        "quote": "\n      \"toColor\": [\n       252,\n       248,\n       210,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       248,\n       210,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       220,\n       252,\n       204,\n       255\n      ],\n      \"fromColor\": [\n       220,\n       252,\n       204,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       219,\n       207,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       219,\n       207,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       204,\n       245,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       204,\n       245,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       218,\n       2",
+        "source_id": "klhk-landcover-2025",
+        "start": 19000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-03f2e16472a6e4a020caf3af99877168fbdda4cb1be8306fd742138b734e83f9",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 21000,
+        "quote": "15,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       218,\n       215,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       188,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       188,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       182,\n       202,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       182,\n       202,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       230,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       230,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       248,\n       204,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       ",
+        "source_id": "klhk-landcover-2025",
+        "start": 20000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-9cf719bcc977ad51c5de72bc7b42f1adb14935bcdc1550f49dbe5e264af1bb7b",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 22000,
+        "quote": "248,\n       204,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       229,\n       182,\n       252,\n       255\n      ],\n      \"fromColor\": [\n       229,\n       182,\n       252,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       184,\n       223,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       184,\n       223,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       179,\n       252,\n       251,\n       255\n      ],\n      \"fromColor\": [\n       179,\n       252,\n       251,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       179,\n       199,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       179,\n       199,\n       255\n      ],\n   ",
+        "source_id": "klhk-landcover-2025",
+        "start": 21000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-d31b0febb85edc9a3b4f5ce0016e3283c860ee0b8d4dfd480bdfee16a21dbeed",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 23000,
+        "quote": "   \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       252,\n       197,\n       199,\n       255\n      ],\n      \"fromColor\": [\n       252,\n       197,\n       199,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     },\n     {\n      \"toColor\": [\n       205,\n       252,\n       179,\n       255\n      ],\n      \"fromColor\": [\n       205,\n       252,\n       179,\n       255\n      ],\n      \"type\": \"algorithmic\",\n      \"algorithm\": \"esriCIELabAlgorithm\"\n     }\n    ],\n    \"type\": \"multipart\"\n   }},\n   \"uniqueValueInfos\": [\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       96,\n       230,\n       99,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Lahan Kering Primer\",\n     \"value\": \"2001\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       114,\n       255,\n       0,\n       255\n      ],\n      \"style\": \"esriS",
+        "source_id": "klhk-landcover-2025",
+        "start": 22000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-66c374efa01230316a5c7f9e54cda98165397e6e6cef6a524a3bd8a7c0b6f0ad",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 24000,
+        "quote": "FSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Lahan Kering Sekunder\",\n     \"value\": \"2002\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABR0lEQVR4nO3VwWlDUQxE0Sx+Fanug+sKuDq1kWzDwwxJEESCc5YGP3szutddj8832lzP949ff+mux8vPn0Pf6n4vvXWlP9H1B/77re730ltX26/wevLb5vz8w1vd731/68eTnzrne9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4AkjheUWF6uLzAAAAAElFTkSuQmCC\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"6361dff80d0181a60b6a7e11a7c9704d\",\n      \"height\": 63\n     },\n     \"label\": \"Hutan Rawa ",
+        "source_id": "klhk-landcover-2025",
+        "start": 23000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-27bcd4d950d01d4deeeb1eb65e57727e24c4c99be35b7a3b36790400ebdc2c6b",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 25000,
+        "quote": "Primer\",\n     \"value\": \"2005\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABTUlEQVR4nO3VUYrCABAEUYWcOAfJlXthv5YBG10KzEC9f9ugjnWceeQhzHE9P3/R+eIruG66Re+1raM9BPUA396i99rWwb2Nfj/Q+fPdds7XP7bovb9bb5/8Xc/5vNlfgycPs/KFlS+s/FJWfrDy4baIPU8eZuULK19Y+aWs/GDlw20Re548zMoXVr6w8ktZ+cHKh9si9jx5mJUvrHxh5Zey8oOVD7dF7HnyMCtfWPnCyi9l5QcrH26L2PPkYVa+sPKFlV/Kyg9WPtwWsefJw6x8YeULK7+UlR+sfLgtYs+Th1n5wsoXVn4pKz9Y+XBbxJ4nD7PyhZUvrPxSVn6w8uG2iD1PHmblCytfWPmlrPxg5cNtEXuePMzKF1a+sPJLWfnByofbIvY8eZiVL6x8YeWXsvKDlQ+3Rex58jArX1j5wsovZeUHKx9ui9j7Ac0n0W5/WzNuAAAAAElFTkSuQmCC\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"9fd7c0133de606f4ede3b6d5f7c25778\",\n      \"height\": 63\n     },\n     \"label\": \"Hutan Rawa Sekunder\",\n     \"value\": \"20051\"\n    },\n    {\n     \"symbol\": {\n      \"",
+        "source_id": "klhk-landcover-2025",
+        "start": 24000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-2f00a190aee95b4526c5474da789f7cdfe5c4767be99c0d016de4c8112399f10",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 26000,
+        "quote": "outline\": null,\n      \"color\": [\n       142,\n       167,\n       4,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Mangrove Primer\",\n     \"value\": \"2004\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       193,\n       167,\n       0,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Mangrove Sekunder\",\n     \"value\": \"20041\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       235,\n       192,\n       167,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Semak/Belukar\",\n     \"value\": \"2007\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABSElEQVR4nO3VwWlDUQxE0Sx+C+4nbaRCt6F+fhHJNjzMkARBJDhnafCzN6N73fX8fKPN9Xj/+PWX7nq+/Pwx9K3u99JbV/oTXX/gv9/qfi+9dbX9Cq8nv23Ojz+81f3e97d+PPmpc76HnQaTb6bygc",
+        "source_id": "klhk-landcover-2025",
+        "start": 25000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-6fb2395e948858c4002f93a0adacd8987444a152eb4199b1235bdaf956b1e64f",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 27000,
+        "quote": "oHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9Uvmadhi/Vfs0cUFLFcgAAAABJRU5ErkJggg==\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"d4519bcd3bd1abcdb1d25fb97c73dfef\",\n      \"height\": 63\n     },\n     \"label\": \"Semak/Belukar Rawa\",\n     \"value\": \"20071\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       213,\n       255,\n       2,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Savana\",\n     \"value\": \"3000\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       211,\n       229,\n       152,\n       255\n      ],\n      \"style\"",
+        "source_id": "klhk-landcover-2025",
+        "start": 26000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-950c13cbd4d572c08298d07eda9bc0b965f535cc8f8b0a327d54d0299be09c69",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 28000,
+        "quote": ": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Hutan Tanaman Industri ( HTI )\",\n     \"value\": \"2006\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       229,\n       210,\n       152,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Perkebunan\",\n     \"value\": \"2010\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       246,\n       254,\n       167,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pertanian Lahan Kering\",\n     \"value\": \"20091\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       237,\n       245,\n       0,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pertanian Lahan Kering Bercampur dgn Semak\",\n     \"value\": \"20092\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       114,\n       142,\n       167,\n       255\n      ",
+        "source_id": "klhk-landcover-2025",
+        "start": 27000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-4468b313bdfcadf2a66c4072166312faf1a595cd6d5d1c20499aa5528a27132e",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 29000,
+        "quote": "],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Transmigrasi; Transmigrasi\",\n     \"value\": \"20122\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       114,\n       142,\n       167,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Transmigrasi; Transmigrasi\",\n     \"value\": \"6000\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": {\n       \"color\": [\n        0,\n        0,\n        0,\n        255\n       ],\n       \"width\": 1\n      },\n      \"color\": [\n       0,\n       0,\n       0,\n       0\n      ],\n      \"size\": 4,\n      \"yoffset\": 0,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"style\": \"esriSMSCircle\",\n      \"type\": \"esriSMS\"\n     },\n     \"label\": \"Sawah\",\n     \"value\": \"20093\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       124,\n       244,\n       244,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Tambak\",\n   ",
+        "source_id": "klhk-landcover-2025",
+        "start": 28000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-c664a035c119d2c13f087ddd63449e96d0931aa5e6591bda4637775221de808f",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 30000,
+        "quote": "  \"value\": \"20094\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": {\n       \"color\": [\n        0,\n        0,\n        0,\n        255\n       ],\n       \"width\": 1\n      },\n      \"color\": [\n       0,\n       0,\n       0,\n       0\n      ],\n      \"size\": 4,\n      \"yoffset\": 0,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"style\": \"esriSMSCircle\",\n      \"type\": \"esriSMS\"\n     },\n     \"label\": \"Tanah Terbuka\",\n     \"value\": \"2014\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       167,\n       4,\n       0,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pertambangan\",\n     \"value\": \"20141\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       78,\n       78,\n       78,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Permukiman\",\n     \"value\": \"2012\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       212,\n       252,\n       247",
+        "source_id": "klhk-landcover-2025",
+        "start": 29000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-8a81f4349ccc33c35c88910c61da592511a07053637c7ff022d31b5610fe0072",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 31000,
+        "quote": ",\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Tubuh Air\",\n     \"value\": \"5001\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       214,\n       0,\n       115,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Pelabuhan Udara/Laut\",\n     \"value\": \"20121\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC\",\n      \"y",
+        "source_id": "klhk-landcover-2025",
+        "start": 30000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-175af45cef640a92b65fc4ab82d02dcdbde043561f7ea9d4495e67142c500fae",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 32000,
+        "quote": "offset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n      \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"89aa3821aff9eacfb4606ca25efc3ff3\",\n      \"height\": 63\n     },\n     \"label\": \"Rawa; rawa\",\n     \"value\": \"5011\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"imageData\": \"iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC\",\n      \"yoffset\": 0,\n      \"width\": 63,\n      \"xoffset\": 0,\n      \"angle\": 0,\n      \"xscale\": 1,\n ",
+        "source_id": "klhk-landcover-2025",
+        "start": 31000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-57286a5fa31d506db53421135b46d1918f80edf4c141f19756d798c1849a8090",
+      "kind": "Chunk"
+    },
+    {
+      "entity_version": null,
+      "evidence": {
+        "authority": "klhk-landcover-2025",
+        "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+        "end": 32780,
+        "quote": "     \"type\": \"esriPFS\",\n      \"yscale\": 1,\n      \"contentType\": \"image/png\",\n      \"url\": \"89aa3821aff9eacfb4606ca25efc3ff3\",\n      \"height\": 63\n     },\n     \"label\": \"Rawa; rawa\",\n     \"value\": \"50011\"\n    },\n    {\n     \"symbol\": {\n      \"outline\": null,\n      \"color\": [\n       209,\n       209,\n       209,\n       255\n      ],\n      \"style\": \"esriSFSSolid\",\n      \"type\": \"esriSFS\"\n     },\n     \"label\": \"Awan\",\n     \"value\": \"2500\"\n    }\n   ],\n   \"type\": \"uniqueValue\",\n   \"fieldDelimiter\": \",\"\n  },\n  \"scaleSymbols\": true,\n  \"transparency\": 0,\n  \"labelingInfo\": null\n },\n \"geometryField\": {},\n \"copyrightText\": \"Direktorat Inventarisasi dan Pemantauan Sumber Daya Hutan, Direktorat Jenderal Planologi Kehutanan, Kementerian Kehutanan\",\n \"geometryType\": \"esriGeometryPolygon\"\n}",
+        "source_id": "klhk-landcover-2025",
+        "start": 32000,
+        "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+      },
+      "id": "chunk-fe266e575486272c7ef280c8c7e9e4e9c44f51e3840e9ac85bbf8337ea9fcc3d",
+      "kind": "Chunk"
+    }
+  ],
+  "raw_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+  "status": "BLOCKED_PENDING_CURATED_METADATA",
+  "text_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+}

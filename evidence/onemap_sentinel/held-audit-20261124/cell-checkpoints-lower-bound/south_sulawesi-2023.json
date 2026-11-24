@@ -1,0 +1,47 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "cell": {
+    "province": "south_sulawesi",
+    "year": 2023,
+    "physical_patch_records": 48,
+    "manifest_quality_eligible": 36,
+    "verified_six_band_scl_patches": 48,
+    "verified_parent_frames": 3,
+    "minimum_patch_threshold": 28,
+    "minimum_patch_met": true,
+    "boundary_area_m2": 45323612676.4504,
+    "footprint_area_m2": 313933231.44370675,
+    "simultaneous_present_area_m2": 313927430.34067285,
+    "clear_joint_area_m2": 299271299.55302066,
+    "present_coverage_pct": 0.6926354979284026,
+    "clear_coverage_pct": 0.6602988638381829,
+    "missing_joint_area_m2": 45009685246.110085,
+    "required_grid": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints-lower-bound\\south_sulawesi-2023.tif",
+      "sha256": "237f1f5ef00f20282568c7dc4ddb6ded402d5216f31b24f3e0c185711cd84f32"
+    },
+    "required_touched_grid_cells": 47451,
+    "fully_present_cells": 251,
+    "fully_clear_cells": 188,
+    "any_present_cells": 390,
+    "any_clear_cells": 388,
+    "grid_rule": "CONSERVATIVE_LOWER_BOUND_REPORT_ONLY",
+    "full_cell_error_direction": "MAY_UNDERCOUNT_BOUNDARY_TOUCH; NEVER_PROMOTE_PARTIAL",
+    "grid_used_for_collection_decision": false,
+    "coverage_area_and_queue_source": "EXACT_NATIVE_GEOMETRY"
+  },
+  "geometry": {
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints-lower-bound\\south_sulawesi-2023-present.wkb",
+      "sha256": "50a582a35243bb2291ed5e20578f9a9086b7e6a8efe6e2ebeb92b5135bf5a48b"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints-lower-bound\\south_sulawesi-2023-clear.wkb",
+      "sha256": "ae727aa64ce6fa5b63db0e660ce3a2f62aa1081530f7803baa461332a9855efc"
+    }
+  }
+}

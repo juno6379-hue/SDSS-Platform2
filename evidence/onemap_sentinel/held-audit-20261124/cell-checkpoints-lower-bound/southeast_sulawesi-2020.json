@@ -1,0 +1,47 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "cell": {
+    "province": "southeast_sulawesi",
+    "year": 2020,
+    "physical_patch_records": 48,
+    "manifest_quality_eligible": 41,
+    "verified_six_band_scl_patches": 48,
+    "verified_parent_frames": 4,
+    "minimum_patch_threshold": 28,
+    "minimum_patch_met": true,
+    "boundary_area_m2": 35444318634.088615,
+    "footprint_area_m2": 263910899.2238741,
+    "simultaneous_present_area_m2": 263910899.2146672,
+    "clear_joint_area_m2": 245408248.00322127,
+    "present_coverage_pct": 0.7445788475698065,
+    "clear_coverage_pct": 0.6923768250046133,
+    "missing_joint_area_m2": 35180407734.87386,
+    "required_grid": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints-lower-bound\\southeast_sulawesi-2020.tif",
+      "sha256": "30799e5f1a9a564c4e6e98115184807dd0da79e846b666e0e8f39759c3f26a76"
+    },
+    "required_touched_grid_cells": 37749,
+    "fully_present_cells": 209,
+    "fully_clear_cells": 124,
+    "any_present_cells": 325,
+    "any_clear_cells": 325,
+    "grid_rule": "CONSERVATIVE_LOWER_BOUND_REPORT_ONLY",
+    "full_cell_error_direction": "MAY_UNDERCOUNT_BOUNDARY_TOUCH; NEVER_PROMOTE_PARTIAL",
+    "grid_used_for_collection_decision": false,
+    "coverage_area_and_queue_source": "EXACT_NATIVE_GEOMETRY"
+  },
+  "geometry": {
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints-lower-bound\\southeast_sulawesi-2020-present.wkb",
+      "sha256": "561702fcd5aab9a03fc2dd33c813582c40ee9488c71bc95a1e9fcdbfc1186f21"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints-lower-bound\\southeast_sulawesi-2020-clear.wkb",
+      "sha256": "9775bc642807d8fd826ba2ef766fab2be147e27d3994660cc411b7fbf093a4da"
+    }
+  }
+}

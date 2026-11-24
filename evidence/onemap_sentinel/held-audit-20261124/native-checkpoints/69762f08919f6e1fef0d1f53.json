@@ -1,0 +1,68 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "southeast_sulawesi",
+  "year": 2025,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\image.tif",
+  "verified_patch_count": 1,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\69762f08919f6e1fef0d1f53-footprint.wkb",
+      "sha256": "00b288073b3f72815e4f5b5f473cd4c91779af2b97ac8c29a35dcecac455fdaa"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\69762f08919f6e1fef0d1f53-present.wkb",
+      "sha256": "1eed0d1951f16354514641463e7ebecfa1d0299dc101c945147d42e7fc109204"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\69762f08919f6e1fef0d1f53-clear.wkb",
+      "sha256": "9552d610a113165b386f4d0524b19cd924990ef32acf021797ef9dc149d81524"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\image.tif",
+      "sha256": "ec00dd2a1ca3ad29b10054d8b8862599b245a3b8de5c4b475587ced0c0e8f3cd"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\stac-item.json",
+      "sha256": "1cd39ce219b43add17a2365897c89ae6e47f9dd80a4df692e3defdcab5192424"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B02.tif",
+      "sha256": "f32042772589c1585174c882b8576204ef14bc765cd7dab0f0fa2364ea65fea5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B03.tif",
+      "sha256": "75485161252e0797a57a6a004617eb77dfbb457cf2f5b295d90d6d282f506a4f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B04.tif",
+      "sha256": "76c6af9d41fb9737966ca6f4e4b910d2a36deafec49d457a9adea8eb870da6c9"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B08.tif",
+      "sha256": "8f02d685be090d82be74c01de7c8929a8065ad2ad28f212ccedba7e257a7bb54"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B11.tif",
+      "sha256": "17790481b86b6360d9fb68d268a78fed5a3909ac75cf7ab886400e37d8d9a91d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-B12.tif",
+      "sha256": "725d157942fd746c10445c7bb0512038ce8bac9259d8dba21a5f8d150890a484"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\bare-local-rank1-2025-2025\\raw-SCL.tif",
+      "sha256": "8ad94d35896963be06a6967321ca96b2b592f3d06b5c1fd5c0cde341f9c2597d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-southeast_sulawesi-2025-local-rank1-2025-a40b24388dbd\\r00-c00\\image.tif",
+      "sha256": "ec00dd2a1ca3ad29b10054d8b8862599b245a3b8de5c4b475587ced0c0e8f3cd"
+    }
+  ]
+}

@@ -1,0 +1,1447 @@
+{
+ "extent": {
+  "ymin": -11.007615375999933,
+  "zmin": 0,
+  "xmin": 94.971949936000044,
+  "ymax": 6.076740869000048,
+  "zmax": 0,
+  "xmax": 141.02004854300003,
+  "mmax": 0,
+  "mmin": 0,
+  "spatialReference": {
+   "falseM": -100000,
+   "xyTolerance": 8.983152841195215E-9,
+   "mUnits": 10000,
+   "zUnits": 10000,
+   "latestWkid": 4326,
+   "zTolerance": 0.001,
+   "wkid": 4326,
+   "xyUnits": 999999999.99999988,
+   "mTolerance": 0.001,
+   "falseX": -400,
+   "falseY": -400,
+   "falseZ": -100000
+  }
+ },
+ "maxRecordCount": 2000,
+ "datesInUnknownTimezone": false,
+ "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+ "type": "Feature Layer",
+ "maxSelectionCount": 2000,
+ "subtypes": [],
+ "relationships": [],
+ "cimVersion": "3.7.0",
+ "isDataArchived": false,
+ "id": 0,
+ "archivingInfo": {
+  "startArchivingMoment": -1,
+  "supportsQueryWithHistoricMoment": false
+ },
+ "spatialReference": {
+  "falseM": -100000,
+  "xyTolerance": 8.983152841195215E-9,
+  "mUnits": 10000,
+  "zUnits": 10000,
+  "latestWkid": 4326,
+  "zTolerance": 0.001,
+  "wkid": 4326,
+  "xyUnits": 999999999.99999988,
+  "mTolerance": 0.001,
+  "falseX": -400,
+  "falseY": -400,
+  "falseZ": -100000
+ },
+ "subtypeFieldName": null,
+ "supportsStatistics": true,
+ "hasLastEditTime": true,
+ "standardMaxRecordCount": 4000,
+ "isDataVersioned": false,
+ "hasGeometryProperties": true,
+ "supportsAdvancedQueries": true,
+ "parentLayer": null,
+ "subLayers": [],
+ "currentVersion": 12.1,
+ "referenceScale": 0,
+ "canScaleSymbols": false,
+ "hasZ": true,
+ "name": "PL2025_AR_50K",
+ "displayField": "KDPPUM",
+ "fields": [
+  {
+   "nullable": false,
+   "domain": null,
+   "name": "OBJECTID",
+   "alias": "OBJECTID",
+   "type": "esriFieldTypeOID"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "KDPPUM",
+   "length": 50,
+   "alias": "Kode PUM Provinsi",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "PL2025_ID_50K",
+   "alias": "ID Penutupan Lahan Tahun 2025",
+   "type": "esriFieldTypeInteger"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "LUAS_HA",
+   "alias": "Luas",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "NAMOBJ",
+   "length": 250,
+   "alias": "Nama Objek",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "FCODE",
+   "length": 50,
+   "alias": "Feature Code",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "LCODE",
+   "length": 8,
+   "alias": "Layer Code",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "SRS_ID",
+   "length": 50,
+   "alias": "Spatial Reference",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "METADATA",
+   "length": 50,
+   "alias": "Metadata",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "REMARK",
+   "length": 250,
+   "alias": "Catatan",
+   "type": "esriFieldTypeString"
+  }
+ ],
+ "maxRecordCountFactor": 1,
+ "dateFieldsTimeReference": null,
+ "hasM": true,
+ "preferredTimeReference": null,
+ "useStandardizedQueries": true,
+ "sourceSpatialReference": {
+  "falseM": -100000,
+  "xyTolerance": 8.983152841195215E-9,
+  "mUnits": 10000,
+  "zUnits": 10000,
+  "latestWkid": 4326,
+  "zTolerance": 0.001,
+  "wkid": 4326,
+  "xyUnits": 999999999.99999988,
+  "mTolerance": 0.001,
+  "falseX": -400,
+  "falseY": -400,
+  "falseZ": -100000
+ },
+ "description": "IGT Penutupan Lahan Kawasan Hutan tahun 2025 skala 1:50.000 adalah hasil update peta IGT Penutupan Lahan Kawasan Hutan tahun 2024 dengan menggunakan mosaik citra landsat tahun 2025 (akuisisi citra landsat pada periode Januari s.d Desember 2025). Penutupan Lahan dikelaskan ke dalam 23 kelas penutupan lahan sesuai dengan Peraturan Direktur Jenderal Planologi Kehutanan Nomor P.1/VII-IPSDH/2015 tentang Pedoman Pemantauan Penutupan Lahan dan Surat Keputusan Direktur Jenderal Planologi Kehutanan Nomor 17 Tahun 2025 tentang Petunjuk Teknis Penafsiran Citra Satelit Resolusi Menengah untuk Pemutakhiran Penutupan Lahan Nasional. Dasar Peraturan : Peraturan Menteri Lingkungan Hidup dan Kehutanan Nomor 7 Tahun 2021 tentang Perencanaan Kehutanan, Perubahan Peruntukan Kawasan Hutan dan Perubahan Fungsi Kawasan Hutan, serta Penggunaan Kawasan. Hasil Penjaminan Kualitas :Berdasarkan hasil penjaminan kualitas/Quality Assurance (QA) IGT kualitas data dan kelengkapan metadata maka IGT Penutupan Lahan Kawasan Hutan Tahun 2025 skala 1:50.000 mendapatkan rata-rata nilai 99,38 dan metadata lengkap, serta sudah mencakup seluruh 38 provinsi di Indonesia sehingga tidak terdapat omission (kekurangan data) dan commission (kelebihan data). Berdasarkan penilaian tersebut maka IGT masuk dalam kategori B. ",
+ "canModifyLayer": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "geometryProperties": {
+  "shapeAreaFieldName": "Shape_Area",
+  "shapeLengthFieldName": "Shape_Length",
+  "units": "esriDecimalDegrees",
+  "mapUnits": {"uwkid": 9102}
+ },
+ "standardMaxRecordCountNoGeometry": 32000,
+ "indexes": null,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "minScale": 0,
+ "supportsDynamicLegends": true,
+ "hasAttachments": false,
+ "advancedQueryCapabilities": {
+  "supportsStatistics": true,
+  "supportsSqlExpression": true,
+  "supportsQueryWithResultType": true,
+  "supportsTrueCurve": false,
+  "supportsOrderBy": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsSqlFormat": false,
+  "useStandardizedQueries": true,
+  "supportsLod": false,
+  "supportsQueryWithDistance": true,
+  "supportsQueryWithCacheHint": false,
+  "supportsCountDistinct": true,
+  "supportsCurrentUserQueries": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsReturningQueryExtent": true,
+  "supportsQueryWithLodSR": false,
+  "supportsPagination": true,
+  "supportsMaxRecordCountFactor": false,
+  "supportsDistinct": true,
+  "supportsTimeRelation": true,
+  "supportsQueryAnalytic": false,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true
+ },
+ "subtypeField": null,
+ "serviceItemId": "a138cdbb7b4347ec946ee4adf46721e8",
+ "supportsCoordinatesQuantization": true,
+ "capabilities": "Map,Query",
+ "maxScale": 0,
+ "supportsExceedsLimitStatistics": true,
+ "defaultVisibility": true,
+ "hasMetadata": true,
+ "tileMaxRecordCount": 4000,
+ "typeIdField": null,
+ "defaultSubtypeCode": null,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "hasLabels": false,
+ "drawingInfo": {
+  "renderer": {
+   "uniqueValueGroups": [{
+    "heading": "",
+    "classes": [
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        96,
+        230,
+        99,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2001"]],
+      "description": "Hutan Lahan Kering Primer",
+      "label": "Hutan Lahan Kering Primer"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        114,
+        255,
+        0,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2002"]],
+      "description": "Hutan Lahan Kering Sekunder",
+      "label": "Hutan Lahan Kering Sekunder"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABR0lEQVR4nO3VwWlDUQxE0Sx+Fanug+sKuDq1kWzDwwxJEESCc5YGP3szutddj8832lzP949ff+mux8vPn0Pf6n4vvXWlP9H1B/77re730ltX26/wevLb5vz8w1vd731/68eTnzrne9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4AkjheUWF6uLzAAAAAElFTkSuQmCC",
+       "yoffset": 0,
+       "width": 63,
+       "xoffset": 0,
+       "angle": 0,
+       "xscale": 1,
+       "type": "esriPFS",
+       "yscale": 1,
+       "contentType": "image/png",
+       "url": "6361dff80d0181a60b6a7e11a7c9704d",
+       "height": 63
+      },
+      "values": [["2005"]],
+      "description": "Hutan Rawa Primer",
+      "label": "Hutan Rawa Primer"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABTUlEQVR4nO3VUYrCABAEUYWcOAfJlXthv5YBG10KzEC9f9ugjnWceeQhzHE9P3/R+eIruG66Re+1raM9BPUA396i99rWwb2Nfj/Q+fPdds7XP7bovb9bb5/8Xc/5vNlfgycPs/KFlS+s/FJWfrDy4baIPU8eZuULK19Y+aWs/GDlw20Re548zMoXVr6w8ktZ+cHKh9si9jx5mJUvrHxh5Zey8oOVD7dF7HnyMCtfWPnCyi9l5QcrH26L2PPkYVa+sPKFlV/Kyg9WPtwWsefJw6x8YeULK7+UlR+sfLgtYs+Th1n5wsoXVn4pKz9Y+XBbxJ4nD7PyhZUvrPxSVn6w8uG2iD1PHmblCytfWPmlrPxg5cNtEXuePMzKF1a+sPJLWfnByofbIvY8eZiVL6x8YeWXsvKDlQ+3Rex58jArX1j5wsovZeUHKx9ui9j7Ac0n0W5/WzNuAAAAAElFTkSuQmCC",
+       "yoffset": 0,
+       "width": 63,
+       "xoffset": 0,
+       "angle": 0,
+       "xscale": 1,
+       "type": "esriPFS",
+       "yscale": 1,
+       "contentType": "image/png",
+       "url": "9fd7c0133de606f4ede3b6d5f7c25778",
+       "height": 63
+      },
+      "values": [["20051"]],
+      "description": "Hutan Rawa Sekunder",
+      "label": "Hutan Rawa Sekunder"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        142,
+        167,
+        4,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2004"]],
+      "description": "Hutan Mangrove Primer",
+      "label": "Hutan Mangrove Primer"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        193,
+        167,
+        0,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["20041"]],
+      "description": "Hutan Mangrove Sekunder",
+      "label": "Hutan Mangrove Sekunder"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        235,
+        192,
+        167,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2007"]],
+      "description": "Semak/Belukar",
+      "label": "Semak/Belukar"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABSElEQVR4nO3VwWlDUQxE0Sx+C+4nbaRCt6F+fhHJNjzMkARBJDhnafCzN6N73fX8fKPN9Xj/+PWX7nq+/Pwx9K3u99JbV/oTXX/gv9/qfi+9dbX9Cq8nv23Ojz+81f3e97d+PPmpc76HnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9Uvmadhi/Vfs0cUFLFcgAAAABJRU5ErkJggg==",
+       "yoffset": 0,
+       "width": 63,
+       "xoffset": 0,
+       "angle": 0,
+       "xscale": 1,
+       "type": "esriPFS",
+       "yscale": 1,
+       "contentType": "image/png",
+       "url": "d4519bcd3bd1abcdb1d25fb97c73dfef",
+       "height": 63
+      },
+      "values": [["20071"]],
+      "description": "Semak/Belukar Rawa",
+      "label": "Semak/Belukar Rawa"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        213,
+        255,
+        2,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["3000"]],
+      "description": "Savana",
+      "label": "Savana"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        211,
+        229,
+        152,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2006"]],
+      "description": "Hutan Tanaman Industri ( HTI )",
+      "label": "Hutan Tanaman Industri ( HTI )"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        229,
+        210,
+        152,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2010"]],
+      "description": "Perkebunan",
+      "label": "Perkebunan"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        246,
+        254,
+        167,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["20091"]],
+      "description": "Pertanian Lahan Kering",
+      "label": "Pertanian Lahan Kering"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        237,
+        245,
+        0,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["20092"]],
+      "description": "Pertanian Lahan Kering Bercampur dgn Semak",
+      "label": "Pertanian Lahan Kering Bercampur dgn Semak"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        114,
+        142,
+        167,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [
+       ["20122"],
+       ["6000"]
+      ],
+      "description": "Transmigrasi; Transmigrasi",
+      "label": "Transmigrasi; Transmigrasi"
+     },
+     {
+      "symbol": {
+       "outline": {
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "width": 1
+       },
+       "color": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "size": 4,
+       "yoffset": 0,
+       "xoffset": 0,
+       "angle": 0,
+       "style": "esriSMSCircle",
+       "type": "esriSMS"
+      },
+      "values": [["20093"]],
+      "description": "Sawah",
+      "label": "Sawah"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        124,
+        244,
+        244,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["20094"]],
+      "description": "Tambak",
+      "label": "Tambak"
+     },
+     {
+      "symbol": {
+       "outline": {
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "width": 1
+       },
+       "color": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "size": 4,
+       "yoffset": 0,
+       "xoffset": 0,
+       "angle": 0,
+       "style": "esriSMSCircle",
+       "type": "esriSMS"
+      },
+      "values": [["2014"]],
+      "description": "Tanah Terbuka",
+      "label": "Tanah Terbuka"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        167,
+        4,
+        0,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["20141"]],
+      "description": "Pertambangan",
+      "label": "Pertambangan"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        78,
+        78,
+        78,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2012"]],
+      "description": "Permukiman",
+      "label": "Permukiman"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        212,
+        252,
+        247,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["5001"]],
+      "description": "Tubuh Air",
+      "label": "Tubuh Air"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        214,
+        0,
+        115,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["20121"]],
+      "description": "Pelabuhan Udara/Laut",
+      "label": "Pelabuhan Udara/Laut"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC",
+       "yoffset": 0,
+       "width": 63,
+       "xoffset": 0,
+       "angle": 0,
+       "xscale": 1,
+       "type": "esriPFS",
+       "yscale": 1,
+       "contentType": "image/png",
+       "url": "89aa3821aff9eacfb4606ca25efc3ff3",
+       "height": 63
+      },
+      "values": [
+       ["5011"],
+       ["50011"]
+      ],
+      "description": "Rawa; rawa",
+      "label": "Rawa; rawa"
+     },
+     {
+      "symbol": {
+       "outline": null,
+       "color": [
+        209,
+        209,
+        209,
+        255
+       ],
+       "style": "esriSFSSolid",
+       "type": "esriSFS"
+      },
+      "values": [["2500"]],
+      "description": "Awan",
+      "label": "Awan"
+     }
+    ]
+   }],
+   "field1": "PL2025_ID_50K",
+   "authoringInfo": {"colorRamp": {
+    "colorRamps": [
+     {
+      "toColor": [
+       252,
+       179,
+       245,
+       255
+      ],
+      "fromColor": [
+       252,
+       179,
+       245,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       179,
+       252,
+       188,
+       255
+      ],
+      "fromColor": [
+       179,
+       252,
+       188,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       209,
+       182,
+       255
+      ],
+      "fromColor": [
+       252,
+       209,
+       182,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       197,
+       224,
+       252,
+       255
+      ],
+      "fromColor": [
+       197,
+       224,
+       252,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       210,
+       252,
+       235,
+       255
+      ],
+      "fromColor": [
+       210,
+       252,
+       235,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       190,
+       184,
+       252,
+       255
+      ],
+      "fromColor": [
+       190,
+       184,
+       252,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       204,
+       224,
+       255
+      ],
+      "fromColor": [
+       252,
+       204,
+       224,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       244,
+       252,
+       179,
+       255
+      ],
+      "fromColor": [
+       244,
+       252,
+       179,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       248,
+       210,
+       255
+      ],
+      "fromColor": [
+       252,
+       248,
+       210,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       220,
+       252,
+       204,
+       255
+      ],
+      "fromColor": [
+       220,
+       252,
+       204,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       219,
+       207,
+       252,
+       255
+      ],
+      "fromColor": [
+       219,
+       207,
+       252,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       204,
+       245,
+       252,
+       255
+      ],
+      "fromColor": [
+       204,
+       245,
+       252,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       218,
+       215,
+       255
+      ],
+      "fromColor": [
+       252,
+       218,
+       215,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       188,
+       179,
+       255
+      ],
+      "fromColor": [
+       252,
+       188,
+       179,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       182,
+       202,
+       252,
+       255
+      ],
+      "fromColor": [
+       182,
+       202,
+       252,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       230,
+       179,
+       255
+      ],
+      "fromColor": [
+       252,
+       230,
+       179,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       248,
+       204,
+       252,
+       255
+      ],
+      "fromColor": [
+       248,
+       204,
+       252,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       229,
+       182,
+       252,
+       255
+      ],
+      "fromColor": [
+       229,
+       182,
+       252,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       184,
+       223,
+       255
+      ],
+      "fromColor": [
+       252,
+       184,
+       223,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       179,
+       252,
+       251,
+       255
+      ],
+      "fromColor": [
+       179,
+       252,
+       251,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       179,
+       199,
+       255
+      ],
+      "fromColor": [
+       252,
+       179,
+       199,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       252,
+       197,
+       199,
+       255
+      ],
+      "fromColor": [
+       252,
+       197,
+       199,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     },
+     {
+      "toColor": [
+       205,
+       252,
+       179,
+       255
+      ],
+      "fromColor": [
+       205,
+       252,
+       179,
+       255
+      ],
+      "type": "algorithmic",
+      "algorithm": "esriCIELabAlgorithm"
+     }
+    ],
+    "type": "multipart"
+   }},
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       96,
+       230,
+       99,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Hutan Lahan Kering Primer",
+     "value": "2001"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       114,
+       255,
+       0,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Hutan Lahan Kering Sekunder",
+     "value": "2002"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABR0lEQVR4nO3VwWlDUQxE0Sx+Fanug+sKuDq1kWzDwwxJEESCc5YGP3szutddj8832lzP949ff+mux8vPn0Pf6n4vvXWlP9H1B/77re730ltX26/wevLb5vz8w1vd731/68eTnzrne9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4AkjheUWF6uLzAAAAAElFTkSuQmCC",
+      "yoffset": 0,
+      "width": 63,
+      "xoffset": 0,
+      "angle": 0,
+      "xscale": 1,
+      "type": "esriPFS",
+      "yscale": 1,
+      "contentType": "image/png",
+      "url": "6361dff80d0181a60b6a7e11a7c9704d",
+      "height": 63
+     },
+     "label": "Hutan Rawa Primer",
+     "value": "2005"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABTUlEQVR4nO3VUYrCABAEUYWcOAfJlXthv5YBG10KzEC9f9ugjnWceeQhzHE9P3/R+eIruG66Re+1raM9BPUA396i99rWwb2Nfj/Q+fPdds7XP7bovb9bb5/8Xc/5vNlfgycPs/KFlS+s/FJWfrDy4baIPU8eZuULK19Y+aWs/GDlw20Re548zMoXVr6w8ktZ+cHKh9si9jx5mJUvrHxh5Zey8oOVD7dF7HnyMCtfWPnCyi9l5QcrH26L2PPkYVa+sPKFlV/Kyg9WPtwWsefJw6x8YeULK7+UlR+sfLgtYs+Th1n5wsoXVn4pKz9Y+XBbxJ4nD7PyhZUvrPxSVn6w8uG2iD1PHmblCytfWPmlrPxg5cNtEXuePMzKF1a+sPJLWfnByofbIvY8eZiVL6x8YeWXsvKDlQ+3Rex58jArX1j5wsovZeUHKx9ui9j7Ac0n0W5/WzNuAAAAAElFTkSuQmCC",
+      "yoffset": 0,
+      "width": 63,
+      "xoffset": 0,
+      "angle": 0,
+      "xscale": 1,
+      "type": "esriPFS",
+      "yscale": 1,
+      "contentType": "image/png",
+      "url": "9fd7c0133de606f4ede3b6d5f7c25778",
+      "height": 63
+     },
+     "label": "Hutan Rawa Sekunder",
+     "value": "20051"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       142,
+       167,
+       4,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Hutan Mangrove Primer",
+     "value": "2004"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       193,
+       167,
+       0,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Hutan Mangrove Sekunder",
+     "value": "20041"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       235,
+       192,
+       167,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Semak/Belukar",
+     "value": "2007"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABSElEQVR4nO3VwWlDUQxE0Sx+C+4nbaRCt6F+fhHJNjzMkARBJDhnafCzN6N73fX8fKPN9Xj/+PWX7nq+/Pwx9K3u99JbV/oTXX/gv9/qfi+9dbX9Cq8nv23Ojz+81f3e97d+PPmpc76HnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9UvmadBpNvpvKBygcqv5TKH1S+Zp0Gk2+m8oHKByq/lMofVL5mnQaTb6bygcoHKr+Uyh9Uvmadhi/Vfs0cUFLFcgAAAABJRU5ErkJggg==",
+      "yoffset": 0,
+      "width": 63,
+      "xoffset": 0,
+      "angle": 0,
+      "xscale": 1,
+      "type": "esriPFS",
+      "yscale": 1,
+      "contentType": "image/png",
+      "url": "d4519bcd3bd1abcdb1d25fb97c73dfef",
+      "height": 63
+     },
+     "label": "Semak/Belukar Rawa",
+     "value": "20071"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       213,
+       255,
+       2,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Savana",
+     "value": "3000"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       211,
+       229,
+       152,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Hutan Tanaman Industri ( HTI )",
+     "value": "2006"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       229,
+       210,
+       152,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Perkebunan",
+     "value": "2010"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       246,
+       254,
+       167,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Pertanian Lahan Kering",
+     "value": "20091"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       237,
+       245,
+       0,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Pertanian Lahan Kering Bercampur dgn Semak",
+     "value": "20092"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       114,
+       142,
+       167,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Transmigrasi; Transmigrasi",
+     "value": "20122"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       114,
+       142,
+       167,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Transmigrasi; Transmigrasi",
+     "value": "6000"
+    },
+    {
+     "symbol": {
+      "outline": {
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "width": 1
+      },
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "size": 4,
+      "yoffset": 0,
+      "xoffset": 0,
+      "angle": 0,
+      "style": "esriSMSCircle",
+      "type": "esriSMS"
+     },
+     "label": "Sawah",
+     "value": "20093"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       124,
+       244,
+       244,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Tambak",
+     "value": "20094"
+    },
+    {
+     "symbol": {
+      "outline": {
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "width": 1
+      },
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "size": 4,
+      "yoffset": 0,
+      "xoffset": 0,
+      "angle": 0,
+      "style": "esriSMSCircle",
+      "type": "esriSMS"
+     },
+     "label": "Tanah Terbuka",
+     "value": "2014"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       167,
+       4,
+       0,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Pertambangan",
+     "value": "20141"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       78,
+       78,
+       78,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Permukiman",
+     "value": "2012"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       212,
+       252,
+       247,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Tubuh Air",
+     "value": "5001"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       214,
+       0,
+       115,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Pelabuhan Udara/Laut",
+     "value": "20121"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC",
+      "yoffset": 0,
+      "width": 63,
+      "xoffset": 0,
+      "angle": 0,
+      "xscale": 1,
+      "type": "esriPFS",
+      "yscale": 1,
+      "contentType": "image/png",
+      "url": "89aa3821aff9eacfb4606ca25efc3ff3",
+      "height": 63
+     },
+     "label": "Rawa; rawa",
+     "value": "5011"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRElEQVR4nO3VwWkDUQxF0SymCzc4JU2DqiPZho95JEEQCc5ZGvztzdO9nqrPD9pc9+v16y89VW8/v4e+1f1eeutKf6LrD/z3W93vpbeutl/h/eS3zfn+w1vd731/68eTnzrnZ9hpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mkw+WYqH6h8oPJLqfxB5WvWaTD5ZiofqHyg8kup/EHla9ZpMPlmKh+ofKDyS6n8QeVr1mn4Aqgy1QybiOd2AAAAAElFTkSuQmCC",
+      "yoffset": 0,
+      "width": 63,
+      "xoffset": 0,
+      "angle": 0,
+      "xscale": 1,
+      "type": "esriPFS",
+      "yscale": 1,
+      "contentType": "image/png",
+      "url": "89aa3821aff9eacfb4606ca25efc3ff3",
+      "height": 63
+     },
+     "label": "Rawa; rawa",
+     "value": "50011"
+    },
+    {
+     "symbol": {
+      "outline": null,
+      "color": [
+       209,
+       209,
+       209,
+       255
+      ],
+      "style": "esriSFSSolid",
+      "type": "esriSFS"
+     },
+     "label": "Awan",
+     "value": "2500"
+    }
+   ],
+   "type": "uniqueValue",
+   "fieldDelimiter": ","
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "geometryField": {},
+ "copyrightText": "Direktorat Inventarisasi dan Pemantauan Sumber Daya Hutan, Direktorat Jenderal Planologi Kehutanan, Kementerian Kehutanan",
+ "geometryType": "esriGeometryPolygon"
+}

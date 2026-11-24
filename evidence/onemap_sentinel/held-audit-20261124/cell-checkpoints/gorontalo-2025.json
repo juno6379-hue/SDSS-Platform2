@@ -1,0 +1,44 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "cell": {
+    "province": "gorontalo",
+    "year": 2025,
+    "physical_patch_records": 48,
+    "manifest_quality_eligible": 33,
+    "verified_six_band_scl_patches": 48,
+    "verified_parent_frames": 3,
+    "minimum_patch_threshold": 28,
+    "minimum_patch_met": true,
+    "boundary_area_m2": 12024825577.287481,
+    "footprint_area_m2": 314314720.88934225,
+    "simultaneous_present_area_m2": 314314720.8893606,
+    "clear_joint_area_m2": 261649370.77912843,
+    "present_coverage_pct": 2.613881747133522,
+    "clear_coverage_pct": 2.1759099048665815,
+    "missing_joint_area_m2": 11710510856.397978,
+    "required_grid": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints\\gorontalo-2025.tif",
+      "sha256": "17415aa7ad381639f47417eea19677125d80a100ac72cab46c530c6a5c05ed0a"
+    },
+    "required_touched_grid_cells": 12703,
+    "fully_present_cells": 240,
+    "fully_clear_cells": 113,
+    "any_present_cells": 360,
+    "any_clear_cells": 347,
+    "grid_rule": "BOUNDARY_INTERSECTING_GRID; FULL_REQUIRES_ENTIRE_CLIPPED_CELL; 0.01m2 numeric tolerance"
+  },
+  "geometry": {
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints\\gorontalo-2025-present.wkb",
+      "sha256": "ba1ab407af9cc3f426fa9082ede78eaf247de4b33afe7b69ebf278d478aa5fb0"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints\\gorontalo-2025-clear.wkb",
+      "sha256": "4f56444ec5c3f1b993cd1a3425bd94d94d8d4c30f9e1dfa28632e2296afa2340"
+    }
+  }
+}

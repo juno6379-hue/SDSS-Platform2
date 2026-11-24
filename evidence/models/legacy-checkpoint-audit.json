@@ -1,0 +1,147 @@
+{
+  "status": "BLOCKED",
+  "inspection_state": "VERIFIED_REAL",
+  "checkpoint_path": "E:\\GeoAI–MLOps–SDSS\\data\\models\\baseline2021_cpu_v1_model\\best.pt",
+  "expected_sha256": "ad74f5cf5ab4bfd42bffd94b2fa399bf28f3527bc8e9f424d6a9d5339b12cd6c",
+  "training_started": false,
+  "inference_started": false,
+  "independent_metrics": null,
+  "blockers": [
+    "CLASS_MAPPING_23_NOT_VALIDATED",
+    "INDEPENDENT_ACCURACY_MISSING",
+    "REPRODUCIBLE_ENVIRONMENT_NOT_BOUND_TO_CHECKPOINT",
+    "SIX_BAND_CHECKPOINT_SIGNATURE_MISMATCH",
+    "LEGACY_REPORT_WEAK_REFERENCE_ONLY"
+  ],
+  "bytes": 130145,
+  "actual_sha256": "ad74f5cf5ab4bfd42bffd94b2fa399bf28f3527bc8e9f424d6a9d5339b12cd6c",
+  "checkpoint_keys": [
+    "architecture",
+    "epoch",
+    "manifest",
+    "seed",
+    "state_dict"
+  ],
+  "tensor_shapes": {
+    "enc1.0.weight": [
+      8,
+      3,
+      3,
+      3
+    ],
+    "enc1.0.bias": [
+      8
+    ],
+    "enc1.2.weight": [
+      8,
+      8,
+      3,
+      3
+    ],
+    "enc1.2.bias": [
+      8
+    ],
+    "enc2.0.weight": [
+      16,
+      8,
+      3,
+      3
+    ],
+    "enc2.0.bias": [
+      16
+    ],
+    "enc2.2.weight": [
+      16,
+      16,
+      3,
+      3
+    ],
+    "enc2.2.bias": [
+      16
+    ],
+    "middle.0.weight": [
+      32,
+      16,
+      3,
+      3
+    ],
+    "middle.0.bias": [
+      32
+    ],
+    "middle.2.weight": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "middle.2.bias": [
+      32
+    ],
+    "dec2.0.weight": [
+      16,
+      48,
+      3,
+      3
+    ],
+    "dec2.0.bias": [
+      16
+    ],
+    "dec2.2.weight": [
+      16,
+      16,
+      3,
+      3
+    ],
+    "dec2.2.bias": [
+      16
+    ],
+    "dec1.0.weight": [
+      8,
+      24,
+      3,
+      3
+    ],
+    "dec1.0.bias": [
+      8
+    ],
+    "dec1.2.weight": [
+      8,
+      8,
+      3,
+      3
+    ],
+    "dec1.2.bias": [
+      8
+    ],
+    "head.weight": [
+      9,
+      8,
+      1,
+      1
+    ],
+    "head.bias": [
+      9
+    ]
+  },
+  "first_convolution": {
+    "key": "enc1.0.weight",
+    "shape": [
+      8,
+      3,
+      3,
+      3
+    ]
+  },
+  "observed_input_channels": 3,
+  "metadata": {
+    "architecture": "tiny_unet",
+    "in_channels": null,
+    "num_classes": null,
+    "seed": 42
+  },
+  "report_path": "E:\\GeoAI–MLOps–SDSS\\data\\models\\baseline2021_cpu_v1_model\\report.json",
+  "report_sha256": "d99f4bd22ce96b1c322e99514edb1bedc04944a88f8e9cb85d771cced38fef9f",
+  "report_reference_kind": "worldcover_weak_label",
+  "report_synthetic": false,
+  "historical_epoch_count": 3
+}

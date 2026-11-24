@@ -1,0 +1,68 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "banten",
+  "year": 2020,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\image.tif",
+  "verified_patch_count": 1,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\64539b1fb9dd79f42018df43-footprint.wkb",
+      "sha256": "8c7de74bd6822e2599e283fd4b58dce70e0b956ffa3bec9c6edcd509da67b00b"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\64539b1fb9dd79f42018df43-present.wkb",
+      "sha256": "03dceb1ee4508fad25e02256ccc0c312d70c114ecbf9ea88de77d2c84b5b8334"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\64539b1fb9dd79f42018df43-clear.wkb",
+      "sha256": "4cff8b9e8cf0fc29256caafca756f70dc67b860bad41f3f7ff4762eb7c4d0c39"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\image.tif",
+      "sha256": "e7e0c7b6320d39030d00a51d2f6666525af4a150b2bcc26f954a8b5d6784209e"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\stac-item.json",
+      "sha256": "4ae6eb969e3ca09bd9d6f4d8182fc1d1ca3e592ccbfe140716db17c98bc11f88"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B02.tif",
+      "sha256": "aa2ac533c8aba667e63c86e769d3fbaad44d1c1c267c6a9ffb94079854f11fd5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B03.tif",
+      "sha256": "14d95b34e466a67d805349265f068b114bf47ee61a46c1aaeb77f5a9570544c1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B04.tif",
+      "sha256": "0074d8134f1f96c59c315c012be0c3360851e3bd083004d326ec4db7df2d597f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B08.tif",
+      "sha256": "9eb9c2cc122ca119ce6f0d3de7eef53b974f55d507b2b8c8994026bba16f2c42"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B11.tif",
+      "sha256": "fe6bd4312121cc5b334f0171a6e152c3851da6399956131554483b3f8abe4700"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-B12.tif",
+      "sha256": "072afc3565e1834fd5ce4055da3fc258c324ea1405afec1431827020b73ffced"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\bare-local-rank0-2020-2020\\raw-SCL.tif",
+      "sha256": "13b4c5d8657436f320284b1323eb6520c7547034e61fe49a4f7fcc8942a849c1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\target256-bare-banten-2020-local-rank0-2020-4e7f2a1411cc\\r00-c00\\image.tif",
+      "sha256": "e7e0c7b6320d39030d00a51d2f6666525af4a150b2bcc26f954a8b5d6784209e"
+    }
+  ]
+}

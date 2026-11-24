@@ -1,0 +1,143 @@
+{
+  "status": "BLOCKED",
+  "errors": [
+    "READ_ONLY_REFERENCE_LEDGER_NO_AUTHORIZED_RESERVATION_ADAPTER",
+    "EXACT_SCENE_ASSET_WINDOW_PINS_MISSING"
+  ],
+  "remaining_global_bytes": 1685992536,
+  "reserve_bytes": 33554432,
+  "stop_on_first_failure": true,
+  "stop_on_429": true,
+  "collector_started": false,
+  "targets": [
+    {
+      "target_id": "855f75367c9590e1c8178a8ad3ba3f6f2083c79f89126d9539d9e489df37625f",
+      "province": "east_java",
+      "year": 2023,
+      "queue": {
+        "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\exact-missing-queue.geojson",
+        "sha256": "16a79b666322a1115883fb908762bf077b60b54834005bb2da2f8ff30bd32f3e",
+        "feature_index": 30
+      },
+      "missing_area_m2": 47857205448.755226,
+      "projected_bounds": [
+        10699873.662796577,
+        -1115879.2303612106,
+        11218454.980457725,
+        -642540.3048362901
+      ],
+      "scene_id": null,
+      "asset_window_pins": null,
+      "executable": false,
+      "status": "PLANNED_EXACT_GEOMETRY_REQUIRES_SCENE_AND_SHARED_LEDGER_ADAPTER"
+    },
+    {
+      "target_id": "5c8279067d2a6e88413a24a6eccc899ebdcd9ff43143aac53828b85bba5c0bf5",
+      "province": "south_sulawesi",
+      "year": 2024,
+      "queue": {
+        "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\exact-missing-queue.geojson",
+        "sha256": "16a79b666322a1115883fb908762bf077b60b54834005bb2da2f8ff30bd32f3e",
+        "feature_index": 56
+      },
+      "missing_area_m2": 45009686346.48141,
+      "projected_bounds": [
+        11292586.35443729,
+        -986913.0660026396,
+        11792788.589139756,
+        -248375.20061045937
+      ],
+      "scene_id": null,
+      "asset_window_pins": null,
+      "executable": false,
+      "status": "PLANNED_EXACT_GEOMETRY_REQUIRES_SCENE_AND_SHARED_LEDGER_ADAPTER"
+    },
+    {
+      "target_id": "dcb84bbd92f4ae785bf1e123f8a49adccafd0ad6364b259295d625c9b2e817c2",
+      "province": "west_java",
+      "year": 2023,
+      "queue": {
+        "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\exact-missing-queue.geojson",
+        "sha256": "16a79b666322a1115883fb908762bf077b60b54834005bb2da2f8ff30bd32f3e",
+        "feature_index": 18
+      },
+      "missing_area_m2": 36873750652.98582,
+      "projected_bounds": [
+        10263271.932447858,
+        -994735.5757141708,
+        10502303.193338847,
+        -739534.6056021049
+      ],
+      "scene_id": null,
+      "asset_window_pins": null,
+      "executable": false,
+      "status": "PLANNED_EXACT_GEOMETRY_REQUIRES_SCENE_AND_SHARED_LEDGER_ADAPTER"
+    },
+    {
+      "target_id": "f81768cadbba31207fa64f14d876e2394fc50e8299b7c14772f556be2ea05a4c",
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "queue": {
+        "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\exact-missing-queue.geojson",
+        "sha256": "16a79b666322a1115883fb908762bf077b60b54834005bb2da2f8ff30bd32f3e",
+        "feature_index": 70
+      },
+      "missing_area_m2": 35180408735.67316,
+      "projected_bounds": [
+        11661763.201985098,
+        -791097.0222046325,
+        12023817.171811828,
+        -353663.1344852641
+      ],
+      "scene_id": null,
+      "asset_window_pins": null,
+      "executable": false,
+      "status": "PLANNED_EXACT_GEOMETRY_REQUIRES_SCENE_AND_SHARED_LEDGER_ADAPTER"
+    },
+    {
+      "target_id": "42cfa9d859b979fc26863c2b6d938b252f84f8c96d35a10b75c9b3c57e58bdae",
+      "province": "gorontalo",
+      "year": 2023,
+      "queue": {
+        "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\exact-missing-queue.geojson",
+        "sha256": "16a79b666322a1115883fb908762bf077b60b54834005bb2da2f8ff30bd32f3e",
+        "feature_index": 42
+      },
+      "missing_area_m2": 11815243384.675194,
+      "projected_bounds": [
+        11690396.316134304,
+        39067.90114733847,
+        11921101.322416928,
+        132763.72295987463
+      ],
+      "scene_id": null,
+      "asset_window_pins": null,
+      "executable": false,
+      "status": "PLANNED_EXACT_GEOMETRY_REQUIRES_SCENE_AND_SHARED_LEDGER_ADAPTER"
+    },
+    {
+      "target_id": "05ec2b7462bd9efd7ec372e705e66262fa217ba83477214848e0778080c51584",
+      "province": "banten",
+      "year": 2023,
+      "queue": {
+        "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\exact-missing-queue.geojson",
+        "sha256": "16a79b666322a1115883fb908762bf077b60b54834005bb2da2f8ff30bd32f3e",
+        "feature_index": 6
+      },
+      "missing_area_m2": 9146391578.600172,
+      "projected_bounds": [
+        10140695.868152028,
+        -892903.3970346734,
+        10302791.80586759,
+        -739652.3641377495
+      ],
+      "scene_id": null,
+      "asset_window_pins": null,
+      "executable": false,
+      "status": "PLANNED_EXACT_GEOMETRY_REQUIRES_SCENE_AND_SHARED_LEDGER_ADAPTER"
+    }
+  ],
+  "source_scope": "SIX_BANDS_PLUS_SCL_SAME_SCENE",
+  "raw_reference_ledger_write_authorized": false,
+  "new_local_ledger_budget_reset_allowed": false
+}

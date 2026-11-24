@@ -1,0 +1,19 @@
+{
+  "schema_version": "source-document-receipt/1.0",
+  "source_id": "klhk-landcover-2025",
+  "source_uri": "https://geoportal.planologi.kehutanan.go.id/server/rest/services/Peta_Interaktif_2026/PL_AR_250K/MapServer/0?f=pjson",
+  "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+  "sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+  "byte_count": 32780,
+  "acquired_at": "2026-11-24T10:43:02.483041+00:00",
+  "license": "NOT_VERIFIED",
+  "authority_status": "HOST_PINNED_NOT_INSTITUTION_CERTIFIED",
+  "headers": {
+    "Content-Type": "text/plain;charset=UTF-8",
+    "ETag": "\"1182ecec\"",
+    "Last-Modified": null
+  },
+  "raw_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\raw\\13b4f23901f0b9e1ce3db81c82add26eaa5f730655e74ee7109d8721af2f9983.raw",
+  "state": "VERIFIED_REAL",
+  "retrieval_permitted": false
+}

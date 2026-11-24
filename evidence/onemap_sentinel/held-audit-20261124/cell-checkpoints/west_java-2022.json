@@ -1,0 +1,44 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "cell": {
+    "province": "west_java",
+    "year": 2022,
+    "physical_patch_records": 60,
+    "manifest_quality_eligible": 56,
+    "verified_six_band_scl_patches": 60,
+    "verified_parent_frames": 4,
+    "minimum_patch_threshold": 28,
+    "minimum_patch_met": true,
+    "boundary_area_m2": 37053027021.84885,
+    "footprint_area_m2": 353090287.52822167,
+    "simultaneous_present_area_m2": 353090287.0134756,
+    "clear_joint_area_m2": 340269580.69529283,
+    "present_coverage_pct": 0.9529323658368609,
+    "clear_coverage_pct": 0.918331397039837,
+    "missing_joint_area_m2": 36699936734.83561,
+    "required_grid": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints\\west_java-2022.tif",
+      "sha256": "5a09b0db863dd6ffa550564124d58e59ac8288b55e859a8f31cc54b2b2807348"
+    },
+    "required_touched_grid_cells": 37807,
+    "fully_present_cells": 302,
+    "fully_clear_cells": 174,
+    "any_present_cells": 432,
+    "any_clear_cells": 432,
+    "grid_rule": "BOUNDARY_INTERSECTING_GRID; FULL_REQUIRES_ENTIRE_CLIPPED_CELL; 0.01m2 numeric tolerance"
+  },
+  "geometry": {
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints\\west_java-2022-present.wkb",
+      "sha256": "184fb24d32bd50c7010dd8faf5060d627ca2e232ce6bb36e42765f36cefd182f"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\cell-checkpoints\\west_java-2022-clear.wkb",
+      "sha256": "b52688a4556d2f28d9e63c5a3410dd8cad037116ffa4e89ef71ffa6654143250"
+    }
+  }
+}

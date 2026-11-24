@@ -1,0 +1,9 @@
+{
+  "stopped_process_id": 178676,
+  "command_line": "\"C:\\Users\\최준오\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -X utf8 -m services.datahub.sentinel --reference-root E:\\GeoAI–MLOps–SDSS --boundary E:\\GeoAI–MLOps–SDSS\\evidence\\integration\\unit362-province-evidence-20261027\\six-province-boundary-candidate.geojson --boundary-sha256 233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423 --manifest E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\annual-window-report.json --manifest-sha256 0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658 --ledger E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-budget\\global-ledger.json --ledger-sha256 8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a --output evidence/onemap_sentinel/audit-20261124",
+  "stopped_at": "2026-11-24T20:04:31.6383938+09:00",
+  "reason": "READ_ONLY_AUDIT_SINGLE_CELL_GEOMETRY_BOTTLENECK",
+  "preserved_grid_count": 12,
+  "collector_stopped": false,
+  "reference_ledger_written": false
+}

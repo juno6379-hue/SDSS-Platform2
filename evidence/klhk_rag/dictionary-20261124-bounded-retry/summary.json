@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-24T10:46:10.058567+00:00",
+  "source_uri": "https://sigap.kehutanan.go.id/tema-kamus/575",
+  "requests_before": 9,
+  "reason": "single bounded official dictionary retry after initial timeout",
+  "status": "BLOCKED",
+  "reason_code": "DOCUMENT_TOO_LARGE",
+  "requests": 1,
+  "body_bytes": 262145,
+  "combined_request_count": 10
+}

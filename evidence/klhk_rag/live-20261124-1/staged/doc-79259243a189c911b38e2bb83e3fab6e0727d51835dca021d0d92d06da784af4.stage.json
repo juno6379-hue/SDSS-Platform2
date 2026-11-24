@@ -1,0 +1,164 @@
+{
+  "document": {
+    "authority": "worldbank-cckp-README.md",
+    "id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+    "sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+    "source_id": "worldbank-cckp-README.md",
+    "source_uri": "https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md",
+    "text": "# World Bank – Climate Change Knowledge Portal Data Collections on AWS\n\n## Overview\n\nThe World Bank’s Climate Change Knowledge Portal (CCKP) provides open access to a comprehensive suite of climate and climate change resources derived from the latest generation of climate data archives. Products are based on a consistent and transparent approach with a systematic way of pre-processing the raw observed and model-based projection data to enable inter-comparable use across a broad range of applications. Climate products consist of basic climate variables as well as a large collection (70+) of more specialized, application-orientated variables and indices across different scenarios. Precomputed data can be extracted per specified variables, select timeframes, climate projection scenarios, as multi-model ensembles or by individual models. CCKP adheres to data distribution standards defined under the Coupled Model Intercomparison Project (CMIP) and its contributions to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports and latest scientific methodologies identified by the World Meteorological Organization and climate science community.\n\n```{seealso}\nAccess the World Bank Climate Change Portal: https://climateknowledgeportal.worldbank.org\n```\n\nThis data archive consists of global gridded NetCDF files that represent ~30 models, 70+ variables, 5 SSPs, multiple climatology periods, 3 temporal aggregations (annual, seasonal, monthly), plus additional statistics for specific variable presentations.\n\nClimate products are global and are available for the following **collections**:\n\n**cmip6-x0.25:** CMIP6 global downscaled, bias corrected 0.25-degree – 1950-2100;<br/>\n**era5-x0.25:** EAR5 global 0.25-degree – 1950-2022;<br/>\n**cru-x0.5:** CRU global 0.50-degree – 1901-2022;<br/>\n**pop-x0.25:** Population global 0.25-degree – 1995-2100 (Gridded Population of the World Version 4).\n\n## Accessing Climate Change Knowledge Portal Data On AWS\n\nYou can access these data via the link, `<aws s3 ls –no-sign-request s3://wbg-cckp/>` and using the web interface via the AWS console. To get a list for all variables and climate indicators available for the CMIP6 data at 0.25x0.25 degree resolution, this sub-directory will list them (using the <font color='#E83E8C'>--no-sign-request</font> flag since this bucket is public):\n\n## Climate Change Knowledge Portal File Structure\n\nThe collections of WB-CCKP raster data stored under the root AWS S3 bucket `<aws s3 ls –no-sign-request s3://wbg-cckp/>`.  The different collections, their variables and datasets with individual raster products (netCDF files) are organized by a hierarchy of facets that follow this structure:\n\n**Example file: (with ‘..’ representing the root of the CCKP S3 bucket)**:\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../<font color='#FF0000'>Sub-Level 1</font>/<font color='#ED7D31'>Sub-Level 2</font>/<font color='#FFD966'>Sub-Level 3</font>/Sub-Level 4 (data)\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../<font color='#FF0000'>collection</font>/<font color='#ED7D31'>variable</font>/<font color='#FFD966'>Model</font>-<font color='#C45911'>scenario</font>/filename.nc<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><b>with filename.nc being:</b><br><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color='#A8D08D'>product</font>-<font color='#ED7D31'>variable</font>-<font color='#B4C6E7'>aggregationperiod</font>-<font color='#4472C4'>statistic</font>\\_<font color='#FF0000'>collection</font>\\_<font color='#FFC000'>modelwithscenario</font>\\_<font color='#538135'>category</font>\\_<font color='#404040'>percentile</font>\\_<font color='#AEAAAA'>timeperiod</font>.nc\n\n### Sub-Level 1 - Collection\n\nUnder the CCKP root, the first level is the level of “Collection” (*cmip6-x0.25*, *era5*, *cru*, …). This represents the fundamental dataset collection. Inside each of these collections, the same structure is offered, albeit with potentially different entries.\n\n### Sub-Level 2 – Variable\n\nThe first sub-level is the level of the variable. These are basic climate variables (*tas*, *pr*, …) as well as climate indicators derived from basic variables (*txx*, *rx1day*, *cdd*, *hi35*, …).\n\n### Sub-Level 3 – Dataset\n\nBelow each of these “variables” (or indicators), there is the “Dataset”, which represents the source itself. This facet is more granular than the collection, because at this level the different versions and individual simulations are being distinguished. For example, the model *access-cm2* with model simulation variant *r1i1p1f1* for the simulation covering the historical period is an exactly defined, single simulation (one model run). This allows to distinguish this dataset from an entry of *“access-cm2-r2i1p1f1-historical”* (note difference in variant label *r2* vs *r1*). For observational data with evolving versions, the dataset level distinguishes these entries: *cru-ts4.07-historical* is different from *cru-ts4.07-historical*.\n\n### Sub-Level 4 – Data\n\nThe final level stores the actual data files where the content is being distinguished in the file naming convention.:\n\n### File Naming Convention\n\nThe file names are designed to be self-explanatory, meaning they can be copied somewhere and still retain the full information of the collection, variable and dataset source in addition to the actual content. The facets in the file name are as follows:\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../<font color='#FF0000'>cmip6-x0.25</font>/<font color='#ED7D31'>tas</font>/<font color='#FFD966'>access-cm2-r1i1p1f1-</font><font color='#C45911'>historical</font>/<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color='#A8D08D'>climatology</font>-<font color='#ED7D31'>tas</font>-<font color='#B4C6E7'>annual</font>-<font color='#4472C4'>mean</font>\\_<font color='#FF0000'>cmip6-x0.25</font>\\_<font color='#FFC000'>access-cm2-r1i1p1f1-historical</font>\\_<font color='#538135'>climatology</font>\\_<font color='#404040'>mean</font>\\_<font color='#AEAAAA'>1995-2014</font>.nc\n\n### <ins> Examples at various sub-levels and facets: </ins>\n\n<font color='#FF0000'>Collection: {cmip6-x0.25,cru-x0.5,era5-x0.25,pop-x1,…}</font><br/>\n&nbsp;&nbsp;&nbsp;<font color='#ED7D31'>Variable: {tas,tasmax,tasmin,txx,tnn,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#FFD966'>Datasetwithscenario: {ensemble-all-historical, access-cm2-r1i1p1f1-historical…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#538135'>ProductType: {timeseries,climatology,heatplot}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#A8D08D'>Product: {timeseries,climatology,anomaly,trend,trendsignificance,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#B4C6E7'>AggregationPeriod: {annual,seasonal,monthly}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#4472C4'>Statistic: {mean,min,max}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#AEAAAA'>TimePeriod: {1950-2014,2015-2100,2020-2039,….}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#404040'>Percentile: {mean,median,p10,p90,…}</font><br/>\n\nNote, the “scenario”, which is a sub-level of the Dataset, is also a separate facet that can be searched, so that a specific projection scenario can be selected (historical, ssp126, ssp245, …).\n\n### <ins> Priority structure for search: </ins>\n\n<font color='#FF0000'>Collection: {cmip6-x0.25,cru-x0.5,era5-x0.25,pop-x1,…}</font><br/>\n&nbsp;&nbsp;&nbsp;<font color='#ED7D31'>Variable: {tas,tasmax,tasmin,txx,tnn,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#A8D08D'>Product: {timeseries,climatology,anomaly,trend,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#C45911'>Scenario: {historical,ssp119,ssp126,ssp245,ssp370,ssp585}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#B4C6E7'>Aggregation: {annual,seasonal,monthly</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#FFD966'>Model including scenario {ensemble-all-historical,access-cm2-r1i1p1f1-ssp126}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#AEAAAA'>TimePeriod: {1950-2014,2015-2100,2020-2039,….}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#404040'>Percentile: {mean,median,p10,p90}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#538135'>ProductType: {timeseries,climatology,heatplot}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#4472C4'>Statistic: {mean,min,max}</font><br/>\n\n### <ins> Single file query example: </ins>\n\nCollection: cmip6-x0.25<br/>\n&nbsp;&nbsp;&nbsp;Variable: tas<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product: trend<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scenario: ssp585<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aggregation: annual<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model: ensemble-all<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TimePeriod: 1971-2020<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Percentile: mean<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Type: climatology<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Statistic: mean<br/>\n\n## Available Selections Per Each Collection\n\n- [](cmip6-x0.25)\n- [](cru-x0.5)\n- [](era5-x0.25)\n- [](pop-x0.25)\n\n## Data Documentation\n\nA detailed documentation of the data content can be found in the CCKP Meta Data Document at: <https://climateknowledgeportal.worldbank.org/media/document/metatag.pdf>\n\n## Additional Resources\n\n- [Climate Change Knowledge Portal](https://climateknowledgeportal.worldbank.org/)\n- [Registry of Open Data on AWS](https://registry.opendata.aws/)\n\n## Contributing\n\nContributions are welcome! If you'd like to contribute, please follow our [contribution guidelines](https://github.com/worldbank/climateknowledgeportal/blob/main/CONTRIBUTING.md).\n\n## License\n\n[This documentation](https://github.com/worldbank/climateknowledgeportal) is licensed under the [**Mozilla Public License**](LICENSE).\n",
+    "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+  },
+  "embedding_quality_verified": false,
+  "extraction": {
+    "format": "markdown",
+    "offset_unit": "unicode_character",
+    "parser_version": "bounded-text/1",
+    "publication_status": "BLOCKED_PENDING_CURATED_METADATA",
+    "raw_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+    "source_authority_status": "HOST_PINNED_NOT_INSTITUTION_CERTIFIED",
+    "text_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4"
+  },
+  "institution_authority_certified": false,
+  "receipt": {
+    "acquired_at": "2026-11-24T10:42:48.739670+00:00",
+    "authority_status": "HOST_PINNED_NOT_INSTITUTION_CERTIFIED",
+    "byte_count": 11335,
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "ETag": "\"1694b809aa38aec3e1a2b25477b188d6aa1236c108efd0b4cc0692fa8c324a34\"",
+      "Last-Modified": null
+    },
+    "license": "NOT_VERIFIED",
+    "raw_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\raw\\d68623555d8c5e7ec84c841b3dbba2c0718d01d2b1d43e33065b1f06e5bec384.raw",
+    "retrieval_permitted": false,
+    "schema_version": "source-document-receipt/1.0",
+    "sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+    "source_id": "worldbank-cckp-README.md",
+    "source_uri": "https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md",
+    "state": "VERIFIED_REAL",
+    "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+  },
+  "spans": [
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 1000,
+      "quote": "# World Bank – Climate Change Knowledge Portal Data Collections on AWS\n\n## Overview\n\nThe World Bank’s Climate Change Knowledge Portal (CCKP) provides open access to a comprehensive suite of climate and climate change resources derived from the latest generation of climate data archives. Products are based on a consistent and transparent approach with a systematic way of pre-processing the raw observed and model-based projection data to enable inter-comparable use across a broad range of applications. Climate products consist of basic climate variables as well as a large collection (70+) of more specialized, application-orientated variables and indices across different scenarios. Precomputed data can be extracted per specified variables, select timeframes, climate projection scenarios, as multi-model ensembles or by individual models. CCKP adheres to data distribution standards defined under the Coupled Model Intercomparison Project (CMIP) and its contributions to the Intergovernmental ",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 0,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 2000,
+      "quote": "Panel on Climate Change (IPCC) Assessment Reports and latest scientific methodologies identified by the World Meteorological Organization and climate science community.\n\n```{seealso}\nAccess the World Bank Climate Change Portal: https://climateknowledgeportal.worldbank.org\n```\n\nThis data archive consists of global gridded NetCDF files that represent ~30 models, 70+ variables, 5 SSPs, multiple climatology periods, 3 temporal aggregations (annual, seasonal, monthly), plus additional statistics for specific variable presentations.\n\nClimate products are global and are available for the following **collections**:\n\n**cmip6-x0.25:** CMIP6 global downscaled, bias corrected 0.25-degree – 1950-2100;<br/>\n**era5-x0.25:** EAR5 global 0.25-degree – 1950-2022;<br/>\n**cru-x0.5:** CRU global 0.50-degree – 1901-2022;<br/>\n**pop-x0.25:** Population global 0.25-degree – 1995-2100 (Gridded Population of the World Version 4).\n\n## Accessing Climate Change Knowledge Portal Data On AWS\n\nYou can access these da",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 1000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 3000,
+      "quote": "ta via the link, `<aws s3 ls –no-sign-request s3://wbg-cckp/>` and using the web interface via the AWS console. To get a list for all variables and climate indicators available for the CMIP6 data at 0.25x0.25 degree resolution, this sub-directory will list them (using the <font color='#E83E8C'>--no-sign-request</font> flag since this bucket is public):\n\n## Climate Change Knowledge Portal File Structure\n\nThe collections of WB-CCKP raster data stored under the root AWS S3 bucket `<aws s3 ls –no-sign-request s3://wbg-cckp/>`.  The different collections, their variables and datasets with individual raster products (netCDF files) are organized by a hierarchy of facets that follow this structure:\n\n**Example file: (with ‘..’ representing the root of the CCKP S3 bucket)**:\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../<font color='#FF0000'>Sub-Level 1</font>/<font color='#ED7D31'>Sub-Level 2</font>/<font color='#FFD966'>Sub-Level 3</font>/Sub-Level 4 (data)\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 2000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 4000,
+      "quote": "<font color='#FF0000'>collection</font>/<font color='#ED7D31'>variable</font>/<font color='#FFD966'>Model</font>-<font color='#C45911'>scenario</font>/filename.nc<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><b>with filename.nc being:</b><br><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color='#A8D08D'>product</font>-<font color='#ED7D31'>variable</font>-<font color='#B4C6E7'>aggregationperiod</font>-<font color='#4472C4'>statistic</font>\\_<font color='#FF0000'>collection</font>\\_<font color='#FFC000'>modelwithscenario</font>\\_<font color='#538135'>category</font>\\_<font color='#404040'>percentile</font>\\_<font color='#AEAAAA'>timeperiod</font>.nc\n\n### Sub-Level 1 - Collection\n\nUnder the CCKP root, the first level is the level of “Collection” (*cmip6-x0.25*, *era5*, *cru*, …). This represents the fundamental dataset collection. Inside each of these collections, the same structure is offered, albeit with potentially different entries.\n\n### Sub-Level 2 – Variable\n\nThe fir",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 3000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 5000,
+      "quote": "st sub-level is the level of the variable. These are basic climate variables (*tas*, *pr*, …) as well as climate indicators derived from basic variables (*txx*, *rx1day*, *cdd*, *hi35*, …).\n\n### Sub-Level 3 – Dataset\n\nBelow each of these “variables” (or indicators), there is the “Dataset”, which represents the source itself. This facet is more granular than the collection, because at this level the different versions and individual simulations are being distinguished. For example, the model *access-cm2* with model simulation variant *r1i1p1f1* for the simulation covering the historical period is an exactly defined, single simulation (one model run). This allows to distinguish this dataset from an entry of *“access-cm2-r2i1p1f1-historical”* (note difference in variant label *r2* vs *r1*). For observational data with evolving versions, the dataset level distinguishes these entries: *cru-ts4.07-historical* is different from *cru-ts4.07-historical*.\n\n### Sub-Level 4 – Data\n\nThe final level",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 4000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 6000,
+      "quote": " stores the actual data files where the content is being distinguished in the file naming convention.:\n\n### File Naming Convention\n\nThe file names are designed to be self-explanatory, meaning they can be copied somewhere and still retain the full information of the collection, variable and dataset source in addition to the actual content. The facets in the file name are as follows:\n\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ../<font color='#FF0000'>cmip6-x0.25</font>/<font color='#ED7D31'>tas</font>/<font color='#FFD966'>access-cm2-r1i1p1f1-</font><font color='#C45911'>historical</font>/<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color='#A8D08D'>climatology</font>-<font color='#ED7D31'>tas</font>-<font color='#B4C6E7'>annual</font>-<font color='#4472C4'>mean</font>\\_<font color='#FF0000'>cmip6-x0.25</font>\\_<font color='#FFC000'>access-cm2-r1i1p1f1-historical</font>\\_<font color='#538135'>climatology</font>\\_<font color='#404040'>mean</font>\\_<font color='#AEAAAA'>1995-2014",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 5000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 7000,
+      "quote": "</font>.nc\n\n### <ins> Examples at various sub-levels and facets: </ins>\n\n<font color='#FF0000'>Collection: {cmip6-x0.25,cru-x0.5,era5-x0.25,pop-x1,…}</font><br/>\n&nbsp;&nbsp;&nbsp;<font color='#ED7D31'>Variable: {tas,tasmax,tasmin,txx,tnn,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#FFD966'>Datasetwithscenario: {ensemble-all-historical, access-cm2-r1i1p1f1-historical…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#538135'>ProductType: {timeseries,climatology,heatplot}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#A8D08D'>Product: {timeseries,climatology,anomaly,trend,trendsignificance,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#B4C6E7'>AggregationPeriod: {annual,seasonal,monthly}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font colo",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 6000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 8000,
+      "quote": "r='#4472C4'>Statistic: {mean,min,max}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#AEAAAA'>TimePeriod: {1950-2014,2015-2100,2020-2039,….}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#404040'>Percentile: {mean,median,p10,p90,…}</font><br/>\n\nNote, the “scenario”, which is a sub-level of the Dataset, is also a separate facet that can be searched, so that a specific projection scenario can be selected (historical, ssp126, ssp245, …).\n\n### <ins> Priority structure for search: </ins>\n\n<font color='#FF0000'>Collection: {cmip6-x0.25,cru-x0.5,era5-x0.25,pop-x1,…}</font><br/>\n&nbsp;&nbsp;&nbsp;<font color='#ED7D31'>Variable: {tas,tasmax,tasmin,txx,tnn,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#A8D08D'>Product: {timeseries,climatology,anomaly,tren",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 7000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 9000,
+      "quote": "d,…}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#C45911'>Scenario: {historical,ssp119,ssp126,ssp245,ssp370,ssp585}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#B4C6E7'>Aggregation: {annual,seasonal,monthly</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#FFD966'>Model including scenario {ensemble-all-historical,access-cm2-r1i1p1f1-ssp126}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#AEAAAA'>TimePeriod: {1950-2014,2015-2100,2020-2039,….}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#404040'>Percentile: {mean,median,p10,p90}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 8000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 10000,
+      "quote": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#538135'>ProductType: {timeseries,climatology,heatplot}</font><br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#4472C4'>Statistic: {mean,min,max}</font><br/>\n\n### <ins> Single file query example: </ins>\n\nCollection: cmip6-x0.25<br/>\n&nbsp;&nbsp;&nbsp;Variable: tas<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product: trend<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scenario: ssp585<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aggregation: annual<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model: ensemble-all<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TimePeriod: 1971-2020<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 9000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 11000,
+      "quote": "p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Percentile: mean<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Type: climatology<br/>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Statistic: mean<br/>\n\n## Available Selections Per Each Collection\n\n- [](cmip6-x0.25)\n- [](cru-x0.5)\n- [](era5-x0.25)\n- [](pop-x0.25)\n\n## Data Documentation\n\nA detailed documentation of the data content can be found in the CCKP Meta Data Document at: <https://climateknowledgeportal.worldbank.org/media/document/metatag.pdf>\n\n## Additional Resources\n\n- [Climate Change Knowledge Portal](https://climateknowledgeportal.worldbank.org/)\n- [Registry of Open Data on AWS](https://registry.opendata.aws/)\n\n## Contributing\n\nContributions are welcome! If you'd like to contribute, please follow",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 10000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-README.md",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "end": 11259,
+      "quote": " our [contribution guidelines](https://github.com/worldbank/climateknowledgeportal/blob/main/CONTRIBUTING.md).\n\n## License\n\n[This documentation](https://github.com/worldbank/climateknowledgeportal) is licensed under the [**Mozilla Public License**](LICENSE).\n",
+      "source_id": "worldbank-cckp-README.md",
+      "start": 11000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    }
+  ],
+  "status": "BLOCKED_PENDING_CURATED_METADATA"
+}

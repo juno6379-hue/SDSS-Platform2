@@ -15,3 +15,8 @@ data/curated/**
 !data/curated/.gitkeep
 artifacts/**
 !artifacts/.gitkeep
+
+# Generated local spatial queue; its SHA/size are pinned in committed evidence.
+evidence/onemap_sentinel/held-audit-*/exact-missing-queue.geojson
+evidence/onemap_sentinel/held-audit-*/*.wkb
+evidence/onemap_sentinel/held-audit-*/**/*.wkb

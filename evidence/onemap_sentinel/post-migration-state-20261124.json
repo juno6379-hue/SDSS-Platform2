@@ -1,0 +1,67 @@
+{
+  "status": "VERIFIED_REAL",
+  "local_CAS_files": 6125,
+  "local_CAS_bytes": 3904601927,
+  "same_volume_stat_dev": true,
+  "source_hardlink_not_performed": true,
+  "all_CAS_objects_single_link": true,
+  "migration_lock_exists": false,
+  "source_manifest_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "reference_ledger_sha256": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+  "manifest_quality_eligible": 1407,
+  "minimum_28_cells_met": 36,
+  "actual_minimum_eligible_per_cell": 28,
+  "sample_read_checks": [
+    {
+      "requested_split": "train",
+      "actual_split": "train",
+      "path": "E:\\SDSS-Platform2\\data\\raw\\migrated\\c93bd65a4f3ed2810d61532e846042549a6c1fad2eae86e36a105eb0bd290e58",
+      "bands": 6,
+      "shape": [
+        256,
+        256
+      ],
+      "crs": "EPSG:32651",
+      "pixel_sample_shape": [
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "requested_split": "validation",
+      "actual_split": "train",
+      "path": "E:\\SDSS-Platform2\\data\\raw\\migrated\\c93bd65a4f3ed2810d61532e846042549a6c1fad2eae86e36a105eb0bd290e58",
+      "bands": 6,
+      "shape": [
+        256,
+        256
+      ],
+      "crs": "EPSG:32651",
+      "pixel_sample_shape": [
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "requested_split": "test",
+      "actual_split": "test",
+      "path": "E:\\SDSS-Platform2\\data\\raw\\migrated\\fd8618b2cb120105b433b4d1363b2838f78dd989a5d81817d8bb426a29d5b627",
+      "bands": 6,
+      "shape": [
+        256,
+        256
+      ],
+      "crs": "EPSG:32748",
+      "pixel_sample_shape": [
+        6,
+        1,
+        1
+      ]
+    }
+  ],
+  "remote_downloads": 0,
+  "new_observation_acquisition": false,
+  "spatial_grid_report_complete": false
+}

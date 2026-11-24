@@ -1,0 +1,128 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "south_sulawesi",
+  "year": 2023,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\image.tif",
+  "verified_patch_count": 16,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\ff6671510190e462bc71faa9-footprint.wkb",
+      "sha256": "d84d04d86dc2aa1cd0de4084f287aa7e7b712f65fd2cdc3d885842fdf6ba5ba4"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\ff6671510190e462bc71faa9-present.wkb",
+      "sha256": "5d551ea4f6f3f44dcba861d087df8692ebe668e6e9437e86853a25b6270203e0"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\ff6671510190e462bc71faa9-clear.wkb",
+      "sha256": "f3efedbca8ebb32dec3688ce1d79f0ca485dc82287421ea6ecf2554af1af3ad8"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\image.tif",
+      "sha256": "886d6432935bcd870d46b53d30eff78084d0b161439a65ca19a570392f509822"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\stac-item.json",
+      "sha256": "14d546341ddfcc3abc0e69f2e2f4064c9e3f9231ae028f069a5f7cb3906440d1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-B02.tif",
+      "sha256": "3d232bc17ddd02714798957bddc64f9cca53c10bc532815b7816cee7d626dbcb"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-B03.tif",
+      "sha256": "3cdb109cbd2a669a55ad35d383f76ca59ae9a684543b0eb3d8f4b08e17e361b6"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-B04.tif",
+      "sha256": "a987deee91360ad2754fe67a3a5901a6e17825f83a6bcf84d182e2ad6a0813b2"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-B08.tif",
+      "sha256": "b4a65663571b60379388a0c15ae89a4ea33c85d98e89fb2b3bcce62a43c57303"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-B11.tif",
+      "sha256": "583e6f52e8ce7c37c4db7d7f35566439444a1377f95e88c3aa4a2330958ae2cb"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-B12.tif",
+      "sha256": "3bc50f2ed29401b8663a08e0cfcb4cd92b51fda8e6628333a833a76e118cb7ff"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\south_sulawesi-g01-2023\\raw-SCL.tif",
+      "sha256": "9b342a73494fc808463c38145459840aedc98b728660931b037a6e2ef6a38e2d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r00-c00\\image.tif",
+      "sha256": "1b7c1ca3cbafcb9a4f52b241563a36313c967d871b9b6fcf2afb4b445d21aef5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r00-c01\\image.tif",
+      "sha256": "94a8e21d3404f5d81a178ce12f490e9560e6dba121f06ef642b8cb6571501ac0"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r00-c02\\image.tif",
+      "sha256": "95b75b269a07e0f481c3aa6d0fde9dc928b35af4a8bf266f0a71fda5a74be570"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r00-c03\\image.tif",
+      "sha256": "a9b5e4d3da6d71e4b53d8fa7f65db8377a868d8fa5b7c124cbf9cb21dc8f0415"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r01-c00\\image.tif",
+      "sha256": "b15dd624dfea6ac7c0e7171a661a718577106fbeb85af3860cb515f64eea154e"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r01-c01\\image.tif",
+      "sha256": "daac7c855315cd791e7a1b0436932759e77b9ae92fc7a26df1f2ccd98e9e4ed7"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r01-c02\\image.tif",
+      "sha256": "45c909f3a7dfd169dd92a7680139a746b19a7bfd78c83aa4de1c386b4b2844e1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r01-c03\\image.tif",
+      "sha256": "e5b8e71f2a54bc871353261361ba0b8f3637ec8d472c1d4cdc253be25c3a5c3c"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r02-c00\\image.tif",
+      "sha256": "3cc77e4654c98335079d322e566e995e615fa7141d6254974bc108311804eaea"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r02-c01\\image.tif",
+      "sha256": "e705e4858a145adb5fc49fdc448cffae11bd6e760c30ea9972a207e4cdaf12e6"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r02-c02\\image.tif",
+      "sha256": "7c4ed84238581d38b655e051230835a302c50e7afe8d6b9d17ecdf1dd57af6a0"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r02-c03\\image.tif",
+      "sha256": "65835008d94e513db1e3c264152042abef336455591f72faba546d93278962d2"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r03-c00\\image.tif",
+      "sha256": "52a99de021cc8373b842f2d7bf0c7153a8fdcde7d9fa9f2ee2f15f4e8b9b7048"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r03-c01\\image.tif",
+      "sha256": "128db71490a5ef7eb56426d33986f56ac8e2bbe36c00218147588f6e94e12955"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r03-c02\\image.tif",
+      "sha256": "3bda6849d1e40a7b2602e4c4329d6ddbe641b6aae8d10784d2da4c5c2d4a8f49"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-south_sulawesi-2023-g01\\r03-c03\\image.tif",
+      "sha256": "3f8e4385832cfe9170eb54102511397a569256ce9bad2f5c978481e116af5193"
+    }
+  ]
+}

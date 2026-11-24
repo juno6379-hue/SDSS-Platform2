@@ -1,0 +1,48 @@
+{
+  "lcluc": {
+    "status": "TESTED_SYNTHETIC",
+    "adapter": "six_band_mask_diagnostic_v1",
+    "valid_pixels": 2,
+    "total_pixels": 4,
+    "diagnostic_sha256": "f31c395f9a062bde479af14bd6eca97b6a16cd2e88685d4915dcd6bb33f10082",
+    "segmentation": null,
+    "independent_metrics": null,
+    "training_started": false,
+    "production_inference": false
+  },
+  "rag": {
+    "status": "TESTED_SYNTHETIC",
+    "answer": null,
+    "numeric_answer_allowed": false,
+    "embedding_model": "synthetic_hash_fixture_not_pretrained",
+    "production_inference": false,
+    "ranked_documents": [
+      {
+        "document_id": "synthetic-doc",
+        "diagnostic_similarity": 1.0,
+        "embedding": [
+          0.7071067811865475,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.7071067811865475,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "citation": "fixture:not-real-source"
+      }
+    ],
+    "blockers": [
+      "TRAINED_RERANKER_EMBEDDING_NOT_INSTALLED"
+    ]
+  }
+}

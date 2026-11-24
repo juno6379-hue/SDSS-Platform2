@@ -1,0 +1,172 @@
+{
+  "file_format": "NETCDF3_CLASSIC",
+  "global_attributes": {
+    "wb_truncation_label": 2,
+    "wb_grid_label": "x0.25",
+    "wb_period_label": "1951-1980",
+    "wb_percentile_label": "mean",
+    "wb_type_label": "climatology",
+    "wb_model_label": "era5",
+    "wb_variant_label": "x0.25",
+    "wb_scenario_label": "historical",
+    "wb_statistic_label": "max",
+    "wb_aggregation_label": "annual",
+    "wb_variable_label": "cdd",
+    "wb_product_label": "climatology",
+    "wb_collection_label": "era5-x0.25",
+    "wb": " \nwb_access_citation = Please acknowledge data source as :\n   ECMWF: https://cds.climate.copernicus.eu, Copernicus Climate Data Store\n   accessed through: World Bank Climate Change Knowledge Portal : https://climateknowledgeportal.worldbank.org \nwb_data_comment = Processed ERA5 data by WB; RAW-data from ECMWF: https://cds.climate.copernicus.eu, Copernicus Climate Data Store\nwb_data_informaiton = https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation\nwb_author = Dr. Caspar M Ammann, Climate Strategies, ammann@climatestrategiesgroup.com",
+    "wb_OBS": " \nwb_creation_date = Tue Aug  5 11:38:53 AM MDT 2025\nwb_OBS_version   = 2.0 (summer 2022)",
+    "DATA_SOURCE": "ECMWF: https://cds.climate.copernicus.eu, Copernicus Climate Data Store",
+    "NETCDF_CONVERSION": "CISL RDA: Conversion from ECMWF GRIB1 data to netCDF4.",
+    "NETCDF_VERSION": "4.8.1",
+    "CONVERSION_PLATFORM": "Linux r1i2n12 4.12.14-95.51-default #1 SMP Fri Apr 17 08:14:12 UTC 2020 (c6bab98) x86_64 x86_64 x86_64 GNU/Linux",
+    "CONVERSION_DATE": "Sat Apr 22 18:05:35 MDT 2023",
+    "Conventions": "CF-1.6",
+    "NETCDF_COMPRESSION": "NCO: Precision-preserving compression to netCDF4/HDF5 (see \"history\" and \"NCO\" global attributes below for specifics).",
+    "history": "Sat Jul 26 05:55:07 2025: ncrcat /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_01.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_02.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_03.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_04.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_05.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_06.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_07.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_08.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_09.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_10.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_11.nc /glade/derecho/scratch/ammann/era5/pr/era5-x0.25_pr_daily_1950_12.nc /glade/derecho/scratch/ammann/era5/pr/timeseries-pr-daily-mean_era5-x0.25_era5-x0.25-historical_timeseries_mean_1950-1950.nc\nSat Apr 22 18:05:43 2023: ncks -4 --ppc default=7 e5.oper.fc.sfc.meanflux.235_055_mtpr.ll025sc.1950010106_1950011606.unc.nc e5.oper.fc.sfc.meanflux.235_055_mtpr.ll025sc.1950010106_1950011606.nc",
+    "NCO": "netCDF Operators version 5.3.1 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco, Citation = 10.1016/j.envsoft.2008.03.004)"
+  },
+  "variables": {
+    "time": {
+      "dimensions": [
+        "time"
+      ],
+      "shape": [
+        1
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "climatology_period": "1951-1980",
+        "long_name": "climatology of longest consecutive sequence of dry days (<1mm) within annual data",
+        "units": "days since 1850-01-01 00:00:00",
+        "calendar": "gregorian",
+        "axis": "T",
+        "standard_name": "climatology of longest consecutive sequence of dry days (<1mm) within annual data"
+      }
+    },
+    "lat": {
+      "dimensions": [
+        "lat"
+      ],
+      "shape": [
+        721
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "long_name": "latitude",
+        "short_name": "lat",
+        "units": "degrees_north",
+        "standard_name": "latitude",
+        "bnds": "lat_bnds",
+        "axis": "Y",
+        "bounds": "lat_bnds"
+      }
+    },
+    "lon": {
+      "dimensions": [
+        "lon"
+      ],
+      "shape": [
+        1440
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "units": "degrees_east",
+        "short_name": "lon",
+        "long_name": "longitude",
+        "standard_name": "longitude",
+        "bnds": "lon_bnds",
+        "axis": "X",
+        "bounds": "lon_bnds"
+      }
+    },
+    "climatology-cdd-annual-max": {
+      "dimensions": [
+        "time",
+        "lat",
+        "lon"
+      ],
+      "shape": [
+        1,
+        721,
+        1440
+      ],
+      "dtype": "float32",
+      "attributes": {
+        "climatoloyg_calculation": "max",
+        "units": "days",
+        "standard_name": "longest consecutive sequence of dry days (<1mm) within annual data",
+        "long_name": "longest consecutive sequence of dry days (<1mm) within annual data",
+        "valid_max": 366.0,
+        "valid_min": 1.0,
+        "_FillValue": 1.0000000200408773e+20
+      }
+    },
+    "bnds": {
+      "dimensions": [
+        "bnds"
+      ],
+      "shape": [
+        2
+      ],
+      "dtype": "int32",
+      "attributes": {
+        "long_name": "grid bounds"
+      }
+    },
+    "lon_bnds": {
+      "dimensions": [
+        "lon",
+        "bnds"
+      ],
+      "shape": [
+        1440,
+        2
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "long_name": "longitude bounds"
+      }
+    },
+    "lat_bnds": {
+      "dimensions": [
+        "lat",
+        "bnds"
+      ],
+      "shape": [
+        721,
+        2
+      ],
+      "dtype": "float64",
+      "attributes": {
+        "long_name": "latitude bounds"
+      }
+    }
+  },
+  "coordinates": {
+    "lat": {
+      "count": 721,
+      "first": -90.0,
+      "last": 90.0,
+      "resolution_degrees": 0.25,
+      "units": "degrees_north"
+    },
+    "lon": {
+      "count": 1440,
+      "first": -180.0,
+      "last": 179.75,
+      "resolution_degrees": 0.25,
+      "units": "degrees_east"
+    }
+  },
+  "calendar_raw": "gregorian",
+  "calendar": "standard",
+  "time_units": "days since 1850-01-01 00:00:00",
+  "decoded_time_coordinates": [
+    "1951-07-01 00:00:00"
+  ],
+  "raw_sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7",
+  "inspected_at": "2026-11-24T10:48:19.423605+00:00",
+  "file_license_attribute": null,
+  "numeric_query_executed": false
+}

@@ -1,0 +1,8 @@
+{
+  "catalog.json": "decdaccdff3e3cd9299860989420301ff9011b8305bb2414309dbdc2c10a0d46",
+  "model-manifest.schema.json": "bc535cd40f64394bbe885518254d73cac54b0e8cd45cf4cae7cc19dbe468f98a",
+  "readiness.json": "b642e0476664697880d77f2f690d18c7d6a1963894f951583e7984f4217d15ca",
+  "runtime-environment.json": "dcd672ffe2c774d6152ec85a7f2cc182ece606dc8e0c63ee12e9830b4c26c876",
+  "synthetic-smoke.json": "a590c5e0049c5df6b8d82bfadb0e5ce614659ea38439832f82975a5a1cecc260",
+  "legacy-checkpoint-audit.json": "7dc190526c7a056f4340f4426515fd6892119dd80ed49017bcfab10a2a854ecb"
+}

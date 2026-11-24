@@ -1,0 +1,13 @@
+{
+  "status": "PREFLIGHT_READY",
+  "errors": [],
+  "ledger_sha256": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+  "remaining_bytes": 1685992536,
+  "reservation_bytes": 33554432,
+  "active_collectors": [],
+  "free_bytes": 1963077791744,
+  "preexisting_pending": [
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+  ]
+}

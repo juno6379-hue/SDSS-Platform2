@@ -1,0 +1,61 @@
+{
+  "status": "IMPLEMENTED_UNVERIFIED_AUDIT_IN_PROGRESS",
+  "captured_at": "2026-11-24T10:57:45.580274+00:00",
+  "phase": "ALL_PATCH_ROWS_PROCESSED_GENERATING_36_CELL_GRIDS",
+  "last_console_checkpoint_rows": 1600,
+  "last_console_checkpoint_failures": 0,
+  "native_total_rows": 1779,
+  "final_failure_count": null,
+  "completed_grid_files": [
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\banten-2020-required-and-support.tif",
+      "sha256": "6ae7d82a6d393073e224bf0ce4ed8363d6545a1730efbb8c3962e5dcc627ba41"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\banten-2021-required-and-support.tif",
+      "sha256": "da1c72908a41f6631313a4ccbdac5402151c3177c1354241549f9538b243fe50"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\banten-2022-required-and-support.tif",
+      "sha256": "515d0b4d330ac6e2f992dbc8ea2ecbfb495f744cc1ef8f05253d4827950bf125"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\banten-2023-required-and-support.tif",
+      "sha256": "cb710569f8f27ab7618689ae23ddd44c1ba11cf462a9247c64941985ab889326"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\banten-2024-required-and-support.tif",
+      "sha256": "bf9c4866b44e600d8f3007be8b23d11afa5ec5c2844a91fc2aaa9d5a42646684"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\banten-2025-required-and-support.tif",
+      "sha256": "c3bf30c6d7148646e19cb6c77b3930a02fd52ed636d75cc3bb31bd20ead98861"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\west_java-2020-required-and-support.tif",
+      "sha256": "d158c86f6250f372524ba45d8a12bd6cbc2d578a7f3fc78a238bd4698f329ae4"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\west_java-2021-required-and-support.tif",
+      "sha256": "5f9515f9746458f5ab676f1a70caad5ac16d31aea80c39e40390999368e57856"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\west_java-2022-required-and-support.tif",
+      "sha256": "9937e02604852674cc1095e4be9af361fe7c4f9710f6a39df75291f2d992e9ef"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\west_java-2023-required-and-support.tif",
+      "sha256": "795dae0cdc2b01870012889e12ff295c42aac6b1ebe18d0825119ca060ac420d"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\west_java-2024-required-and-support.tif",
+      "sha256": "c1444afbf020eb92ffe103ebbcb9e2b6cf1ccbe97fb8ddd2361eee2beb33bc85"
+    },
+    {
+      "path": "evidence\\onemap_sentinel\\audit-20261124\\audit\\west_java-2025-required-and-support.tif",
+      "sha256": "d05b436c647f74437678a7afb13a28ead690e0a2b42c25af8003a617b795b90a"
+    }
+  ],
+  "reference_ledger_sha256_now": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+  "collector_started": false
+}

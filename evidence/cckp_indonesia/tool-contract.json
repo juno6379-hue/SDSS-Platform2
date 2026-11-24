@@ -1,0 +1,136 @@
+{
+  "name": "climate.query",
+  "description": "검증된 원본 grid의 명시 bbox/기간 통계. RAG 숫자 생성 금지.",
+  "input_schema": {
+    "$defs": {
+      "QueryGeography": {
+        "additionalProperties": false,
+        "properties": {
+          "bbox": {
+            "maxItems": 4,
+            "minItems": 4,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Bbox",
+            "type": "array"
+          },
+          "geography_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Geography Id",
+            "type": "string"
+          },
+          "method": {
+            "const": "bbox_cell_centers",
+            "title": "Method",
+            "type": "string"
+          }
+        },
+        "required": [
+          "bbox",
+          "geography_id",
+          "method"
+        ],
+        "title": "QueryGeography",
+        "type": "object"
+      },
+      "QueryTime": {
+        "additionalProperties": false,
+        "properties": {
+          "start": {
+            "title": "Start",
+            "type": "string"
+          },
+          "end": {
+            "title": "End",
+            "type": "string"
+          },
+          "calendar": {
+            "title": "Calendar",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "calendar"
+        ],
+        "title": "QueryTime",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "geography": {
+        "$ref": "#/$defs/QueryGeography"
+      },
+      "time": {
+        "$ref": "#/$defs/QueryTime"
+      },
+      "variable": {
+        "minLength": 1,
+        "title": "Variable",
+        "type": "string"
+      },
+      "observed_or_projected": {
+        "enum": [
+          "observed",
+          "projected"
+        ],
+        "title": "Observed Or Projected",
+        "type": "string"
+      },
+      "model": {
+        "minLength": 1,
+        "title": "Model",
+        "type": "string"
+      },
+      "scenario": {
+        "minLength": 1,
+        "title": "Scenario",
+        "type": "string"
+      },
+      "aggregation": {
+        "enum": [
+          "bbox_cell_mean",
+          "bbox_area_weighted_mean",
+          "bbox_min",
+          "bbox_max"
+        ],
+        "title": "Aggregation",
+        "type": "string"
+      },
+      "unit": {
+        "minLength": 1,
+        "title": "Unit",
+        "type": "string"
+      }
+    },
+    "required": [
+      "geography",
+      "time",
+      "variable",
+      "observed_or_projected",
+      "model",
+      "scenario",
+      "aggregation",
+      "unit"
+    ],
+    "title": "ClimateQueryRequest",
+    "type": "object"
+  },
+  "read_only": true,
+  "source": "configured pinned local NetCDF + receipt; not user-supplied arbitrary URL"
+}

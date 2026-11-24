@@ -1,0 +1,9 @@
+{
+  "stopped_at": "2026-11-24T20:27:33.2891309+09:00",
+  "read_only_audit_pid": 83244,
+  "preserved_strict_cells": 24,
+  "next_grid_rule": "CONSERVATIVE_LOWER_BOUND_REPORT_ONLY",
+  "native_geometry_queue_rule": "UNCHANGED_EXACT_DIFFERENCE",
+  "migration_process_stopped": false,
+  "source_written": false
+}

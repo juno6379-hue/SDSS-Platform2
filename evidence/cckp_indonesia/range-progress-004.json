@@ -1,0 +1,12 @@
+{
+  "plan_id": "5105872b4ef59a7b1b69638e9f9a489141b25289c2112bfa70df3894941fc9f8",
+  "reserved_bytes": 4209592,
+  "max_bytes": 67108864,
+  "reviewed_retry_count": 1,
+  "prior_uncertain_reserved_bytes": 4209592,
+  "partial_bytes": 1048576,
+  "partial_sha256": "f9674a13e2fe1882f32340ca601f2066650b15571ab8e730fe4241543fbf3b2a",
+  "conservative_total_bytes": 5258168,
+  "range_retry_requested_bytes": 1048576,
+  "status": "REVIEWED_RANGE_RETRY_RUNNING"
+}

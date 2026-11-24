@@ -1,0 +1,128 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "gorontalo",
+  "year": 2025,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\image.tif",
+  "verified_patch_count": 16,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\0666a67903c1301ad457b52f-footprint.wkb",
+      "sha256": "d17cb48c9a89f597aea8071704ba139f70b30399bb80325df1188be226a454fb"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\0666a67903c1301ad457b52f-present.wkb",
+      "sha256": "2d3778146aa80e39cdc0c2cf8e585cc9482fc5dc0b17c565f450ea5f68051461"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\0666a67903c1301ad457b52f-clear.wkb",
+      "sha256": "848a257f9a6fb57887e8141dd1c7e364a8095e8fe24d14441241984bce613e5f"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\image.tif",
+      "sha256": "b310514eb0619f973953a71415a8d0a576107bb2a0f85157d1ade740fefcb502"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\stac-item.json",
+      "sha256": "99b101219f5498a42e6e735d6d3451f4a44e7072f7932babea71c404472b0650"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-B02.tif",
+      "sha256": "0b543da8712e81dd9312828b94fa50249991f29e9ea409cd581a02744dbf8a61"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-B03.tif",
+      "sha256": "3f207bf96449079629bef73a3161f3970cb652dbce2ec92362f65635102e55b8"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-B04.tif",
+      "sha256": "4b6296c91d6c265ef78b368d4bf9d854d1cda5ec973aa3c7e851cb6cf864221f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-B08.tif",
+      "sha256": "9d48dc275ca2912d222a82fd6778437f027bada4572db8828d73cc69cdf4bb68"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-B11.tif",
+      "sha256": "2ff7fff58194f6afa5e28787ef2fad616b853c36a4e746e5d433785b88700cda"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-B12.tif",
+      "sha256": "0559b7e953c0d69c5cada421f8667b3c14de91882a7a6a8e721be4af71a9908e"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\gorontalo-g02-2025\\raw-SCL.tif",
+      "sha256": "aea0f02b99a8d072ec4422a8042029bd09b1f173ffdbe25260c56d20d184ab24"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r00-c00\\image.tif",
+      "sha256": "c316b7795e130a61e6273ad0a87e11e3616443cab765098d195c6ec5969a82da"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r00-c01\\image.tif",
+      "sha256": "b3b7f30d9c654d0cae450325552dcb118de4b2a8a4ffeabeec81d0e3397b0faa"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r00-c02\\image.tif",
+      "sha256": "8e40d9bac774e6571c10ac7b6b857d2effbfe4f148726e33a24b7d806dd9d15b"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r00-c03\\image.tif",
+      "sha256": "37d0c89c741279855f2aad714f60f89a94f7a735787ef8650642709730ea413a"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r01-c00\\image.tif",
+      "sha256": "9fa6d4de978b30534df07dbea7075e288ac7d6be98dcd9cd40d6f95294e9d2cc"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r01-c01\\image.tif",
+      "sha256": "d710b10bed67c43988ccab0bb9a1c5bd3118452c0c8c23fca1bcdbf462138932"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r01-c02\\image.tif",
+      "sha256": "f350dc2d04616395028832677fcf61c7bb6cf7f151aac836249e497b56e6ca8f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r01-c03\\image.tif",
+      "sha256": "ac3d9ea6cf35c2858d1f63896308ba36e0f6d36e1bb430cf344ac9e41a037dd8"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r02-c00\\image.tif",
+      "sha256": "e8afc2725917d25c9a9d2d0e1e47ec75184968c55dbe6664848631f1ff8a42f4"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r02-c01\\image.tif",
+      "sha256": "6f29d85f7b4305c3a861ba6d40d5504b84767d8e40f2ffe449d159db964c4795"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r02-c02\\image.tif",
+      "sha256": "c5057022418636e649b51a9b7b3d7db44718ccac7e45f3d84e24b944189df752"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r02-c03\\image.tif",
+      "sha256": "3f5e401ae205f8955c0e6a83e85d77e892370df927aa7c44524326ce31a1920c"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r03-c00\\image.tif",
+      "sha256": "8272cd7142b0d16b4b885fd33094912af1e63c232a9287f3f1af91e7e913e5c2"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r03-c01\\image.tif",
+      "sha256": "2c4f1291f004eccfc8392e8a68957b344411ee72e5c2850303f2cdfcf6a65082"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r03-c02\\image.tif",
+      "sha256": "fd8180c62b26c00b755238c121d071b325b631ca82fa0753ddbd92a0c557a4e1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-gorontalo-2025-g02\\r03-c03\\image.tif",
+      "sha256": "8d7e29b4596574c7e47ea709254b2c133d2a8beec9b82c0d619677ab22043867"
+    }
+  ]
+}

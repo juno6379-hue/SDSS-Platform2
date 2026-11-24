@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-11-24T10:46:10.044015+00:00",
+  "items": [
+    {
+      "year": 2024,
+      "raw_sha256": "ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df",
+      "stage_path": "evidence\\klhk_rag\\live-20261124-1\\staged\\doc-ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df.stage.json",
+      "chunks": 33,
+      "rag_publication": "BLOCKED_LICENSE_VALIDITY_ACCESS_REVIEW_REQUIRED"
+    },
+    {
+      "year": 2025,
+      "raw_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+      "stage_path": "evidence\\klhk_rag\\live-20261124-1\\staged\\doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332.stage.json",
+      "chunks": 33,
+      "rag_publication": "BLOCKED_LICENSE_VALIDITY_ACCESS_REVIEW_REQUIRED"
+    }
+  ]
+}

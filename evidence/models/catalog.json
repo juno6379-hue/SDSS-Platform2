@@ -1,0 +1,105 @@
+{
+  "schema_version": "specialized-catalog/1.0",
+  "models": [
+    {
+      "schema_version": "specialized-model/1.0",
+      "model_id": "lcluc_segmentation",
+      "version": "v1",
+      "lifecycle": "Draft",
+      "implementation_status": "BLOCKED",
+      "signature": {
+        "task": "lcluc_segmentation",
+        "band_names": [
+          "B02",
+          "B03",
+          "B04",
+          "B08",
+          "B11",
+          "B12"
+        ],
+        "tensor_layout": "CHW",
+        "required_fields": [
+          "image",
+          "scl",
+          "normalization_evidence",
+          "source_sha256"
+        ],
+        "normalization": "per_product_verified_scale_offset",
+        "scl_required": true,
+        "class_mapping_23_to_internal": null,
+        "climate_resolution_policy": null,
+        "numeric_answer_allowed": false
+      },
+      "signature_sha256": "c7ccb8c432b8346658495fb5d8fb2974b1ac03f19beb32a462e8ea3a73f09915",
+      "checkpoint": null,
+      "training_report": null,
+      "reproducible_environment": null,
+      "metric_kind": "unavailable",
+      "independent_metrics": null
+    },
+    {
+      "schema_version": "specialized-model/1.0",
+      "model_id": "structured_climate_features",
+      "version": "v1",
+      "lifecycle": "Draft",
+      "implementation_status": "BLOCKED",
+      "signature": {
+        "task": "structured_climate_features",
+        "band_names": [],
+        "tensor_layout": "structured",
+        "required_fields": [
+          "asset",
+          "boundary",
+          "as_of",
+          "observed_or_projected",
+          "model",
+          "scenario",
+          "calendar",
+          "unit",
+          "grid",
+          "feature_window"
+        ],
+        "normalization": "explicit_unit_conversion_only",
+        "scl_required": false,
+        "class_mapping_23_to_internal": null,
+        "climate_resolution_policy": "native_grid_preserved_no_10m_observation_claim",
+        "numeric_answer_allowed": false
+      },
+      "signature_sha256": "66c42d7435e01e6a9f0cd8353660959ece0e5729c569c5407159592d2698fef1",
+      "checkpoint": null,
+      "training_report": null,
+      "reproducible_environment": null,
+      "metric_kind": "unavailable",
+      "independent_metrics": null
+    },
+    {
+      "schema_version": "specialized-model/1.0",
+      "model_id": "rag_embedding_reranker",
+      "version": "v1",
+      "lifecycle": "Draft",
+      "implementation_status": "BLOCKED",
+      "signature": {
+        "task": "rag_embedding_reranker",
+        "band_names": [],
+        "tensor_layout": "authorized_text",
+        "required_fields": [
+          "principal",
+          "authorized_documents",
+          "question",
+          "citations"
+        ],
+        "normalization": "acl_before_tokenization_embedding_reranking",
+        "scl_required": false,
+        "class_mapping_23_to_internal": null,
+        "climate_resolution_policy": null,
+        "numeric_answer_allowed": false
+      },
+      "signature_sha256": "e99404247ec7c2f32011d30e6fdb393486dbf06b754e01955c519e940ae63d33",
+      "checkpoint": null,
+      "training_report": null,
+      "reproducible_environment": null,
+      "metric_kind": "unavailable",
+      "independent_metrics": null
+    }
+  ]
+}

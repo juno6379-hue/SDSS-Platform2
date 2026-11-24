@@ -1,0 +1,128 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "west_java",
+  "year": 2020,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\image.tif",
+  "verified_patch_count": 16,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\97d491c5f4423ac1585527a4-footprint.wkb",
+      "sha256": "cd90924f0243ce9b3959339744009201e6124538fec7dfa469c55c0d466a3f01"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\97d491c5f4423ac1585527a4-present.wkb",
+      "sha256": "69fc81d90fffe2542f349ae4474be3750fa2bbd988d87d15e51f1ea84014e0c1"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\97d491c5f4423ac1585527a4-clear.wkb",
+      "sha256": "2f1de3623ba9bdf38df486cae459617795bb8fc058f09366774749da35325e45"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\image.tif",
+      "sha256": "adcb8633e558211c76b43d89a947cb2cad1a6bfb79e4d4e0ab81de8abf336d58"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\stac-item.json",
+      "sha256": "dd0fb9a72d688d4286af0b1cabd23174d9740330be2bf648d5ce51dde222afbc"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B02.tif",
+      "sha256": "40c8470cee0883e52b7b01e739c61ee8ff63817eb74a5fbe609e78bdb6a89e07"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B03.tif",
+      "sha256": "170eaa0ff89e488adf54a035f69e1206b003ad642ac0b442b423064f3fa1732a"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B04.tif",
+      "sha256": "c89ec6b11e0180d46c89cfb4cd17385da7c5c7382239f2b101fe2477f13eb51b"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B08.tif",
+      "sha256": "4dcdee197d116944fcc3eb79eea506cc64b80d5cfdaa70ea0f930fe3ce5c9f94"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B11.tif",
+      "sha256": "c63ff2697a35fa76191a9e242f66223a19b53885647f643b9ea2ed744f0a5c9e"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-B12.tif",
+      "sha256": "d34b96835a28237820022ccd7a181f4f8ec87f7efe0f36015ddf1198123018fe"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\west_java-extra-17-2020\\raw-SCL.tif",
+      "sha256": "75bc525de9dad38f8d599a04c218a958a2b8f8f144579d53bc05e5d0e98eeff6"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r00-c00\\image.tif",
+      "sha256": "2bc8069909061b6e766a48615d70b133db314e739c0662d52c3135bc9155230f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r00-c01\\image.tif",
+      "sha256": "e7b2bd6cf70f0bfa9442fb9b03455d59a7f743eef494166f40b3198cf06a1c9f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r00-c02\\image.tif",
+      "sha256": "69d903c532d9c52febd06ba2d360534dcb331bb5a357875dfd4e043da2fd6993"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r00-c03\\image.tif",
+      "sha256": "d2b6b1400aaf7f19bd23b5e7b045f1cb082e2c7fd5427507a00c7ebfae129f12"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r01-c00\\image.tif",
+      "sha256": "e21c226063ef5dfeca24a8047be7388b9386730a36ac155f0ea1d0927cee0807"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r01-c01\\image.tif",
+      "sha256": "3d8661a2c5a23a5912558756e27cc1ec03423246e2a94323a5d55464186b0e9d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r01-c02\\image.tif",
+      "sha256": "8c961efdcaac0f37edbd892f9d4420291ff592be3b8355a50f50c68600ac2b00"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r01-c03\\image.tif",
+      "sha256": "ccde1ac139061fd1085b6a1e14ad8d334726c416c210cf466f512bf943424865"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r02-c00\\image.tif",
+      "sha256": "52d48c629e42a9ff0f7db290df740a4ad27466433ee1a81059377015490a14d5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r02-c01\\image.tif",
+      "sha256": "233bf8c48afff586c7ada6d2767ae78251dcb87bc34f0d9b7e2c934c622c3157"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r02-c02\\image.tif",
+      "sha256": "83dd790ffa3b2cf99a42f4de376549a87d5508096a347c544e0a870236e0674f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r02-c03\\image.tif",
+      "sha256": "788425f5d0901d5839ba7c7ebba6df7a07df13afed5be0063275786bf51f1fbe"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r03-c00\\image.tif",
+      "sha256": "1ddadd7eb78de95c8f17fb021e81009aaf992c4bc2e5a3dfad177455a48dbc58"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r03-c01\\image.tif",
+      "sha256": "4e17e73a6229c2aec5ae94b10932176b0f6de04452b97f6c61c8ccd2629f87b5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r03-c02\\image.tif",
+      "sha256": "7f5049c5fea297de6058d0b152e49704a757afa62de9e7c7e9d6d606b0961b37"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2020-v2-laneB-west_java-boundary-01\\r03-c03\\image.tif",
+      "sha256": "c297ef371c005a01217da480a30b013b93efcfc61d053dfb07818875bf1cb165"
+    }
+  ]
+}

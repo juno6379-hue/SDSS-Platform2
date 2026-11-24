@@ -1,0 +1,19 @@
+{
+  "schema_version": "source-document-receipt/1.0",
+  "source_id": "worldbank-cckp-repository-metadata",
+  "source_uri": "https://api.github.com/repos/worldbank/climateknowledgeportal",
+  "version": "content-sha256:7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58",
+  "sha256": "7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58",
+  "byte_count": 12342,
+  "acquired_at": "2026-11-24T10:42:46.228259+00:00",
+  "license": "NOT_VERIFIED",
+  "authority_status": "HOST_PINNED_NOT_INSTITUTION_CERTIFIED",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "ETag": "W/\"7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58\"",
+    "Last-Modified": "Wed, 30 Sep 2026 08:49:02 GMT"
+  },
+  "raw_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\raw\\3976367fd26790e625239af0bbf347c04846da17e5ce333d0d706f82bd5f529b.raw",
+  "state": "VERIFIED_REAL",
+  "retrieval_permitted": false
+}

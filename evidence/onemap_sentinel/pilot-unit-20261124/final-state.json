@@ -1,0 +1,10 @@
+{
+  "status": "VERIFIED_REAL",
+  "active_collectors": [],
+  "collector_count": 0,
+  "additional_pilots_started": 0,
+  "source_CAS_read_only": true,
+  "ledger_only_authorized_mutation": true,
+  "global_coverage_aggregate_updated": false,
+  "current_ledger_sha256": "b257db2925e5c4eac99081c5539216314c972d49dd6741f38f5780da7dd25de1"
+}

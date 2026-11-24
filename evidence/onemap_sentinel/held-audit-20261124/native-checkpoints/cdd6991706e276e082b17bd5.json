@@ -1,0 +1,128 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "banten",
+  "year": 2021,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\image.tif",
+  "verified_patch_count": 16,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\cdd6991706e276e082b17bd5-footprint.wkb",
+      "sha256": "f090099da0c8b5970122880cbd3ffdf494a66f82e4e1e697a2fed9426b88106e"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\cdd6991706e276e082b17bd5-present.wkb",
+      "sha256": "1c6c37dc90daeb5c2108f11286d441a38e4830f8491a2e2daa295e17786cbe2a"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\cdd6991706e276e082b17bd5-clear.wkb",
+      "sha256": "e1ef77c29157c0b17b95d129b90ecce2a68a350b6272d852f964caac4ff8de18"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\image.tif",
+      "sha256": "baa155965be2c6a574fd6d67cdf413b4e79dfeaaeeaab7ee420f9cc19e40235a"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\stac-item.json",
+      "sha256": "7eee9008c2e9a3b409f74434b9ce27320c6651e264df72656343f603cdf074ed"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-B02.tif",
+      "sha256": "02b24932ea7ca233e5a8ac25967659a246ab2bfb7d006f1cdf78d93472bb4ab4"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-B03.tif",
+      "sha256": "0d5e32746f23d683f591976dfc45529bcc8e9512274d983938ce42edd078c242"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-B04.tif",
+      "sha256": "3786ad66025fc6946f677a797b52025236d53f6812476ec9e3d2dce385db4bff"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-B08.tif",
+      "sha256": "f939634dac5857bb5dc33b0f85986034741a05ac0d5895384e3c2f69f6e943c8"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-B11.tif",
+      "sha256": "2993b8ddd62d126bdce44b90c4dc572a7070abc72e5da73808c18270531a9247"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-B12.tif",
+      "sha256": "944963045b80d61a4a34238561ac552fd7e36dfbc22d414ce2906b386d746a17"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-grid-esri_io-banten-2021-g01\\banten-g01-2021\\raw-SCL.tif",
+      "sha256": "b08e793e68a08327b238de45e9b88b8d11ad138c727df9c1b2eb0777fae90af3"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r00-c00\\image.tif",
+      "sha256": "f33a573a4d61a73ff8818e30dcd5bdbc116dadc76d5e6fc9c77f108c72aa465f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r00-c01\\image.tif",
+      "sha256": "e90e53a12ec814f2952abc2f77f61ec396ad80987fc1672ce31ddd0d8b585d66"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r00-c02\\image.tif",
+      "sha256": "c9e51e44388621e8bbe94ce27af633b6b147a329f804131da16bfdc80c901577"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r00-c03\\image.tif",
+      "sha256": "02119def7948686fb24518e7319d2c12e82eb29760f1efd1300b8a6ad80c47b2"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r01-c00\\image.tif",
+      "sha256": "8c88a466529bb53a29d4774117bee56b56934ae54b3081ca54b8e0945a676b58"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r01-c01\\image.tif",
+      "sha256": "cd31fdb27849fc92f982767a133220b63225f1fbdfff96fe8e9445495a0d8b7c"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r01-c02\\image.tif",
+      "sha256": "b00aaa176d59cb8dc070530f3e2ddd1d6e2843464fee140e7a930f6b8df630e1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r01-c03\\image.tif",
+      "sha256": "a8652d207bf96028e2a04f573212e78094ba0c009d1af58b155e92237cbdc9bc"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r02-c00\\image.tif",
+      "sha256": "eded0a2db6e7670f842f8693b3ea7f123d0aa773108a160fa4b5a0b089fcba6b"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r02-c01\\image.tif",
+      "sha256": "880cb7806e5ffa75f40aace7df75116000197697f9f0a22c7590a63e8be3d6f8"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r02-c02\\image.tif",
+      "sha256": "43d39401458bcdbfe1155002893864bf9e4fc64dc9212bf3615ec8cc4c2e145d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r02-c03\\image.tif",
+      "sha256": "982501e0c6832d09fd03ba10295496dbaf05b2434d546ad23783389f0b3cae41"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r03-c00\\image.tif",
+      "sha256": "c29944950b4df2c9e845eece982f48cb49edc3c843949b77eb1745d309b38bc1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r03-c01\\image.tif",
+      "sha256": "66680037e8b1f190b86916beb9d42c34fee4fff4561e86d71cd9c2ab8b7a3418"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r03-c02\\image.tif",
+      "sha256": "569e6ff069ab52a853e4112187b2466873d21a0976972a101f29f8ca77f19d7a"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-grid-esri_io-banten-2021-g01\\r03-c03\\image.tif",
+      "sha256": "6eafecbe25ecc67d2206fb18e02c22624b2ed1d480741f2bc4bafe05be062010"
+    }
+  ]
+}

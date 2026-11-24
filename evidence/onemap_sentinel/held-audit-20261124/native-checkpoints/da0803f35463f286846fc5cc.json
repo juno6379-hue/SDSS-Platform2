@@ -1,0 +1,112 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "west_java",
+  "year": 2021,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\image.tif",
+  "verified_patch_count": 12,
+  "remainder_native_pixels": 82944,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\da0803f35463f286846fc5cc-footprint.wkb",
+      "sha256": "cb81233a0f67f768171c849b5282d1b94febf667917d8d383fd678e2158fbbcc"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\da0803f35463f286846fc5cc-present.wkb",
+      "sha256": "c9dbf97c3750df1d5ede9c870bb533b32f3449fca070db6d7522cbf40baec6fa"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\da0803f35463f286846fc5cc-clear.wkb",
+      "sha256": "7a100264d6b463845bd89251ee6466606d419aa6874ee51ad98ee654482cb81a"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\image.tif",
+      "sha256": "d1355517510668dc995c7cf9b1e6920c54bfa151f31a296e518ad038d8d91446"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\stac-item.json",
+      "sha256": "ada41be1034b273161248ab62f4d271736e75e1a897845ddd29f184c1e0ac2ee"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-B02.tif",
+      "sha256": "881d93988b0a132e6f3067c5c43776119433564da420d76c97f1cd84c51cfea6"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-B03.tif",
+      "sha256": "0eadf39f049ba4afae5cee5b1e1e9571cb8cc83f4bdf6250e2fd0dfa34d437b6"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-B04.tif",
+      "sha256": "601b15e38ae4a84d34494a6e057f54a71aa5ca79fd266ba5484ef7adffc3e0ff"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-B08.tif",
+      "sha256": "5ba83a9d5d91b5a8c31ca2fd430314363d94092ce8eab14246390e1c156554ab"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-B11.tif",
+      "sha256": "f12917cef16e976928154c7d8e85121f991d68ad921d845489683de52e9f14de"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-B12.tif",
+      "sha256": "13252eaaadca15368f7156f4cce7da1673b27b8b6e628e884b89f9dc5dc12af4"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\west_java-extra-17-2021\\raw-SCL.tif",
+      "sha256": "8ff49a3e522ef5dfd7aa171e99b81be6729d8572ce3003591f7cb26bee4ce890"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c00\\image.tif",
+      "sha256": "b6e59039739c03fc0caa8cf83be173eda2b0f3fc9d2c99d682034dc8af91cc10"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c01\\image.tif",
+      "sha256": "56d30b056c6b51093d339522cdaf0997d9edcff62fcf07f1736a4b6d551b5827"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c02\\image.tif",
+      "sha256": "76b3d5dd8ea67ddfc4fc761b3e38c71c01f7b989b40e451f94717e4fe08b001d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r00-c03\\image.tif",
+      "sha256": "45848e4ff5583863ed1f21e983f2e48ce4eae4d0a81692c68c0e7e8c61bb7121"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c00\\image.tif",
+      "sha256": "287daa5e5cd37940397f9521e3f22c506a6e18c998efb91caad65b0e3fef8468"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c01\\image.tif",
+      "sha256": "5faa19a60863b3e6cb5f2917a6c17f0912720e9c5946988f61af818725401de0"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c02\\image.tif",
+      "sha256": "8ed61db36426bf9f2703bb5d3aa6af3b30d86513afd4b628a738698e1da4a6d4"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r01-c03\\image.tif",
+      "sha256": "cf1afa89ca5bde575b2bad6fa7fe41c831ec6c70bfd9d822ac479917fd4a170a"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c00\\image.tif",
+      "sha256": "9881ee6e5af0b53a9965a585fa1b86b56d90b4127531a87c6c2ee8971bc8b1fa"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c01\\image.tif",
+      "sha256": "8305a5d269c97547cabd2cbb41cd73d7bd5a92ad64f72d2f2b891c518e213612"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c02\\image.tif",
+      "sha256": "c46af749f341fcb4c028067d52c797b26793bc45bdbf9228b58cb6b773528490"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-west_java-2021-v2-laneB-west_java-boundary-01\\r02-c03\\image.tif",
+      "sha256": "a9feca58032d74ad11be88f96650f01aab967768d1448ee0573cb0e029b3dfbb"
+    }
+  ]
+}

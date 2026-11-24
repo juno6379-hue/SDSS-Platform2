@@ -1,0 +1,91 @@
+{
+  "status": "VERIFIED_REAL",
+  "historical_ledgers_unchanged": true,
+  "all_prior_batches_unchanged": true,
+  "preexisting_pending_preserved": [
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+  ],
+  "ledger_sha256_current": "b257db2925e5c4eac99081c5539216314c972d49dd6741f38f5780da7dd25de1",
+  "old_source_manifest_sha256": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+  "migration_receipt_sha256": "0204d1a1dcde0a471b512a1a042d5a05daa638214afde150762e5ea508f556e5",
+  "migrated_CAS_file_count": 6125,
+  "legacy_execution_lock_exists": false,
+  "legacy_ledger_lock_exists": false,
+  "quality_recomputed_from_native_SCL_matches": true,
+  "outputs": {
+    "image.tif": {
+      "path": "E:\\SDSS-Platform2\\data\\raw\\sentinel-pilots\\sdss2-pilot-154d9f5e507eced7ddfa09038a78f551c6784fd6803f8ab5f3e015a55e45f010\\image.tif",
+      "sha256": "26c90e00c6e5d25483a22874c0a8feeff2f4491144e9a33bfdfa04c26d5b3648",
+      "shape": [
+        6,
+        256,
+        256
+      ],
+      "crs": "EPSG:32749",
+      "transform": [
+        10.0,
+        0.0,
+        618550.0,
+        0.0,
+        -10.0,
+        9146540.0
+      ],
+      "resolution": [
+        10.0,
+        10.0
+      ]
+    },
+    "aligned-SCL.tif": {
+      "path": "E:\\SDSS-Platform2\\data\\raw\\sentinel-pilots\\sdss2-pilot-154d9f5e507eced7ddfa09038a78f551c6784fd6803f8ab5f3e015a55e45f010\\aligned-SCL.tif",
+      "sha256": "ab35008efa0c9dd0419663f0801761c0310afac96d4913245c3e02f2515002af",
+      "shape": [
+        1,
+        256,
+        256
+      ],
+      "crs": "EPSG:32749",
+      "transform": [
+        10.0,
+        0.0,
+        618550.0,
+        0.0,
+        -10.0,
+        9146540.0
+      ],
+      "resolution": [
+        10.0,
+        10.0
+      ]
+    },
+    "quality.tif": {
+      "path": "E:\\SDSS-Platform2\\data\\raw\\sentinel-pilots\\sdss2-pilot-154d9f5e507eced7ddfa09038a78f551c6784fd6803f8ab5f3e015a55e45f010\\quality.tif",
+      "sha256": "42744e507e753c67fcadbf0a841058281b91e9464af7d01457a7821ebb6bb737",
+      "shape": [
+        1,
+        256,
+        256
+      ],
+      "crs": "EPSG:32749",
+      "transform": [
+        10.0,
+        0.0,
+        618550.0,
+        0.0,
+        -10.0,
+        9146540.0
+      ],
+      "resolution": [
+        10.0,
+        10.0
+      ]
+    }
+  },
+  "remote_status_counts": {
+    "200": 8,
+    "206": 20
+  },
+  "head_count": 7,
+  "range_body_bytes": 7471104,
+  "metadata_body_bytes": 402
+}

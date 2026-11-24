@@ -1,0 +1,31 @@
+{
+  "status": "VERIFIED_REAL",
+  "subset_path": "indonesia-bbox-values.csv",
+  "sha256": "9ef641970b744c9ce18fcef2e749058442d3370c6643ebfed739d2313703ad91",
+  "rows": 12765,
+  "bbox": [
+    95,
+    -11,
+    141,
+    6
+  ],
+  "raw_sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7",
+  "period": "1951-1980 climatology",
+  "country_administrative_subset": false,
+  "license": "CC-BY-4.0",
+  "citations": [
+    {
+      "source_uri": "s3://wbg-cckp/data/era5-x0.25/cdd/era5-x0.25-historical/climatology-cdd-annual-max_era5-x0.25_era5-x0.25-historical_climatology_mean_1951-1980.nc",
+      "sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7",
+      "locator": "climatology-cdd-annual-max[time=0,selected lat/lon centers]"
+    },
+    {
+      "source_uri": "https://datacatalog.worldbank.org/search/dataset/0065626/climate-change-knowledge-portal-observed-climate-data-era5-0-25-degree",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "source_uri": "https://cds.climate.copernicus.eu",
+      "institution": "ECMWF / Copernicus Climate Data Store"
+    }
+  ]
+}

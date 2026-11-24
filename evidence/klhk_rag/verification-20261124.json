@@ -1,0 +1,113 @@
+{
+  "recorded_at": "2026-11-24T10:49:18.522908+00:00",
+  "actual_requests": 10,
+  "actual_body_bytes": 381676,
+  "acquired_documents": [
+    {
+      "source_id": "worldbank-cckp-repository-metadata",
+      "source_uri": "https://api.github.com/repos/worldbank/climateknowledgeportal",
+      "version": "content-sha256:7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58",
+      "sha256": "7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58",
+      "bytes": 12342,
+      "chunks": 13,
+      "graph_path": "evidence\\klhk_rag\\live-20261124-1\\graphs\\doc-7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58.kg.json",
+      "source_authority_certified": false,
+      "public_index_status": "BLOCKED_PENDING_CURATED_METADATA"
+    },
+    {
+      "source_id": "worldbank-cckp-commit",
+      "source_uri": "https://api.github.com/repos/worldbank/climateknowledgeportal/commits?per_page=1",
+      "version": "content-sha256:3c9a603799d674c82553ca9719c06f5d2fd60489a0eccdbebcccd3fd30972ff8",
+      "sha256": "3c9a603799d674c82553ca9719c06f5d2fd60489a0eccdbebcccd3fd30972ff8",
+      "bytes": 4959,
+      "chunks": 5,
+      "graph_path": "evidence\\klhk_rag\\live-20261124-1\\graphs\\doc-3c9a603799d674c82553ca9719c06f5d2fd60489a0eccdbebcccd3fd30972ff8.kg.json",
+      "source_authority_certified": false,
+      "public_index_status": "BLOCKED_PENDING_CURATED_METADATA"
+    },
+    {
+      "source_id": "worldbank-cckp-file-list",
+      "source_uri": "https://api.github.com/repos/worldbank/climateknowledgeportal/contents?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2",
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2",
+      "sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "bytes": 8626,
+      "chunks": 9,
+      "graph_path": "evidence\\klhk_rag\\live-20261124-1\\graphs\\doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4.kg.json",
+      "source_authority_certified": false,
+      "public_index_status": "BLOCKED_PENDING_CURATED_METADATA"
+    },
+    {
+      "source_id": "worldbank-cckp-README.md",
+      "source_uri": "https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md",
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2",
+      "sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "bytes": 11335,
+      "chunks": 12,
+      "graph_path": "evidence\\klhk_rag\\live-20261124-1\\graphs\\doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4.kg.json",
+      "source_authority_certified": false,
+      "public_index_status": "BLOCKED_PENDING_CURATED_METADATA"
+    },
+    {
+      "source_id": "worldbank-cckp-LICENSE",
+      "source_uri": "https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/LICENSE",
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2",
+      "sha256": "8aa28514e2349015499252fc120dc6f6a7b99312312ba45ab1a920f2e45b5783",
+      "bytes": 16710,
+      "chunks": 17,
+      "graph_path": "evidence\\klhk_rag\\live-20261124-1\\graphs\\doc-8aa28514e2349015499252fc120dc6f6a7b99312312ba45ab1a920f2e45b5783.kg.json",
+      "source_authority_certified": false,
+      "public_index_status": "BLOCKED_PENDING_CURATED_METADATA"
+    },
+    {
+      "source_id": "klhk-landcover-2024",
+      "source_uri": "https://geoportal.planologi.kehutanan.go.id/server/rest/services/Peta_Interaktif_2026/PL2024_AR_50K/MapServer/0?f=pjson",
+      "version": "metadata-sha256:ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df",
+      "sha256": "ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df",
+      "bytes": 32779,
+      "chunks": 33,
+      "graph_path": "evidence\\klhk_rag\\live-20261124-1\\graphs\\doc-ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df.kg.json",
+      "source_authority_certified": false,
+      "public_index_status": "BLOCKED_PENDING_CURATED_METADATA",
+      "year": 2024,
+      "year_verified": true,
+      "renderer_count": 25,
+      "native_23_verified": false,
+      "license_verified": false
+    },
+    {
+      "source_id": "klhk-landcover-2025",
+      "source_uri": "https://geoportal.planologi.kehutanan.go.id/server/rest/services/Peta_Interaktif_2026/PL_AR_250K/MapServer/0?f=pjson",
+      "version": "metadata-sha256:37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+      "sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+      "bytes": 32780,
+      "chunks": 33,
+      "graph_path": "evidence\\klhk_rag\\live-20261124-1\\graphs\\doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332.kg.json",
+      "source_authority_certified": false,
+      "public_index_status": "BLOCKED_PENDING_CURATED_METADATA",
+      "year": 2025,
+      "year_verified": true,
+      "renderer_count": 25,
+      "native_23_verified": false,
+      "license_verified": false
+    }
+  ],
+  "actual_document_count": 7,
+  "actual_chunk_count": 122,
+  "public_index_publications": 0,
+  "quantitative_rag_answers": 0,
+  "institution_authority_certified": false,
+  "embedding_quality_verified": false,
+  "live_dictionary_status": "BLOCKED",
+  "live_dictionary_blocker": "DOCUMENT_TOO_LARGE",
+  "source_report": "live-20261124-1/summary.json",
+  "dictionary_retry_report": "dictionary-20261124-bounded-retry/summary.json",
+  "measurement_scope": "Python bounded connector primary run + one dictionary retry; web source research excluded from byte/request counters",
+  "synthetic_tests": {
+    "tests": 29,
+    "failures": 0,
+    "errors": 0,
+    "junit": "evidence/klhk_rag/synthetic-tests.xml"
+  },
+  "raw_sha_mismatches": 0,
+  "raw_documents_checked": 7
+}

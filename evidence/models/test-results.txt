@@ -1,0 +1,19 @@
+test_artifact_actual_sha_and_path_containment (test_specialized_models.ModelContractTests.test_artifact_actual_sha_and_path_containment) ... ok
+test_climate_metadata_and_asof_propagation (test_specialized_models.ModelContractTests.test_climate_metadata_and_asof_propagation) ... ok
+test_climate_required_semantics_and_rag_acl_signature_cannot_be_removed (test_specialized_models.ModelContractTests.test_climate_required_semantics_and_rag_acl_signature_cannot_be_removed) ... ok
+test_common_data_gate_scene_leakage_propagates (test_specialized_models.ModelContractTests.test_common_data_gate_scene_leakage_propagates) ... ok
+test_legacy_sha_mismatch_never_deserializes (test_specialized_models.ModelContractTests.test_legacy_sha_mismatch_never_deserializes) ... ok
+test_missing_data_artifacts_never_become_ready (test_specialized_models.ModelContractTests.test_missing_data_artifacts_never_become_ready) ... ok
+test_rag_acl_before_embedding_and_tokenization (test_specialized_models.ModelContractTests.test_rag_acl_before_embedding_and_tokenization) ... ok
+test_rag_numeric_question_cannot_generate_answer (test_specialized_models.ModelContractTests.test_rag_numeric_question_cannot_generate_answer) ... ok
+test_registry_version_is_not_overwritten_or_promoted (test_specialized_models.ModelContractTests.test_registry_version_is_not_overwritten_or_promoted) ... ok
+test_scl_grid_nan_and_non_synthetic_inputs_rejected (test_specialized_models.ModelContractTests.test_scl_grid_nan_and_non_synthetic_inputs_rejected) ... ok
+test_synthetic_lcluc_cloud_mask_and_determinism_not_segmentation (test_specialized_models.ModelContractTests.test_synthetic_lcluc_cloud_mask_and_determinism_not_segmentation) ... ok
+test_three_catalog_manifests_round_trip_and_signature_tamper (test_specialized_models.ModelContractTests.test_three_catalog_manifests_round_trip_and_signature_tamper) ... ok
+test_unverified_23_class_mapping_and_band_order_rejected (test_specialized_models.ModelContractTests.test_unverified_23_class_mapping_and_band_order_rejected) ... ok
+test_weak_reference_and_unbound_deployment_never_promoted (test_specialized_models.ModelContractTests.test_weak_reference_and_unbound_deployment_never_promoted) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.600s
+
+OK

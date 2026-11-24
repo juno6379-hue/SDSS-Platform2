@@ -1,0 +1,143 @@
+{
+  "schema_version": "specialized-readiness/1.0",
+  "generated_at": "2026-11-24T11:21:06.242000+00:00",
+  "status": "BLOCKED",
+  "models": [
+    {
+      "model_id": "lcluc_segmentation",
+      "version": "v1",
+      "input_signature_sha256": "c7ccb8c432b8346658495fb5d8fb2974b1ac03f19beb32a462e8ea3a73f09915",
+      "lifecycle": "Draft",
+      "evidence_state": "BLOCKED",
+      "runtime_contract": "IMPLEMENTED_UNVERIFIED",
+      "axes": {
+        "training": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "CLASS_BALANCE_EVIDENCE_MISSING",
+            "CLASS_MAPPING_23_NOT_VALIDATED",
+            "DATA_READINESS_EVIDENCE_MISSING"
+          ]
+        },
+        "inference": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "CHECKPOINT_MISSING",
+            "CLASS_MAPPING_23_NOT_VALIDATED",
+            "PRODUCTION_EXECUTOR_NOT_IMPLEMENTED",
+            "REPRODUCIBLE_ENVIRONMENT_MISSING",
+            "TRAINING_REPORT_MISSING"
+          ]
+        },
+        "deployment": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "CHECKPOINT_MISSING",
+            "CLASS_BALANCE_EVIDENCE_MISSING",
+            "CLASS_MAPPING_23_NOT_VALIDATED",
+            "DATA_READINESS_EVIDENCE_MISSING",
+            "DEPLOYMENT_EVIDENCE_MISSING",
+            "INDEPENDENT_ACCURACY_MISSING",
+            "PRODUCTION_EXECUTOR_NOT_IMPLEMENTED",
+            "REPRODUCIBLE_ENVIRONMENT_MISSING",
+            "TRAINING_REPORT_MISSING"
+          ]
+        }
+      },
+      "independent_metrics": null,
+      "scientific_execution_started": false
+    },
+    {
+      "model_id": "structured_climate_features",
+      "version": "v1",
+      "input_signature_sha256": "66c42d7435e01e6a9f0cd8353660959ece0e5729c569c5407159592d2698fef1",
+      "lifecycle": "Draft",
+      "evidence_state": "BLOCKED",
+      "runtime_contract": "IMPLEMENTED_UNVERIFIED",
+      "axes": {
+        "training": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "TYPE_SPECIFIC_TRAINING_POLICY_NOT_IMPLEMENTED"
+          ]
+        },
+        "inference": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "CHECKPOINT_MISSING",
+            "PRODUCTION_EXECUTOR_NOT_IMPLEMENTED",
+            "REPRODUCIBLE_ENVIRONMENT_MISSING",
+            "TRAINING_REPORT_MISSING"
+          ]
+        },
+        "deployment": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "CHECKPOINT_MISSING",
+            "PRODUCTION_EXECUTOR_NOT_IMPLEMENTED",
+            "REPRODUCIBLE_ENVIRONMENT_MISSING",
+            "TRAINING_REPORT_MISSING",
+            "TYPE_SPECIFIC_DEPLOYMENT_POLICY_NOT_IMPLEMENTED",
+            "TYPE_SPECIFIC_TRAINING_POLICY_NOT_IMPLEMENTED"
+          ]
+        }
+      },
+      "independent_metrics": null,
+      "scientific_execution_started": false
+    },
+    {
+      "model_id": "rag_embedding_reranker",
+      "version": "v1",
+      "input_signature_sha256": "e99404247ec7c2f32011d30e6fdb393486dbf06b754e01955c519e940ae63d33",
+      "lifecycle": "Draft",
+      "evidence_state": "BLOCKED",
+      "runtime_contract": "IMPLEMENTED_UNVERIFIED",
+      "axes": {
+        "training": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "TYPE_SPECIFIC_TRAINING_POLICY_NOT_IMPLEMENTED"
+          ]
+        },
+        "inference": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "CHECKPOINT_MISSING",
+            "PRODUCTION_EXECUTOR_NOT_IMPLEMENTED",
+            "REPRODUCIBLE_ENVIRONMENT_MISSING",
+            "TRAINING_REPORT_MISSING"
+          ]
+        },
+        "deployment": {
+          "status": "BLOCKED",
+          "allowed": false,
+          "blockers": [
+            "CHECKPOINT_MISSING",
+            "PRODUCTION_EXECUTOR_NOT_IMPLEMENTED",
+            "REPRODUCIBLE_ENVIRONMENT_MISSING",
+            "TRAINING_REPORT_MISSING",
+            "TYPE_SPECIFIC_DEPLOYMENT_POLICY_NOT_IMPLEMENTED",
+            "TYPE_SPECIFIC_TRAINING_POLICY_NOT_IMPLEMENTED"
+          ]
+        }
+      },
+      "independent_metrics": null,
+      "scientific_execution_started": false
+    }
+  ],
+  "data_readiness": null,
+  "data_note": "No data evidence imported or fabricated in this repository",
+  "legacy_audit": "legacy-checkpoint-audit.json",
+  "synthetic_smoke": "synthetic-smoke.json",
+  "independent_metrics": null,
+  "training_started": false,
+  "deployment_started": false
+}

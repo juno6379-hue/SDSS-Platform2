@@ -1,0 +1,12 @@
+{
+  "status": "TESTED_SYNTHETIC_AND_VERIFIED_REAL_EVIDENCE_SEPARATED",
+  "command": "python -B -m unittest discover -s tests/climate_query -v",
+  "tests": 14,
+  "passed": 14,
+  "synthetic_tests": 12,
+  "real_read_only_tests": 2,
+  "seconds": 4.395,
+  "ruff": "PASS",
+  "network_requests_during_tests": 0,
+  "training_executed": false
+}

@@ -1,0 +1,128 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "banten",
+  "year": 2023,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\image.tif",
+  "verified_patch_count": 16,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\b69bbb2532d7ce6b5e1aa1f8-footprint.wkb",
+      "sha256": "bf3a37a56a0bea9c2e053720e3db42569f163c0a12270c7092a967f3cec74733"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\b69bbb2532d7ce6b5e1aa1f8-present.wkb",
+      "sha256": "47429ad219a9ef34b50aace50854bda42f93464bfc85d970cfd127d5f01d3b0c"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\b69bbb2532d7ce6b5e1aa1f8-clear.wkb",
+      "sha256": "6f6ca270f14bda8ecb4b7f9bfa598ba758720c0f342cd2528aa4f72aaafeb8d4"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\image.tif",
+      "sha256": "cd9754afbfb2e03b2cb3d17165ff08c3d14ff82ee5eedbab4017e5b276143f0d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\stac-item.json",
+      "sha256": "fb85fdd46021b251df364e87f570e9e6f78c2583cf3956a167e985dc39b1fa3a"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-B02.tif",
+      "sha256": "2fa0b16607fd968f87f2cf2004082f96167a35bb5ec876b9847c6ba0797a7f5f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-B03.tif",
+      "sha256": "a55be505cb81dcc87125150504f4da0ce246f40f2040e5b613640e73dabc2104"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-B04.tif",
+      "sha256": "1b9b40ee5c77ef11be63053bb511e7869777e559451c5abcdeea4d03a16937da"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-B08.tif",
+      "sha256": "3ce0b0aef8563b000ee26690ef73f99292f94c57344c5ec190996a2d5d5a615b"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-B11.tif",
+      "sha256": "a653ab600b99e0034e174ab0da70ea7672b970a32e5e04f7a1ff7c12c7a188f2"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-B12.tif",
+      "sha256": "69b0c971b5fd92f423e31b0ece50f5f86ee6f2bf2518b85843f7ad9b7b01b8fd"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\banten-extra-08-2023\\raw-SCL.tif",
+      "sha256": "5505c598094f71255c5d2ec8a5ec5f8b4887091b5187a75630cdd327e81097f4"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r00-c00\\image.tif",
+      "sha256": "a37570469312511865e10ef9c397bac5f499e2d26ba6dfa74427ee14a727f39a"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r00-c01\\image.tif",
+      "sha256": "d6fe3bb1c9b79a0a9e13bfd3f4186ed5317cbc68088f2c336f4cf720f405c676"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r00-c02\\image.tif",
+      "sha256": "ca26e00ec2adb911b36749490fb65d958feb507b3964cf014eaa2fdd3d19ee31"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r00-c03\\image.tif",
+      "sha256": "43bcd6a0d307bd360000eee26aef2dba2c7259aa8c9cf0065e33db1773892565"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r01-c00\\image.tif",
+      "sha256": "654bc6ee747ab333a1b79d2fcc3abb741444086c75dbee5ed4d5c4f25f0cf7c5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r01-c01\\image.tif",
+      "sha256": "4f5a506cc8be5811ccbd2848976307291851d52a92438744c07e355e37c21c82"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r01-c02\\image.tif",
+      "sha256": "9a5f9b5f8d9d2e404d78e3268b3019a76fdb079674e974714713399eb7fdb2a3"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r01-c03\\image.tif",
+      "sha256": "9f0f8fa94fa8870a00541aedc74c656c878c7f434545da68377090117d88112d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r02-c00\\image.tif",
+      "sha256": "5b7a78b7874c3780f45fb778d0eb57b8767e860bbcc164b23d97b5a66c1b0011"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r02-c01\\image.tif",
+      "sha256": "b1795c0375a19efa8945e626b37d90ab5fc753838365c6ec8dba92c16c745a82"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r02-c02\\image.tif",
+      "sha256": "9a94866ec25dd0e8166e9c6f8a83d872e984f67ec374cffea70662d217772ee0"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r02-c03\\image.tif",
+      "sha256": "df65b1eb888142c9d9b37dfbeccffedddd8597ed89e921f8bdac4cea6f3ac22e"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r03-c00\\image.tif",
+      "sha256": "aeb9947d30473531614dbcc62de6e34087a7d8c286bb3192da1f5d61d545dae1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r03-c01\\image.tif",
+      "sha256": "05095b09528e982c8b6bb35606453eb678b21065af495d70041e16c5d331c2a4"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r03-c02\\image.tif",
+      "sha256": "c85f83e23cacce242aade5f7eb91593779bf5acb2ac6eeaa6579f160b88788e6"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-00\\r03-c03\\image.tif",
+      "sha256": "e10c542081020e8aee6ca472cf6d23147b52efef47ffa9be5483a31b66e57a39"
+    }
+  ]
+}

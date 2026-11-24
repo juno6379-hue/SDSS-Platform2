@@ -3,8 +3,8 @@
 - updated_at: 2026-11-24 KST
 - source_commit: `UNCOMMITTED_BOOTSTRAP` (현재 브랜치에 아직 커밋 없음)
 - evidence_paths: `docs/architecture/V42_EXECUTION_PLAN.md`, `services/contracts/climate.py`, `services/datahub/connectors/cckp/`, `services/datahub/climate/`, `services/geoai/features/`, `services/rag/`, 관련 `tests/`, `docs/ai/climate/`
-- confidence: 완료 코드, 실제 CCKP 제한형 탐색 증거, 71개 합성 계약시험을 직접 대조했다. `VERIFIED_REAL`은 익명 S3 목록 5페이지 5,289B와 목록에 있던 NetCDF 1건의 HEAD 200에만 적용한다.
-- status: CCKP 제한형 탐색 일부는 `VERIFIED_REAL`; source/lake/feature/RAG 계약은 `TESTED_SYNTHETIC`; Indonesia 자료 계획·실제 NetCDF 본문·수치 feature·운영 서비스는 `BLOCKED` 또는 `PLANNED`; 전체 v4.2는 `IMPLEMENTED_UNVERIFIED`이다.
+- confidence: 완료 코드, 실제 CCKP 탐색·원본·numeric evidence와 시험을 직접 대조했다. `VERIFIED_REAL` 수치는 한 개 ERA5 CDD climatology 원본과 개발 bbox 집계에만 적용한다.
+- status: CCKP 제한형 탐색과 한 개 ERA5 CDD bbox 통계는 `VERIFIED_REAL`; source/lake/feature/RAG 계약은 `TESTED_SYNTHETIC`; 행정경계 통계·일반화된 수치 API·운영 서비스는 `BLOCKED` 또는 `PLANNED`; 전체 v4.2는 `IMPLEMENTED_UNVERIFIED`이다.
 
 ## 1. 쉬운 설명
 
@@ -15,7 +15,7 @@ v4.2의 핵심은 **기후 숫자를 검색 문서의 비슷한 문장에서 만
 - “강수량이 무엇인가?”, “SSP245 방법론은 무엇인가?” 같은 설명 질문은 근거 문서 창구가 원문 인용을 찾아준다.
 - “2050년 인도네시아 강수량은 몇 mm인가?” 같은 수치 질문은 문서 창구가 답하지 않고 구조화 기후 도구 창구로 보낸다.
 
-현재는 두 창구를 구분하는 규칙, 제한형 CCKP 목록 탐색, 원본 receipt 계약, 자료의 출처표, CF 달력·단위 검사, 미래누출 방지형 공간 조인 계획, 접근권한, 인용 검증까지 구현했다. 실제로 확인한 것은 공개 S3 목록 5페이지 5,289B와 그 목록에 있던 NetCDF 한 건의 HEAD 200뿐이다. NetCDF 본문은 0B이고 Indonesia 식별자·국가별 경로도 확인되지 않았다. 따라서 CCKP의 실제 값, 독립 정확도, 기관 승인, 학습·배포 준비를 완료했다고 말하면 안 된다.
+현재는 두 창구를 구분하는 규칙, 제한형 CCKP 탐색·취득, 원본 receipt, CF 달력·단위 검사, 미래누출 방지형 공간 조인 계획, 접근권한, 인용 검증까지 구현했다. 이후 실제 4,209,592B ERA5 CDD NetCDF를 SHA로 고정해 1951–1980 제공 climatology의 개발 bbox 평균 40.91221481742199 days를 재현했다. 단, 인도네시아 행정경계 평균·연별/월별 시계열·독립 정확도가 아니며 live 서비스·학습·배포는 0건이다.
 
 ## 2. 이론적 배경
 
@@ -52,7 +52,7 @@ flowchart TD
   Q[ko/id/en 질문] --> R{route_question}
   R -->|정량·현재값·연도/단위| T[structured climate tool]
   R -->|명시적 설명·방법론| H[HybridIndex]
-  T -->|실제 도구 미연결| B[BLOCKED / TOOL_REQUIRED]
+  T -->|한정된 CDD 로컬 도구| B[고정 raw·CF·license 검증]
   H --> A[ACL·license·유효기간 선필터]
   A --> M[변수·모델·시나리오·달력·공간·시간 필터]
   M --> S[BM25 + 합성 hash vector + metadata score]
@@ -75,7 +75,9 @@ flowchart TD
 - `VERIFIED_REAL`: root부터 ERA5 CDD historical까지 S3 목록 5페이지, 응답 XML 합계 5,289B
 - `VERIFIED_REAL`: 목록의 NetCDF 1건 HEAD 200, 크기 4,209,592B와 ETag 일치
 - `BLOCKED`: Indonesia 식별자 또는 국가별 prefix가 목록에서 확인되지 않아 download plan 없음
-- `BLOCKED`: 실제 NetCDF GET 본문 0B, CF metadata·단위·달력·CRS·수치 미확인
+- `VERIFIED_REAL`: 후속 승인 Gate에서 4,209,592B 원본을 Range 17개로 취득하고 SHA·CF·NETCDF3_CLASSIC을 검증
+- `VERIFIED_REAL`: 1951–1980 CDD climatology bbox full-cell 구면가중 평균 40.91221481742199 days
+- `BLOCKED`: 인도네시아 행정경계 평균, 연별/월별 값, 일반화된 live 수치 서비스
 
 ETag는 SHA-256으로 간주하지 않는다. 합성 fixture의 `country/IDN/`은 안전계약 시험용이지 실제 CCKP 구조의 증거가 아니다.
 
@@ -131,7 +133,7 @@ python -X utf8 -m compileall -q services/contracts services/rag services/datahub
 - climate lake 12개: CF 달력·단위 차원/기간변환·projection 의미·고정 버전/URI·RAW metadata 차단·경로 제한
 - climate feature 12개: 경계/자료 as-of·직접/간접 미래누출·ACL·projection role·CRS·bbox cell edge·위도축 방향
 
-이 71개 시험은 모두 합성 문서·fixture 기반 `TESTED_SYNTHETIC`이다. 별도의 실제 네트워크 증거는 목록 5페이지와 HEAD 한 건뿐이다. 실제 CCKP NetCDF 본문, Indonesia 수치, 실제 공간 join/numeric feature, 모델 학습·배포, semantic embedding, 기관 인증, 독립 과학 정확도는 검증하지 않았다.
+이 71개 시험은 모두 합성 문서·fixture 기반 `TESTED_SYNTHETIC`이다. 이후 별도 climate.query Gate에서 실제 4,209,592B 원본과 CDD bbox 수치를 read-only 재현 2건으로 검증했다. 이 제한 실증은 실제 행정경계 join/numeric feature, 모델 학습·배포, semantic embedding, 기관 인증, 독립 과학 정확도를 검증하지 않는다.
 
 ### Gate 상태
 
@@ -139,36 +141,36 @@ python -X utf8 -m compileall -q services/contracts services/rag services/datahub
 |---|---|---|
 | CLIM-01 공통 metadata·lineage | `TESTED_SYNTHETIC` | Pydantic 계약 5 PASS; 운영 ingestion 미연결 |
 | CLIM-02 CCKP inventory/discovery | `VERIFIED_REAL` / `BLOCKED` | 목록 5페이지 5,289B와 HEAD 1건만 실제 확인; Indonesia prefix 미확인 |
-| CLIM-03 immutable RAW receipt | `TESTED_SYNTHETIC` | receipt·재개·중복·예산·429 계약 24 PASS; 실제 GET 0B |
-| CLIM-04 CF 달력·단위·관측/전망 QC | `TESTED_SYNTHETIC` | lake 계약 12 PASS; 실제 numeric QA·curated publication 없음 |
+| CLIM-03 immutable RAW receipt | `VERIFIED_REAL` / `TESTED_SYNTHETIC` | 한 NetCDF 4,209,592B·17 Range·SHA/receipt 검증; 일반 계약 24 PASS |
+| CLIM-04 CF 달력·단위·관측/전망 QC | `VERIFIED_REAL` / `TESTED_SYNTHETIC` | 한 CDD 원본 CF-1.6·NETCDF3_CLASSIC·기간/단위 검증; 일반 lake 계약 12 PASS |
 | CLIM-05 시공간 feature join | `TESTED_SYNTHETIC` | planner 12 PASS; 실제 join 0, `execution_started=false`, `numeric_features=null` |
 | CLIM-06 ontology/KG/ACL/citation | `TESTED_SYNTHETIC` | 실제 문서/identity provider 미연결 |
-| CLIM-07 hybrid retrieval/tool routing | `TESTED_SYNTHETIC` | 합성 hash vector; 실제 수치 도구 BLOCKED |
+| CLIM-07 hybrid retrieval/tool routing | `VERIFIED_REAL` / `TESTED_SYNTHETIC` | 한 CDD bbox 로컬 tool 14 PASS; 운영 embedding·live 등록은 BLOCKED |
 | CLIM-08 통합 인수·운영 인계 | `BLOCKED` | 실제 원천·API/UI·보안·운영 검증 필요 |
 
 ## 5. 발표 스크립트
 
 ### 1분
 
-“v4.2에서는 기후 설명과 숫자의 답변 경로를 분리하고, CCKP 자료도 추측 없이 제한적으로 탐색하도록 만들었습니다. 실제로 확인한 것은 공개 S3 목록 5페이지 5,289바이트와 목록에 있던 NetCDF 한 건의 HEAD 200뿐이며 본문은 받지 않았습니다. source·lake·feature·RAG 계약은 합성 시험 71건을 통과했지만 Indonesia 국가 경로, 실제 수치 feature, 학습·배포, 기관 인증은 아직 차단되어 전체 완료가 아닙니다.”
+“v4.2에서는 기후 설명과 숫자의 답변 경로를 분리하고, 실제 CCKP 원본 한 건을 SHA로 고정해 CDD bbox 통계를 재현했습니다. 1951–1980 climatology의 12,765개 native 셀 구면가중 평균은 40.91221481742199일입니다. 하지만 인도네시아 행정경계 평균이나 연별·월별 시계열이 아니고 ERA5는 독립 ground truth가 아닙니다. live 서비스·학습·배포는 0건이므로 전체 완료는 아닙니다.”
 
 ### 5분 핵심 순서
 
 1. 문제: 벡터 유사도가 숫자 사실과 기관 authority를 보증하지 않는다.
 2. 계약: 출처 URI·버전·SHA·단위·달력·관측/전망·모델·시나리오를 fail-closed로 고정한다.
 3. 설명 경로: ACL 선필터 후 BM25·합성 vector·metadata로 순위를 만들고 원문 citation을 재검증한다.
-4. 정량 경로: `climate.query`를 요구하며 실제 구조화 도구가 없으면 차단한다.
-5. source/lake/feature: bounded 목록·receipt·CF/as-of/ACL/bbox 계획은 fail-closed이며 실행 결과 숫자는 없다.
-6. 증거: contract/RAG 23 + source 24 + lake/feature 24 = 71 합성 시험, 실제 목록 5페이지와 HEAD 1건.
-7. 한계: Indonesia 경로·실제 CCKP 값·공간 조인·학습·배포·기관 인증·독립 정확도는 미검증이다.
+4. 정량 경로: `climate.query`가 고정 raw·CF·license가 맞는 한 CDD bbox 통계만 반환한다.
+5. source/lake/feature: bounded 목록·receipt·CF/as-of/ACL 계약은 fail-closed이며 일반 feature planner 숫자는 여전히 null이다.
+6. 증거: 기존 합성 71과 별도로 climate.query 합성 12 + 실재현 2가 통과했다.
+7. 한계: 검증값은 행정경계 평균·연별/월별 시계열·독립 ground truth가 아니며 live 서비스·학습·배포는 0건이다.
 
 ## 6. Q&A
 
 **Q. 이제 CCKP의 실제 2050년 강수량을 답할 수 있나?**
-아니다. 정량 질문을 구조화 도구로 보내는 계약만 있다. 공식 API/Grid/Parquet/PostGIS 도구가 연결·검증되기 전에는 숫자를 답하지 않는다.
+아니다. 실제 검증 범위는 1951–1980 CDD climatology의 한정된 bbox 통계뿐이다. 2050년 강수량은 해당 변수·기간·모델의 검증 원본 없이는 답하지 않는다.
 
 **Q. CCKP 연동이 실제로 된 것은 무엇인가?**
-익명 공개 S3 목록 5페이지와 목록에 있던 NetCDF 한 건의 HEAD만 실제 확인했다. 본문은 0B이며 Indonesia 국가 prefix가 확인되지 않아 실제 국가 다운로드 계획은 차단된다.
+공개 S3 목록과 HEAD 이후, 실제 global ERA5 CDD NetCDF 4,209,592B를 Range 17개로 취득하고 SHA·CF·기간·단위를 검증했다. 국가 object가 아니라 global grid에서 개발 bbox를 선택한 것이며 행정경계 평균은 아니다.
 
 **Q. feature join 결과를 모델에 바로 쓸 수 있나?**
 아니다. 현재는 bbox 기반 native cell 후보를 계획하고 누출·ACL·달력·CRS를 검사할 뿐이다. `execution_started=false`, `numeric_features=null`이며 실제 공간 조인·학습·배포는 0건이다.

@@ -1,0 +1,21 @@
+{
+  "status": "PREFLIGHT_READY",
+  "errors": [],
+  "ledger_sha256": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+  "remaining_bytes": 1685992536,
+  "reservation_bytes": 33554432,
+  "active_collectors": [],
+  "free_bytes": 1963077623808,
+  "preexisting_pending": [
+    "parallel-v2-extra-banten-2023-v2-laneB-banten-boundary-01",
+    "parallel-v2-extra-west_java-2023-v2-laneB-west_java-boundary-01"
+  ],
+  "asset_pin_state": "HEAD_REQUIRED_NOT_EXECUTED",
+  "remote_requests": 0,
+  "ledger_writes": 0,
+  "acceptance_blockers": [
+    "BIG_AUTHORITY_APPROVAL_PENDING",
+    "FULL_SPATIAL_COVERAGE_FALSE",
+    "INDEPENDENT_GROUND_TRUTH_UNVERIFIED"
+  ]
+}

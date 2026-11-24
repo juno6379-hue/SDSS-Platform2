@@ -1,0 +1,15 @@
+{
+  "schema_version": "cckp-global-grid-one/1.0",
+  "scope": "GLOBAL_GRID_NOT_COUNTRY_OBJECT",
+  "key": "data/era5-x0.25/cdd/era5-x0.25-historical/climatology-cdd-annual-max_era5-x0.25_era5-x0.25-historical_climatology_mean_1951-1980.nc",
+  "size": 4209592,
+  "etag": "\"89a1fc4164f41e1db1e22e776918d4df\"",
+  "inventory_id": "02f758fc994c32aa6ccfc7a54ceb29d310f833a30abe5cd1f3ca2ad3bcc612aa",
+  "inventory_sha256": "16b037d6fe7b4ed48a72e479aecae83c9a823f0c6616a02b49dce516266de01d",
+  "listing_file_sha256": "00dbc68bf8782a823825cbfda683a782571df30d139b9637df1814d690c0c16a",
+  "max_files": 1,
+  "max_bytes": 67108864,
+  "license": "CC-BY-4.0",
+  "license_source_uri": "https://datacatalog.worldbank.org/search/dataset/0065626/climate-change-knowledge-portal-observed-climate-data-era5-0-25-degree",
+  "plan_id": "5105872b4ef59a7b1b69638e9f9a489141b25289c2112bfa70df3894941fc9f8"
+}

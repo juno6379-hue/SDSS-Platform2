@@ -1,0 +1,38 @@
+{
+  "status": "VERIFIED_REAL",
+  "generated_at": "2026-11-24T11:40:23.330686+00:00",
+  "physical_patch_records": 1779,
+  "manifest_quality_eligible": 1407,
+  "verified_patches": 1779,
+  "verified_parent_frames": 119,
+  "minimum_28_cells_met": 36,
+  "boundary_area_m2_summed_over_36_cells": 1123552761159.3,
+  "simultaneous_present_area_m2": 10974205322.115086,
+  "simultaneous_clear_area_m2": 9997410706.463326,
+  "weighted_present_coverage_pct": 0.9767414314207837,
+  "weighted_clear_coverage_pct": 0.8898034032819104,
+  "exact_missing_presence_area_m2": 1112578555837.185,
+  "local_unpatched_remainder_pixels_included": 317440,
+  "full_spatial_coverage": false,
+  "grid_mode": "conservative-lower-bound",
+  "missing_queue_features": 72,
+  "missing_queue_bytes": 317455915,
+  "collection_plan_status": "BLOCKED",
+  "collection_blockers": [
+    "READ_ONLY_REFERENCE_LEDGER_NO_AUTHORIZED_RESERVATION_ADAPTER",
+    "EXACT_SCENE_ASSET_WINDOW_PINS_MISSING"
+  ],
+  "remote_downloads": 0,
+  "ledger_writes": 0,
+  "migration_bytes": 3904601927,
+  "migration_objects": 6125,
+  "completeness_report_sha256": "71c495c1fcf18c7fbcbb962021eedb40a61779cc200d8ddbf153cab3ed241943",
+  "migration_receipt_sha256": "0204d1a1dcde0a471b512a1a042d5a05daa638214afde150762e5ea508f556e5",
+  "runtime": {
+    "captured_at": "2026-11-24T20:39:54.8826401+09:00",
+    "active_collector_count": 0,
+    "collector_processes": [],
+    "reference_execution_lock_exists": false,
+    "migration_lock_exists": false
+  }
+}

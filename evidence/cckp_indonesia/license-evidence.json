@@ -1,0 +1,9 @@
+{
+  "status": "VERIFIED_REAL_CATALOGUE_LICENSE",
+  "dataset_family": "ERA5",
+  "license": "CC-BY-4.0",
+  "source_uri": "https://datacatalog.worldbank.org/search/dataset/0065626/climate-change-knowledge-portal-observed-climate-data-era5-0-25-degree",
+  "verification_method": "official World Bank catalogue page inspected via web tool on 2026-11-24",
+  "quoted_license_label": "License: Creative Commons Attribution 4.0",
+  "rights_note": "ECMWF / Copernicus and World Bank CCKP attribution retained; documentation MPL is not used as data license"
+}

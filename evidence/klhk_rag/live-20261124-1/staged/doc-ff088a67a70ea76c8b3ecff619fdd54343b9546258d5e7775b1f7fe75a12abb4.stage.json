@@ -1,0 +1,134 @@
+{
+  "document": {
+    "authority": "worldbank-cckp-file-list",
+    "id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+    "sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+    "source_id": "worldbank-cckp-file-list",
+    "source_uri": "https://api.github.com/repos/worldbank/climateknowledgeportal/contents?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2",
+    "text": "[{\"name\":\".github\",\"path\":\".github\",\"sha\":\"f71587419eb6c22d872432305b1c7d8a4123926f\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/.github?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.github\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/f71587419eb6c22d872432305b1c7d8a4123926f\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/.github?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/f71587419eb6c22d872432305b1c7d8a4123926f\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.github\"}},{\"name\":\".gitignore\",\"path\":\".gitignore\",\"sha\":\"9a1fa3d093d69c7018f016c72b5dd39d61994b4a\",\"size\":1036,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/.gitignore?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.gitignore\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/9a1fa3d093d69c7018f016c72b5dd39d61994b4a\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.gitignore\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/.gitignore?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/9a1fa3d093d69c7018f016c72b5dd39d61994b4a\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.gitignore\"}},{\"name\":\"CONTRIBUTING.md\",\"path\":\"CONTRIBUTING.md\",\"sha\":\"a9448b679d6402dc9fbfe9de8c25ad85c34c8db6\",\"size\":2955,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/CONTRIBUTING.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/CONTRIBUTING.md\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/a9448b679d6402dc9fbfe9de8c25ad85c34c8db6\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/CONTRIBUTING.md\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/CONTRIBUTING.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/a9448b679d6402dc9fbfe9de8c25ad85c34c8db6\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/CONTRIBUTING.md\"}},{\"name\":\"LICENSE\",\"path\":\"LICENSE\",\"sha\":\"ef17e49fb3db2d251b6f87a7931896fd6d1017a9\",\"size\":16710,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/LICENSE?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/LICENSE\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/ef17e49fb3db2d251b6f87a7931896fd6d1017a9\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/LICENSE\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/LICENSE?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/ef17e49fb3db2d251b6f87a7931896fd6d1017a9\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/LICENSE\"}},{\"name\":\"Makefile\",\"path\":\"Makefile\",\"sha\":\"4939ec09ce43bba40de992ca197e33b924cf4d16\",\"size\":131,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/Makefile?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/Makefile\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/4939ec09ce43bba40de992ca197e33b924cf4d16\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/Makefile\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/Makefile?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/4939ec09ce43bba40de992ca197e33b924cf4d16\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/Makefile\"}},{\"name\":\"README.md\",\"path\":\"README.md\",\"sha\":\"6c4a3d87a5b22d3c05de0dd143882df82e030852\",\"size\":11335,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/README.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/6c4a3d87a5b22d3c05de0dd143882df82e030852\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/README.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/6c4a3d87a5b22d3c05de0dd143882df82e030852\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md\"}},{\"name\":\"_static\",\"path\":\"_static\",\"sha\":\"13eb19c6996e0c1ac4d0e1302e2edb8d30f33f8f\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/_static?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/_static\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/13eb19c6996e0c1ac4d0e1302e2edb8d30f33f8f\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/_static?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/13eb19c6996e0c1ac4d0e1302e2edb8d30f33f8f\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/_static\"}},{\"name\":\"docs\",\"path\":\"docs\",\"sha\":\"bfd439e014386f9345c4f4fc96fa7bb45cace53b\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/docs?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/docs\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/bfd439e014386f9345c4f4fc96fa7bb45cace53b\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/docs?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/bfd439e014386f9345c4f4fc96fa7bb45cace53b\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/docs\"}},{\"name\":\"notebooks\",\"path\":\"notebooks\",\"sha\":\"a11865a974c8cb356cd0f097a95b109da5213d5a\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/notebooks?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/notebooks\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/a11865a974c8cb356cd0f097a95b109da5213d5a\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/notebooks?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/a11865a974c8cb356cd0f097a95b109da5213d5a\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/notebooks\"}}]",
+    "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+  },
+  "embedding_quality_verified": false,
+  "extraction": {
+    "format": "json",
+    "offset_unit": "unicode_character",
+    "parser_version": "bounded-text/1",
+    "publication_status": "BLOCKED_PENDING_CURATED_METADATA",
+    "raw_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+    "source_authority_status": "HOST_PINNED_NOT_INSTITUTION_CERTIFIED",
+    "text_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4"
+  },
+  "institution_authority_certified": false,
+  "receipt": {
+    "acquired_at": "2026-11-24T10:42:48.215377+00:00",
+    "authority_status": "HOST_PINNED_NOT_INSTITUTION_CERTIFIED",
+    "byte_count": 8626,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "ETag": "\"f322d80684bc8f73252b7b8964b99948e59e80ff\"",
+      "Last-Modified": "Wed, 30 Sep 2026 08:49:02 GMT"
+    },
+    "license": "NOT_VERIFIED",
+    "raw_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\raw\\c2f078ae5a06db1d3bd38232599b1aa1f8ddc443aa78d42d56cbe54759953d47.raw",
+    "retrieval_permitted": false,
+    "schema_version": "source-document-receipt/1.0",
+    "sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+    "source_id": "worldbank-cckp-file-list",
+    "source_uri": "https://api.github.com/repos/worldbank/climateknowledgeportal/contents?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2",
+    "state": "VERIFIED_REAL",
+    "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+  },
+  "spans": [
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 1000,
+      "quote": "[{\"name\":\".github\",\"path\":\".github\",\"sha\":\"f71587419eb6c22d872432305b1c7d8a4123926f\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/.github?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.github\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/f71587419eb6c22d872432305b1c7d8a4123926f\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/.github?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/f71587419eb6c22d872432305b1c7d8a4123926f\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.github\"}},{\"name\":\".gitignore\",\"path\":\".gitignore\",\"sha\":\"9a1fa3d093d69c7018f016c72b5dd39d61994b4a\",\"size\":1036,\"url\":\"https:/",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 0,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 2000,
+      "quote": "/api.github.com/repos/worldbank/climateknowledgeportal/contents/.gitignore?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.gitignore\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/9a1fa3d093d69c7018f016c72b5dd39d61994b4a\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.gitignore\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/.gitignore?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/9a1fa3d093d69c7018f016c72b5dd39d61994b4a\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/.gitignore\"}},{\"name\":\"CONTRIBUTING.md\",\"path\":\"CONTRIBUTING.md\",\"sha\":\"a9448b679d6402dc9fbfe9de8c25ad85c34c8",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 1000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 3000,
+      "quote": "db6\",\"size\":2955,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/CONTRIBUTING.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/CONTRIBUTING.md\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/a9448b679d6402dc9fbfe9de8c25ad85c34c8db6\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/CONTRIBUTING.md\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/CONTRIBUTING.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/a9448b679d6402dc9fbfe9de8c25ad85c34c8db6\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/CONTRIBUTING.md\"}},{\"name\":\"LICENSE\",\"path\":\"LICENSE\",\"sha",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 2000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 4000,
+      "quote": "\":\"ef17e49fb3db2d251b6f87a7931896fd6d1017a9\",\"size\":16710,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/LICENSE?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/LICENSE\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/ef17e49fb3db2d251b6f87a7931896fd6d1017a9\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/LICENSE\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/LICENSE?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/ef17e49fb3db2d251b6f87a7931896fd6d1017a9\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/LICENSE\"}},{\"name\":\"Makefile\",\"path\":\"Makefile\",\"",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 3000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 5000,
+      "quote": "sha\":\"4939ec09ce43bba40de992ca197e33b924cf4d16\",\"size\":131,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/Makefile?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/Makefile\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/4939ec09ce43bba40de992ca197e33b924cf4d16\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/Makefile\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/Makefile?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/4939ec09ce43bba40de992ca197e33b924cf4d16\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/Makefile\"}},{\"name\":\"README.md\",\"path\":\"READ",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 4000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 6000,
+      "quote": "ME.md\",\"sha\":\"6c4a3d87a5b22d3c05de0dd143882df82e030852\",\"size\":11335,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/README.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/6c4a3d87a5b22d3c05de0dd143882df82e030852\",\"download_url\":\"https://raw.githubusercontent.com/worldbank/climateknowledgeportal/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/README.md?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/blobs/6c4a3d87a5b22d3c05de0dd143882df82e030852\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/blob/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/README.md\"}},{\"name\":\"_static\"",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 5000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 7000,
+      "quote": ",\"path\":\"_static\",\"sha\":\"13eb19c6996e0c1ac4d0e1302e2edb8d30f33f8f\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/_static?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/_static\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/13eb19c6996e0c1ac4d0e1302e2edb8d30f33f8f\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/_static?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/13eb19c6996e0c1ac4d0e1302e2edb8d30f33f8f\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/_static\"}},{\"name\":\"docs\",\"path\":\"docs\",\"sha\":\"bfd439e014386f9345c4f4fc96fa7bb45cace53b\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/c",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 6000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 8000,
+      "quote": "limateknowledgeportal/contents/docs?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/docs\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/bfd439e014386f9345c4f4fc96fa7bb45cace53b\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/docs?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/bfd439e014386f9345c4f4fc96fa7bb45cace53b\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/docs\"}},{\"name\":\"notebooks\",\"path\":\"notebooks\",\"sha\":\"a11865a974c8cb356cd0f097a95b109da5213d5a\",\"size\":0,\"url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/notebooks?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"html_url\":\"https://github.com/worldba",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 7000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    },
+    {
+      "authority": "worldbank-cckp-file-list",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "end": 8626,
+      "quote": "nk/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/notebooks\",\"git_url\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/a11865a974c8cb356cd0f097a95b109da5213d5a\",\"download_url\":null,\"type\":\"dir\",\"_links\":{\"self\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/contents/notebooks?ref=ac98dd008f6d201361abf16d64d5b72bc8c6fbf2\",\"git\":\"https://api.github.com/repos/worldbank/climateknowledgeportal/git/trees/a11865a974c8cb356cd0f097a95b109da5213d5a\",\"html\":\"https://github.com/worldbank/climateknowledgeportal/tree/ac98dd008f6d201361abf16d64d5b72bc8c6fbf2/notebooks\"}}]",
+      "source_id": "worldbank-cckp-file-list",
+      "start": 8000,
+      "version": "ac98dd008f6d201361abf16d64d5b72bc8c6fbf2"
+    }
+  ],
+  "status": "BLOCKED_PENDING_CURATED_METADATA"
+}

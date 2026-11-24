@@ -1,0 +1,141 @@
+{
+  "status": "VERIFIED_REAL_LOCAL_CAPTURE",
+  "files": {
+    "first-get-failure.json": {
+      "bytes": 365,
+      "sha256": "38648cba163bf0133bef57f9368dfff118f952b53033eb044a41dbda0b972f33"
+    },
+    "first-transfer-state.json": {
+      "bytes": 141,
+      "sha256": "439ec14e24a40e719d4043825d687a8d1cb191c05e3869651fb4348721086457"
+    },
+    "global-asset.nc": {
+      "bytes": 4209592,
+      "sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7"
+    },
+    "indonesia-bbox-values.csv": {
+      "bytes": 225017,
+      "sha256": "9ef641970b744c9ce18fcef2e749058442d3370c6643ebfed739d2313703ad91"
+    },
+    "license-evidence.json": {
+      "bytes": 556,
+      "sha256": "cddad402f01f95fac8029104f4b4ba777ae09adcf4f6a719d641a80425949a89"
+    },
+    "netcdf-metadata.json": {
+      "bytes": 6536,
+      "sha256": "534ae7746025d426d3f379a8cdcf27f139c796511c9a1e4810982c08fde08919"
+    },
+    "numeric-result-validated.json": {
+      "bytes": 3295,
+      "sha256": "6fdd91a87592c0f4bcbb0fccc37e367052e677e4dead2f25cb9fb29c548bcbbf"
+    },
+    "numeric-result.json": {
+      "bytes": 3057,
+      "sha256": "f41efb285cdef9f67da7a416969142f4ae6a75740512c32fabad241c291d8009"
+    },
+    "plan.json": {
+      "bytes": 896,
+      "sha256": "6cff464aba5da4ff4b01a2321a2d137f4b869828db2be901da7f0f42c4f9d7a7"
+    },
+    "query-request.json": {
+      "bytes": 463,
+      "sha256": "5e8e10be347e32158609f010bdd01eb1d02f75f25398043a85c9befe97603ac0"
+    },
+    "range-progress-001.json": {
+      "bytes": 461,
+      "sha256": "8b024ad0414b236d75852e5e3553a757926cb0514434e120d84fff75bfde8bfc"
+    },
+    "range-progress-002.json": {
+      "bytes": 461,
+      "sha256": "33675dbeb642a496d51977a81b8f3d85c34be818d699d018ec72f2e59ea8dd03"
+    },
+    "range-progress-003.json": {
+      "bytes": 461,
+      "sha256": "fb4cfb518dea89602117bf6f991b6fc61126bccb3a04fabd4ed9c5f89bcb48f6"
+    },
+    "range-progress-004.json": {
+      "bytes": 463,
+      "sha256": "c641cd223b2397f511c0a438f91895a349ac3e7f456f4456dbf9e532425a4137"
+    },
+    "range-progress-005.json": {
+      "bytes": 463,
+      "sha256": "de648668cfc399939158137c90bf25ecfad8b7b433c324b8c4f69d63775fb871"
+    },
+    "range-progress-006.json": {
+      "bytes": 463,
+      "sha256": "f37ec17807224c1d093f2eee00e234453748769d5b8c981e4663ed3082aac5f6"
+    },
+    "range-progress-007.json": {
+      "bytes": 463,
+      "sha256": "9274cf548d19e2489f77012fb5623f516007c4140711490ccebf01af16e58fca"
+    },
+    "range-progress-008.json": {
+      "bytes": 463,
+      "sha256": "02ea4fc79355b9d094ac21415e7e84e2a284fee161b893d417eeb41c2a179ac6"
+    },
+    "range-progress-009.json": {
+      "bytes": 463,
+      "sha256": "9b700ca9b36810e4c8a9917b3ab2773e231be2ff574c8c26241cee4dea9cf89f"
+    },
+    "range-progress-010.json": {
+      "bytes": 463,
+      "sha256": "0060dd089118fc11a6a73e50f48cde5362e20af69e743858592ba4b5db7c3fd4"
+    },
+    "range-progress-011.json": {
+      "bytes": 463,
+      "sha256": "382795e88809e177c5dece295022dfed31deab01235c269b5623736ab6558b5b"
+    },
+    "range-progress-012.json": {
+      "bytes": 463,
+      "sha256": "34dc9ac9221f7f8db52a861671260693780c691665e8f737901fa8cc80722acc"
+    },
+    "range-progress-013.json": {
+      "bytes": 463,
+      "sha256": "d6563a74cf120677a94c68e56126fb2ff0ee1bbc744957d1e92d7dd97c84d21e"
+    },
+    "range-progress-014.json": {
+      "bytes": 463,
+      "sha256": "671f5fb3598bac7229f6149bb336055d7f511ccb4ebff31b32ae91b2ccacf187"
+    },
+    "range-progress-015.json": {
+      "bytes": 463,
+      "sha256": "5324e0b7a84126318cb8a69e099cb7c415787e20adb1d0e3fb902d97104da968"
+    },
+    "range-progress-016.json": {
+      "bytes": 463,
+      "sha256": "9b2f7fdf054ee74321a6d2a49b7e2d55f88a39530339e73d3aa6285a0210169e"
+    },
+    "range-progress-017.json": {
+      "bytes": 463,
+      "sha256": "074670da9f193e347f71cd3514ad701a25f9e0fb2cee88a7c841af93a2cdbb42"
+    },
+    "raw-receipt.json": {
+      "bytes": 2248,
+      "sha256": "d5ae8d9d7bacfcc243dd5d5d64541353b63364606851342290839b0cd3cd5746"
+    },
+    "receipt-seal.json": {
+      "bytes": 174,
+      "sha256": "43b107244cb8873a86a1ecad278058071d142431025d4c1415dba29f97ed82f9"
+    },
+    "reuse-verification.json": {
+      "bytes": 201,
+      "sha256": "ed286e26163a4e74a921ddcd6de911ba5d307757d8ac953cc268bcdf9ea08749"
+    },
+    "subset-provenance.json": {
+      "bytes": 1132,
+      "sha256": "9c8e07f5f33f18cf2be47d3a18953f026970ca4386705f4c01385dd3f9ac5bb0"
+    },
+    "test-summary.json": {
+      "bytes": 346,
+      "sha256": "d21e39f5a8ce1297b40000172490eee92c24769b00ec53e7d178be2583384630"
+    },
+    "tool-contract.json": {
+      "bytes": 3210,
+      "sha256": "66c07ba1957caa0cfb9c4a3c32500e8ed31756bb6fab1f34e82a691c42a9cfca"
+    },
+    "transfer-state.json": {
+      "bytes": 465,
+      "sha256": "23b1a83207d8c0a791c72ed0fe719087d44626636317b46a0f116292ed93f385"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED_FIRST_ATTEMPT_PRESERVED",
+  "error_type": "TimeoutError",
+  "stage": "GET response body read after verified HEAD",
+  "received_body_bytes": null,
+  "conservative_reserved_bytes": 4209592,
+  "evidence_basis": "actual command failure before explicit root-reviewed Range retry",
+  "original_transfer_state": "first-transfer-state.json"
+}

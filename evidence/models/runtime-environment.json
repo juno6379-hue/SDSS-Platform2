@@ -1,0 +1,10 @@
+{
+  "python": "3.11.9",
+  "system": "Windows",
+  "packages": {
+    "pydantic": "2.13.5",
+    "numpy": "2.4.6"
+  },
+  "scope": "current_contract_diagnostic_runtime_not_legacy_training_environment",
+  "content_sha256": "61bf0d1ab30ea2ba994776e287c6ee3176295a852dfffb002fc95a8324c6b676"
+}

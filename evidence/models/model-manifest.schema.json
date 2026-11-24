@@ -1,0 +1,211 @@
+{
+  "$defs": {
+    "ArtifactRef": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "title": "ArtifactRef",
+      "type": "object"
+    },
+    "InputSignature": {
+      "additionalProperties": false,
+      "properties": {
+        "task": {
+          "enum": [
+            "lcluc_segmentation",
+            "structured_climate_features",
+            "rag_embedding_reranker"
+          ],
+          "title": "Task",
+          "type": "string"
+        },
+        "band_names": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Band Names",
+          "type": "array"
+        },
+        "tensor_layout": {
+          "enum": [
+            "CHW",
+            "structured",
+            "authorized_text"
+          ],
+          "title": "Tensor Layout",
+          "type": "string"
+        },
+        "required_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Fields",
+          "type": "array"
+        },
+        "normalization": {
+          "title": "Normalization",
+          "type": "string"
+        },
+        "scl_required": {
+          "default": false,
+          "title": "Scl Required",
+          "type": "boolean"
+        },
+        "class_mapping_23_to_internal": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "integer"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Class Mapping 23 To Internal"
+        },
+        "climate_resolution_policy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Climate Resolution Policy"
+        },
+        "numeric_answer_allowed": {
+          "const": false,
+          "default": false,
+          "title": "Numeric Answer Allowed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "task",
+        "tensor_layout",
+        "required_fields",
+        "normalization"
+      ],
+      "title": "InputSignature",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "specialized-model/1.0",
+      "default": "specialized-model/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "model_id": {
+      "pattern": "^[a-z][a-z0-9_-]{1,79}$",
+      "title": "Model Id",
+      "type": "string"
+    },
+    "version": {
+      "pattern": "^[a-zA-Z0-9_.-]{1,40}$",
+      "title": "Version",
+      "type": "string"
+    },
+    "lifecycle": {
+      "const": "Draft",
+      "default": "Draft",
+      "title": "Lifecycle",
+      "type": "string"
+    },
+    "implementation_status": {
+      "default": "BLOCKED",
+      "enum": [
+        "IMPLEMENTED_UNVERIFIED",
+        "BLOCKED"
+      ],
+      "title": "Implementation Status",
+      "type": "string"
+    },
+    "signature": {
+      "$ref": "#/$defs/InputSignature"
+    },
+    "signature_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Signature Sha256",
+      "type": "string"
+    },
+    "checkpoint": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "training_report": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "reproducible_environment": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "metric_kind": {
+      "default": "unavailable",
+      "enum": [
+        "unavailable",
+        "weak_reference_agreement",
+        "synthetic_diagnostic"
+      ],
+      "title": "Metric Kind",
+      "type": "string"
+    },
+    "independent_metrics": {
+      "default": null,
+      "title": "Independent Metrics",
+      "type": "null"
+    }
+  },
+  "required": [
+    "model_id",
+    "version",
+    "signature",
+    "signature_sha256"
+  ],
+  "title": "ModelManifest",
+  "type": "object"
+}

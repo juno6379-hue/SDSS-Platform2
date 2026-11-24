@@ -1,0 +1,87 @@
+{
+  "tool": "climate.query",
+  "status": "VERIFIED_REAL",
+  "value": 40.91221481742199,
+  "unit": "days",
+  "aggregation": "bbox_area_weighted_mean",
+  "geography": {
+    "bbox": [
+      95.0,
+      -11.0,
+      141.0,
+      6.0
+    ],
+    "geography_id": "IDN_BBOX_DEVELOPMENT",
+    "method": "bbox_cell_centers"
+  },
+  "geography_is_official_country_polygon": false,
+  "time": {
+    "start": "1951-01-01",
+    "end": "1980-12-31",
+    "calendar": "standard"
+  },
+  "observed_or_projected": "observed",
+  "data_role": "ERA5_REANALYSIS",
+  "model": "era5",
+  "scenario": "not_applicable",
+  "source_scenario": "historical",
+  "variable": "cdd",
+  "netcdf_variable": "climatology-cdd-annual-max",
+  "grid_shape": [
+    69,
+    185
+  ],
+  "valid_cells": 12765,
+  "selected_cells": 12765,
+  "masked_cells": 0,
+  "native_resolution_degrees": 0.25,
+  "calendar": "standard",
+  "provenance": {
+    "raw_sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7",
+    "acquired_at": "2026-11-24T10:43:31.528824+00:00",
+    "local_content_version": "sha256:646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7",
+    "receipt_sha256": "d5ae8d9d7bacfcc243dd5d5d64541353b63364606851342290839b0cd3cd5746",
+    "license_evidence_sha256": "cddad402f01f95fac8029104f4b4ba777ae09adcf4f6a719d641a80425949a89",
+    "source_uri": "s3://wbg-cckp/data/era5-x0.25/cdd/era5-x0.25-historical/climatology-cdd-annual-max_era5-x0.25_era5-x0.25-historical_climatology_mean_1951-1980.nc",
+    "etag": "\"89a1fc4164f41e1db1e22e776918d4df\"",
+    "etag_is_sha256": false,
+    "trace_id": "cckp-indonesia-numeric-5105872b4ef59a7b",
+    "source_variable_attributes": {
+      "climatoloyg_calculation": "max",
+      "units": "days",
+      "standard_name": "longest consecutive sequence of dry days (<1mm) within annual data",
+      "long_name": "longest consecutive sequence of dry days (<1mm) within annual data",
+      "valid_max": 366.0,
+      "valid_min": 1.0,
+      "_FillValue": 1.0000000200408773e+20
+    },
+    "wb_statistic_label": "max",
+    "wb_percentile_label": "mean"
+  },
+  "citations": [
+    {
+      "source_uri": "s3://wbg-cckp/data/era5-x0.25/cdd/era5-x0.25-historical/climatology-cdd-annual-max_era5-x0.25_era5-x0.25-historical_climatology_mean_1951-1980.nc",
+      "sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7",
+      "locator": "climatology-cdd-annual-max[time=0,selected lat/lon centers]"
+    },
+    {
+      "source_uri": "https://datacatalog.worldbank.org/search/dataset/0065626/climate-change-knowledge-portal-observed-climate-data-era5-0-25-degree",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "source_uri": "https://cds.climate.copernicus.eu",
+      "institution": "ECMWF / Copernicus Climate Data Store"
+    }
+  ],
+  "warnings": [
+    "BBOX_GRID_STATISTIC_NOT_INDONESIA_ADMINISTRATIVE_MEAN",
+    "ERA5_REANALYSIS_NOT_INDEPENDENT_GROUND_TRUTH",
+    "COARSE_0_25_DEGREE_GRID_NOT_10M_OBSERVATIONS",
+    "SOURCE_CLIMATOLOGY_FIELD_NO_ANNUAL_OR_MONTHLY_VALUES_INFERRED"
+  ],
+  "numeric_values_verified": true,
+  "independent_accuracy_validated": false,
+  "curated_asset_registered": false,
+  "model_training_authorized": false,
+  "training_executed": false
+}

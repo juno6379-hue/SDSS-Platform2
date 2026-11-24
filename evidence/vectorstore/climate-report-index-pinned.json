@@ -1,0 +1,83 @@
+{
+  "schema_version": "climate-report-vector-index/1.0",
+  "status": "VERIFIED_LOCAL_PRIVATE_REVIEW_INDEX",
+  "database_path": "E:\\SDSS-Platform2\\data\\curated\\vector\\climate_reports_pinned.sqlite3",
+  "database_sha256": "2400a6e7e1cf4eef73a6d4aa07c1f1aee77a2e5d829ae0a09396de20ddc2a4e4",
+  "document_count": 7,
+  "chunk_count": 122,
+  "embedding_model": "synthetic-hash-64-v1",
+  "embedding_dimension": 64,
+  "embedding_quality_verified": false,
+  "access": "private",
+  "allowed_roles": [
+    "data_steward"
+  ],
+  "public_search_enabled": false,
+  "numeric_answers_enabled": false,
+  "created_on": "2026-11-24",
+  "sources": [
+    {
+      "stage_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\staged\\doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332.stage.json",
+      "stage_sha256": "185568cbcd158ede8c89a46239ef00b6fef4532b91e43b75cee82ca4a4345228",
+      "document_id": "doc-37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+      "document_sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332",
+      "chunk_count": 33,
+      "retrieval_permitted": false,
+      "license": "NOT_VERIFIED"
+    },
+    {
+      "stage_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\staged\\doc-3c9a603799d674c82553ca9719c06f5d2fd60489a0eccdbebcccd3fd30972ff8.stage.json",
+      "stage_sha256": "8ffb73db2e3ce767d33db94c1ca98769dc8fac06194ae4a4c071790230e970f1",
+      "document_id": "doc-3c9a603799d674c82553ca9719c06f5d2fd60489a0eccdbebcccd3fd30972ff8",
+      "document_sha256": "3c9a603799d674c82553ca9719c06f5d2fd60489a0eccdbebcccd3fd30972ff8",
+      "chunk_count": 5,
+      "retrieval_permitted": false,
+      "license": "NOT_VERIFIED"
+    },
+    {
+      "stage_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\staged\\doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4.stage.json",
+      "stage_sha256": "6970364987f573bf0bdec2407c4c488012ae2e6d5fbb1f0eff8950fe826af216",
+      "document_id": "doc-79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "document_sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4",
+      "chunk_count": 12,
+      "retrieval_permitted": false,
+      "license": "NOT_VERIFIED"
+    },
+    {
+      "stage_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\staged\\doc-7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58.stage.json",
+      "stage_sha256": "6cdd05934d983be9ddb01ec19a9ff7d3865469b2c1efb840388374763eb1d56c",
+      "document_id": "doc-7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58",
+      "document_sha256": "7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58",
+      "chunk_count": 13,
+      "retrieval_permitted": false,
+      "license": "NOT_VERIFIED"
+    },
+    {
+      "stage_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\staged\\doc-8aa28514e2349015499252fc120dc6f6a7b99312312ba45ab1a920f2e45b5783.stage.json",
+      "stage_sha256": "a7a85aaef97d85ba89d5aa1cca27443f3105d7a99a73b5a8284900908bff51da",
+      "document_id": "doc-8aa28514e2349015499252fc120dc6f6a7b99312312ba45ab1a920f2e45b5783",
+      "document_sha256": "8aa28514e2349015499252fc120dc6f6a7b99312312ba45ab1a920f2e45b5783",
+      "chunk_count": 17,
+      "retrieval_permitted": false,
+      "license": "NOT_VERIFIED"
+    },
+    {
+      "stage_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\staged\\doc-ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df.stage.json",
+      "stage_sha256": "a5ece02cf65c880e239d3c08f4ec19637e45e47031b51c9aae6493dff06f984b",
+      "document_id": "doc-ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df",
+      "document_sha256": "ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df",
+      "chunk_count": 33,
+      "retrieval_permitted": false,
+      "license": "NOT_VERIFIED"
+    },
+    {
+      "stage_path": "E:\\SDSS-Platform2\\evidence\\klhk_rag\\live-20261124-1\\staged\\doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4.stage.json",
+      "stage_sha256": "f1bfda07ac5637479566a382eaffe913c3e052a45ba4e64365250d761d97326e",
+      "document_id": "doc-ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "document_sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4",
+      "chunk_count": 9,
+      "retrieval_permitted": false,
+      "license": "NOT_VERIFIED"
+    }
+  ]
+}

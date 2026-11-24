@@ -1,0 +1,128 @@
+{
+  "input_pins": {
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423"
+  },
+  "province": "southeast_sulawesi",
+  "year": 2024,
+  "parent_path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\image.tif",
+  "verified_patch_count": 16,
+  "remainder_native_pixels": 0,
+  "geometry": {
+    "footprint": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\09a84866ca54f2a86132def8-footprint.wkb",
+      "sha256": "e891d82cb0fcc63fa66be59cbed2cea2d9d6e229e13f20c6d63e5c9562959cf6"
+    },
+    "present": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\09a84866ca54f2a86132def8-present.wkb",
+      "sha256": "7bf856917d4d09da20e512e74fe8679a00a338bcc29af6049bf6847f4565503c"
+    },
+    "clear": {
+      "path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\held-audit-20261124\\native-checkpoints\\09a84866ca54f2a86132def8-clear.wkb",
+      "sha256": "2cdb9009e391ec7df25afea996ba0efcc361657c9bd0c54232bebb1116cac5e7"
+    }
+  },
+  "verified_files": [
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\image.tif",
+      "sha256": "8b3b76bf36d6e900c6e660c7264238f5a6eda525d5599f34059497554c5d3a68"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\stac-item.json",
+      "sha256": "103a9eb1e27d50d83c7e1a6e7b33e1b57de35cc90d77493f37d7e12e41fe4c10"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\raw-B02.tif",
+      "sha256": "1bde3783449ff323f0e6b2bdc4698f3d31897723f4b482f4f3107fbb26e69762"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\raw-B03.tif",
+      "sha256": "4e28cae22781d399a92daaaefa14bfd4e500dc4957301ac1bd59eb692de681cb"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\raw-B04.tif",
+      "sha256": "b7cbb10c2a03545a79714e57af6ed9626e9261006bcd491acba5df7325b85d95"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\raw-B08.tif",
+      "sha256": "f172333b7c539a6edf24fda404ce5c1d3bcb5db09b51fc4d924f7c6d8884b613"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\raw-B11.tif",
+      "sha256": "cba84f9e76fd6487a8fd3fa7a67fc8a02a1d1e9cc484012d4f20e296d88414e9"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\raw-B12.tif",
+      "sha256": "b877fdfd282ba006b85aafc91da73527003ed45bbdb0f7aa7816a7ea6db455e1"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\sources\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\centers182-southeast_sulawesi-bd99d40b7b68-2024\\raw-SCL.tif",
+      "sha256": "c388d14b6d009278238fcbc58507ee05ad3783289af32b3393be4dd57dbb76e5"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r00-c00\\image.tif",
+      "sha256": "c7e506c8ef5a14c8e82f96bdaabd43988c2a516109c861c53163f6cda83b1044"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r00-c01\\image.tif",
+      "sha256": "67b625c39e5585e821b8b1fd83c6ff3d2eef778ea52cf521d6d231b9cbbc96ec"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r00-c02\\image.tif",
+      "sha256": "71d35ad80f1411759d854d9595d72bcca5dff1a5dce8a85ba26405083e90914f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r00-c03\\image.tif",
+      "sha256": "0cb9d8215769a3050966531cbf9ac28a370b630d7a045e05110b6637e7ffbd14"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r01-c00\\image.tif",
+      "sha256": "403058b039fdbd12b3c089bdc1ec28f7321ee2d690b3b660bb43118abf428a6d"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r01-c01\\image.tif",
+      "sha256": "dcad717fdd97ace878b59e49631abed3f0e661710910ca88a071671a61f26df6"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r01-c02\\image.tif",
+      "sha256": "4da676a9debaadffae7016de5982329884dc7736b5f3329a7b218659af4a3ba9"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r01-c03\\image.tif",
+      "sha256": "f3e1b0cabda7a98f4f9dda3f2dc6d60ddbe01b4f5ded6621206cba0fa9f0c464"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r02-c00\\image.tif",
+      "sha256": "e628b509afbb2530df3c2d3efb6fc613df5c53c3aa7e71ced44dc23e9b631f0f"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r02-c01\\image.tif",
+      "sha256": "0da99ac2f7f052a8091e2f56fffc7c1268e0cc632160681d1465d527dfd93dfe"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r02-c02\\image.tif",
+      "sha256": "e596fffa14430e3281caddeb0aee093023b0c9a2ad449fb7a1c7c53e6f2129a4"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r02-c03\\image.tif",
+      "sha256": "da994c4ce40c79e387d2cc6721494e2ace77e5999a61a103da7a0e7b0229da07"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r03-c00\\image.tif",
+      "sha256": "14e50607505f8726dfa524bc75533496cccb5db2192eb5ace4227d4b761576fa"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r03-c01\\image.tif",
+      "sha256": "428824b9aa36f7f6ed27561e6eb93960f9a51b2c44c02f321f9a6cc87bf925df"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r03-c02\\image.tif",
+      "sha256": "089cb7a80982ed9555334cb118a58939a4405c7f3bf3be6b2855dd0954c11358"
+    },
+    {
+      "path": "E:\\GeoAI–MLOps–SDSS\\data\\first-group-training-esri-v1\\patches\\center1024-southeast_sulawesi-2024-c28a69f1093e-7158f440\\r03-c03\\image.tif",
+      "sha256": "07145383cc77aa74254c9ac48f19a1b08a77b01673aeaf3b2d4073a802fd2568"
+    }
+  ]
+}
