@@ -1,0 +1,23 @@
+{
+  "source_id": "synthetic-cckp",
+  "dataset_id": "synthetic-temperature",
+  "version": "v1",
+  "source_uri": "https://example.invalid/synthetic/temperature.nc",
+  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "license": "EXPLICIT-SYNTHETIC-FIXTURE-LICENSE",
+  "acquired_at": "2021-01-01T00:00:00Z",
+  "available_at": "2021-01-01T00:00:00Z",
+  "observed_or_projected": "observed",
+  "model": "synthetic-observational-product",
+  "scenario": "not_applicable",
+  "variable": "tas",
+  "unit": "K",
+  "temporal_method": "mean",
+  "spatial_coverage": {"bbox": [100.0, -8.0, 104.0, -4.0]},
+  "time_coverage": {"calendar": "standard", "start": "2020-01-01", "end": "2020-12-31", "time_units": "days since 1850-01-01", "frequency": "annual"},
+  "grid": {"resolution_x": 2.0, "resolution_y": 2.0, "width": 2, "height": 2, "unit": "degrees", "layout": "rectilinear_cell_bounds", "row_order": "north_to_south", "column_order": "west_to_east"},
+  "crs": "EPSG:4326",
+  "derived_from": [],
+  "access": {"visibility": "public", "allowed_principals": []},
+  "trace_id": "synthetic-contract-test-only"
+}

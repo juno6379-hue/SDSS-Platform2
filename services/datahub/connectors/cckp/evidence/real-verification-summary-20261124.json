@@ -1,0 +1,61 @@
+{
+  "status": "VERIFIED_REAL_DISCOVERY_HEAD_ONLY",
+  "list_pages": 5,
+  "list_xml_body_bytes": 5289,
+  "head_requests": 1,
+  "netcdf_get_requests": 0,
+  "netcdf_body_bytes": 0,
+  "indonesia_identifier": null,
+  "country_download_status": "BLOCKED_COUNTRY_SCOPE_NOT_VERIFIED",
+  "private_prefix_accessed": false,
+  "global_sync_executed": false,
+  "listings": [
+    {
+      "path": "services/datahub/connectors/cckp/evidence/data-listing-20261124.json",
+      "receipt_sha256": "b1040119ec0d243ad1581e485f31b7c8b09c98b8e95b3283c46baeca32ae3328",
+      "source_uri": "https://wbg-cckp.s3.amazonaws.com/?list-type=2&prefix=data%2F&delimiter=%2F&max-keys=10",
+      "response_sha256": "10b8e3e1cb39a91be20b4f315c40460b10a889668da693fb8d6b26de2ad02589",
+      "body_bytes": 1158,
+      "truncated": true
+    },
+    {
+      "path": "services/datahub/connectors/cckp/evidence/era5-cdd-historical-listing-20261124.json",
+      "receipt_sha256": "00dbc68bf8782a823825cbfda683a782571df30d139b9637df1814d690c0c16a",
+      "source_uri": "https://wbg-cckp.s3.amazonaws.com/?list-type=2&prefix=data%2Fera5-x0.25%2Fcdd%2Fera5-x0.25-historical%2F&delimiter=%2F&max-keys=5",
+      "response_sha256": "16b037d6fe7b4ed48a72e479aecae83c9a823f0c6616a02b49dce516266de01d",
+      "body_bytes": 2296,
+      "truncated": true
+    },
+    {
+      "path": "services/datahub/connectors/cckp/evidence/era5-cdd-listing-20261124.json",
+      "receipt_sha256": "ba637e6b9422108c3fb03c950bd7e1198896f987660ff666b7a97614f52ad8e9",
+      "source_uri": "https://wbg-cckp.s3.amazonaws.com/?list-type=2&prefix=data%2Fera5-x0.25%2Fcdd%2F&delimiter=%2F&max-keys=5",
+      "response_sha256": "eec6a0fbac4864e797fe89b92e42030616653556be25ed5e63b9d4d9c0e4aca1",
+      "body_bytes": 585,
+      "truncated": false
+    },
+    {
+      "path": "services/datahub/connectors/cckp/evidence/era5-listing-20261124.json",
+      "receipt_sha256": "92d0b4bf64536541d4215bb1fe574e57527bd6066f6626b16c908de00fa76f17",
+      "source_uri": "https://wbg-cckp.s3.amazonaws.com/?list-type=2&prefix=data%2Fera5-x0.25%2F&delimiter=%2F&max-keys=5",
+      "response_sha256": "7535c053f5410859dc6c798ebbb25251203319968ce0f4d03de01119c1fcdf47",
+      "body_bytes": 876,
+      "truncated": true
+    },
+    {
+      "path": "services/datahub/connectors/cckp/evidence/root-listing-20261124.json",
+      "receipt_sha256": "bfc2e22c452ec5b14741af55121e1153aebb3940347dd509db8da397d312d4ba",
+      "source_uri": "https://wbg-cckp.s3.amazonaws.com/?list-type=2&prefix=&delimiter=%2F&max-keys=10",
+      "response_sha256": "fb806b03bad4d65f5f5058c22b526ec44b554eef07070012e84ca979acb1af99",
+      "body_bytes": 374,
+      "truncated": false
+    }
+  ],
+  "synthetic_tests": {
+    "passed": 24,
+    "seconds": 1.12,
+    "junit": "synthetic-tests-20261124.xml"
+  },
+  "ruff_status": "NOT_RUN_MODULE_NOT_INSTALLED",
+  "cli_plan_only_file_written": false
+}

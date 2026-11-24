@@ -1,0 +1,18 @@
+{
+  "status": "VERIFIED_REAL",
+  "inventory": {
+    "bucket": "wbg-cckp",
+    "prefix": "",
+    "prefixes": [
+      "data/",
+      "private/"
+    ],
+    "objects": [],
+    "response_sha256": "fb806b03bad4d65f5f5058c22b526ec44b554eef07070012e84ca979acb1af99",
+    "source_uri": "https://wbg-cckp.s3.amazonaws.com/?list-type=2&prefix=&delimiter=%2F&max-keys=10",
+    "acquired_at": "2026-11-24T10:15:26.915934+00:00",
+    "truncated": false,
+    "continuation_token": null,
+    "response_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListBucketResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Name>wbg-cckp</Name><Prefix></Prefix><KeyCount>2</KeyCount><MaxKeys>10</MaxKeys><Delimiter>/</Delimiter><IsTruncated>false</IsTruncated><CommonPrefixes><Prefix>data/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>private/</Prefix></CommonPrefixes></ListBucketResult>"
+  }
+}

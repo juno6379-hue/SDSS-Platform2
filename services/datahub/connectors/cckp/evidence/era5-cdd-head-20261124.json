@@ -1,0 +1,9 @@
+{
+  "status": "VERIFIED_REAL_HEAD_ONLY",
+  "source_uri": "s3://wbg-cckp/data/era5-x0.25/cdd/era5-x0.25-historical/climatology-cdd-annual-max_era5-x0.25_era5-x0.25-historical_climatology_mean_1951-1980.nc",
+  "size": 4209592,
+  "etag": "\"89a1fc4164f41e1db1e22e776918d4df\"",
+  "downloaded_body_bytes": 0,
+  "verified_at": "2026-11-24T10:18:56.853730+00:00",
+  "inventory_id": "02f758fc994c32aa6ccfc7a54ceb29d310f833a30abe5cd1f3ca2ad3bcc612aa"
+}
