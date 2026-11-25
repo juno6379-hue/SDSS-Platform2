@@ -1,0 +1,65 @@
+{
+  "schema_version": "institution-source-handoff/1.0",
+  "sources": [
+    {
+      "source_id": "rtrw",
+      "verification": "VERIFIED_REAL",
+      "publication_gate": "BLOCKED",
+      "public_search_enabled": false,
+      "collection_progress_ref": {
+        "endpoint": "/api/collection-progress",
+        "dataset_id": "rtrw"
+      }
+    },
+    {
+      "source_id": "cckp",
+      "verification": "VERIFIED_REAL",
+      "publication_gate": "BLOCKED",
+      "public_search_enabled": false,
+      "collection_progress_ref": {
+        "endpoint": "/api/collection-progress",
+        "dataset_id": "cckp"
+      }
+    },
+    {
+      "source_id": "lake",
+      "verification": "VERIFIED_REAL",
+      "publication_gate": "BLOCKED",
+      "public_search_enabled": false,
+      "collection_progress_ref": {
+        "endpoint": "/api/collection-progress",
+        "dataset_id": null
+      }
+    },
+    {
+      "source_id": "klhk",
+      "verification": "VERIFIED_REAL",
+      "publication_gate": "BLOCKED",
+      "public_search_enabled": false,
+      "collection_progress_ref": {
+        "endpoint": "/api/collection-progress",
+        "dataset_id": "klhk"
+      }
+    },
+    {
+      "source_id": "private_index",
+      "verification": "VERIFIED_REAL",
+      "publication_gate": "BLOCKED",
+      "public_search_enabled": false,
+      "collection_progress_ref": {
+        "endpoint": "/api/collection-progress",
+        "dataset_id": "documents"
+      }
+    },
+    {
+      "source_id": "sentinel",
+      "verification": "VERIFIED_REAL",
+      "publication_gate": "BLOCKED",
+      "public_search_enabled": false,
+      "collection_progress_ref": {
+        "endpoint": "/api/collection-progress",
+        "dataset_id": "sentinel"
+      }
+    }
+  ]
+}

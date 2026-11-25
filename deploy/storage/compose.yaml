@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: ${SDSS_STORAGE_PG_IMAGE:-sdss-platform2-storage-postgres:dev}
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    environment:
+      POSTGRES_USER: sdss_admin
+      POSTGRES_DB: sdss
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_admin_password
+    secrets:
+      - postgres_admin_password
+      - postgres_app_password
+    ports:
+      - "127.0.0.1:${SDSS_STORAGE_PG_PORT:-55482}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./schema.sql:/storage-schema/schema.sql:ro
+      - ./init.sh:/docker-entrypoint-initdb.d/40-sdss-storage.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U sdss_admin -d sdss"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  objects:
+    image: ${SDSS_STORAGE_S3_IMAGE:-chrislusf/seaweedfs:4.04}
+    command: ["server", "-dir=/data", "-ip=objects", "-ip.bind=0.0.0.0", "-volume.max=16", "-s3",
+              "-s3.config=/run/secrets/s3_config", "-s3.iam=false", "-s3.allowDeleteBucketNotEmpty=false"]
+    secrets:
+      - s3_config
+    ports:
+      - "127.0.0.1:${SDSS_STORAGE_S3_PORT:-59082}:8333"
+    volumes:
+      - object-data:/data
+
+secrets:
+  postgres_admin_password:
+    file: ${SDSS_STORAGE_SECRETS_DIR:?Set SDSS_STORAGE_SECRETS_DIR}/pg-admin
+  postgres_app_password:
+    file: ${SDSS_STORAGE_SECRETS_DIR:?Set SDSS_STORAGE_SECRETS_DIR}/pg-app
+  s3_config:
+    file: ${SDSS_STORAGE_SECRETS_DIR:?Set SDSS_STORAGE_SECRETS_DIR}/s3-config.json
+
+volumes:
+  postgres-data:
+  object-data:

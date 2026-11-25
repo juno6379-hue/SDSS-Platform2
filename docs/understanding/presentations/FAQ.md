@@ -70,7 +70,7 @@
 
 **Q. 36/36 감사 통과는 공간 수집 완료입니까?**
 
-아닙니다. 각 지역·연도 셀이 최소 28개 패치를 가진다는 뜻입니다. paired 피복은 0.976741%, clear 피복은 0.889803%라 약 99% 공간 공백이 남습니다.
+아닙니다. 각 지역·연도 셀이 최소 28개 패치를 가진다는 뜻입니다. post-pilot paired 피복은 0.9773249834093871%, clear 피복은 0.890386955270514%라 약 99% 공간 공백이 남습니다.
 
 **Q. CAS 6,125개·3.904GB는 새 Sentinel 다운로드입니까?**
 
@@ -78,7 +78,7 @@
 
 **Q. Edge에서 UI를 클릭했으니 운영 배포도 검증됐습니까?**
 
-아닙니다. 실제 로컬 Edge 클릭은 API/UI 연결과 차단 표시를 검증합니다. 자동 API 11건은 통과했지만 Playwright 3건은 skip되었고 인증·다중 사용자·운영 가용성은 검증하지 않았습니다.
+아닙니다. 이전 snapshot과 post-pilot 화면, 공통 결과 Gate를 로컬 Edge에서 확인했습니다. 이는 로컬 연결·상태·검토 흐름 증거이며 인증·다중 사용자·운영 가용성은 검증하지 않았습니다.
 
 **Q. 모델 adapter와 오케스트레이터가 통과했으니 학습을 시작할 수 있습니까?**
 
@@ -104,7 +104,7 @@ weak agreement는 WorldCover나 KLHK 같은 참조와의 일치도입니다. ind
 
 **Q. pilot 후 기존 0.976741% coverage가 바뀌었습니까?**
 
-아직 알 수 없습니다. pilot 관측은 `used_in_aggregate_coverage=false`이며 aggregate를 재감사하지 않았습니다. 0.976741%는 pilot 이전 snapshot입니다.
+예. 후속 exact geometry 재감사에서 0.9773249834093871%로 계산했습니다. 0.976741%는 pilot 이전 snapshot이며 둘 다 각 시점의 실제 감사값입니다.
 
 **Q. 잔액 1,678,521,030B면 전체 공간을 채울 수 있습니까?**
 
@@ -115,3 +115,137 @@ weak agreement는 WorldCover나 KLHK 같은 참조와의 일치도입니다. ind
 아닙니다. SCL clear QA일 뿐이며 `learning_ready=false`, `independent_ground_truth=false`입니다. WorldCover 2021도 타연도 ground truth로 사용할 수 없습니다.
 
 추가 근거: [Sentinel 단일 실제 pilot](../V42_SENTINEL_SINGLE_PILOT.md)
+
+**Q. clear coverage의 현재 재감사값은 무엇입니까?**
+
+0.890386955270514%입니다. pilot 전 0.8898034032819104%보다 늘었지만 full spatial coverage는 false입니다.
+
+**Q. 44,829,036B는 전체 남은 공간 수집량입니까?**
+
+아닙니다. pilot 실측 7,471,506B짜리 창을 6개 추천 후보에 하나씩 적용한 산술 참고값입니다. 전체 gap 전송량, 비용, 승인과 예산 충분성은 미확정입니다.
+
+**Q. 재감사에서 원격 수집이나 원장 변경이 발생했습니까?**
+
+아닙니다. collector·remote download·ledger write 모두 0이며 실 저장 geometry를 읽어 계산했습니다.
+
+**Q. post-pilot API/UI도 실제 검증됐습니까?**
+
+예. 로컬 API와 실제 Edge에서 36행·6후보·42.75MiB 표시를 확인했습니다. 다만 운영 배포·인증·다중 사용자 검증은 아닙니다.
+
+추가 근거: [Sentinel pilot 반영 36셀 재감사](../V42_SENTINEL_POST_PILOT_REAUDIT.md)
+
+**Q. 후속 배치의 36개 창은 모두 완료됐습니까?**
+
+아닙니다. 36개는 계획 수입니다. 11:44 KST의 3/36·QA 2는 역사적 snapshot이며, 12:05 KST 최신 reconciliation은 8/36·QA 5와 worker 종료를 확인했습니다.
+
+**Q. 첫 East Java 창의 clear 49.47%는 전송 실패입니까?**
+
+아닙니다. 동일 scene의 6밴드+SCL 7개와 계측이 완전하고 429·오류가 없는 품질 미달 관측입니다. quality gap으로 분리해 학습 적격에서 제외하고 다음 창을 계속합니다.
+
+**Q. 어떤 경우 배치를 멈춥니까?**
+
+HTTP 429 또는 asset 누락·불완전 계측 같은 실제 전송 실패에서 멈춥니다. 완전 전송 SCL 80% 미달은 별도 기록하고 계속합니다. 현재는 worker가 9번째 창 정산 전에 종료돼 pending transfer의 실제 byte를 확인할 때까지 차단됐습니다.
+
+**Q. 배치 신규 면적이 전역 피복률에 반영됐습니까?**
+
+아직 아닙니다. 8개 observation이 저장됐지만 최신 면적·byte는 9번째 pending transfer와 분리해 재감사해야 합니다. 후속 aggregate 재감사 전 전역값은 0.9773249834093871%와 0.890386955270514%입니다.
+
+**Q. 수집된 창은 바로 학습자료입니까?**
+
+아닙니다. 새 training-eligible patch는 0입니다. label source와 독립 ground truth가 없고 WorldCover 2021은 다른 연도 정답이 아닙니다.
+
+추가 근거: [Sentinel 경계 내 후속 배치](../V42_SENTINEL_BACKGROUND_COVERAGE_BATCH.md)
+
+**Q. 공통 결과 10개 등록은 10개 분석을 새로 실행한 것입니까?**
+
+아닙니다. 기존 고정 증거 10개를 검증·등록하고 같은 ID로 다시 읽은 것입니다. 30단계는 source마다 verify/register/lookup 3단계이며 외부 수집·학습·배포는 0입니다.
+
+**Q. 결과가 `ACCEPTED`면 과학적 차단도 해제됩니까?**
+
+아닙니다. review status와 evidence state는 별도입니다. `BLOCKED + ACCEPTED`는 차단 사실을 검토자가 확인했다는 뜻이며 학습·배포 승인이 아닙니다.
+
+**Q. Edge에서 남긴 검토 이력이 프로젝트 운영 결정입니까?**
+
+아닙니다. 수정 요청·검토 완료 흐름은 격리 임시 DB에서 검증했습니다. 실제 프로젝트 8014의 10개 결과는 모두 `PENDING`입니다.
+
+**Q. 공통 결과 화면은 실제로 검증됐습니까?**
+
+예. 별도 실제 Edge 선택시험 5건과 DOM 계약 2건이 통과했고, 로컬 8014에서 10 result·PENDING 10·30단계 scope·One Map 상세 UX와 JavaScript 오류 0을 확인했습니다. 다만 운영 인증·다중 사용자·공용 DB/Lake 전환은 검증하지 않았습니다.
+
+**Q. RTRW 결과가 등록됐으니 6개 지역 RTRW가 확보됐습니까?**
+
+아닙니다. 현행 RTRW는 0/6입니다. Banten 역사 샘플과 BIG 93,340 record를 현행 6지역 RTRW 완료로 확대하지 않습니다.
+
+**Q. MLOps 결과가 등록됐으니 split이 안전합니까?**
+
+아닙니다. 실제 audit에서 동일 원본 scene 1건이 validation과 test에 겹쳐 scene split gate가 차단됐습니다. 독립 정답도 없습니다.
+
+추가 근거: [공통 결과 등록·검토·조회 Gate](../V42_COMMON_RESULT_REVIEW_GATE.md)
+
+**Q. `CATALOG_READY`면 결과를 바로 공개할 수 있습니까?**
+
+아닙니다. 고정 패키지가 결과 ID에 붙었다는 뜻입니다. 현재 패키지에 대한 과학축과 게시축의 승인이 모두 있어야 `release_eligible`이 됩니다.
+
+**Q. CCKP `40.91221481742199 days`는 인도네시아 국가 평균입니까?**
+
+아닙니다. 개발 bbox `[95,-11,141,6]`의 0.25° full-cell 12,765개에 대한 1951–1980 climatology 구면가중 평균입니다. 행정경계 평균·연별·월별 값이 아닙니다.
+
+**Q. GeoJSON 점 12,765개는 독립 관측소입니까?**
+
+아닙니다. ERA5 재분석 격자의 중심점입니다. 독립 관측 ground truth나 행정구역 표본이 아닙니다.
+
+**Q. 반텐 폴리곤 1개가 있으면 현행 RTRW를 쓸 수 있습니까?**
+
+아닙니다. 2017 조례 표기의 역사 표본이며 현행 효력 기간·권리·반텐 전체성·위치 정확도가 확인되지 않았습니다.
+
+**Q. 불확실성 `NOT_REPORTED`는 오차가 0이라는 뜻입니까?**
+
+아닙니다. 신뢰구간·독립 관측 오차 또는 위치 정확도를 산정하지 않았다는 뜻입니다.
+
+**Q. 공통 결과의 `ACCEPTED`와 과학축 `APPROVED`는 같은 상태입니까?**
+
+아닙니다. 일반 업무 검토, 독립 과학 검토, 기관 게시 승인은 서로 다른 결정축입니다.
+
+**Q. 과학·게시 승인 API가 구현됐으니 실제 기관 승인도 끝났습니까?**
+
+아닙니다. API 계약은 합성시험 6건으로 검증했지만 실제 기관 authority·token·결정 근거와 승인은 아직 `BLOCKED`입니다. 두 실제 seed의 두 승인축은 모두 `PENDING`입니다.
+
+추가 근거: [결과 카탈로그와 이중 승인 Gate](../V42_RESULT_CATALOG_AND_GOVERNANCE.md)
+
+**Q. `/api/jobs`가 HTTP 200이면 기관 작업을 실행할 수 있습니까?**
+
+아닙니다. 본문이 `BLOCKED`이고 `JOB_PROVIDER_CONFIG_NOT_SET`이면 조회 API가 차단 상태를 정상 설명한 것입니다. 실제 공급자 작업 성공이 아닙니다.
+
+**Q. 기관 작업 시험 8건이 통과했으니 실제 기관 endpoint도 검증됐습니까?**
+
+아닙니다. 멱등 제출·재개·취소·model pin·asset SHA·결과 등록을 격리 시험한 것입니다. 실제 endpoint·token·승인 원본·인수시험은 없습니다.
+
+**Q. 기관 원천 6종이 `VERIFIED_REAL`이면 외부에 공개할 수 있습니까?**
+
+아닙니다. 제한된 로컬 파일 SHA·byte가 실제라는 뜻입니다. RTRW·CCKP·Lake·KLHK·private index·Sentinel 모두 publication gate가 차단되고 public search는 false입니다.
+
+**Q. KLHK 문서 7개는 토지피복 연차 원본 7개입니까?**
+
+아닙니다. 기존 취득 보고서에 포함된 CCKP 문서 5개와 KLHK metadata 2개의 합입니다. native 23-class 검증은 0입니다.
+
+**Q. scene 충돌 0이면 바로 학습해도 됩니까?**
+
+아닙니다. 1,779행에서 충돌 scene 전체를 빼 1,751행·적격 1,382행을 만든 후보일 뿐입니다. 지리 중첩·피복·독립 라벨이 남았고 `training_allowed=false`입니다.
+
+**Q. 합성 ONNX 출력 11→12→11은 실제 모델 성능 향상입니까?**
+
+아닙니다. 입력 10에 상수 1 또는 2를 더하는 합성 그래프로 활성 버전 선택과 rollback을 확인한 것입니다.
+
+**Q. 활성 모델의 과학 승인이 나중에 철회되면 계속 실행됩니까?**
+
+아닙니다. 실행 직전에 카탈로그 승인과 증거를 다시 검사하므로 이후 실행을 차단합니다.
+
+**Q. API 8014·Vite 5175 HTTP 200과 build 통과는 실제 Edge 클릭 증거입니까?**
+
+아닙니다. 세 운영 경로와 138-module build의 연결 증거입니다. 실제 브라우저 E2E는 Root 확인이 끝날 때까지 `PLANNED`입니다.
+
+**Q. SeaweedFS에서 실제 JSON을 읽었으니 운영 Lake 전환이 끝났습니까?**
+
+아닙니다. CCKP 검산 JSON 3,295B의 SHA·재시도, 익명 403, 45초 presigned GET과 만료 403만 검증했습니다. PostgreSQL fixture는 TCP timeout이었고 Kubernetes context도 없어 RLS·PostGIS·pgvector·복구·클러스터 인수는 `BLOCKED`입니다.
+
+추가 근거: [운영 경로 2~8](../V42_OPERATION_PATH_2_TO_8.md)

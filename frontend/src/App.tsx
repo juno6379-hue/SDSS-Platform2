@@ -1,3 +1,5 @@
+import {resultIdFromHash,resultReviewHash} from './institutionOpsClient';
+import {InstitutionJobs,ModelReleases} from './InstitutionOperations';
 import { SDSSHeader, SDSSFooter } from './SDSSChrome';
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
@@ -115,7 +117,7 @@ export default function App() {
   function go(next:number,dataset=route.dataset,replace=false){navigationGeneration.current++;setBusy(false);const value={step:next,dataset:next===1||(next>=26&&next<=30)?dataset:'',model:workspaceAgent,tab:workspaceTab};const hash=routeHash(value);if(window.location.hash!==hash){const depth=appHistoryDepth(history.state);history[replace?'replaceState':'pushState'](appHistoryState(replace?depth:depth+1),'',hash);}setRoute(value);setActionResult(undefined);setActionError('');}
   const navigate=(next:number)=>go(next,next>=26&&next<=30?insightDatasetId(route.dataset,readCatalogSession().selected,rows(resources.datasets).map(row=>String(row.id||row.dataset_id||''))):route.dataset);
   function previous(){if(appHistoryDepth(history.state)>0)history.back();else go(1,route.dataset,true);}
-  useEffect(()=>{const update=()=>{navigationGeneration.current++;setBusy(false);const value=parseRoute(window.location.hash);if(routeHash(value)!==window.location.hash)history.replaceState(appHistoryState(appHistoryDepth(history.state)),'',routeHash(value));setRoute(value);setWorkspaceAgent(value.model);setWorkspaceTab(value.tab);setActionResult(undefined);setActionError('');};update();window.addEventListener('popstate',update);window.addEventListener('hashchange',update);return()=>{window.removeEventListener('popstate',update);window.removeEventListener('hashchange',update);};},[]);
+  useEffect(()=>{const update=()=>{navigationGeneration.current++;setBusy(false);const value=parseRoute(window.location.hash);const linkedResult=resultIdFromHash(window.location.hash);const canonical=value.step===COMMON_RESULT_STEP&&linkedResult?resultReviewHash(linkedResult):routeHash(value);if(canonical!==window.location.hash)history.replaceState(appHistoryState(appHistoryDepth(history.state)),'',canonical);setRoute(value);setWorkspaceAgent(value.model);setWorkspaceTab(value.tab);setActionResult(undefined);setActionError('');};update();window.addEventListener('popstate',update);window.addEventListener('hashchange',update);return()=>{window.removeEventListener('popstate',update);window.removeEventListener('hashchange',update);};},[]);
   useEffect(()=>{if(step===24){const value={...route,model:workspaceAgent,tab:workspaceTab};history.replaceState(appHistoryState(appHistoryDepth(history.state)),'',routeHash(value));}},[workspaceAgent,workspaceTab,step]);
   const currentMenu = step===25?1:navigationForStep(step);
   useEffect(() => { window.scrollTo({top:0,behavior:'instant'}); }, [step,workspaceAgent,workspaceTab]);
@@ -224,6 +226,7 @@ export default function App() {
               <Workflow index={1} onJob={addJob} initialModelId={activeModel}/>
             </details>
           )}
+          {(step === 17 || step === 18) && <ModelReleases/>}
           {step === 17 && (
             <details className="panel" style={{ marginTop: '16px' }}>
               <summary>전문가 검토 · 배포 관리 (Legacy View)</summary>
@@ -246,7 +249,7 @@ export default function App() {
       {step === 20 && <section className="panel"><span className="eyebrow">SPATIAL PLANNING</span><h2>RDTR 공간계획 검토</h2><p className="muted">지역 공간계획의 공식 경계·용도지역·정책 근거와 권한이 연결된 뒤 분석 결과를 중첩합니다.</p><p className="empty">공식 RDTR/RTRW 데이터와 검토·승인 API 미연결</p><div className="button-row"><button className="secondary" onClick={()=>navigate(14)}>분석 지도 보기</button><button disabled>계획 승인 API 미연결</button></div></section>}
       {step === 21 && <section className="panel"><h2>검토·승인 이력</h2><p className="empty">기관별 보고서 승인·전자서명 이력 API 미연결</p><button className="secondary" onClick={()=>navigate(17)}>모델의 실제 승인 근거 검토</button></section>}
       {step === COMMON_RESULT_STEP && <CommonResultReview/>}
-      {step === 22 && <ResourceList title="저장된 작업·알림" data={resources.jobs} error={errors.jobs}/>}
+      {step === 22 && <><InstitutionJobs/><ResourceList title="저장된 작업·알림" data={resources.jobs} error={errors.jobs}/></>}
       {step === 23 && <AgentCenter tools={rows(resources.tools)} models={models} jobs={rows(resources.jobs)} onNavigate={navigate} onStandardLayer={(geo,bounds)=>{setGeometry(geo);setProvinceGeometry(undefined);if(bounds){setBbox(bounds);setMapBounds(bounds);}navigate(14);}}/>}
       {step === 0 && <><div className="metrics"><Metric label="등록 데이터셋" value={errors.datasets ? '—' : resources.datasets === undefined ? '…' : String(datasets.length)} suffix="개"/><Metric label="모델 레지스트리" value={errors.models ? '—' : resources.models === undefined ? '…' : String(models.length)} suffix="개"/><Metric label="저장된 분석" value={errors.analyses ? '—' : resources.analyses === undefined ? '…' : String(analyses.length)} suffix="건"/><Metric label="API 연결" value={connected ? '정상' : '미연결'} suffix=""/></div><CollectionStatus compact/><ErrorNotice error={errors.health || ''}/><div className="map-heading"><h2>분석 영역 탐색</h2><span className="muted">선택한 연구 AOI · 실행 전 범위를 확인하세요</span></div><MapView bbox={bbox} geometry={geometry} boundary={provinceGeometry} viewBounds={mapBounds}/><div className="two-col"><section className="panel"><span className="eyebrow">YOUR NEXT STEP</span><h2>위성 데이터에서 시작하세요</h2><p className="muted">관심 영역과 기간으로 실제 카탈로그를 검색한 뒤, 데이터 준비 → 학습 → 추론 → 변화 분석 순서로 진행합니다.</p><button onClick={() => navigate(1)}>위성 데이터 검색 →</button></section><section className="panel"><span className="eyebrow">LIVE SERVER RESPONSE</span><h2>플랫폼 현황</h2><ErrorNotice error={errors.dashboard || ''}/>{resources.dashboard !== undefined ? <Json value={resources.dashboard}/> : <p className="empty">서버 현황 응답을 기다리는 중입니다.</p>}</section></div></>}
       {(step === 1 || step === 25) && <section className="panel catalog-intro"><div><span className="eyebrow">DATA CATALOG</span><h2>관측 데이터 검색</h2><p className="muted">검색·품질·출처를 확인한 다음 분석할 모델을 직접 선택하세요.</p></div><button className="secondary" onClick={()=>navigate(12)}>선택 데이터로 분석 도구 찾기 →</button></section>}

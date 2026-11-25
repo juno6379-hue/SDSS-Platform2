@@ -1,0 +1,56 @@
+name: sdss-platform2
+services:
+  api:
+    build:
+      context: ..
+    image: sdss-platform2-api:local
+    env_file:
+      - path: api.local.env
+        required: false
+    environment:
+      SDSS_JOBS_CONFIG: ${SDSS_JOBS_CONFIG_CONTAINER:-}
+    ports:
+      - "127.0.0.1:${SDSS_WEB_PORT:-5180}:8080"
+    volumes:
+      - ../evidence:/srv/sdss/evidence:ro
+      - ../data/curated:/srv/sdss/data/curated
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8014/api/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 4
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/frontend/Dockerfile
+    image: sdss-platform2-web:local
+    network_mode: service:api
+    depends_on:
+      api:
+        condition: service_healthy
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  job-worker:
+    profiles: [worker]
+    build:
+      context: ..
+    image: sdss-platform2-api:local
+    command: ["python", "-m", "services.jobs.worker"]
+    env_file:
+      - path: worker.local.env
+        required: false
+    environment:
+      SDSS_JOBS_CONFIG: ${SDSS_JOBS_CONFIG_CONTAINER:-}
+    volumes:
+      - ../evidence:/srv/sdss/evidence:ro
+      - ../data/curated:/srv/sdss/data/curated
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]

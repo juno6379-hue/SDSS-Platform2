@@ -1,3 +1,4 @@
+import {resultIdFromHash} from './institutionOpsClient';
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import ResultLayerMap from './ResultLayerMap';
@@ -97,6 +98,26 @@ export default function CommonResultReview() {
   const [actionError, setActionError] = useState('');
   const [feedback, setFeedback] = useState('');
   const inFlight = useRef(false);
+  useEffect(() => {
+    const controller = new AbortController();
+    let generation = 0;
+    // 동일 결과 ID만 조회하고 늦게 도착한 다른 링크의 응답은 버린다.
+    function openLinkedResult() {
+      const current = ++generation;
+      const id = resultIdFromHash(window.location.hash);
+      if (!id) return;
+      setSelected(undefined); setActionError('');
+      readResult(id, controller.signal).then(value => {
+        if (!controller.signal.aborted && current === generation && resultIdFromHash(window.location.hash) === id) {
+          if (value.id !== id) throw Error('RESULT_ID_MISMATCH');
+          setSelected(value);
+        }
+      }).catch(error => { if (!controller.signal.aborted && current === generation) setActionError(resultError(error)); });
+    }
+    openLinkedResult(); window.addEventListener('hashchange', openLinkedResult);
+    return () => { controller.abort(); window.removeEventListener('hashchange', openLinkedResult); };
+  }, []);
+
 
   useEffect(() => {
     const controller = new AbortController();

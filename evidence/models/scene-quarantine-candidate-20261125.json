@@ -1,0 +1,26 @@
+{
+  "candidate_bytes": 11388949,
+  "candidate_sha256": "2cab1cb03d043ce58e3fd8f318ac0162ca48e15688bb51e729c6f796738ca032",
+  "deployment_allowed": false,
+  "eligible_rows_after": 1382,
+  "eligible_rows_before": 1407,
+  "eligible_splits_after": {
+    "test": 241,
+    "train": 865,
+    "val": 276
+  },
+  "original_scene_conflicts_after": 0,
+  "original_scene_conflicts_before": 1,
+  "physical_rows_after": 1751,
+  "physical_rows_before": 1779,
+  "quarantined_scene_count": 1,
+  "remaining_checks": [
+    "GEOGRAPHIC_SPLIT_OVERLAP",
+    "SOURCE_COVERAGE",
+    "INDEPENDENT_LABELS"
+  ],
+  "schema_version": "sdss-scene-quarantine/1",
+  "source_manifest_sha256": "1b0e9962e4a613fab18e6f7c3e66a54c1156e24c55733f48b71c16e87df2f2df",
+  "status": "VERIFIED_REAL_LOCAL_CANDIDATE",
+  "training_allowed": false
+}

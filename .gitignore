@@ -20,3 +20,5 @@ artifacts/**
 evidence/onemap_sentinel/held-audit-*/exact-missing-queue.geojson
 evidence/onemap_sentinel/held-audit-*/*.wkb
 evidence/onemap_sentinel/held-audit-*/**/*.wkb
+
+/deploy/*.local.env

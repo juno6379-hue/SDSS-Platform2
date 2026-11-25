@@ -1,0 +1,125 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sdss-curated
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdss-platform2
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: sdss-platform2
+  template:
+    metadata:
+      labels:
+        app: sdss-platform2
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: evidence-api
+          image: sdss-platform2-api:local
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef: {name: sdss-api-local, optional: true}
+          readinessProbe:
+            exec:
+              command: [python, -c, "from urllib.request import urlopen; urlopen('http://127.0.0.1:8014/api/health', timeout=3)"]
+            timeoutSeconds: 5
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: "100m", memory: "192Mi"}
+            limits: {cpu: "1", memory: "1Gi"}
+          volumeMounts:
+            - {name: evidence, mountPath: /srv/sdss/evidence, readOnly: true}
+            - {name: curated, mountPath: /srv/sdss/data/curated}
+            - {name: api-tmp, mountPath: /tmp}
+        - name: react-web
+          image: sdss-platform2-web:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - {name: http, containerPort: 8080}
+          readinessProbe:
+            httpGet: {path: /, port: http}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: "25m", memory: "24Mi"}
+            limits: {cpu: "250m", memory: "128Mi"}
+          volumeMounts:
+            - {name: web-tmp, mountPath: /tmp}
+      volumes:
+        - name: evidence
+          persistentVolumeClaim: {claimName: sdss-evidence, readOnly: true}
+        - name: curated
+          persistentVolumeClaim: {claimName: sdss-curated}
+        - name: api-tmp
+          emptyDir: {sizeLimit: 64Mi}
+        - name: web-tmp
+          emptyDir: {sizeLimit: 64Mi}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdss-job-worker
+spec:
+  replicas: 0
+  strategy: {type: Recreate}
+  selector:
+    matchLabels: {app: sdss-job-worker}
+  template:
+    metadata:
+      labels: {app: sdss-job-worker}
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: worker
+          image: sdss-platform2-api:local
+          imagePullPolicy: IfNotPresent
+          command: [python, -m, services.jobs.worker]
+          envFrom:
+            - secretRef: {name: sdss-worker-local, optional: false}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: "100m", memory: "128Mi"}
+            limits: {cpu: "1", memory: "1Gi"}
+          volumeMounts:
+            - {name: evidence, mountPath: /srv/sdss/evidence, readOnly: true}
+            - {name: curated, mountPath: /srv/sdss/data/curated}
+            - {name: worker-tmp, mountPath: /tmp}
+      volumes:
+        - name: evidence
+          persistentVolumeClaim: {claimName: sdss-evidence, readOnly: true}
+        - name: curated
+          persistentVolumeClaim: {claimName: sdss-curated}
+        - name: worker-tmp
+          emptyDir: {sizeLimit: 64Mi}

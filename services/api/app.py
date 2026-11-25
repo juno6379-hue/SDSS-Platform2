@@ -1,4 +1,4 @@
-"""loopback 로컬 API와 same-origin 정적 대시보드. 실행 승격은 지원하지 않는다."""
+"""Loopback evidence API, catalog, and authority-gated execution interfaces."""
 
 import sqlite3
 from datetime import datetime, timezone
@@ -11,6 +11,7 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from services.climate_query.models import ClimateQueryRequest, tool_contract
 from services.climate_query.numeric import climate_query
+from services.datahub.institution_sources import build_inventory, public_summary
 from services.mlops.gates import MLOpsPolicy
 from services.orchestration import WorkflowState
 from services.rag.retrieval import SearchQuery
@@ -18,8 +19,11 @@ from services.rag.routing import route_question
 
 from .collection_progress import snapshot as collection_snapshot
 from .evidence import LOCK_PATH, ROOT, EvidenceBlocked, EvidenceStore
+from .jobs_api import mount_jobs
+from .model_releases import mount_model_releases
+from .operation_lineage import mount_operation_lineage
 from .pinned import LOCK_SHA256
-from .results import mount_results, registration_snapshot
+from .results import check_local, mount_results, registration_snapshot
 
 CCKP = "evidence/cckp_indonesia/"
 KLHK = "evidence/klhk_rag/"
@@ -63,6 +67,14 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
         return JSONResponse(blocked(str(error)), status_code=409)
 
     mount_results(app, store, result_registry)
+    mount_model_releases(app, store, result_registry)
+    mount_jobs(app, store, result_registry)
+    mount_operation_lineage(app)
+
+    @app.get("/api/institution-sources")
+    def institution_sources(request: Request):
+        check_local(request)
+        return public_summary(build_inventory(store.root))
 
     @app.get("/api/health")
     def health():
