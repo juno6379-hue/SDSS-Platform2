@@ -35,6 +35,8 @@
 
 ## 로컬 배포 재현
 
+2026-11-25 검증에서 Compose 설정과 Kubernetes YAML 구조를 확인했다. React 컨테이너 빌드는 Docker Hub의 Node·Nginx 이미지 메타데이터 요청이 시간 초과되어 차단됐다. Kubernetes 현재 컨텍스트는 비어 있다. Windows 개발 API와 React는 HTTP 200으로 확인했다.
+
 `deploy/compose.yaml`의 API와 React 컨테이너가 네트워크 네임스페이스를 공유한다. FastAPI는 컨테이너 내부 loopback에만 연결하고 React 프록시가 호스트 loopback 5180을 제공한다. 컨테이너는 UID 10001, 읽기 전용 루트 파일시스템, 권한 상승 금지를 사용한다. 기존 GeoAI API 8002가 필요한 기능은 Windows의 Vite 실행에서도 계속 쓸 수 있다. 플랫폼 단독 컨테이너에는 레거시 서비스를 포함하지 않았다.
 
 ```powershell
