@@ -1,0 +1,7 @@
+/* Keep registration details independent of global .help negative margins and block inputs. */
+.model-version-registration { min-width: 0; }
+.model-version-registration > summary { line-height: 1.8; padding-block: 4px; cursor: pointer; }
+.model-version-registration > .help { margin: 12px 0 14px; overflow-wrap: anywhere; }
+.model-version-registration .model-version-option > span { display: flex; align-items: center; gap: 8px; line-height: 1.8; }
+.model-version-registration .model-version-option input[type="checkbox"] { display: inline-block; flex: 0 0 16px; width: 16px; height: 16px; min-height: 16px; margin: 0; padding: 0; }
+.model-version-registration > button { max-width: 100%; }

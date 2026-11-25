@@ -1,0 +1,187 @@
+{
+  "groups": {
+    "cckp": {
+      "files": {
+        "evidence/cckp_indonesia/evidence-manifest.json": {
+          "bytes": 5021,
+          "sha256": "8b63859d7ba01a0bf51a706ee1d4bfff357e5946666eae3a51e5cbd49e8196e5"
+        },
+        "evidence/cckp_indonesia/global-asset.nc": {
+          "bytes": 4209592,
+          "sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7"
+        },
+        "evidence/cckp_indonesia/license-evidence.json": {
+          "bytes": 556,
+          "sha256": "cddad402f01f95fac8029104f4b4ba777ae09adcf4f6a719d641a80425949a89"
+        },
+        "evidence/cckp_indonesia/numeric-result-validated.json": {
+          "bytes": 3295,
+          "sha256": "6fdd91a87592c0f4bcbb0fccc37e367052e677e4dead2f25cb9fb29c548bcbbf"
+        },
+        "evidence/cckp_indonesia/query-request.json": {
+          "bytes": 463,
+          "sha256": "5e8e10be347e32158609f010bdd01eb1d02f75f25398043a85c9befe97603ac0"
+        },
+        "evidence/cckp_indonesia/raw-receipt.json": {
+          "bytes": 2248,
+          "sha256": "d5ae8d9d7bacfcc243dd5d5d64541353b63364606851342290839b0cd3cd5746"
+        },
+        "evidence/cckp_indonesia/receipt-seal.json": {
+          "bytes": 174,
+          "sha256": "43b107244cb8873a86a1ecad278058071d142431025d4c1415dba29f97ed82f9"
+        }
+      },
+      "missing": []
+    },
+    "klhk": {
+      "files": {
+        "evidence/klhk_rag/dictionary-20261124-bounded-retry/summary.json": {
+          "bytes": 366,
+          "sha256": "5a730ea9ff2df8d8316a5d70d1e6dc2decc0b060239947346e5a7fef1d95e00f"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/13b4f23901f0b9e1ce3db81c82add26eaa5f730655e74ee7109d8721af2f9983.raw": {
+          "bytes": 32780,
+          "sha256": "37c48647d7295c9940d350fd37884263d49ccf1d16f8fa485aa2f59acdbf6332"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/13b4f23901f0b9e1ce3db81c82add26eaa5f730655e74ee7109d8721af2f9983.receipt.json": {
+          "bytes": 902,
+          "sha256": "b63a207dea57cf8becb7a182f93ef7bdff1bb9e6eb68366c810c738ca623ddc1"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/3976367fd26790e625239af0bbf347c04846da17e5ce333d0d706f82bd5f529b.raw": {
+          "bytes": 12342,
+          "sha256": "7c6c1ee1044ce71a2001b7f7536d5d2c0c987cf4da14784e9522593351cf2a58"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/3976367fd26790e625239af0bbf347c04846da17e5ce333d0d706f82bd5f529b.receipt.json": {
+          "bytes": 953,
+          "sha256": "dc3b6116a1afe4df605cc889f78f7abe1dc36cb2cda3cbb10b91f51344b6b745"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/6f32cb811336e9b66945680d17803d6f4803f6bbf9a65413e86b40002cb66475.raw": {
+          "bytes": 4959,
+          "sha256": "3c9a603799d674c82553ca9719c06f5d2fd60489a0eccdbebcccd3fd30972ff8"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/6f32cb811336e9b66945680d17803d6f4803f6bbf9a65413e86b40002cb66475.receipt.json": {
+          "bytes": 958,
+          "sha256": "15b4ba0c004dc8788e1d845f21972cf55c079795aa2b521033d9711d121b17c0"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/c2f078ae5a06db1d3bd38232599b1aa1f8ddc443aa78d42d56cbe54759953d47.raw": {
+          "bytes": 8626,
+          "sha256": "ff088a67a70ea76c8b3ecff619fdd54343b9546258d5e7775b1f7fe75a12abb4"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/c2f078ae5a06db1d3bd38232599b1aa1f8ddc443aa78d42d56cbe54759953d47.receipt.json": {
+          "bytes": 931,
+          "sha256": "d742f2649979556f98a8bdfe11ec8ac571953c49f386133ec1eb47c45e8c25e1"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/d68623555d8c5e7ec84c841b3dbba2c0718d01d2b1d43e33065b1f06e5bec384.raw": {
+          "bytes": 11335,
+          "sha256": "79259243a189c911b38e2bb83e3fab6e0727d51835dca021d0d92d06da784af4"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/d68623555d8c5e7ec84c841b3dbba2c0718d01d2b1d43e33065b1f06e5bec384.receipt.json": {
+          "bytes": 925,
+          "sha256": "903c811fc6eedb5a0807eaa178948350b7cf2d5860d07ae0ad897f769ac15d6e"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/f2aa3662e9150c2d8e4777392d48d2dbcc94f8e6daa21936ee367aec04451808.raw": {
+          "bytes": 32779,
+          "sha256": "ea48c840a8669c53a0e9dab8d44c532c9c34f36844b2200be1087e9e2e0b56df"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/f2aa3662e9150c2d8e4777392d48d2dbcc94f8e6daa21936ee367aec04451808.receipt.json": {
+          "bytes": 905,
+          "sha256": "1b05e3055573535d66d4ffcfd63c93f54930acd3a2aa31828354c7a2437e87d8"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/fae1ba1dd6c0aa4d46c439f98cf155f30112333bff82562404b06b9691410f7a.raw": {
+          "bytes": 16710,
+          "sha256": "8aa28514e2349015499252fc120dc6f6a7b99312312ba45ab1a920f2e45b5783"
+        },
+        "evidence/klhk_rag/live-20261124-1/raw/fae1ba1dd6c0aa4d46c439f98cf155f30112333bff82562404b06b9691410f7a.receipt.json": {
+          "bytes": 921,
+          "sha256": "690de58bd1a7118e504e51ecae02bf344e734e371c5879db6139427ea33981b0"
+        },
+        "evidence/klhk_rag/live-20261124-1/summary.json": {
+          "bytes": 11754,
+          "sha256": "db21fb5647af08c559a1964e6e6ce3a34f5a49b4d37005d0441ce2b0a2bc252c"
+        },
+        "evidence/klhk_rag/verification-20261124.json": {
+          "bytes": 5839,
+          "sha256": "d384de5279f907dfb76aa3feb8a256b2a1a03cbd883d3546fb79441390a4fc26"
+        }
+      },
+      "missing": []
+    },
+    "models": {
+      "files": {
+        "evidence/models/legacy-checkpoint-audit.json": {
+          "bytes": 2660,
+          "sha256": "7dc190526c7a056f4340f4426515fd6892119dd80ed49017bcfab10a2a854ecb"
+        },
+        "evidence/models/readiness.json": {
+          "bytes": 4739,
+          "sha256": "b642e0476664697880d77f2f690d18c7d6a1963894f951583e7984f4217d15ca"
+        }
+      },
+      "missing": []
+    },
+    "sentinel": {
+      "files": {
+        "evidence/onemap_sentinel/handoff-summary-20261124.json": {
+          "bytes": 1525,
+          "sha256": "6fa637cbdabade06162a986a4affcb5f0146d8fc1855860eed62fecf325c44ab"
+        },
+        "evidence/onemap_sentinel/held-audit-20261124/completeness.json": {
+          "bytes": 803374,
+          "sha256": "71c495c1fcf18c7fbcbb962021eedb40a61779cc200d8ddbf153cab3ed241943"
+        },
+        "evidence/onemap_sentinel/migration-receipt-20261124.json": {
+          "bytes": 4902383,
+          "sha256": "0204d1a1dcde0a471b512a1a042d5a05daa638214afde150762e5ea508f556e5"
+        },
+        "evidence/onemap_sentinel/pilot-unit-20261124/final-state.json": {
+          "bytes": 343,
+          "sha256": "b6e6382b542efc7ee4ff0c7d465991994d164e03521ac6286c718caf0494d6a9"
+        },
+        "evidence/onemap_sentinel/pilot-unit-20261124/postflight-integrity.json": {
+          "bytes": 2606,
+          "sha256": "88a004216f43b85588b11324cf5c936b9c21f4223eff733ef2ae414c08cbe046"
+        },
+        "evidence/onemap_sentinel/pilot-unit-20261124/run-01/result.json": {
+          "bytes": 19041,
+          "sha256": "c727174f512ef9e0fe8fcfcac5dedf02db18f84a8a63634e720d06368b2013d7"
+        },
+        "evidence/onemap_sentinel/post-migration-state-20261124.json": {
+          "bytes": 1847,
+          "sha256": "f1efbd56fe70103e4f23475f81bfdb9f9addf371cc095e342c48fd6750820125"
+        },
+        "evidence/onemap_sentinel/post-pilot-reaudit.json": {
+          "bytes": 13619,
+          "sha256": "550a4a40bb3373a2c66a183958704837bcd73a81661806292f61ec75821d6de0"
+        }
+      },
+      "missing": []
+    },
+    "vector": {
+      "files": {
+        "data/curated/vector/climate_reports_pinned.sqlite3": {
+          "bytes": 778240,
+          "sha256": "2400a6e7e1cf4eef73a6d4aa07c1f1aee77a2e5d829ae0a09396de20ddc2a4e4"
+        },
+        "evidence/vectorstore/climate-report-index-pinned.json": {
+          "bytes": 4570,
+          "sha256": "814ad40454c1f6df5487cba4dfff425cdd1d4c0ffd47f8800fbcd8a4b2f952a8"
+        },
+        "services/vectorstore/pgvector_schema.sql": {
+          "bytes": 1838,
+          "sha256": "695dd62c0e4b37fd5b85d664118eb70e27633b2abccb45114bde9be1df8d8c5c"
+        }
+      },
+      "missing": []
+    },
+    "workflow": {
+      "files": {},
+      "missing": [
+        "evidence/workflows/current-state.json"
+      ]
+    }
+  },
+  "note": "manual local integrity snapshot; licensing/authority readiness separate",
+  "reviewed_at": "2026-11-25T01:22:36.163785+00:00",
+  "schema_version": "api-evidence-lock/1",
+  "valid_days": 7
+}

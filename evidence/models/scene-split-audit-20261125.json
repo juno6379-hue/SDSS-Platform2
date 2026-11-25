@@ -1,0 +1,187 @@
+{
+  "schema_version": "scene-split-audit/1.0",
+  "status": "BLOCKED",
+  "scene_split_gate_passed": false,
+  "manifest_sha256": "1b0e9962e4a613fab18e6f7c3e66a54c1156e24c55733f48b71c16e87df2f2df",
+  "physical_row_count": 1779,
+  "eligible_row_count": 1407,
+  "split_counts": {
+    "train": 1178,
+    "val": 337,
+    "test": 264
+  },
+  "eligible_split_counts": {
+    "train": 865,
+    "val": 292,
+    "test": 250
+  },
+  "unique_original_scene_count": 107,
+  "conflict_scene_count": 1,
+  "conflicts": [
+    {
+      "scene_id": "S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431",
+      "splits": [
+        "test",
+        "val"
+      ],
+      "rows_by_split": {
+        "test": [
+          {
+            "row": 1096,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1097,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1098,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1099,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1100,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1101,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1102,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1103,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1104,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1105,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1106,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 1107,
+            "province": "west_java",
+            "source_group": "west_java/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          }
+        ],
+        "val": [
+          {
+            "row": 288,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 289,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 290,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 291,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 292,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 293,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 294,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 295,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 296,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 297,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 298,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 299,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 300,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 301,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 302,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          },
+          {
+            "row": 303,
+            "province": "banten",
+            "source_group": "banten/S2A_MSIL2A_20210812T025551_R032_T48MXT_20210812T132431"
+          }
+        ]
+      }
+    }
+  ],
+  "invalid_rows": [],
+  "blockers": [
+    "ORIGINAL_SCENE_SPLIT_LEAKAGE"
+  ],
+  "training_allowed": false,
+  "deployment_allowed": false,
+  "scientific_execution_started": false,
+  "scope": "original_scene_identity_only_not_full_geometric_overlap_or_training_readiness",
+  "source_path": "E:\\SDSS-Platform2\\evidence\\onemap_sentinel\\migrated-scene-manifest.json",
+  "expected_manifest_sha256": "1b0e9962e4a613fab18e6f7c3e66a54c1156e24c55733f48b71c16e87df2f2df",
+  "snapshot_unchanged_after_read": true,
+  "generated_at": "2026-11-25T03:05:31.923937+00:00"
+}

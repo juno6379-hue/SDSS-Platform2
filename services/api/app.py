@@ -16,8 +16,10 @@ from services.orchestration import WorkflowState
 from services.rag.retrieval import SearchQuery
 from services.rag.routing import route_question
 
-from .evidence import ROOT, EvidenceBlocked, EvidenceStore
+from .collection_progress import snapshot as collection_snapshot
+from .evidence import LOCK_PATH, ROOT, EvidenceBlocked, EvidenceStore
 from .pinned import LOCK_SHA256
+from .results import mount_results, registration_snapshot
 
 CCKP = "evidence/cckp_indonesia/"
 KLHK = "evidence/klhk_rag/"
@@ -33,10 +35,8 @@ def blocked(code, **extra):
     return dict(status="BLOCKED", blockers=[code], value=None, execution_started=False, **extra)
 
 
-def create_app(store=None, curated_index=None):
-    store = store or EvidenceStore(
-        ROOT, Path(__file__).with_name("evidence-lock.json"), LOCK_SHA256
-    )
+def create_app(store=None, curated_index=None, *, result_registry=None):
+    store = store or EvidenceStore(ROOT, LOCK_PATH, LOCK_SHA256)
     app = FastAPI(title="SDSS Platform2 · Evidence API", version="0.1.0")
     app.state.store = store
 
@@ -61,6 +61,8 @@ def create_app(store=None, curated_index=None):
     @app.exception_handler(EvidenceBlocked)
     async def evidence_error(request, error):
         return JSONResponse(blocked(str(error)), status_code=409)
+
+    mount_results(app, store, result_registry)
 
     @app.get("/api/health")
     def health():
@@ -249,24 +251,43 @@ def create_app(store=None, curated_index=None):
             or not integrity["quality_recomputed_from_native_SCL_matches"]
         ):
             raise EvidenceBlocked("PILOT_REPORTS_INCONSISTENT")
+        audit, _ = store.read_json("sentinel", SENTINEL + "post-pilot-reaudit.json")
+        if (
+            audit["status"] != "VERIFIED_REAL"
+            or audit["cell_count"] != completeness["cell_count"]
+            or len(audit["cells"]) != audit["cell_count"]
+            or audit["source_pins"]["baseline_report"] != summary["completeness_report_sha256"]
+            or audit["source_pins"]["pilot_ledger_after"] != pilot["ledger_after_sha256"]
+            or audit["source_pins"]["pilot_receipt"] != pilot["data_receipt_sha256"]
+            or audit["pilot_delta"]["scene_id"] != pilot["scene_id"]
+            or audit["next_collection"]["reference_window_observed_body_bytes"]
+            != pilot["remote_body_bytes_read"]
+        ):
+            raise EvidenceBlocked("POST_PILOT_AUDIT_SOURCE_MISMATCH")
+        queue = audit["missing_queue"]
         return {
             "status": "BLOCKED_COLLECTION_NOT_COMPLETE",
             "audit_state": "VERIFIED_REAL",
             "audited_cells": completeness["cell_count"],
             "expected_cells": 36,
             "completion": False,
-            "full_spatial_coverage": completeness["full_spatial_coverage"],
+            "full_spatial_coverage": audit["full_spatial_coverage"],
             "physical_patch_records": summary["physical_patch_records"],
             "quality_eligible_patches": summary["manifest_quality_eligible"],
             "verified_parent_frames": summary["verified_parent_frames"],
-            "paired_six_band_same_scene_scl_coverage_pct": summary["weighted_present_coverage_pct"],
-            "clear_coverage_pct": summary["weighted_clear_coverage_pct"],
+            "paired_six_band_same_scene_scl_coverage_pct": audit["weighted_present_coverage_pct"],
+            "clear_coverage_pct": audit["weighted_clear_coverage_pct"],
+            "area_audit_computed_at": audit["computed_at"],
+            "missing_area_m2": audit["missing_area_m2"],
+            "province_year_cells": audit["cells"],
+            "next_collection": audit["next_collection"],
+            "pilot_coverage_delta": audit["pilot_delta"],
             "grid_mode": completeness["grid_mode"],
             # 대형 GeoJSON은 열거나 전송하지 않는다. 감사 문서의 참조 메타데이터만 표시한다.
             "exact_missing_queue": {
-                "sha256": completeness["missing_queue"]["sha256"],
-                "bytes": summary["missing_queue_bytes"],
-                "features": completeness["missing_queue"]["features"],
+                "sha256": queue["sha256"],
+                "bytes": queue["bytes"],
+                "features": queue["features"],
                 "geometry_included": False,
             },
             "migration": {
@@ -277,8 +298,8 @@ def create_app(store=None, curated_index=None):
                 "new_observation_acquisition": post["new_observation_acquisition"],
             },
             "pre_pilot_audit_remote_downloads": summary["remote_downloads"],
-            "global_coverage_aggregate_updated": final["global_coverage_aggregate_updated"],
-            "coverage_basis": "PRE_PILOT_HELD_AUDIT_NOT_RECOMPUTED",
+            "global_coverage_aggregate_updated": True,
+            "coverage_basis": audit["coverage_basis"],
             "pilot": {
                 "status": pilot["status"],
                 "execution_status": pilot["execution_status"],
@@ -306,17 +327,21 @@ def create_app(store=None, curated_index=None):
             "runtime_snapshot": summary["runtime"],
             "reservation_adapter": "BOUNDED_PILOT_VERIFIED_NO_GENERAL_COLLECTION_AUTHORIZATION",
             # 감사 당시의 adapter/pin 미구현 blocker는 단일 pilot 경로 구현으로 해소됐다.
-            # 일반 수집은 별도 권한·예산·재감사 Gate를 통과하기 전까지 계속 차단한다.
+            # 일반 수집은 경계·예산 승인과 정확한 원격 창 고정이 필요하다.
             "blockers": [
                 "GENERAL_COLLECTION_AUTHORIZATION_PENDING",
                 "FULL_SPATIAL_COVERAGE_FALSE",
-                "POST_PILOT_AGGREGATE_NOT_RECOMPUTED",
+                "EXACT_SCENE_ASSET_WINDOW_PINS_MISSING",
                 "COLLECTION_BUDGET_SUFFICIENCY_UNVERIFIED",
             ],
             "execution_started": False,
             "evidence": proof,
-            "warning": "36개 셀 감사 완료와 전체 공간피복·수집 완료는 별도입니다. 로컬 CAS 이관과 pilot 원격 수집은 별도입니다. 피복률은 pilot 이전 감사이며 재계산되지 않았습니다. Pilot QA는 독립 정확도가 아닙니다. 프로세스 수는 저장된 관측 시각 기준입니다.",
+            "warning": "공간피복은 저장된 BIG 경계와 실제 보유 영상으로 계산했습니다. 전체 수집은 미완료입니다. 전송량은 256×256 시험 창의 본문 실측을 후보별 한 창에 적용한 계획값입니다. 독립 현장 정확도는 미측정입니다. 프로세스 수는 저장된 관측 시각 기준입니다.",
         }
+
+    @app.get("/api/collection-progress")
+    def collection_progress():
+        return collection_snapshot(store, sentinel=sentinel, climate=cckp, vector=vector)
 
     @app.get("/api/models")
     def models():
@@ -383,12 +408,17 @@ def create_app(store=None, curated_index=None):
             persisted = blocked(str(error))
         except ValidationError:
             persisted = blocked("WORKFLOW_STATE_SCHEMA_INVALID")
+        try:
+            result_registration = registration_snapshot(store)
+        except EvidenceBlocked as error:
+            result_registration = blocked(str(error))
         return {
             "status": "BLOCKED",
             "mode": "READ_ONLY_EVIDENCE_WORKFLOW",
             "stages": stages,
             "execution_started": False,
             "persisted_workflow": persisted,
+            "result_registration": result_registration,
             "workflow_schema_status": "IMPLEMENTED_UNVERIFIED",
             "warning": "실제 Orchestrator Job 실행·진척률·학습·배포가 아닙니다.",
         }

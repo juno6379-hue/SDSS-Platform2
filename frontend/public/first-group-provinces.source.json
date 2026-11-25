@@ -1,0 +1,15 @@
+{
+  "title": "Indonesia first group: six selected ADM1 reference boundaries",
+  "api": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/",
+  "geometry_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/IDN/ADM1/geoBoundaries-IDN-ADM1_simplified.geojson",
+  "boundary_id": "IDN-ADM1-65028918",
+  "boundary_year_represented": "2017",
+  "source": "OpenStreetMap, Wambacher",
+  "license": "Open Data Commons Open Database License 1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "selected_feature_count": 6,
+  "selected_sha256": "de7722bfa88ddff3e12137d271c28717c23b3077a87b7dc36c66d1d8c522c909",
+  "legal_boundary_certification": false,
+  "note": "공개 참조 행정경계입니다. 사업상 확정 경계는 별도 검토가 필요합니다."
+}

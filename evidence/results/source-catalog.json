@@ -1,0 +1,204 @@
+{
+  "schema_version": "sdss-result-sources/1",
+  "sources": {
+    "sentinel-post-pilot-20261125": {
+      "domain": "sentinel",
+      "title": "Sentinel-2 6개 주 공간피복 재감사",
+      "evidence_status": "VERIFIED_REAL",
+      "summary": "6개 주 × 2020~2025년 고정 재감사. 6밴드와 SCL 동시 피복 0.977325%, SCL 유효 피복 0.890387%, 품질 적격 패치 1,407개. 후속 백그라운드 배치는 별도 기록이다.",
+      "blockers": [
+        "FULL_SPATIAL_COVERAGE_FALSE",
+        "BIG_AUTHORITY_APPROVAL_PENDING"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/onemap_sentinel/post-pilot-reaudit.json",
+          "sha256": "550a4a40bb3373a2c66a183958704837bcd73a81661806292f61ec75821d6de0",
+          "bytes": 13619
+        }
+      ]
+    },
+    "cckp-cdd-1951-1980": {
+      "domain": "climate",
+      "title": "CCKP 인도네시아 CDD 구조화 검산",
+      "evidence_status": "VERIFIED_REAL",
+      "summary": "ERA5 1951~1980년 CDD 개발 bbox 면적가중 평균 40.9122148174일. 공식 행정경계 집계와 전망은 별도 자료가 필요하다.",
+      "blockers": [
+        "ADMINISTRATIVE_BOUNDARY_AGGREGATE_UNAVAILABLE",
+        "FULL_SOURCE_INVENTORY_UNRESOLVED"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/cckp_indonesia/numeric-result-validated.json",
+          "sha256": "6fdd91a87592c0f4bcbb0fccc37e367052e677e4dead2f25cb9fb29c548bcbbf",
+          "bytes": 3295
+        },
+        {
+          "path": "evidence/cckp_indonesia/raw-receipt.json",
+          "sha256": "d5ae8d9d7bacfcc243dd5d5d64541353b63364606851342290839b0cd3cd5746",
+          "bytes": 2248
+        },
+        {
+          "path": "evidence/cckp_indonesia/license-evidence.json",
+          "sha256": "cddad402f01f95fac8029104f4b4ba777ae09adcf4f6a719d641a80425949a89",
+          "bytes": 556
+        }
+      ]
+    },
+    "lake-local-handoff-20261125": {
+      "domain": "lake",
+      "title": "Data Lake 로컬 이관 증거",
+      "evidence_status": "VERIFIED_REAL",
+      "summary": "로컬 원본 카탈로그와 검토 인덱스의 이관 영수증. 객체 6,175개와 출처 참조 6,721건.",
+      "blockers": [
+        "PRODUCTION_POSTGIS_AND_OBJECT_STORE_UNVERIFIED"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/data_lake/local-handoff-20261125.json",
+          "sha256": "efefa52810868c0874766e268e073ab4dc0e3c768261699315f216e192a50a05",
+          "bytes": 1362
+        }
+      ]
+    },
+    "klhk-source-20261124": {
+      "domain": "klhk",
+      "title": "KLHK 연차 토지피복 원본 상태",
+      "evidence_status": "BLOCKED",
+      "summary": "2024·2025 메타데이터가 확보된 상태. 연차별 토지피복 원본과 native 23개 클래스, 사용 조건 검증이 남았다.",
+      "blockers": [
+        "NATIVE_23_CLASS_AND_LICENSE_NOT_VERIFIED"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/klhk_rag/verification-20261124.json",
+          "sha256": "d384de5279f907dfb76aa3feb8a256b2a1a03cbd883d3546fb79441390a4fc26",
+          "bytes": 5839
+        }
+      ]
+    },
+    "private-rag-index-20261124": {
+      "domain": "rag",
+      "title": "기후 보고서 로컬 검토 인덱스",
+      "evidence_status": "IMPLEMENTED_UNVERIFIED",
+      "summary": "7개 문서와 122개 청크를 로컬 검토용 인덱스에서 확인했다. 합성 해시 임베딩을 사용한다.",
+      "blockers": [
+        "EMBEDDING_QUALITY_UNVERIFIED",
+        "PUBLIC_RETRIEVAL_NOT_APPROVED"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/vectorstore/climate-report-index-pinned.json",
+          "sha256": "814ad40454c1f6df5487cba4dfff425cdd1d4c0ffd47f8800fbcd8a4b2f952a8",
+          "bytes": 4570
+        }
+      ]
+    },
+    "model-readiness-20261124": {
+      "domain": "mlops",
+      "title": "특화 모델 학습·독립 정확도·배포 Gate",
+      "evidence_status": "BLOCKED",
+      "summary": "모델 계약과 차단 근거를 기록했다. 약한 참조 일치도와 독립 정확도를 따로 검증해야 한다.",
+      "blockers": [
+        "VERIFIED_TRAINING_DATA_MISSING",
+        "INDEPENDENT_ACCURACY_MISSING",
+        "HUMAN_APPROVAL_MISSING",
+        "DEPLOYMENT_EVIDENCE_MISSING"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/models/readiness.json",
+          "sha256": "b642e0476664697880d77f2f690d18c7d6a1963894f951583e7984f4217d15ca",
+          "bytes": 4739
+        },
+        {
+          "path": "evidence/models/legacy-checkpoint-audit.json",
+          "sha256": "7dc190526c7a056f4340f4426515fd6892119dd80ed49017bcfab10a2a854ecb",
+          "bytes": 2660
+        }
+      ]
+    },
+    "result-registration-workflow-20261125": {
+      "domain": "workflow",
+      "title": "공통 결과 증거 검증·등록·재조회 실행",
+      "evidence_status": "VERIFIED_REAL",
+      "summary": "6개 고정 결과의 증거 SHA·크기를 확인하고 로컬 원장에 등록한 뒤 결과 ID와 페이로드를 재조회했다. 18단계가 성공했다.",
+      "blockers": [
+        "FULL_SCIENTIFIC_WORKFLOW_NOT_EXECUTED"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/results/result-registration-20261125-base.json",
+          "sha256": "66d48d51a21da85d5a34f12c56b99e483eca7535d868939666b13164f0db19e1",
+          "bytes": 6468
+        }
+      ]
+    },
+    "rtrw-six-province-review-20261125": {
+      "domain": "onemap",
+      "title": "One Map RTRW 6개 주 버전 확인",
+      "evidence_status": "BLOCKED",
+      "summary": "공개 레이어 14에서 6개 주 93,340개 레코드와 반텐 2017년 조례 소속 GeoJSON 1개를 확인했다. 현행 조례와 공간 범위가 검증된 벡터는 0/6개 주다.",
+      "blockers": [
+        "CURRENT_RTRW_VECTOR_MISSING",
+        "RTRW_APPLICABLE_VERSION_OR_REUSE_TERMS_UNVERIFIED"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/rtrw-20261125/source-candidates.json",
+          "sha256": "37d7945d11b69885361e02b9ffa88d1c0e8e3ee9ce39b463aad2202724dc0455",
+          "bytes": 3923
+        },
+        {
+          "path": "evidence/rtrw-20261125/six-province-version-groups.raw",
+          "sha256": "3ece623f6e7e2d8195fb28c61f8a2c836f62039c56d5ab654651f42210e9c851",
+          "bytes": 955
+        },
+        {
+          "path": "evidence/rtrw-20261125/banten-historical-sample.receipt.json",
+          "sha256": "317e8d84148107cc580377d6f22d957421735dcba685fb9cdf12e1e06110dad0",
+          "bytes": 832
+        },
+        {
+          "path": "evidence/rtrw-20261125/banten-historical-sample.geojson",
+          "sha256": "afad1488a9e07235b1f0fde644f79ee40c663eedf4b527fcbce1ee4fc3126356",
+          "bytes": 3331
+        }
+      ]
+    },
+    "sentinel-worker-reconciliation-20261125": {
+      "domain": "sentinel",
+      "title": "Sentinel-2 후속 수집 프로세스와 미정산 창",
+      "evidence_status": "BLOCKED",
+      "summary": "36개 중 8개 수신·5개 SCL 통과 뒤 프로세스가 사라졌다. 서자바 2024 전송 시작 후 정산 영수증이 없으며 해당 창은 확보량에 합산하지 않았다.",
+      "blockers": [
+        "SENTINEL_WORKER_EXITED_BEFORE_WINDOW_SETTLEMENT",
+        "PENDING_TRANSFER_AMOUNT_UNVERIFIED"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/results/sentinel-worker-reconciliation-20261125.json",
+          "sha256": "6b1490cb060c916a2e089b1c39718b8ec4487319f4e91f3138e36ed756d72ab9",
+          "bytes": 974
+        }
+      ]
+    },
+    "model-scene-split-audit-20261125": {
+      "domain": "mlops",
+      "title": "모델 원본 장면 분할 누수 감사",
+      "evidence_status": "BLOCKED",
+      "summary": "고정 후보 1,779행을 검증했다. 동일 Sentinel-2 원본 장면이 반텐 validation 16행과 서자바 test 12행에 겹쳐 있어 학습 후보의 split을 재구성해야 한다.",
+      "blockers": [
+        "SCENE_SPLIT_LEAKAGE",
+        "INDEPENDENT_ACCURACY_MISSING"
+      ],
+      "evidence": [
+        {
+          "path": "evidence/models/scene-split-audit-20261125.json",
+          "sha256": "da678ad50982054257ac330fdbeb224341f1f2cf26a6cb9d4236ba4986276e27",
+          "bytes": 6468
+        }
+      ]
+    }
+  }
+}

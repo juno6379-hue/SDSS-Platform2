@@ -1,0 +1,10 @@
+.model-registration-provenance { min-width: 0; border: 1px solid #d8e6ee; border-radius: 9px; padding: 16px; margin: 18px 0; }
+.model-registration-provenance > h3 { display: flex; align-items: center; gap: 8px; line-height: 1.7; margin: 0 0 10px; }
+.model-registration-provenance > p { font-size: 12px; line-height: 1.8; margin: 10px 0; overflow-wrap: anywhere; }
+.model-registration-provenance > button { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; margin: 4px 0; }
+.model-registration-provenance dl { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin: 14px 0; }
+.model-registration-provenance dl > div { background: #f3f7fa; padding: 10px; min-width: 0; border-radius: 6px; }
+.model-registration-provenance dt { font-size: 11px; color: #61798d; }
+.model-registration-provenance dd { margin: 6px 0 0; font-size: 12px; overflow-wrap: anywhere; }
+.model-registration-provenance .mrp-message { color: #76561b; background: #fff8e9; padding: 10px; border-radius: 6px; }
+@media(max-width:750px) { .model-registration-provenance dl { grid-template-columns: minmax(0,1fr); } }

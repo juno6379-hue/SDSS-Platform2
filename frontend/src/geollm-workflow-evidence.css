@@ -1,0 +1,17 @@
+.geo-workflow-evidence{margin:20px 0 0;padding:16px;border:1px solid #cbdff2;border-radius:12px;background:#f8fbff;min-width:0;color:#163659}
+.geo-workflow-evidence>summary{position:static;display:flex;align-items:center;gap:9px;cursor:pointer;min-height:26px;line-height:1.5;font-weight:700;list-style:none;margin:0;padding:0}
+.geo-workflow-evidence>summary::before{content:'▸';color:#075ac8}.geo-workflow-evidence[open]>summary::before{content:'▾'}
+.geo-workflow-evidence p{position:static;line-height:1.65;margin:12px 0;overflow-wrap:anywhere}
+.geo-workflow-evidence label{display:flex;flex-direction:column;gap:7px;margin:14px 0}
+.geo-workflow-evidence input{width:100%;min-width:0;box-sizing:border-box;font-family:ui-monospace,monospace}
+.geo-workflow-evidence .gwe-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.geo-workflow-evidence button{display:inline-flex;align-items:center;justify-content:center;gap:7px;line-height:1.5;background:#edf5ff;color:#075ac8;border:1px solid #b6d5f7;padding:9px 13px;border-radius:8px}
+.geo-workflow-evidence button:hover:not(:disabled){background:#dfeeff;color:#075ac8}.geo-workflow-evidence button:disabled{opacity:.55;cursor:not-allowed}
+.geo-workflow-evidence :is(button,input,select,summary,[tabindex]):focus-visible{outline:3px solid #075ac8;outline-offset:3px}
+.geo-workflow-evidence .gwe-help{font-size:.9rem;color:#526b84}.geo-workflow-evidence .gwe-warning{padding:10px 12px;background:#fff6df;border:1px solid #ecd18a;border-radius:8px;color:#694c12}
+.geo-workflow-evidence .gwe-result{margin-top:16px;min-width:0}.geo-workflow-evidence h3{margin:12px 0;font-size:1.05rem}
+.geo-workflow-evidence dl{display:grid;gap:8px;margin:12px 0}.geo-workflow-evidence dl>div{display:grid;grid-template-columns:minmax(110px,160px) minmax(0,1fr);gap:12px}
+.geo-workflow-evidence dt{font-weight:700}.geo-workflow-evidence dd{margin:0;min-width:0;overflow-wrap:anywhere}.geo-workflow-evidence code{white-space:normal;overflow-wrap:anywhere;font-size:.85em}
+.geo-workflow-evidence .gwe-scroll{max-width:100%;overflow-x:auto;margin:14px 0}.geo-workflow-evidence table{border-collapse:collapse;width:100%;min-width:420px}
+.geo-workflow-evidence caption{text-align:left;padding:8px 0;font-weight:600}.geo-workflow-evidence th,.geo-workflow-evidence td{padding:8px 10px;text-align:left;border-bottom:1px solid #dbe7f1}
+@media(max-width:600px){.geo-workflow-evidence{padding:12px}.geo-workflow-evidence dl>div{grid-template-columns:1fr;gap:3px}.geo-workflow-evidence .gwe-actions button{width:100%}}

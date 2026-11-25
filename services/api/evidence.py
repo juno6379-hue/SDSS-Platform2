@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DIRECTORY = Path(__file__).parent
+LOCK_PATH = DIRECTORY / "evidence-lock-v2.json"
 GROUPS = {
     "cckp": [
         "evidence/cckp_indonesia/" + name
@@ -36,6 +37,7 @@ GROUPS = {
             "pilot-unit-20261124/run-01/result.json",
             "pilot-unit-20261124/final-state.json",
             "pilot-unit-20261124/postflight-integrity.json",
+            "post-pilot-reaudit.json",
         )
     ],
     "models": ["evidence/models/readiness.json", "evidence/models/legacy-checkpoint-audit.json"],
@@ -163,7 +165,7 @@ def pin():
         "note": "manual local integrity snapshot; licensing/authority readiness separate",
     }
     raw = json.dumps(lock, ensure_ascii=False, indent=2, sort_keys=True).encode()
-    (DIRECTORY / "evidence-lock.json").write_bytes(raw)
+    LOCK_PATH.write_bytes(raw)
     (DIRECTORY / "pinned.py").write_text(
         "# 검토된 evidence lock. 갱신은 명시적 pin 명령만 사용한다.\nLOCK_SHA256 = "
         + repr(sha256(raw).hexdigest())

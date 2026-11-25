@@ -1,0 +1,565 @@
+/**
+ * LCLUC Master Analysis Suite CSS (lcluc-master-suite.css)
+ * High-contrast geospatial UI styling for all 7 analysis modules.
+ * Dark/light theme compatible, responsive layout.
+ */
+
+.lcluc-master-suite {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  padding: 16px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* Global Filterbar */
+.lms-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.lms-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lms-filter-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: -0.01em;
+}
+
+.lms-select {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lms-select:focus {
+  border-color: #087d41;
+  box-shadow: 0 0 0 2px rgba(8, 125, 65, 0.15);
+}
+
+.lms-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lms-run-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #087d41 0%, #065f32 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(8, 125, 65, 0.2);
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+
+.lms-run-btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.lms-run-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.lms-reset-btn {
+  padding: 8px 14px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.lms-reset-btn:hover {
+  background: #e2e8f0;
+}
+
+/* Master Navigation Tabs */
+.lms-nav-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.lms-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.lms-tab-btn:hover {
+  color: #0f172a;
+}
+
+.lms-tab-btn.active {
+  color: #087d41;
+  border-bottom-color: #087d41;
+}
+
+/* Status & Error Notices */
+.lms-notice {
+  padding: 10px 16px;
+  background: #ecfdf5;
+  border-left: 4px solid #10b981;
+  color: #065f46;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lms-error {
+  padding: 10px 16px;
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  color: #991b1b;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* Top KPI Grid */
+.lms-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.lms-kpi-card {
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-top: 3px solid #087d41;
+}
+
+.lms-kpi-header {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.lms-kpi-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 4px 0;
+}
+
+.lms-kpi-unit {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.lms-kpi-delta {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lms-kpi-delta.negative {
+  color: #dc2626;
+}
+
+.lms-kpi-delta.positive {
+  color: #16a34a;
+}
+
+.lms-kpi-subtext {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Main Content Panel */
+.lms-content-panel {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.lms-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.lms-panel-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+/* Map Module Styles */
+.lms-map-container {
+  height: 480px;
+  background: #0f172a;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.lms-map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.lms-map-controls-overlay {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(6px);
+  color: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 280px;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lms-slider-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.lms-slider-control input[type="range"] {
+  flex: 1;
+  accent-color: #10b981;
+}
+
+.lms-legend-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.lms-legend-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.15s ease;
+}
+
+.lms-legend-chip.inactive {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.lms-chip-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* Time-Series Module */
+.lms-chart-svg {
+  width: 100%;
+  height: 260px;
+  background: #ffffff;
+}
+
+.lms-trajectory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.lms-trajectory-card {
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border-left: 4px solid #cbd5e1;
+}
+
+/* Change Detection Module */
+.lms-filter-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.lms-toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lms-toggle-switch input {
+  width: 18px;
+  height: 18px;
+  accent-color: #087d41;
+}
+
+/* 9x9 Transition Matrix Heatmap */
+.lms-matrix-scroll {
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.lms-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: right;
+}
+
+.lms-matrix-table th,
+.lms-matrix-table td {
+  border: 1px solid #e2e8f0;
+  padding: 6px 8px;
+  white-space: nowrap;
+}
+
+.lms-matrix-table th {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+}
+
+.lms-matrix-cell {
+  transition: background-color 0.15s ease;
+}
+
+.lms-matrix-cell:hover {
+  outline: 2px solid #087d41;
+  z-index: 2;
+}
+
+.lms-matrix-diagonal {
+  background-color: #f0fdf4 !important;
+  font-weight: 700;
+}
+
+/* Sankey Flows */
+.lms-flow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.lms-flow-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border-left: 5px solid #087d41;
+  font-size: 13px;
+}
+
+/* Hotspot Analysis Module */
+.lms-hotspot-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.lms-hotspot-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lms-hotspot-card:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+}
+
+.lms-hotspot-card.selected {
+  border-color: #ef4444;
+  background: #fff5f5;
+}
+
+.lms-risk-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lms-risk-badge.CRITICAL {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.lms-risk-badge.HIGH {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.lms-risk-badge.MODERATE {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+/* Regional Comparison Module */
+.lms-radar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.lms-table-scroll {
+  overflow-x: auto;
+}
+
+.lms-benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.lms-benchmark-table th,
+.lms-benchmark-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lms-benchmark-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  text-align: left;
+}
+
+.lms-benchmark-table tr:hover {
+  background: #f8fafc;
+}
+
+/* Export Module */
+.lms-export-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.lms-export-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lms-export-badge {
+  align-self: flex-start;
+  padding: 3px 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.lms-download-btn {
+  margin-top: auto;
+  padding: 8px 14px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.lms-download-btn:hover {
+  background: #1e293b;
+}

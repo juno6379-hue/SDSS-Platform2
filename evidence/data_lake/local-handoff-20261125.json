@@ -1,0 +1,41 @@
+{
+  "schema_version": "local-lake-migration/1.0",
+  "status": "VERIFIED_REAL",
+  "checked_at": "2026-11-25T02:14:32.892955+00:00",
+  "scope": "LOCAL_PORTABLE_CATALOG_AND_CONTENT_ADDRESSED_FILES",
+  "existing_held_objects_verified": 6125,
+  "existing_held_bytes_verified": 3904601927,
+  "legacy_reference_files_migrated": 26,
+  "new_object_files_written": 35,
+  "new_object_bytes_written": 377564224,
+  "catalog_object_count": 6175,
+  "catalog_reference_count": 6721,
+  "reference_count_by_collection": {
+    "cckp": 5,
+    "climate-documents": 14,
+    "legacy-catalog": 1,
+    "legacy-reference": 26,
+    "one-map-boundary": 8,
+    "sentinel-coverage": 1,
+    "sentinel-held": 6655,
+    "sentinel-pilot": 10,
+    "vector-review": 1
+  },
+  "catalog": {
+    "path": "data/curated/lake/catalog.sqlite3",
+    "sha256": "d77a70cf6b4220118c7e386b89ca372775ac7c6ea4314e1278bc448f17c2cb6c"
+  },
+  "legacy_sqlite": {
+    "path": "data/curated/lake/legacy-catalog.sqlite3",
+    "sha256": "d08418826b858deccad972d5326cfaa2122f56aa13faef0fc1e3628650fdfc45",
+    "records": 29
+  },
+  "vector_sqlite": {
+    "path": "data/curated/vector/climate_reports_pinned.sqlite3",
+    "chunks": 122,
+    "read_only_private_review": true
+  },
+  "live_postgis_or_object_service_cutover": false,
+  "source_deletes": 0,
+  "network_acquisitions": 0
+}

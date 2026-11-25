@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "workflow_id": "result-registration-20261125-base",
+  "trace_id": "result-registration-3659179bd1dcf412",
+  "plan_sha256": "fb383b0d32640c5bc681c8853e2c20abc578938c5c1beedcf0b335b68b2f6dae",
+  "input_fingerprint": "3659179bd1dcf41276fdcb3eddd1f8e9904e27a9b9bacb267c9dcf07b1639428",
+  "status": "SUCCEEDED",
+  "created_at": "2026-11-25T03:02:50.388352Z",
+  "updated_at": "2026-11-25T03:02:51.372313Z",
+  "steps": {
+    "verify-01": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.389351Z",
+      "completed_at": "2026-11-25T03:02:50.500872Z",
+      "evidence_sha256": [
+        "6fdd91a87592c0f4bcbb0fccc37e367052e677e4dead2f25cb9fb29c548bcbbf",
+        "d5ae8d9d7bacfcc243dd5d5d64541353b63364606851342290839b0cd3cd5746",
+        "cddad402f01f95fac8029104f4b4ba777ae09adcf4f6a719d641a80425949a89"
+      ],
+      "blockers": [],
+      "message": ""
+    },
+    "verify-02": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.566631Z",
+      "completed_at": "2026-11-25T03:02:50.684090Z",
+      "evidence_sha256": [
+        "d384de5279f907dfb76aa3feb8a256b2a1a03cbd883d3546fb79441390a4fc26"
+      ],
+      "blockers": [],
+      "message": ""
+    },
+    "verify-03": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.722389Z",
+      "completed_at": "2026-11-25T03:02:50.794714Z",
+      "evidence_sha256": [
+        "efefa52810868c0874766e268e073ab4dc0e3c768261699315f216e192a50a05"
+      ],
+      "blockers": [],
+      "message": ""
+    },
+    "verify-04": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.806723Z",
+      "completed_at": "2026-11-25T03:02:50.831492Z",
+      "evidence_sha256": [
+        "b642e0476664697880d77f2f690d18c7d6a1963894f951583e7984f4217d15ca",
+        "7dc190526c7a056f4340f4426515fd6892119dd80ed49017bcfab10a2a854ecb"
+      ],
+      "blockers": [],
+      "message": ""
+    },
+    "verify-05": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.846026Z",
+      "completed_at": "2026-11-25T03:02:50.860571Z",
+      "evidence_sha256": [
+        "814ad40454c1f6df5487cba4dfff425cdd1d4c0ffd47f8800fbcd8a4b2f952a8"
+      ],
+      "blockers": [],
+      "message": ""
+    },
+    "verify-06": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.873093Z",
+      "completed_at": "2026-11-25T03:02:50.888146Z",
+      "evidence_sha256": [
+        "550a4a40bb3373a2c66a183958704837bcd73a81661806292f61ec75821d6de0"
+      ],
+      "blockers": [],
+      "message": ""
+    },
+    "register-01": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.900617Z",
+      "completed_at": "2026-11-25T03:02:50.981118Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "318ad96f89c23875aa8927aa5adcd327132bb2a6e58d0819736803e5f7f65a27"
+    },
+    "register-02": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:50.990888Z",
+      "completed_at": "2026-11-25T03:02:51.022864Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "654d531c27ffb165ee2791f14f6580ccb0412eba1992bbf719e5fd612371fe15"
+    },
+    "register-03": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.033869Z",
+      "completed_at": "2026-11-25T03:02:51.069051Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "5b4e7cdd6181a551c3ab55c4e73ba5c88d819417e61faf76c02cdd79a297f780"
+    },
+    "register-04": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.076360Z",
+      "completed_at": "2026-11-25T03:02:51.110872Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "74e04f17669911e6e371efbe96372813e82154401a59075f713feabb6c5959ce"
+    },
+    "register-05": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.119074Z",
+      "completed_at": "2026-11-25T03:02:51.149928Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "295a978fba856061fe511a058bbd522835914ec32d629e65d95c14a8cf363aca"
+    },
+    "register-06": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.160171Z",
+      "completed_at": "2026-11-25T03:02:51.203851Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "097974de86b1dab1bcc77453736455c5626957a21dad17eb8825d8dc36cebcfd"
+    },
+    "lookup-01": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.213171Z",
+      "completed_at": "2026-11-25T03:02:51.231221Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "318ad96f89c23875aa8927aa5adcd327132bb2a6e58d0819736803e5f7f65a27"
+    },
+    "lookup-02": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.246279Z",
+      "completed_at": "2026-11-25T03:02:51.261030Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "654d531c27ffb165ee2791f14f6580ccb0412eba1992bbf719e5fd612371fe15"
+    },
+    "lookup-03": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.272032Z",
+      "completed_at": "2026-11-25T03:02:51.284892Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "5b4e7cdd6181a551c3ab55c4e73ba5c88d819417e61faf76c02cdd79a297f780"
+    },
+    "lookup-04": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.294108Z",
+      "completed_at": "2026-11-25T03:02:51.309986Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "74e04f17669911e6e371efbe96372813e82154401a59075f713feabb6c5959ce"
+    },
+    "lookup-05": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.319548Z",
+      "completed_at": "2026-11-25T03:02:51.334827Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "295a978fba856061fe511a058bbd522835914ec32d629e65d95c14a8cf363aca"
+    },
+    "lookup-06": {
+      "status": "SUCCEEDED",
+      "attempts": 1,
+      "started_at": "2026-11-25T03:02:51.345814Z",
+      "completed_at": "2026-11-25T03:02:51.361118Z",
+      "evidence_sha256": [],
+      "blockers": [],
+      "message": "097974de86b1dab1bcc77453736455c5626957a21dad17eb8825d8dc36cebcfd"
+    }
+  }
+}

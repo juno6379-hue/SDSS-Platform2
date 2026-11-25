@@ -147,13 +147,13 @@ class WorkflowRunner:
         if unknown:
             raise ValueError(f"unregistered adapters: {unknown}")
         state_path, lock_path = self._paths(spec)
-        state = self._load(spec, state_path)
         if not execute:
-            return state
+            return self._load(spec, state_path)
         lock_path.parent.mkdir(parents=True, exist_ok=True)
         descriptor = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
         os.close(descriptor)
         try:
+            state = self._load(spec, state_path)
             for step in spec.steps:
                 prior = state.steps[step.id]
                 if prior.status == "SUCCEEDED" and step.allow_resume:

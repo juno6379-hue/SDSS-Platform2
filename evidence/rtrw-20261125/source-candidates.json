@@ -1,0 +1,99 @@
+{
+  "schema_version": "rtrw-source-review/1.0",
+  "checked_at": "2026-11-25T03:05:04.620221+00:00",
+  "status": "BLOCKED_CURRENT_VECTOR_NOT_VERIFIED",
+  "current_verified_provinces": 0,
+  "historical_feature_count": 93340,
+  "provinces": [
+    {
+      "province": "banten",
+      "official_ordinance_candidate": "1/2023",
+      "big_layer_ordinance": "5/2017",
+      "feature_count": 2410,
+      "official_law_source": "https://jdih-dprd.bantenprov.go.id/produkhukum/perda/peraturan-daerah-provinsi-banten-nomor-1-tahun-2023-tentang-rencana-tata-ruang-wilayah-provinsi-banten-tahun-2023-2043",
+      "gate": "BLOCKED_VECTOR_VERSION_MISMATCH",
+      "latest_exhaustive_legal_search_completed": false
+    },
+    {
+      "province": "west_java",
+      "official_ordinance_candidate": "9/2022",
+      "big_layer_ordinance": "22/2010",
+      "feature_count": 37076,
+      "official_law_source": "https://jdih.jabarprov.go.id/page/info/produk/31142?tentang=peraturan-",
+      "gate": "BLOCKED_VECTOR_VERSION_MISMATCH",
+      "latest_exhaustive_legal_search_completed": false
+    },
+    {
+      "province": "east_java",
+      "official_ordinance_candidate": "10/2023",
+      "big_layer_ordinance": "5/2012",
+      "feature_count": 27908,
+      "official_law_source": "https://mail.sitr.jatimprov.go.id/beritaru/sosialisasi-perda-rtrw-provinsi-pendekatan-kewilayahan-di-5-bakorwil-jawa-timur",
+      "gate": "BLOCKED_VECTOR_VERSION_MISMATCH",
+      "latest_exhaustive_legal_search_completed": false
+    },
+    {
+      "province": "south_sulawesi",
+      "official_ordinance_candidate": "3/2022",
+      "big_layer_ordinance": "9/2009",
+      "feature_count": 13343,
+      "official_law_source": "https://jdih.sulselprov.go.id/unggahan/files/PERDA/2022pd0073003.pdf",
+      "gate": "BLOCKED_VECTOR_VERSION_MISMATCH",
+      "latest_exhaustive_legal_search_completed": false
+    },
+    {
+      "province": "gorontalo",
+      "official_ordinance_candidate": "2/2024",
+      "big_layer_ordinance": "4/2011",
+      "feature_count": 1991,
+      "official_law_source": "https://jdih.gorontaloprov.go.id/dokumen/595",
+      "gate": "BLOCKED_VECTOR_VERSION_MISMATCH",
+      "latest_exhaustive_legal_search_completed": false
+    },
+    {
+      "province": "southeast_sulawesi",
+      "official_ordinance_candidate": null,
+      "big_layer_ordinance": "2/2014",
+      "feature_count": 10612,
+      "official_law_source": null,
+      "gate": "BLOCKED_CURRENT_LAW_REVIEW",
+      "latest_exhaustive_legal_search_completed": false
+    }
+  ],
+  "sample_receipt": "evidence/rtrw-20261125/banten-historical-sample.receipt.json",
+  "sample_is_current": false,
+  "reuse_terms": "UNVERIFIED",
+  "existing_evidence_pins": [
+    {
+      "path": "evidence/cckp_indonesia/numeric-result-validated.json",
+      "sha256": "6fdd91a87592c0f4bcbb0fccc37e367052e677e4dead2f25cb9fb29c548bcbbf",
+      "bytes": 3295
+    },
+    {
+      "path": "evidence/cckp_indonesia/global-asset.nc",
+      "sha256": "646fba633f7ca2d4cde8138209deb63b3fa4430bbc46e0be3288e6039f9b01f7",
+      "bytes": 4209592
+    },
+    {
+      "path": "evidence/cckp_indonesia/raw-receipt.json",
+      "sha256": "d5ae8d9d7bacfcc243dd5d5d64541353b63364606851342290839b0cd3cd5746",
+      "bytes": 2248
+    },
+    {
+      "path": "evidence/data_lake/local-handoff-20261125.json",
+      "sha256": "efefa52810868c0874766e268e073ab4dc0e3c768261699315f216e192a50a05",
+      "bytes": 1362
+    },
+    {
+      "path": "data/curated/lake/catalog.sqlite3",
+      "sha256": "d77a70cf6b4220118c7e386b89ca372775ac7c6ea4314e1278bc448f17c2cb6c",
+      "bytes": 5312512
+    }
+  ],
+  "lake_sqlite_readonly_quick_check": "ok",
+  "new_climate_download_bytes": 0,
+  "new_large_vector_downloads": 0,
+  "sentinel_collector_modified": false,
+  "sentinel_ledger_modified": false,
+  "independent_ground_truth_verified": false
+}

@@ -1,0 +1,395 @@
+{
+  "schema_version": "sentinel-post-pilot-audit/1.0",
+  "status": "VERIFIED_REAL",
+  "computed_at": "2026-11-25T01:20:28.557618+00:00",
+  "coverage_basis": "POST_PILOT_EXACT_NATIVE_GEOMETRY",
+  "source_pins": {
+    "pilot_result": "c727174f512ef9e0fe8fcfcac5dedf02db18f84a8a63634e720d06368b2013d7",
+    "pilot_observation": "bcd0da476ac401ce7674c3d3cddfd8eab9bdb187233256018677c56e52a9ab76",
+    "pilot_receipt": "66434d3fc88ee5e81b16d5cb1152bdb1a3cc9e234167e75881bd98d945a567cf",
+    "pilot_ledger_after": "b257db2925e5c4eac99081c5539216314c972d49dd6741f38f5780da7dd25de1",
+    "manifest": "0c149628ccfa916ee976e561c5da05f9ccc810cbeab7d233a05b9bc7eff54658",
+    "ledger": "8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a",
+    "boundary": "233c034c0b6a777799b14ab5451afedc3ece9abbe836b28e59292a18f4c2a423",
+    "baseline_report": "71c495c1fcf18c7fbcbb962021eedb40a61779cc200d8ddbf153cab3ed241943"
+  },
+  "cell_count": 36,
+  "cells": [
+    {
+      "province": "banten",
+      "year": 2020,
+      "boundary_area_m2": 9356032223.35084,
+      "simultaneous_present_area_m2": 407221491.1254615,
+      "clear_joint_area_m2": 394188425.94616747,
+      "missing_joint_area_m2": 8948810732.225378
+    },
+    {
+      "province": "banten",
+      "year": 2021,
+      "boundary_area_m2": 9356032223.35084,
+      "simultaneous_present_area_m2": 400694027.109961,
+      "clear_joint_area_m2": 397806269.70487976,
+      "missing_joint_area_m2": 8955338196.24088
+    },
+    {
+      "province": "banten",
+      "year": 2022,
+      "boundary_area_m2": 9356032223.35084,
+      "simultaneous_present_area_m2": 400692826.9364298,
+      "clear_joint_area_m2": 365029509.957148,
+      "missing_joint_area_m2": 8955339396.414413
+    },
+    {
+      "province": "banten",
+      "year": 2023,
+      "boundary_area_m2": 9356032223.35084,
+      "simultaneous_present_area_m2": 209640644.7506696,
+      "clear_joint_area_m2": 206297358.31842527,
+      "missing_joint_area_m2": 9146391578.600172
+    },
+    {
+      "province": "banten",
+      "year": 2024,
+      "boundary_area_m2": 9356032223.35084,
+      "simultaneous_present_area_m2": 419428160.5733359,
+      "clear_joint_area_m2": 363159540.3374311,
+      "missing_joint_area_m2": 8936604062.777506
+    },
+    {
+      "province": "banten",
+      "year": 2025,
+      "boundary_area_m2": 9356032223.35084,
+      "simultaneous_present_area_m2": 314684140.3467745,
+      "clear_joint_area_m2": 313474388.72855365,
+      "missing_joint_area_m2": 9041348083.004068
+    },
+    {
+      "province": "west_java",
+      "year": 2020,
+      "boundary_area_m2": 37053027021.84885,
+      "simultaneous_present_area_m2": 363916461.60180837,
+      "clear_joint_area_m2": 346461852.5301061,
+      "missing_joint_area_m2": 36689110560.24728
+    },
+    {
+      "province": "west_java",
+      "year": 2021,
+      "boundary_area_m2": 37053027021.84885,
+      "simultaneous_present_area_m2": 248320775.62007055,
+      "clear_joint_area_m2": 237474924.3449799,
+      "missing_joint_area_m2": 36804706246.22901
+    },
+    {
+      "province": "west_java",
+      "year": 2022,
+      "boundary_area_m2": 37053027021.84885,
+      "simultaneous_present_area_m2": 353090287.0134756,
+      "clear_joint_area_m2": 340269580.69529283,
+      "missing_joint_area_m2": 36699936734.83561
+    },
+    {
+      "province": "west_java",
+      "year": 2023,
+      "boundary_area_m2": 37053027021.84885,
+      "simultaneous_present_area_m2": 179276368.86326993,
+      "clear_joint_area_m2": 178708286.71411255,
+      "missing_joint_area_m2": 36873750652.98582
+    },
+    {
+      "province": "west_java",
+      "year": 2024,
+      "boundary_area_m2": 37053027021.84885,
+      "simultaneous_present_area_m2": 179276368.86326993,
+      "clear_joint_area_m2": 178414132.5713737,
+      "missing_joint_area_m2": 36873750652.98582
+    },
+    {
+      "province": "west_java",
+      "year": 2025,
+      "boundary_area_m2": 37053027021.84885,
+      "simultaneous_present_area_m2": 179276368.86326993,
+      "clear_joint_area_m2": 178339397.01594272,
+      "missing_joint_area_m2": 36873750652.98582
+    },
+    {
+      "province": "east_java",
+      "year": 2020,
+      "boundary_area_m2": 48056977393.52378,
+      "simultaneous_present_area_m2": 304538962.35012656,
+      "clear_joint_area_m2": 258025051.31970617,
+      "missing_joint_area_m2": 47752438431.17383
+    },
+    {
+      "province": "east_java",
+      "year": 2021,
+      "boundary_area_m2": 48056977393.52378,
+      "simultaneous_present_area_m2": 209547018.18823564,
+      "clear_joint_area_m2": 207765645.73207667,
+      "missing_joint_area_m2": 47847430375.33562
+    },
+    {
+      "province": "east_java",
+      "year": 2022,
+      "boundary_area_m2": 48056977393.52378,
+      "simultaneous_present_area_m2": 304395723.0318371,
+      "clear_joint_area_m2": 264068859.47403073,
+      "missing_joint_area_m2": 47752581670.49212
+    },
+    {
+      "province": "east_java",
+      "year": 2023,
+      "boundary_area_m2": 48056977393.52378,
+      "simultaneous_present_area_m2": 206328459.24948412,
+      "clear_joint_area_m2": 205653001.11375168,
+      "missing_joint_area_m2": 47850648934.27447
+    },
+    {
+      "province": "east_java",
+      "year": 2024,
+      "boundary_area_m2": 48056977393.52378,
+      "simultaneous_present_area_m2": 260781372.03000826,
+      "clear_joint_area_m2": 260148471.01321656,
+      "missing_joint_area_m2": 47796196021.49388
+    },
+    {
+      "province": "east_java",
+      "year": 2025,
+      "boundary_area_m2": 48056977393.52378,
+      "simultaneous_present_area_m2": 314346145.0038804,
+      "clear_joint_area_m2": 300174300.9880442,
+      "missing_joint_area_m2": 47742631248.51997
+    },
+    {
+      "province": "gorontalo",
+      "year": 2020,
+      "boundary_area_m2": 12024825577.287481,
+      "simultaneous_present_area_m2": 314800664.9724383,
+      "clear_joint_area_m2": 305442094.7736993,
+      "missing_joint_area_m2": 11710024912.3149
+    },
+    {
+      "province": "gorontalo",
+      "year": 2021,
+      "boundary_area_m2": 12024825577.287481,
+      "simultaneous_present_area_m2": 314800664.9724383,
+      "clear_joint_area_m2": 255426339.3370873,
+      "missing_joint_area_m2": 11710024912.3149
+    },
+    {
+      "province": "gorontalo",
+      "year": 2022,
+      "boundary_area_m2": 12024825577.287481,
+      "simultaneous_present_area_m2": 314606902.8213379,
+      "clear_joint_area_m2": 274849651.24766946,
+      "missing_joint_area_m2": 11710218674.466002
+    },
+    {
+      "province": "gorontalo",
+      "year": 2023,
+      "boundary_area_m2": 12024825577.287481,
+      "simultaneous_present_area_m2": 209582192.61214352,
+      "clear_joint_area_m2": 203223738.04420543,
+      "missing_joint_area_m2": 11815243384.675194
+    },
+    {
+      "province": "gorontalo",
+      "year": 2024,
+      "boundary_area_m2": 12024825577.287481,
+      "simultaneous_present_area_m2": 314522093.39711773,
+      "clear_joint_area_m2": 269275113.52859706,
+      "missing_joint_area_m2": 11710303483.890219
+    },
+    {
+      "province": "gorontalo",
+      "year": 2025,
+      "boundary_area_m2": 12024825577.287481,
+      "simultaneous_present_area_m2": 314314720.8893606,
+      "clear_joint_area_m2": 261649370.77912843,
+      "missing_joint_area_m2": 11710510856.397978
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2020,
+      "boundary_area_m2": 45323612676.4504,
+      "simultaneous_present_area_m2": 418606390.59638464,
+      "clear_joint_area_m2": 399018996.2017852,
+      "missing_joint_area_m2": 44905006285.8544
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2021,
+      "boundary_area_m2": 45323612676.4504,
+      "simultaneous_present_area_m2": 313933231.67663586,
+      "clear_joint_area_m2": 275480146.1008188,
+      "missing_joint_area_m2": 45009679444.77415
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2022,
+      "boundary_area_m2": 45323612676.4504,
+      "simultaneous_present_area_m2": 418603890.58343816,
+      "clear_joint_area_m2": 351151606.70905304,
+      "missing_joint_area_m2": 44905008785.86748
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2023,
+      "boundary_area_m2": 45323612676.4504,
+      "simultaneous_present_area_m2": 313927430.34067285,
+      "clear_joint_area_m2": 299271299.55302066,
+      "missing_joint_area_m2": 45009685246.110085
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2024,
+      "boundary_area_m2": 45323612676.4504,
+      "simultaneous_present_area_m2": 313926329.969397,
+      "clear_joint_area_m2": 290705645.5822231,
+      "missing_joint_area_m2": 45009686346.48141
+    },
+    {
+      "province": "south_sulawesi",
+      "year": 2025,
+      "boundary_area_m2": 45323612676.4504,
+      "simultaneous_present_area_m2": 313933231.67663586,
+      "clear_joint_area_m2": 276229461.022609,
+      "missing_joint_area_m2": 45009679444.77415
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2020,
+      "boundary_area_m2": 35444318634.088615,
+      "simultaneous_present_area_m2": 263910899.2146672,
+      "clear_joint_area_m2": 245408248.00322127,
+      "missing_joint_area_m2": 35180407734.87386
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2021,
+      "boundary_area_m2": 35444318634.088615,
+      "simultaneous_present_area_m2": 368599576.9633593,
+      "clear_joint_area_m2": 316996094.3976986,
+      "missing_joint_area_m2": 35075719057.125175
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2022,
+      "boundary_area_m2": 35444318634.088615,
+      "simultaneous_present_area_m2": 263910899.2146672,
+      "clear_joint_area_m2": 233026642.2459285,
+      "missing_joint_area_m2": 35180407734.87386
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2023,
+      "boundary_area_m2": 35444318634.088615,
+      "simultaneous_present_area_m2": 263910899.2146672,
+      "clear_joint_area_m2": 214991027.4097146,
+      "missing_joint_area_m2": 35180407734.87386
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2024,
+      "boundary_area_m2": 35444318634.088615,
+      "simultaneous_present_area_m2": 425506317.5437486,
+      "clear_joint_area_m2": 298584919.48092234,
+      "missing_joint_area_m2": 35018812316.54478
+    },
+    {
+      "province": "southeast_sulawesi",
+      "year": 2025,
+      "boundary_area_m2": 35444318634.088615,
+      "simultaneous_present_area_m2": 263909898.4153647,
+      "clear_joint_area_m2": 237777830.021463,
+      "missing_joint_area_m2": 35180408735.67316
+    }
+  ],
+  "weighted_present_coverage_pct": 0.9773249834093871,
+  "weighted_clear_coverage_pct": 0.890386955270514,
+  "missing_area_m2": 1112571999322.7073,
+  "full_spatial_coverage": false,
+  "pilot_delta": {
+    "province": "east_java",
+    "year": 2023,
+    "scene_id": "S2A_MSIL2A_20230905T023531_R089_T49MFM_20240916T145247",
+    "added_present_area_m2": 6556514.480755895,
+    "added_clear_area_m2": 6556514.480755895
+  },
+  "missing_queue": {
+    "path": "data/staging/sentinel-post-pilot/exact-missing-queue.geojson",
+    "sha256": "42a18a8712b137b4aaa96fb8292d9d20d9cb5f571ee557d9a69475750afb52ce",
+    "bytes": 116206625,
+    "features": 72
+  },
+  "next_collection": {
+    "status": "PLANNED",
+    "ranking_basis": "LARGEST_MISSING_AREA_PER_PROVINCE",
+    "priorities": [
+      {
+        "rank": 1,
+        "province": "east_java",
+        "year": 2023,
+        "missing_joint_area_m2": 47850648934.27447,
+        "estimated_single_window_body_bytes": 7471506,
+        "executable": false
+      },
+      {
+        "rank": 2,
+        "province": "south_sulawesi",
+        "year": 2024,
+        "missing_joint_area_m2": 45009686346.48141,
+        "estimated_single_window_body_bytes": 7471506,
+        "executable": false
+      },
+      {
+        "rank": 3,
+        "province": "west_java",
+        "year": 2023,
+        "missing_joint_area_m2": 36873750652.98582,
+        "estimated_single_window_body_bytes": 7471506,
+        "executable": false
+      },
+      {
+        "rank": 4,
+        "province": "southeast_sulawesi",
+        "year": 2025,
+        "missing_joint_area_m2": 35180408735.67316,
+        "estimated_single_window_body_bytes": 7471506,
+        "executable": false
+      },
+      {
+        "rank": 5,
+        "province": "gorontalo",
+        "year": 2023,
+        "missing_joint_area_m2": 11815243384.675194,
+        "estimated_single_window_body_bytes": 7471506,
+        "executable": false
+      },
+      {
+        "rank": 6,
+        "province": "banten",
+        "year": 2023,
+        "missing_joint_area_m2": 9146391578.600172,
+        "estimated_single_window_body_bytes": 7471506,
+        "executable": false
+      }
+    ],
+    "reference_window_size_px": [
+      256,
+      256
+    ],
+    "reference_window_observed_body_bytes": 7471506,
+    "estimated_total_body_bytes_for_one_window_per_priority": 44829036,
+    "full_gap_transfer_estimate_bytes": null,
+    "estimate_basis": "ONE_PRIOR_COG_WINDOW_MEASUREMENT_NOT_A_QUOTE",
+    "blocking_requirements": [
+      "BIG_AUTHORITY_APPROVAL",
+      "COVERAGE_AND_BUDGET_APPROVAL",
+      "SCENE_ASSET_WINDOW_PINS"
+    ]
+  },
+  "collector_started": false,
+  "remote_downloads": 0,
+  "ledger_writes": 0,
+  "learning_ready": false
+}

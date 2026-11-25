@@ -1,0 +1,21 @@
+{
+  "status": "VERIFIED_REAL_HISTORICAL_SAMPLE_NOT_CURRENT",
+  "source_uri": "https://kspservices.big.go.id/satupeta/rest/services/PUBLIK/PERENCANAAN_RUANG/MapServer/14/query?f=geojson&where=wadmpr%3D%27PROVINSI+BANTEN%27&outFields=objectid%2Cwadmpr%2Cnothpd%2Crtrppr&returnGeometry=true&outSR=4326&orderByFields=objectid+ASC&resultRecordCount=1",
+  "acquired_at": "2026-11-25T03:04:16.391769+00:00",
+  "sha256": "afad1488a9e07235b1f0fde644f79ee40c663eedf4b527fcbce1ee4fc3126356",
+  "bytes": 3331,
+  "http_status": 200,
+  "license": "UNVERIFIED",
+  "sample": {
+    "physical_features": 1,
+    "properties": [
+      {
+        "objectid": 41,
+        "wadmpr": "PROVINSI BANTEN",
+        "nothpd": "Perda No. 05 Tahun 2017",
+        "rtrppr": "Kawasan Danau"
+      }
+    ]
+  },
+  "current_ordinance_match": false
+}

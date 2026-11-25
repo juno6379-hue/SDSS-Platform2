@@ -1,0 +1,9 @@
+# These JSON files are verified byte-for-byte on every API request.
+/services/api/evidence-lock.json text eol=lf
+/services/api/evidence-lock-v2.json text eol=lf
+/evidence/onemap_sentinel/post-pilot-reaudit.json text eol=lf
+/evidence/cckp_indonesia/** -text whitespace=cr-at-eol
+/evidence/results/** -text whitespace=cr-at-eol
+/evidence/rtrw-20261125/** -text whitespace=cr-at-eol
+/evidence/data_lake/local-handoff-20261125.json -text whitespace=cr-at-eol
+/evidence/models/scene-split-audit-20261125.json -text whitespace=cr-at-eol

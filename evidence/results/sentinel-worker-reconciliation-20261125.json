@@ -1,0 +1,30 @@
+{
+  "schema_version": "sentinel-worker-reconciliation/1",
+  "status": "BLOCKED",
+  "checked_at": "2026-11-25T12:05:20.6136840+09:00",
+  "progress_path": "evidence\\onemap_sentinel\\coverage-batches\\20261125-pass01\\progress.json",
+  "progress_sha256": "f71969efc2209746cc9713a66cdfac17e2fed8c9d76ae0d4c4ea063bb98fc69e",
+  "persisted_worker_status": "RUNNING",
+  "worker_pid": 37644,
+  "worker_alive": false,
+  "planned_windows": 36,
+  "received_windows": 8,
+  "quality_passing_windows": 5,
+  "recent_429_count": 0,
+  "pending_window": {
+    "province": "west_java",
+    "year": 2024,
+    "index": 9
+  },
+  "pending_receipt_found": false,
+  "pending_ledger": {
+    "sha256": "ddbeda493e3418f7d82d6430b48f5eae16a78fba3b641c22f86ceef6ca5d6d69",
+    "status": "pending",
+    "io_started": true,
+    "charged_bytes": 33554432
+  },
+  "blockers": [
+    "SENTINEL_WORKER_EXITED_BEFORE_WINDOW_SETTLEMENT",
+    "PENDING_TRANSFER_AMOUNT_UNVERIFIED"
+  ]
+}
