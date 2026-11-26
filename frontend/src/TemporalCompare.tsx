@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
+import { showAdminBoundaries } from './adminBoundaryMap';
 import { api, API_BASE } from './api';
 import './TemporalCompare.css';
 
@@ -80,6 +81,7 @@ function AnnualMaps({ left, right, swipe, position, onPositionChange }: {
     const a = create(leftContainer.current, left, 'left');
     const b = swipe && right && rightContainer.current ? create(rightContainer.current, right, 'right') : undefined;
     maps.current = { left: a, right: b };
+    const overlayCleanup = b ? [showAdminBoundaries(a), showAdminBoundaries(b)] : [showAdminBoundaries(a)];
     if (!viewport.current) a.fitBounds(left.bbox, { padding: 35, duration: 0, maxZoom: 18 });
     let synchronizing = false;
     const syncFrom = (source: maplibregl.Map, target?: maplibregl.Map) => {
@@ -96,7 +98,7 @@ function AnnualMaps({ left, right, swipe, position, onPositionChange }: {
     a.on('move', syncLeft); a.on('load', syncLeft); b?.on('move', syncRight); b?.on('load', syncRight);
     const observer = new ResizeObserver(() => { a.resize(); b?.resize(); syncLeft(); });
     observer.observe(container.current);
-    return () => { observer.disconnect(); maps.current = {}; a.remove(); b?.remove(); };
+    return () => { observer.disconnect(); overlayCleanup.forEach(remove => remove()); maps.current = {}; a.remove(); b?.remove(); };
   }, [swipe]);
 
   useEffect(() => {

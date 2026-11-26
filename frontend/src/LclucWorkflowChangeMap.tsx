@@ -1,5 +1,6 @@
 import {useEffect,useRef,useState} from 'react';
 import maplibregl from 'maplibre-gl';
+import { showAdminBoundaries } from './adminBoundaryMap';
 import {Icon} from './Icon';
 import {WorkflowFlight} from './lclucWorkflowAdapter';
 import type {WorkflowReceipt} from './lclucWorkflowAdapter';
@@ -16,7 +17,7 @@ function Preview({view}:{view:WorkflowChangeMap}){
  const [error,setError]=useState(''),[loading,setLoading]=useState(true);
  useEffect(()=>{
   if(view.empty||!view.bounds||!node.current)return;
-  let alive=true,map:maplibregl.Map|undefined,observer:ResizeObserver|undefined;
+  let alive=true,map:maplibregl.Map|undefined,observer:ResizeObserver|undefined,removeAdmin:(()=>void)|undefined;
   setError('');setLoading(true);
   const fail=()=>{if(alive){setError('지도 표시를 사용할 수 없습니다. WebGL 지원과 브라우저 설정을 확인하세요. 아래 보고서 통계는 그대로 유지됩니다.');setLoading(false);}};
   const load=()=>{if(!alive||!map)return;try{
@@ -29,9 +30,9 @@ function Preview({view}:{view:WorkflowChangeMap}){
   try{
    map=new maplibregl.Map({container:node.current,style:{version:8,sources:{},layers:[{id:'neutral-background',type:'background',paint:{'background-color':'#edf3f8'}}]},center:[118,-3],zoom:3,attributionControl:false});
    mapRef.current=map;map.addControl(new maplibregl.AttributionControl({compact:false,customAttribution:'LCLUC 로컬 변화 산출물 · 기관 출처·과학 정확도 미인증'}),'bottom-right');
-   map.on('load',load);map.on('error',fail);map.on('webglcontextlost',fail);observer=new ResizeObserver(()=>map?.resize());observer.observe(node.current);
+   map.on('load',load);removeAdmin=showAdminBoundaries(map);map.on('error',fail);map.on('webglcontextlost',fail);observer=new ResizeObserver(()=>map?.resize());observer.observe(node.current);
   }catch{fail();}
-  return()=>{alive=false;observer?.disconnect();if(map){map.off('load',load);map.off('error',fail);map.off('webglcontextlost',fail);map.remove();}mapRef.current=null;};
+  return()=>{alive=false;observer?.disconnect();removeAdmin?.();if(map){map.off('load',load);map.off('error',fail);map.off('webglcontextlost',fail);map.remove();}mapRef.current=null;};
  },[view]);
  if(view.empty)return <p className="lwf-map-empty" role="status">표시할 변화 도형 0개입니다. 가짜 도형을 생성하지 않습니다. 벡터 지도와 전체 유효 래스터의 변화량 통계는 별도입니다.</p>;
  return <div className="lwf-map-preview"><div ref={node} className="lwf-map-canvas" aria-label="검증된 선택 변화쌍 지도"/>{loading&&!error&&<p role="status" className="lwf-map-message">지도 표시 준비 중…</p>}{error&&<p role="alert" className="lwf-map-message lwf-warning">{error}</p>}<div className="lwf-map-controls" role="group" aria-label="변화 지도 조작"><button type="button" disabled={!!error||loading} aria-label="변화 지도 확대" onClick={()=>mapRef.current?.zoomIn()}><Icon name="plus" size={18}/></button><button type="button" disabled={!!error||loading} aria-label="변화 지도 축소" onClick={()=>mapRef.current?.zoomOut()}><Icon name="minus" size={18}/></button><button type="button" disabled={!!error||loading} aria-label="변화 도형 전체 보기" onClick={()=>{if(view.bounds)mapRef.current?.fitBounds(view.bounds,{padding:32,maxZoom:14,duration:0});}}><Icon name="focus" size={18}/></button></div></div>;

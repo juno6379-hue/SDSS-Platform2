@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
+import { showAdminBoundaries } from './adminBoundaryMap';
 
 type Bounds = [number, number, number, number];
 
@@ -12,6 +13,7 @@ export default function ResultLayerMap({ href, bounds, title }: { href: string; 
     if (!host) return;
     const controller = new AbortController();
     let map: maplibregl.Map | undefined;
+    let removeAdmin: (() => void) | undefined;
     async function render() {
       const response = await fetch(href, { signal: controller.signal });
       if (!response.ok) throw new Error('지도 레이어를 열 수 없습니다.');
@@ -33,6 +35,7 @@ export default function ResultLayerMap({ href, bounds, title }: { href: string; 
         bounds,
         fitBoundsOptions: { padding: 20, maxZoom: 14, duration: 0 },
       });
+      removeAdmin = showAdminBoundaries(map);
       map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
       map.once('load', () => setStatus(''));
       map.on('error', () => setStatus('지도 미리보기를 표시할 수 없습니다.'));
@@ -41,7 +44,7 @@ export default function ResultLayerMap({ href, bounds, title }: { href: string; 
     void render().catch(() => {
       if (!controller.signal.aborted) setStatus('지도 미리보기를 표시할 수 없습니다.');
     });
-    return () => { controller.abort(); map?.remove(); };
+    return () => { controller.abort(); removeAdmin?.(); map?.remove(); };
   }, [href, bounds]);
 
   return <><div className="common-catalog-map" ref={container} aria-label={title} data-testid="common-catalog-map"/>{status && <p role="status">{status}</p>}</>;

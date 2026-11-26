@@ -1,0 +1,15 @@
+.postprocess{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:start;color:#102a62}
+.postprocess .panel{padding:13px;min-width:0;margin:0}.postprocess h2{font-size:16px;margin:0 0 8px}.postprocess p{margin:7px 0}
+.postprocess-toolbox{grid-column:1/-1}.postprocess-tools,.postprocess-toolbox form,.postprocess-map-tools,.postprocess-downloads{display:flex;align-items:end;flex-wrap:wrap;gap:8px 12px}
+.postprocess-tools button[aria-pressed=true],.postprocess-toolbox button[type=submit]{background:#0b5dde;color:white}
+.postprocess-toolbox form label{display:grid;gap:3px}.postprocess-toolbox select,.postprocess-toolbox input[type=number]{border:1px solid #b6cde5;border-radius:4px;padding:5px 8px;max-width:100%}
+.postprocess-history{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px}
+.postprocess-map{position:relative;background:#102f4b;border-radius:5px;overflow:hidden;max-width:750px;margin:auto}
+.postprocess-map img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;image-rendering:pixelated}.postprocess-map-divider{position:absolute;inset:0 auto 0 50%;border-left:2px solid #fff;pointer-events:none}
+.postprocess-map-handle{position:absolute;top:50%;width:28px;height:28px;display:grid;place-items:center;padding:0;transform:translate(-50%,-50%);border:1px solid #1a65cc;border-radius:50%;background:white;color:#1a65cc;cursor:ew-resize;touch-action:none}
+.postprocess-map-label{position:absolute;top:8px;background:#102f4b;color:white;padding:4px 8px;border-radius:4px}.postprocess-map-label.left{left:8px}.postprocess-map-label.right{right:8px}
+.postprocess-map-tools{align-items:center;margin:7px 0}.postprocess-map-tools label{display:flex;gap:5px;align-items:center}.postprocess-correction-color,.postprocess-area i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px;background:#e84427}
+.postprocess-map-tools label{white-space:nowrap}.postprocess-map-tools input[type=checkbox]{width:16px;height:16px;min-height:0;margin:0}.postprocess-map-tools input[type=range]{min-height:0}
+.postprocess table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}.postprocess th,.postprocess td{padding:6px;border-bottom:1px solid #deebf8}.postprocess th{text-align:left}.postprocess td{text-align:right}.postprocess thead{background:#edf6ff}.postprocess thead th:not(:first-child){text-align:right}
+.postprocess-run-id{overflow-wrap:anywhere}.postprocess-downloads{margin-top:10px}.postprocess-downloads a{color:#075bdb}
+@media(max-width:850px){.postprocess{grid-template-columns:1fr}}

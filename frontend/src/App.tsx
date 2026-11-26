@@ -4,6 +4,7 @@ import { SDSSHeader, SDSSFooter } from './SDSSChrome';
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import type { GeoJSONSource } from 'maplibre-gl';
+import { showAdminBoundaries } from './adminBoundaryMap';
 import { api, API_BASE } from './api';
 import { firstGroupProvinces } from './provinces';
 import CollectionStatus from './CollectionStatus';
@@ -16,7 +17,9 @@ import GeoQuery from './GeoQuery';
 import DashboardReference from './DashboardReference';
 import DataCatalogReference from './DataCatalogReference';
 import CatalogInsights from './CatalogInsights';
-import {COMMON_RESULT_STEP,parseRoute,routeHash,appHistoryDepth,appHistoryState,navigationResponseCurrent,insightDatasetId,readCatalogSession} from './catalogNavigation';
+import {COMMON_RESULT_STEP,LCLUC_POSTPROCESS_STEP,parseRoute,routeHash,appHistoryDepth,appHistoryState,navigationResponseCurrent,insightDatasetId,readCatalogSession} from './catalogNavigation';
+import LclucPostprocess from './LclucPostprocess';
+import MapbiomasKnowledge from './MapbiomasKnowledge';
 import { PlatformSidebar, PlatformContext, ToolboxHub, ModelWorkspace, ModelMlopsWorkspace, navigationForStep, titleForStep, menuSections } from './PlatformShell';
 
 type RecordValue = Record<string, unknown>;
@@ -44,19 +47,21 @@ function MapView({ bbox, geometry, boundary, viewBounds }: { bbox: Bbox; geometr
   const container = useRef<HTMLDivElement>(null);
   const instance = useRef<maplibregl.Map | null>(null);
   const [mapError, setMapError] = useState('');
+  const [adminLoaded, setAdminLoaded] = useState(false);
   useEffect(() => {
     if (!container.current) return;
     const map = new maplibregl.Map({ container: container.current, style: { version: 8, sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OpenStreetMap contributors' } }, layers: [{ id: 'osm', type: 'raster', source: 'osm', paint: { 'raster-saturation': -0.65, 'raster-opacity': 0.85 } }] }, center: [117, -2], zoom: 4 });
     instance.current = map;
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
     map.on('error', () => setMapError('기저지도 일부를 불러오지 못했습니다. 인터넷 연결을 확인하세요.'));
-    return () => { map.remove(); instance.current = null; };
+    const removeAdmin = showAdminBoundaries(map, setAdminLoaded);
+    return () => { removeAdmin(); map.remove(); instance.current = null; };
   }, []);
   useEffect(() => {
     const map = instance.current;
     if (!map) return;
     const draw = () => {
-      const province = obj(boundary);
+      const province = obj(adminLoaded ? undefined : boundary);
       const provinceData = province.type ? province : { type: 'FeatureCollection', features: [] };
       if (map.getSource('province')) (map.getSource('province') as GeoJSONSource).setData(provinceData as never);
       else {
@@ -78,8 +83,8 @@ function MapView({ bbox, geometry, boundary, viewBounds }: { bbox: Bbox; geometr
     };
     if (map.isStyleLoaded()) draw(); else map.once('load', draw);
     return () => { map.off('load', draw); };
-  }, [bbox, geometry, boundary, viewBounds]);
-  return <div className="map-shell"><div ref={container} className="map" /><span className="map-label">점선: 검색 bbox{boundary ? ' · 진한 실선: 공개 주 경계(2017)' : ''}{geometry ? ' · 주황: 분류지도 간 변화(독립 미검증)' : ''}</span>{mapError && <span className="map-error">{mapError}</span>}</div>;
+  }, [bbox, geometry, boundary, viewBounds, adminLoaded]);
+  return <div className="map-shell"><div ref={container} className="map" /><span className="map-label">점선: 검색 bbox{adminLoaded ? ' · 주·군·시 경계: One Map / BIG' : boundary ? ' · 진한 실선: 공개 주 경계(2017)' : ''}{geometry ? ' · 주황: 분류지도 간 변화(독립 미검증)' : ''}</span>{mapError && <span className="map-error">{mapError}</span>}</div>;
 }
 
 function Workflow({ index, onJob, initialModelId = '' }: { index: number; onJob: (job: Job) => void; initialModelId?: string }) {
@@ -249,6 +254,7 @@ export default function App() {
       {step === 20 && <section className="panel"><span className="eyebrow">SPATIAL PLANNING</span><h2>RDTR 공간계획 검토</h2><p className="muted">지역 공간계획의 공식 경계·용도지역·정책 근거와 권한이 연결된 뒤 분석 결과를 중첩합니다.</p><p className="empty">공식 RDTR/RTRW 데이터와 검토·승인 API 미연결</p><div className="button-row"><button className="secondary" onClick={()=>navigate(14)}>분석 지도 보기</button><button disabled>계획 승인 API 미연결</button></div></section>}
       {step === 21 && <section className="panel"><h2>검토·승인 이력</h2><p className="empty">기관별 보고서 승인·전자서명 이력 API 미연결</p><button className="secondary" onClick={()=>navigate(17)}>모델의 실제 승인 근거 검토</button></section>}
       {step === COMMON_RESULT_STEP && <CommonResultReview/>}
+      {step === LCLUC_POSTPROCESS_STEP && <LclucPostprocess/>}
       {step === 22 && <><InstitutionJobs/><ResourceList title="저장된 작업·알림" data={resources.jobs} error={errors.jobs}/></>}
       {step === 23 && <AgentCenter tools={rows(resources.tools)} models={models} jobs={rows(resources.jobs)} onNavigate={navigate} onStandardLayer={(geo,bounds)=>{setGeometry(geo);setProvinceGeometry(undefined);if(bounds){setBbox(bounds);setMapBounds(bounds);}navigate(14);}}/>}
       {step === 0 && <><div className="metrics"><Metric label="등록 데이터셋" value={errors.datasets ? '—' : resources.datasets === undefined ? '…' : String(datasets.length)} suffix="개"/><Metric label="모델 레지스트리" value={errors.models ? '—' : resources.models === undefined ? '…' : String(models.length)} suffix="개"/><Metric label="저장된 분석" value={errors.analyses ? '—' : resources.analyses === undefined ? '…' : String(analyses.length)} suffix="건"/><Metric label="API 연결" value={connected ? '정상' : '미연결'} suffix=""/></div><CollectionStatus compact/><ErrorNotice error={errors.health || ''}/><div className="map-heading"><h2>분석 영역 탐색</h2><span className="muted">선택한 연구 AOI · 실행 전 범위를 확인하세요</span></div><MapView bbox={bbox} geometry={geometry} boundary={provinceGeometry} viewBounds={mapBounds}/><div className="two-col"><section className="panel"><span className="eyebrow">YOUR NEXT STEP</span><h2>위성 데이터에서 시작하세요</h2><p className="muted">관심 영역과 기간으로 실제 카탈로그를 검색한 뒤, 데이터 준비 → 학습 → 추론 → 변화 분석 순서로 진행합니다.</p><button onClick={() => navigate(1)}>위성 데이터 검색 →</button></section><section className="panel"><span className="eyebrow">LIVE SERVER RESPONSE</span><h2>플랫폼 현황</h2><ErrorNotice error={errors.dashboard || ''}/>{resources.dashboard !== undefined ? <Json value={resources.dashboard}/> : <p className="empty">서버 현황 응답을 기다리는 중입니다.</p>}</section></div></>}
@@ -259,7 +265,7 @@ export default function App() {
       {step >= 2 && step <= 5 && step !== 3 && <><Workflow key={step} index={step - 2} onJob={addJob} initialModelId={activeModel}/>{step === 2 && <ResourceList title="등록 데이터셋" data={resources.datasets} error={errors.datasets}/ >}{step === 5 && <><MapView bbox={bbox} geometry={geometry} boundary={provinceGeometry} viewBounds={mapBounds}/><AnalysisReview initialSelected={activeAnalysis} analyses={analyses} onView={(geo, bounds) => { setGeometry(geo); setProvinceGeometry(undefined); if (bounds) { setBbox(bounds); setMapBounds(bounds); } window.requestAnimationFrame(() => document.querySelector('.map-shell')?.scrollIntoView({behavior:'smooth'})); }}/></>}</>}
       {step === 9 && <AgentCenter tools={rows(resources.tools)} models={models} jobs={rows(resources.jobs)} onNavigate={navigate} onStandardLayer={(geo,bounds)=>{setGeometry(geo);setProvinceGeometry(undefined);if(bounds){setBbox(bounds);setMapBounds(bounds);}navigate(14);}}/>}
       {step === 8 && <TemporalCompare/>}
-      {step === 7 && <GeoQuery analyses={analyses} onAgentCenter={() => navigate(9)} onReviewResult={id => {setActiveAnalysis(id);navigate(5);}}/>}
+      {step === 7 && <><GeoQuery analyses={analyses} onAgentCenter={() => navigate(9)} onReviewResult={id => {setActiveAnalysis(id);navigate(5);}}/><MapbiomasKnowledge/></>}
       {(step === 1 || step === 25) && <section className="panel"><h2>카탈로그 제공처 및 연차별 수집</h2><label>STAC 제공처<select value={endpoint} onChange={e => setEndpoint(e.target.value)}><option value="planetary-computer">Microsoft Planetary Computer (기본)</option><option value="earth-search">Element 84 Earth Search</option></select></label><p className="muted">수집 기준: 2020~2025년, 동일 계절·동일 밴드, 첫 번째 그룹의 6개 주 × 6개 연차의 36개 셀입니다. 검색은 위의 기간 설정으로 실행하고 수집 계획과 실제 다운로드 결과를 구분해 확인하세요.</p><div className="button-row">{[2020, 2021, 2022, 2023, 2024, 2025].map(year => <button key={year} className="secondary" onClick={() => { setStartDate(`${year}-01-01`); setEndDate(`${year}-12-31`); }}>{year}년 기간 선택</button>)}</div><p className="help">연도 버튼은 조회 기간만 바꿉니다. 계절 비교 시 월·일을 동일하게 직접 조정하세요. 다운로드 진행 여부는 실제 작업 응답에서 확인합니다.</p></section>}
       {step === 5 && <JsonRequest title="2020~2025 연차별 시계열 분석" path="/timeseries" initial={{ model_id: '', images: [2020, 2021, 2022, 2023, 2024, 2025].map(year => ({ year, image_path: '', source: '', license: '', date: `${year}-01-01` })), output_id: 'indonesia-timeseries' }} help="배포 모델 ID와 6개 연차의 실제 영상 경로를 입력하세요. 동일 계절·밴드·AOI의 정렬된 영상이 필요합니다. 서버의 분류 결과와 인접 연차·2020년 기준 변화량만 표시합니다." onJob={addJob}/>}
 

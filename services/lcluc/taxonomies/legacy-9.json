@@ -1,0 +1,74 @@
+{
+  "schema_version": "land-cover-taxonomy/1",
+  "id": "legacy-9",
+  "version": "sdss-worldcover-grouped-v1",
+  "evidence_status": "VERIFIED_REAL",
+  "approval_status": "BLOCKED",
+  "nodata": 255,
+  "source": {
+    "uri": "https://github.com/juno6379-hue/SDSS-Platform/blob/90c0302f07cdb2acdf5a1ee1d02c52a557d18087/backend/app/ml/raster.py",
+    "verification_uri": null,
+    "authority": "GeoAI–MLOps–SDSS CLASS_NAMES",
+    "checked_on": "2026-11-25",
+    "license": "NOT_VERIFIED",
+    "raw_metadata_sha256": "2fee32d1782e5de1b578b49f54997c74e8def767db778e13c95e8fd68407c54c",
+    "raw_metadata_bytes": 3911
+  },
+  "analysis_groups": {},
+  "classes": [
+    {
+      "code": 0,
+      "label": "water",
+      "name_ko": "수역",
+      "role": "land_cover"
+    },
+    {
+      "code": 1,
+      "label": "trees",
+      "name_ko": "교목",
+      "role": "land_cover"
+    },
+    {
+      "code": 2,
+      "label": "grass",
+      "name_ko": "초지",
+      "role": "land_cover"
+    },
+    {
+      "code": 3,
+      "label": "flooded_vegetation",
+      "name_ko": "침수 식생",
+      "role": "land_cover"
+    },
+    {
+      "code": 4,
+      "label": "crops",
+      "name_ko": "농작물",
+      "role": "land_cover"
+    },
+    {
+      "code": 5,
+      "label": "shrub_and_scrub",
+      "name_ko": "관목·덤불",
+      "role": "land_cover"
+    },
+    {
+      "code": 6,
+      "label": "built",
+      "name_ko": "건조물·시가지",
+      "role": "land_cover"
+    },
+    {
+      "code": 7,
+      "label": "bare",
+      "name_ko": "나지",
+      "role": "land_cover"
+    },
+    {
+      "code": 8,
+      "label": "snow_and_ice",
+      "name_ko": "눈·얼음",
+      "role": "land_cover"
+    }
+  ]
+}

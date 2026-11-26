@@ -24,7 +24,8 @@ export default defineConfig(({ mode }) => {
   // 운영 전용 경로는 기존 legacy /api보다 먼저 매칭한다.
   const opsTarget = new URL(env.VITE_OPERATIONS_PROXY_TARGET || env.VITE_RESULTS_PROXY_TARGET || 'http://127.0.0.1:8014');
   if (opsTarget.protocol !== 'http:' || !['127.0.0.1', 'localhost', '[::1]'].includes(opsTarget.hostname) || opsTarget.href !== opsTarget.origin + '/') throw new Error('VITE_OPERATIONS_PROXY_TARGET must be a local HTTP origin');
-  for (const name of ['jobs', 'model-releases', 'institution-sources', 'storage', 'lineage']) proxy['^/api/' + name + '(?:/|\\?|$)'] = { target: opsTarget.origin, changeOrigin: false };
+  for (const name of ['jobs', 'model-releases', 'institution-sources', 'storage', 'lineage', 'lcluc']) proxy['^/api/' + name + '(?:/|\\?|$)'] = { target: opsTarget.origin, changeOrigin: false };
+  proxy['^/api/rag/mapbiomas(?:/|\\?|$)'] = { target: opsTarget.origin, changeOrigin: false };
   if (target) for (const path of paths) proxy[path] = { target, changeOrigin: true };
   return {
     plugins: [react()],

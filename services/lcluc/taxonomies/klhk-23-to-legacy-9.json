@@ -1,0 +1,105 @@
+{
+  "schema_version": "land-cover-crosswalk/1",
+  "id": "klhk-23-to-legacy-9",
+  "version": "provisional-conservative-v1",
+  "approval_status": "BLOCKED",
+  "evidence_status": "IMPLEMENTED_UNVERIFIED",
+  "source_taxonomy_id": "klhk-23",
+  "source_taxonomy_sha256": "bf4eb70aeb2572dacad95410edad68e74376f82408437244514799370db183bc",
+  "target_taxonomy_id": "legacy-9",
+  "target_taxonomy_sha256": "3429335b49cf3566a826dd4c69351b02bcddac5951d414c9f0e4a75a159c82df",
+  "mapping": [
+    {
+      "source_code": 2001,
+      "target_code": 1
+    },
+    {
+      "source_code": 2002,
+      "target_code": 1
+    },
+    {
+      "source_code": 2004,
+      "target_code": null
+    },
+    {
+      "source_code": 2005,
+      "target_code": null
+    },
+    {
+      "source_code": 2006,
+      "target_code": 1
+    },
+    {
+      "source_code": 2007,
+      "target_code": 5
+    },
+    {
+      "source_code": 2010,
+      "target_code": null
+    },
+    {
+      "source_code": 2012,
+      "target_code": 6
+    },
+    {
+      "source_code": 2014,
+      "target_code": 7
+    },
+    {
+      "source_code": 2500,
+      "target_code": null
+    },
+    {
+      "source_code": 3000,
+      "target_code": 2
+    },
+    {
+      "source_code": 5001,
+      "target_code": 0
+    },
+    {
+      "source_code": 20041,
+      "target_code": null
+    },
+    {
+      "source_code": 20051,
+      "target_code": null
+    },
+    {
+      "source_code": 20071,
+      "target_code": null
+    },
+    {
+      "source_code": 20091,
+      "target_code": 4
+    },
+    {
+      "source_code": 20092,
+      "target_code": null
+    },
+    {
+      "source_code": 20093,
+      "target_code": 4
+    },
+    {
+      "source_code": 20094,
+      "target_code": null
+    },
+    {
+      "source_code": 20121,
+      "target_code": null
+    },
+    {
+      "source_code": 20122,
+      "target_code": 6
+    },
+    {
+      "source_code": 20141,
+      "target_code": null
+    },
+    {
+      "source_code": 50011,
+      "target_code": null
+    }
+  ]
+}

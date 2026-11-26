@@ -4,13 +4,33 @@
 
 ## 상태와 실행
 
-API와 정적 반응형 화면은 구현되었다. 실제 서버 적용·실제 브라우저 확인은 root가 별도로 수행한다. 이 문서의 TestClient 시험은 실제 브라우저 확인이 아니다. 외부 LLM/embedding 키, 원격 수집, 학습, 추론, 배포 실행은 없다.
+2026-11-26 Edge 5175의 **연차 토지피복도 → Esri·MapBiomas 원본별 면적**에서 Esri 9행과 MapBiomas 11행, 차이 열 제거, 2020·2024 연도 전환을 확인했다. API에서 2024년 경계·분류 유효·발행 합계와 비공통연도 422를 확인했다. [Edge 시험](../../artifacts/lcluc/banten-native-area-edge.log) · [면적 계약과 공식 참조 조건](../lcluc/BANTEN_MAPBIOMAS_AREA_COMPARISON.md)
+
+2026-11-26 Edge 5175에서 LCLUC 반텐의 **Landsat → AI 모델 비교**, **Sentinel-2 → AI 신규 분류**로 전환했다. 센서별 세 모델의 약한 참조 지표와 GeoTIFF 6개를 확인했다. Toolbox에서 두 DeepLabv3+ 후보의 후처리를 실행했고 각각 동일한 전·후 평가 표본을 확인했다. [Edge 시험](../../artifacts/lcluc/banten-deeplab-area-edge.log) · [모델 계약](../lcluc/BANTEN_MODEL_TRIALS.md)
+
+2026-11-26 Edge 5175의 **GeoLLM Assistant → MapBiomas Indonesia 지식 검색**에서 P0 9건 포함 14개 원문의 검색 및 공식 PDF·웹 인용을 확인했다. **후처리 및 품질관리**에서 RF와 Tiny U-Net 동일 표본 비교, Tiny U-Net 공간 필터 Swipe, Sentinel-2 Siamese 전·후 결과, 계층 통합의 동년 라벨·레이어 대기 표기를 확인했다. [통합 Edge 실행](../../artifacts/lcluc/banten-models-knowledge-edge.log) · [GeoLLM 계약](../lcluc/MAPBIOMAS_GEOLLM_KNOWLEDGE.md) · [모델 계약](../lcluc/BANTEN_MODEL_TRIALS.md)
+
+2026-11-26 **GeoAI Toolbox → 후처리 및 품질관리**와 기존 LCLUC 제목 바로가기에서 실제 반텐 Spatial Filter 시험을 실행했다. Edge에서 이력 조회, 원본·보정본 Swipe, 보정 마스크, 클래스 면적표, 같은 표본의 약한 참조 비교 및 GeoTIFF 3개의 SHA-256 일치를 확인했다. API는 후보·실행 ID 계약과 409 입력/무결성 오류를 제공한다. [UI·API 계약](../lcluc/POSTPROCESS_QUALITY.md) · [Edge 실행](../../artifacts/lcluc/lcluc-postprocess-edge.log)
+
+2026-11-26 React Edge 5175의 기존 LCLUC **반텐 → 지도 자료 → Landsat**에서 분광 프리셋 7종과 두 시점 ΔNDVI의 실제 PNG 요청, 관측 품질표, MapBiomas 장기 통계, Random Forest 약한 참조 근거를 확인했다. 기존 지도 폭은 886.95px다. `GET /api/lcluc/banten-landsat`의 `annual`이 스와이프·재생 연도, `periods`가 다년 합성 자료를 공급한다. `LANDSAT_ARTIFACT_PENDING`은 아직 발행되지 않은 자료, `LANDSAT_ASSET_INTEGRITY_FAILURE`는 고정 파일 검증 실패다. React 5175에서 포트 8014 API를 조회해 1990↔2020 스와이프와 1990→2000→2010→2020 재생 프레임을 확인했다. [데이터·API 계약](../lcluc/LANDSAT_EXPLORER.md) · [Edge 시험](../../artifacts/lcluc/landsat-explorer-edge-final.log)
+
+2026-11-26 React Edge 5175의 기존 LCLUC **반텐 → 지도 자료 → Sentinel-2 L2A**에서 기존 지도 폭, 오른쪽·하단의 여섯 카드와 상단 항목의 카드 이동을 검증했다. 스와이프 T1·T2는 상단 연도 필터, 양쪽 지도 및 AOI API·면적·전이에 반영된다. 전이 PNG는 표시용 해상도, 면적은 Esri 10m 기준이다. AI 신규 분류는 실자료 연차 작업과 GeoTIFF 링크를 연결한다. MapBiomas 발행 주 통계와 2021 Esri↔WorldCover 지도 일치도에는 각 범위와 연도가 표시된다. [조작과 API 계약](../lcluc/SENTINEL_EXPLORER.md) · [Edge 클릭 시험](../../artifacts/lcluc/sentinel-workspace-final-edge.log)
+
+API와 정적 반응형 화면이 구현되었다. 2026-11-25 재감사 버전은 8011에서 Edge로 확인했다. TestClient와 브라우저 검증 근거는 아래에 별도로 기록한다.
+
+2026-11-25 공통 결과 검토는 `http://127.0.0.1:8014/#results`의 **리포트 & RDTR → 결과 검토**에서 제공한다. 실제 Edge와 임시 SQLite에서 고정 증거 등록 → 수정 요청 → 검토 완료 → 필터·새로고침 후 재조회를 확인했다. 실제 프로젝트 원장에서는 10건이 검토 대기 상태다. [등록·검토 API와 병렬 담당](../architecture/COMMON_RESULT_PATH.md)
+
+화면은 기존 GeoAI–MLOps–SDSS의 `SDSSChrome.tsx`, `PlatformShell.tsx`, `sdss-chrome.css` 기준으로 청색 헤더와 7개 업무 메뉴, 현재 위치와 세부 탭을 사용한다. `web/sdss-reference.png`는 원본 UI 참조 그림에서 헤더 로고와 사이드바 사진 구간만 CSS로 표시한다. 대시보드 건수와 결과 상세는 실제 8014 응답을 사용한다. 기존 해시 링크는 동일하며, 메뉴를 바꿀 때 활성 작업화면만 표시한다. 결과 검토의 왼쪽 목록에서 분야·검토 상태를 필터링하고, 아래 **고정 증거 등록**에서 등록한다. 오른쪽 상세에서 근거 SHA, 차단 사유, 검토 이력을 확인한다. 좁은 화면에서는 목록과 상세를 위아래로 배치한다.
+
+화면 구조 반영 뒤 `tests/api_ui` 24건을 통과했다. 8014의 실제 결과 10건, RTRW 상세, 데이터 카탈로그 세부 탭을 Edge 1440px와 390px에서 확인했다. 5174는 응답하지 않아 레거시 비교는 해당 저장소 코드와 기존 참조 화면을 기준으로 했다.
+
+Playwright를 설치한 환경에서 `SDSS_BROWSER_E2E=1`, `SDSS_BROWSER_CHANNEL=msedge`, `SDSS_UI_BASE=http://127.0.0.1:8014`를 설정해 `tests/api_ui/test_browser_e2e.py`, `test_results_browser.py`, `test_live_results.py`를 실행했다. 실제 Edge 5건과 DOM 계약 시험 2건이 통과했다.
 
 프로젝트 루트 `E:\SDSS-Platform2`에서 실행한다.
 
 ```powershell
-python -m uvicorn services.api.app:app --host 127.0.0.1 --port 8010
-# 브라우저: http://127.0.0.1:8010/
+python -m uvicorn services.api.app:app --host 127.0.0.1 --port 8011
+# 브라우저: http://127.0.0.1:8011/#sentinel
 python -m pytest tests/api_ui -q --junitxml=tests/api_ui/results.xml
 python -m ruff check services/api tests/api_ui
 python -m ruff format --check services/api tests/api_ui
@@ -21,7 +41,7 @@ node --check web/app.js
 
 ## 불변 증거·실패 조건
 
-`services/api/evidence-lock.json`에 검토한 상대 경로·SHA·시각·7일 유효기간을 기록하고 `pinned.py`의 lock SHA와 대조한다. 매 요청마다 해당 그룹의 모든 파일을 재해시한다. 누락·변경·기한 만료·미래 시각·루트 밖 경로는 HTTP 409, BLOCKED, value=null로 반환한다. 프로세스 health 200은 증거/공식 공급자/과학 검증이 정상이라는 뜻이 아니다.
+`services/api/evidence-lock-v2.json`에 검토한 상대 경로·SHA·시각·7일 유효기간을 기록하고 `pinned.py`의 lock SHA와 대조한다. 매 요청마다 해당 그룹의 모든 파일을 재해시한다. 누락·변경·기한 만료·미래 시각·루트 밖 경로는 HTTP 409, BLOCKED, value=null로 반환한다. 기존 8010 프로세스는 이전 lock과 시험 전 집계를 읽고, 새 집계는 8011에서 제공한다.
 
 재고 증거가 변경되면 자동으로 새 SHA를 신뢰하지 않는다. 변경 내용을 검토한 뒤에만 아래 명령으로 pin을 갱신하고 서버를 재시작한다.
 
@@ -43,10 +63,12 @@ python -m services.api.evidence --pin-reviewed
 | VectorDB | GET /api/vector | vector-status, vector-output: DB SHA·실제 count·dim/model/private 상태만 읽기 |
 | 보고서 검색 | POST /api/reports/search | report-search, report-output: 인증 없는 private index 검색 금지 |
 | Sentinel | GET /api/sentinel | sentinel-load, sentinel-output: 최종 BLOCKED_COLLECTION_NOT_COMPLETE; 감사·CAS 이관 완료와 수집 미완료 구분 |
+| 수집 현황 | GET /api/collection-progress | collection-load: 출처별 목표·확보·미확보·진행률 및 상세. 미확정 목표나 누락 증거는 숫자 대신 상태 표시 |
 | 모델 | GET /api/models | models-load, models-output: readiness 및 legacy checkpoint 감사, 실제 독립 성능 null |
 | 실행 gate | GET /api/gates | gates-load, gates-output, training-blocker, deployment-blocker: 제안 정책과 차단 이유 |
 | 학습·배포 | POST /api/actions/{action} | training-execute, deployment-execute: disabled; 직접 요청도 409, execution_started=false |
 | Workflow | GET /api/workflow | workflow-load, workflow-output: 증거 검사 단계와 실제 persisted state 구분 |
+| 공통 결과 | GET /api/results/sources, GET·POST /api/results, GET /api/results/{id}, POST /api/results/{id}/reviews | results-refresh, results-register, result-request-changes, result-accept: 증거와 검토 상태, 버전 충돌과 이력을 따로 표시 |
 
 CCKP 예시 질문은 ERA5 observed CDD, 1951–1980, days, bbox [95,-11,141,6]의 면적 가중 격자 통계다. 고정 재현값 40.91221481742199 days는 공식 인도네시아 행정경계 평균·미래 전망·Sentinel 10m 관측이 아니다. 화면의 숫자는 서버 응답만 사용한다. RAG에 정량 기후 질문을 보내면 climate.query로 라우팅하고 answer=null/citations=[]를 유지한다.
 
@@ -110,3 +132,13 @@ ledger SHA는 `8e98e9ba033f015e4e289860166b87f67d81a10e12fee66c9b45481296caa44a`
 현재 evidence-lock SHA: `56b2f604a632a7f232fc9e9cba9c6469ec0775c6a8d6375f822f5c09ab9fcc3b`. 새 pin을 읽으려면 API 프로세스를 재시작한다. 응답 20 KB 미만 제한 회귀시험을 유지했다. 실제 브라우저·서버 적용은 root 인계 범위이다.
 
 Pilot 추가 검증: API 시험 12 passed / 선택 Playwright 3 skipped, Ruff check/format 및 node --check 통과. 최신 시험 결과: tests/api_ui/results.xml. 실제 브라우저는 이번 담당 미실행.
+
+## 시험 자료 반영 재감사 UI 검증 (2026-11-25)
+
+`GET /api/sentinel`에 `coverage_basis=POST_PILOT_EXACT_NATIVE_GEOMETRY`, `province_year_cells`, `pilot_coverage_delta`, `missing_area_m2`, `next_collection`을 추가했다. 셀 면적은 m², 전송 추정은 응답 본문 byte 단위다. `full_gap_transfer_estimate_bytes=null`은 원격 창 미확정 상태를 뜻한다. GeoJSON 본문은 응답에서 제외하며 전체 수집 상태는 `BLOCKED_COLLECTION_NOT_COMPLETE`다. 증거 pin을 읽을 수 없으면 409와 차단 사유를 반환한다.
+
+Edge 158.0.4370.33의 격리 세션에서 로컬 8011의 페이지를 열어 **05 공간피복·이관**, **재감사 결과 조회**, **36개 주·연도별 피복 상세**를 클릭했다. /api/sentinel HTTP 200, 피복 0.9773%·0.8904%, 동자바 2023 1위, 예상 42.75MiB, 상세 36행, 페이지 JavaScript 오류 0을 확인했다. 화면 캡처는 `artifacts/sentinel-post-pilot-ui.png`다. Sentinel/API 회귀시험은 UTF-8 모드에서 71 통과, 선택 브라우저 시나리오 3건 건너뜀이다.
+
+## 수집 현황 추가 (2026-11-25)
+
+기존 메뉴 순서와 스타일을 유지하며 **수집 현황** 항목을 추가했다. 로컬 8012의 Edge에서 수집 목록 조회, 자료군 6개, Sentinel-2 질·수량 지표 3행 및 36개 주·연도 상세, CCKP 목표 미확정, 기존 공간피복 화면을 확인했다. HTTP 200, 페이지 JavaScript 오류 0, 390px 너비에서 문서 가로 넘침 없음. 화면 캡처는 `artifacts/collection-progress-ui.png`다.

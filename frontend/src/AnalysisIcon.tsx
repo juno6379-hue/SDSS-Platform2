@@ -5,6 +5,8 @@ import { IconFrame } from './Icon';
 function iconFor(label: string): ReactNode {
   if (/내보내기/.test(label)) return <><path d="M12 3v12m-4-4 4 4 4-4"/><path d="M4 15v5h16v-5"/></>;
   if (/행렬/.test(label)) return <><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/><path d="m4.5 6 1 1 2-2m3 7 1 1 2-2m3 7 1 1 2-2"/></>;
+  if (/AI 신규 분류/.test(label)) return <><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="m14 17 2 2 4-4"/></>;
+  if (/제품 간 검증/.test(label)) return <><path d="m12 3 7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6Z"/><path d="m9 12 2 2 4-4"/></>;
   if (/핫스팟/.test(label)) return <><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></>;
   if (/지역 비교/.test(label)) return <><path d="M3 20h18M5 17v-6h3v6m3 0V5h3v12m3 0V8h3v9"/><path d="m4 5 3-2 3 2"/></>;
   if (/시나리오/.test(label)) return <><path d="M4 5h4l4 7h4m-8-7 4 14h4M16 9l4 3-4 3m0 1 4 3-4 3"/><circle cx="4" cy="5" r="2"/></>;
@@ -17,7 +19,7 @@ function iconFor(label: string): ReactNode {
   if (/수지/.test(label)) return <><path d="M12 3v18M5 21h14M4 6h16M5 6l-3 8h6Zm14 0-3 8h6Z"/><path d="M2 14c0 3 6 3 6 0m8 0c0 3 6 3 6 0"/></>;
   if (/프로파일/.test(label)) return <><path d="M3 3v18h18M4 16l4-6 4 4 4-8 5 4"/><path d="M4 18h17" strokeDasharray="2 3"/></>;
   if (/노출/.test(label)) return <><path d="M3 21V9h7v12m2 0V3h9v18M6 12v1m0 3v1m9-10h3m-3 4h3m-3 4h3M2 21h20"/></>;
-  if (/통계/.test(label)) return <><path d="M3 3v18h18M6 17v-5h3v5m3 0V6h3v11m3 0v-8h3v8"/></>;
+  if (/통계|면적·비율/.test(label)) return <><path d="M3 3v18h18M6 17v-5h3v5m3 0V6h3v11m3 0v-8h3v8"/></>;
   return <><path d="m3 5 6-2 6 3 6-3v16l-6 3-6-3-6 2Z"/><path d="M9 3v16M15 6v16"/><circle cx="15" cy="10" r="2"/></>;
 }
 

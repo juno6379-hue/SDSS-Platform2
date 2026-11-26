@@ -3,6 +3,7 @@
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Literal
 
 from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse
@@ -14,12 +15,19 @@ from services.climate_query.numeric import climate_query
 from services.datahub.institution_sources import build_inventory, public_summary
 from services.mlops.gates import MLOpsPolicy
 from services.orchestration import WorkflowState
+from services.rag.mapbiomas import catalog as mapbiomas_catalog
+from services.rag.mapbiomas import search as mapbiomas_search
 from services.rag.retrieval import SearchQuery
 from services.rag.routing import route_question
 
 from .collection_progress import snapshot as collection_snapshot
 from .evidence import LOCK_PATH, ROOT, EvidenceBlocked, EvidenceStore
 from .jobs_api import mount_jobs
+from .lcluc_annual import mount_lcluc_annual
+from .lcluc_cases import mount_lcluc_cases
+from .lcluc_landsat_explorer import mount_landsat_explorer
+from .lcluc_postprocess import mount_postprocess
+from .lcluc_sentinel_explorer import mount_sentinel_explorer
 from .model_releases import mount_model_releases
 from .operation_lineage import mount_operation_lineage
 from .pinned import LOCK_SHA256
@@ -33,6 +41,7 @@ SENTINEL = "evidence/onemap_sentinel/"
 class RagRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     question: str = Field(min_length=1, max_length=2000)
+    scope: Literal["mapbiomas-indonesia"] | None = None
 
 
 def blocked(code, **extra):
@@ -69,6 +78,11 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
     mount_results(app, store, result_registry)
     mount_model_releases(app, store, result_registry)
     mount_jobs(app, store, result_registry)
+    mount_lcluc_cases(app, store, result_registry)
+    mount_sentinel_explorer(app, store)
+    mount_landsat_explorer(app, store)
+    mount_postprocess(app, store)
+    mount_lcluc_annual(app, store)
     mount_operation_lineage(app)
 
     @app.get("/api/institution-sources")
@@ -151,8 +165,11 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
         }
 
     @app.post("/api/rag/search")
-    def rag(body: RagRequest):
+    def rag(request: Request, body: RagRequest):
         decision = route_question(body.question)
+        if body.scope == "mapbiomas-indonesia":
+            check_local(request)
+            return mapbiomas_search(store, body.question)
         if decision.kind == "structured_climate_tool":
             return blocked(
                 "NUMERIC_TOOL_REQUIRED",
@@ -177,6 +194,16 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
         result["route"] = decision.kind
         result["index_scope"] = "TESTED_SYNTHETIC_INJECTED_INDEX"
         return result
+
+    @app.get("/api/rag/mapbiomas/catalog")
+    def mapbiomas_sources(request: Request):
+        check_local(request)
+        return mapbiomas_catalog(store)
+
+    @app.post("/api/rag/mapbiomas/search")
+    def mapbiomas_evidence(request: Request, body: RagRequest):
+        check_local(request)
+        return mapbiomas_search(store, body.question)
 
     @app.get("/api/vector")
     def vector():

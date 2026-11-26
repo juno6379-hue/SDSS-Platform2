@@ -1,0 +1,29 @@
+{
+  "schema_version": "land-cover-taxonomy/1",
+  "id": "esri-io-v003",
+  "version": "Esri-Impact-Observatory-v003",
+  "evidence_status": "VERIFIED_REAL",
+  "approval_status": "BLOCKED",
+  "nodata": 0,
+  "source": {
+    "uri": "https://api.impactobservatory.com/stac-aws/collections/io-10m-annual-lulc/items/48M-2024",
+    "verification_uri": "https://www.esri.com/about/newsroom/arcnews/latest-land-cover-data-release-shows-more-change-over-time",
+    "authority": "Esri and Impact Observatory",
+    "checked_on": "2026-11-25",
+    "license": "CC-BY-4.0",
+    "raw_metadata_sha256": "e60fbfeb80a759a3bca995b787747895c4cdf67549a3ca9473893eb1da7f43ff",
+    "raw_metadata_bytes": 7468
+  },
+  "analysis_groups": {"settlement": [7]},
+  "classes": [
+    {"code": 1, "label": "Water", "name_ko": "수역", "role": "land_cover"},
+    {"code": 2, "label": "Trees", "name_ko": "수목", "role": "land_cover"},
+    {"code": 4, "label": "Flooded vegetation", "name_ko": "침수 식생", "role": "land_cover"},
+    {"code": 5, "label": "Crops", "name_ko": "농경지", "role": "land_cover"},
+    {"code": 7, "label": "Built area", "name_ko": "시가지", "role": "land_cover"},
+    {"code": 8, "label": "Bare ground", "name_ko": "나지", "role": "land_cover"},
+    {"code": 9, "label": "Snow/ice", "name_ko": "눈·얼음", "role": "land_cover"},
+    {"code": 10, "label": "Clouds", "name_ko": "구름", "role": "quality_mask"},
+    {"code": 11, "label": "Rangeland", "name_ko": "초지·관목지", "role": "land_cover"}
+  ]
+}

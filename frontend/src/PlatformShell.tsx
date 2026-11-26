@@ -1,11 +1,11 @@
 import { SDSSIcon } from './SDSSChrome';
-import { COMMON_RESULT_STEP } from './catalogNavigation';
+import { COMMON_RESULT_STEP, LCLUC_POSTPROCESS_STEP } from './catalogNavigation';
 export { default as ModelWorkspace } from './ModelAnalysisWorkspace';
 export { default as ToolboxHub } from './GeoAIToolbox';
 export { default as ModelMlopsWorkspace } from './ModelMlopsWorkspace';
 
 const menus = [ ['Dashboard','대시보드','▦'], ['Data Catalog','데이터 카탈로그','▤'], ['GeoAI Toolbox','분석 도구','◈'], ['WebGIS Analysis','공간 분석','◫'], ['GeoLLM Assistant','자연어 공간질의','☷'], ['Model & MLOps','모델 운영','⚙'], ['Reports & RDTR','보고서·공간계획','▣'] ];
-export const menuSections: [number,string][][] = [ [[0,'전체 현황'],[22,'작업·알림'],[23,'Agent 현황']], [[1,'데이터 검색'],[26,'모델 입력자료'],[27,'다운로드 이용조건'],[28,'메타데이터·품질'],[29,'Toolbox 전환'],[30,'WebGIS 공간연계'],[10,'품질·정합 감사'],[11,'메타데이터·출처'],[2,'데이터 등록']], [[12,'6개 모델 허브'],[9,'다중 Agent 워크플로'],[13,'모델 선택 목록']], [[14,'레이어·지도'],[8,'시계열·지도 비교'],[5,'공간통계·중첩']], [[7,'자연어 질의'],[15,'실행계획 검토'],[16,'근거·출처 확인']], [[6,'Model Registry'],[3,'재학습·재보정'],[17,'승인·배포'],[18,'운영 모니터링']], [[19,'보고서 작성'],[20,'RDTR 공간계획'],[21,'검토·승인 이력'],[COMMON_RESULT_STEP,'공통 결과 검토']] ];
+export const menuSections: [number,string][][] = [ [[0,'전체 현황'],[22,'작업·알림'],[23,'Agent 현황']], [[1,'데이터 검색'],[26,'모델 입력자료'],[27,'다운로드 이용조건'],[28,'메타데이터·품질'],[29,'Toolbox 전환'],[30,'WebGIS 공간연계'],[10,'품질·정합 감사'],[11,'메타데이터·출처'],[2,'데이터 등록']], [[12,'6개 모델 허브'],[9,'다중 Agent 워크플로'],[13,'모델 선택 목록'],[LCLUC_POSTPROCESS_STEP,'후처리 및 품질관리']], [[14,'레이어·지도'],[8,'시계열·지도 비교'],[5,'공간통계·중첩']], [[7,'자연어 질의'],[15,'실행계획 검토'],[16,'근거·출처 확인']], [[6,'Model Registry'],[3,'재학습·재보정'],[17,'승인·배포'],[18,'운영 모니터링']], [[19,'보고서 작성'],[20,'RDTR 공간계획'],[21,'검토·승인 이력'],[COMMON_RESULT_STEP,'공통 결과 검토']] ];
 export function navigationForStep(step:number) { if(step===24||step===4)return 2; return Math.max(0,menuSections.findIndex(rows=>rows.some(([id])=>id===step))); }
 export function titleForStep(step:number) { return menuSections.flat().find(([id])=>id===step)?.[1] || '공간 추론'; }
 export const agents = [

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import maplibregl from 'maplibre-gl';
+import { adminBoundaryStartLayer, showAdminBoundaries } from './adminBoundaryMap';
 import { Icon } from './Icon';
 import { api, agentApi } from './api';
 import { firstGroupProvinces } from './provinces';
@@ -42,12 +43,36 @@ function count(value:unknown){return typeof value==='number'&&Number.isFinite(va
 function Panel({title,icon,onClick,children,action='상세보기'}:{title:string;icon:string;onClick?:()=>void;children:ReactNode;action?:string}){return <section className="db-panel"><div className="db-panel-heading"><h2><DashboardIcon name={icon} size={23}/>{title}</h2>{onClick&&<button onClick={onClick}>{action} →</button>}</div>{children}</section>;}
 function DashboardMap({selected,onSelect}:{selected:string;onSelect:(id:string)=>void}){
  const node=useRef<HTMLDivElement>(null);const onSelectRef=useRef(onSelect);useEffect(()=>{onSelectRef.current=onSelect;},[onSelect]);const instance=useRef<maplibregl.Map|null>(null);const [error,setError]=useState('');const [boundaryLoaded,setBoundaryLoaded]=useState(false);
- useEffect(()=>{if(!node.current)return;const map=new maplibregl.Map({container:node.current,style:{version:8,sources:{imagery:{type:'raster',tiles:['https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],tileSize:256,attribution:'Tiles © Esri, Maxar, Earthstar Geographics; boundaries © geoBoundaries / OpenStreetMap · ODbL 1.0'}},layers:[{id:'imagery',source:'imagery',type:'raster',paint:{'raster-opacity':0.92,'raster-saturation':-0.55}}]},center:[117,-3],zoom:3.7,attributionControl:{compact:true}});instance.current=map;map.addControl(new maplibregl.NavigationControl({showCompass:true}),'top-right');map.addControl(new maplibregl.ScaleControl({maxWidth:100,unit:'metric'}),'bottom-left');const resize=new ResizeObserver(()=>map.resize());resize.observe(node.current);const abort=new AbortController();
+ useEffect(()=>{if(!node.current)return;const map=new maplibregl.Map({container:node.current,style:{version:8,sources:{imagery:{type:'raster',tiles:['https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],tileSize:256,attribution:'Tiles © Esri, Maxar, Earthstar Geographics'}},layers:[{id:'imagery',source:'imagery',type:'raster',paint:{'raster-opacity':0.92,'raster-saturation':-0.55}}]},center:[117,-3],zoom:3.7,attributionControl:{compact:true}});instance.current=map;map.addControl(new maplibregl.NavigationControl({showCompass:true}),'top-right');map.addControl(new maplibregl.ScaleControl({maxWidth:100,unit:'metric'}),'bottom-left');const resize=new ResizeObserver(()=>map.resize());resize.observe(node.current);const removeAdmin=showAdminBoundaries(map, loaded => {
+   setBoundaryLoaded(loaded);
+   if (!loaded) {
+     setError('One Map / BIG 경계 조회 실패');
+     return;
+   }
+   map.setLayoutProperty('onemap-province-name', 'visibility', 'none');
+   map.on('click', adminBoundaryStartLayer, event => {
+     const id = event.features?.[0]?.properties?.province_id;
+     if (typeof id === 'string') onSelectRef.current(id);
+   });
+   firstGroupProvinces.forEach((province,index)=>{
+     const b=province.provinceBbox;
+     const label=document.createElement('button');
+     label.className='db-map-region-label';
+     label.textContent=province.name;
+     const local=document.createElement('small');
+     local.textContent=`(${regionKo[index]})`;
+     label.appendChild(local);
+     label.setAttribute('aria-label',`${province.name} 공개 참조 범위 보기`);
+     label.addEventListener('click',()=>onSelectRef.current(province.id));
+     const offset=([[-40,0],[0,-25],[20,30],[-35,15],[-10,60],[40,55]][index] as [number,number]);
+     new maplibregl.Marker({element:label,anchor:'bottom',offset}).setLngLat([(b[0]+b[2])/2,(b[1]+b[3])/2]).addTo(map);
+   });
+ });
  map.on('error',()=>setError('기저지도 일부 연결 확인 필요'));
- map.on('load',()=>{map.fitBounds([[102,-10],[128,4]],{padding:{left:20,right:10,top:15,bottom:30},duration:0});fetch(`${import.meta.env.BASE_URL}first-group-provinces.geojson`,{signal:abort.signal}).then(async response=>{if(!response.ok)throw new Error('공개 경계 조회 실패');return response.json();}).then(geo=>{if(abort.signal.aborted)return;map.addSource('first-group',{type:'geojson',data:geo});map.addLayer({id:'reference-fill',source:'first-group',type:'fill',paint:{'fill-color':['match',['get','province_id'],'west_java','#3aca52','east_java','#1678ff','banten','#1e84ff','south_sulawesi','#0086ee','gorontalo','#1677ff','#0077f5'],'fill-opacity':0.68}});map.addLayer({id:'reference-outline',source:'first-group',type:'line',paint:{'line-color':'#d7f9ff','line-width':1.4}});setBoundaryLoaded(true);firstGroupProvinces.forEach((province,index)=>{const b=province.provinceBbox;const label=document.createElement('button');label.className='db-map-region-label';label.textContent=province.name;const local=document.createElement('small');local.textContent=`(${regionKo[index]})`;label.appendChild(local);label.setAttribute('aria-label',`${province.name} 공개 참조 범위 보기`);label.addEventListener('click',()=>onSelectRef.current(province.id));new maplibregl.Marker({element:label,anchor:'bottom',offset:([[-40,0],[0,-25],[20,30],[-35,15],[-10,60],[40,55]][index] as [number,number])}).setLngLat([(b[0]+b[2])/2,(b[1]+b[3])/2]).addTo(map);});map.on('click','reference-fill',e=>{const id=e.features?.[0]?.properties?.province_id;if(typeof id==='string')onSelectRef.current(id);});map.on('mouseenter','reference-fill',()=>{map.getCanvas().style.cursor='pointer';});map.on('mouseleave','reference-fill',()=>{map.getCanvas().style.cursor='';});}).catch(e=>{if(!abort.signal.aborted)setError(diagnosticText(String(e)));});});
- return()=>{abort.abort();resize.disconnect();map.remove();instance.current=null;};},[]);
+ map.on('load',()=>map.fitBounds([[102,-10],[128,4]],{padding:{left:20,right:10,top:15,bottom:30},duration:0}));
+ return()=>{removeAdmin();resize.disconnect();map.remove();instance.current=null;};},[]);
  useEffect(()=>{const map=instance.current;if(!map||!selected)return;const region=firstGroupProvinces.find(p=>p.id===selected);if(region){const b=region.provinceBbox;map.fitBounds([[b[0],b[1]],[b[2],b[3]]],{padding:50,duration:500});}},[selected]);
- return <div className="db-map"><div ref={node} className="db-map-canvas"/><div className="db-map-caption">{boundaryLoaded?'2017 공개 ADM1 참조 · 사업상 확정 경계 아님':'공개 6주 경계 불러오는 중…'}{error&&<span>{error}</span>}</div><button className="db-map-home" title="첫 그룹 전체 보기" onClick={()=>instance.current?.fitBounds([[102,-10],[128,4]],{padding:20})}><DashboardIcon name="expand" size={17}/></button></div>;
+ return <div className="db-map"><div ref={node} className="db-map-canvas"/><div className="db-map-caption">{boundaryLoaded?'One Map / BIG 주·군·시 경계 · 사업 통계 승인 대기':'공개 6주 경계 불러오는 중…'}{error&&<span>{error}</span>}</div><button className="db-map-home" title="첫 그룹 전체 보기" onClick={()=>instance.current?.fitBounds([[102,-10],[128,4]],{padding:20})}><DashboardIcon name="expand" size={17}/></button></div>;
 }
 export function DashboardSidebar({onNavigate,active=0}:{onNavigate:(step:number)=>void;active?:number}) {return <aside className="db-sidebar"><button className="db-brand" onClick={()=>onNavigate(0)}><span className="db-brand-globe"/><strong>Indonesia<br/>Climate Action<br/>GeoAI Platform</strong></button><nav aria-label="전체 플랫폼 메뉴">{menu.map(([id,label,icon])=><button key={id} className={id===active?'active':''} aria-current={id===active?'page':undefined} onClick={()=>onNavigate(id)}><DashboardIcon name={icon} size={25}/><span>{label}</span></button>)}</nav><div className="db-coast-photo" aria-hidden="true"/><div className="db-side-motto"><DashboardIcon name="leaf" size={29}/><span>Data for<br/>A Resilient Indonesia</span></div></aside>;}
 export default function DashboardReference({resources,errors,connected,loading,onRefresh,onNavigate,onOpenModel}:{resources:Record<string,unknown>;errors:Record<string,string>;connected:boolean;loading:boolean;onRefresh:()=>void;onNavigate:(step:number)=>void;onOpenModel:(id:string)=>void}){

@@ -1,0 +1,185 @@
+{
+  "schema_version": "land-cover-taxonomy/1",
+  "id": "klhk-23",
+  "version": "sk-398-2024-c1018ar-v1",
+  "evidence_status": "VERIFIED_REAL",
+  "approval_status": "BLOCKED",
+  "nodata": 65535,
+  "source": {
+    "uri": "https://sigap.kehutanan.go.id/tema-kamus/575",
+    "verification_uri": "https://bpkh2.planologi.kehutanan.go.id/wp-content/uploads/2025/08/SK-398-Tahun-2024-tentang-Standar-DG-dan-IGT-Lingkup-KLHK.pdf",
+    "authority": "Direktorat Inventarisasi dan Pemantauan Sumber Daya Hutan",
+    "checked_on": "2026-11-25",
+    "license": "NOT_VERIFIED",
+    "raw_metadata_sha256": "abd45de2d17d9630e5b8cb72bcb1f2bc95566928c3a2ab203f149384559f81d5",
+    "raw_metadata_bytes": 444011
+  },
+  "analysis_groups": {
+    "natural_forest": [
+      2001,
+      2002,
+      2004,
+      2005,
+      20041,
+      20051
+    ],
+    "forest": [
+      2001,
+      2002,
+      2004,
+      2005,
+      2006,
+      20041,
+      20051
+    ],
+    "settlement": [
+      2012,
+      20122
+    ],
+    "built_up": [
+      2012,
+      20121,
+      20122
+    ]
+  },
+  "classes": [
+    {
+      "code": 2001,
+      "label": "Hutan Lahan Kering Primer",
+      "name_ko": "건조지 일차림",
+      "role": "land_cover"
+    },
+    {
+      "code": 2002,
+      "label": "Hutan Lahan Kering Sekunder",
+      "name_ko": "건조지 이차림",
+      "role": "land_cover"
+    },
+    {
+      "code": 2004,
+      "label": "Hutan Mangrove Primer",
+      "name_ko": "일차 맹그로브림",
+      "role": "land_cover"
+    },
+    {
+      "code": 2005,
+      "label": "Hutan Rawa Primer",
+      "name_ko": "일차 습지림",
+      "role": "land_cover"
+    },
+    {
+      "code": 2006,
+      "label": "Hutan Tanaman",
+      "name_ko": "조림지",
+      "role": "land_cover"
+    },
+    {
+      "code": 2007,
+      "label": "Semak Belukar",
+      "name_ko": "관목·덤불",
+      "role": "land_cover"
+    },
+    {
+      "code": 2010,
+      "label": "Perkebunan",
+      "name_ko": "플랜테이션",
+      "role": "land_cover"
+    },
+    {
+      "code": 2012,
+      "label": "Permukiman",
+      "name_ko": "정착지",
+      "role": "land_cover"
+    },
+    {
+      "code": 2014,
+      "label": "Lahan Terbuka",
+      "name_ko": "나지",
+      "role": "land_cover"
+    },
+    {
+      "code": 2500,
+      "label": "Awan",
+      "name_ko": "구름",
+      "role": "quality_mask"
+    },
+    {
+      "code": 3000,
+      "label": "Savana/ Padang Rumput",
+      "name_ko": "사바나·초지",
+      "role": "land_cover"
+    },
+    {
+      "code": 5001,
+      "label": "Tubuh Air",
+      "name_ko": "수역",
+      "role": "land_cover"
+    },
+    {
+      "code": 20041,
+      "label": "Hutan Mangrove Sekunder",
+      "name_ko": "이차 맹그로브림",
+      "role": "land_cover"
+    },
+    {
+      "code": 20051,
+      "label": "Hutan Rawa Sekunder",
+      "name_ko": "이차 습지림",
+      "role": "land_cover"
+    },
+    {
+      "code": 20071,
+      "label": "Semak Belukar Rawa",
+      "name_ko": "습지 관목·덤불",
+      "role": "land_cover"
+    },
+    {
+      "code": 20091,
+      "label": "Pertanian Lahan Kering",
+      "name_ko": "건조지 농경지",
+      "role": "land_cover"
+    },
+    {
+      "code": 20092,
+      "label": "Pertanian Lahan Kering Campur",
+      "name_ko": "혼합 건조지 농경지",
+      "role": "land_cover"
+    },
+    {
+      "code": 20093,
+      "label": "Sawah",
+      "name_ko": "논",
+      "role": "land_cover"
+    },
+    {
+      "code": 20094,
+      "label": "Tambak",
+      "name_ko": "양식 연못",
+      "role": "land_cover"
+    },
+    {
+      "code": 20121,
+      "label": "Bandara/ Pelabuhan",
+      "name_ko": "공항·항만",
+      "role": "land_cover"
+    },
+    {
+      "code": 20122,
+      "label": "Permukiman Transmigrasi",
+      "name_ko": "이주 정착지",
+      "role": "land_cover"
+    },
+    {
+      "code": 20141,
+      "label": "Pertambangan",
+      "name_ko": "채굴지",
+      "role": "land_cover"
+    },
+    {
+      "code": 50011,
+      "label": "Rawa",
+      "name_ko": "습지",
+      "role": "land_cover"
+    }
+  ]
+}
