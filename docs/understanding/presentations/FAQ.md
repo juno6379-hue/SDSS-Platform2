@@ -622,4 +622,16 @@ One Map/BIG 경계는 위치 맥락 지도다. 수치는 발행자 기준 반텐
 
 현재 읽기 전용 응답의 `result_id`는 `null`이다. 공통 결과 등록·검토 흐름은 연결되지 않았다.
 
+**Q. 현재 GeoLLM API는 파생 런타임 이미지를 사용합니까?**
+
+현재 검증 경로는 기본 Dockerfile이 Debian `libexpat1`을 설치한다. 보관 `b471bb3` 소스와 이 Dockerfile 변경만으로 `sdss-platform2-api:geollm-libexpat1`을 새로 빌드했으며 별도 파생 런타임 이미지는 없다. 이전 `b471bb3-expat` 라운드는 최소 해결책을 확인한 역사적 검증이다.
+
+**Q. 두 컨테이너 환경에서 같은 결과가 재현됐습니까?**
+
+Compose 5180과 로컬 kind 5181에서 한국어·인도네시아어·영어 RAG와 GIS 결과 5건을 확인했다. API 소스·원본 XLSX·정제 JSON의 SHA가 같았고 JSON 응답 10개와 대응 지도 자산 해시도 일치했다. 양쪽 raw·evidence는 `ro`, curated 복사본은 `rw`였다.
+
+**Q. 이식 검증으로 GeoLLM의 과학적 승인도 끝났습니까?**
+
+검증 범위는 컨테이너 실행과 응답 재현성이다. Kemenhut 원본, 중첩 자산, 독립 정확도, 결과 registry는 기존 `BLOCKED` 상태를 유지한다.
+
 추가 근거: [GeoLLM 반텐 토지피복 질의응답](../V42_LCLUC_GEOLLM_QUERY.md)

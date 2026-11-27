@@ -1,5 +1,19 @@
 # 이해자료 변경 이력
 
+## 2026-11-27 — GeoLLM 기본 Dockerfile 재빌드 검증
+
+- 기본 Dockerfile에 Debian `libexpat1` 설치 단계를 반영하고, 보관 `b471bb3` 소스와 정확히 이 변경만으로 `sdss-platform2-api:geollm-libexpat1`을 새로 빌드한 증거를 기록
+- 별도 파생 런타임 이미지 없이 Compose 5180·kind 5181에서 한국어·인도네시아어·영어 RAG와 GIS 결과 5건을 `VERIFIED_REAL`로 확인
+- 두 환경의 JSON 10개·대응 지도 자산 해시, API·원본 XLSX·정제 JSON SHA 동일성을 반영
+- 양쪽 raw·evidence `ro`, curated 복사본 `rw`를 기록하고 이전 `b471bb3-expat` 라운드는 역사적 최소 보완 검증으로 유지
+
+## 2026-11-27 — GeoLLM Compose·Kubernetes 실검증
+
+- 원본 `b471bb3` API 이미지가 Compose와 Kubernetes에서 동일하게 `libexpat.so.1` 누락으로 중단된 증거를 `BLOCKED`로 기록
+- 애플리케이션 소스를 유지하고 `libexpat1`만 추가한 `b471bb3-expat` 파생 이미지로 원인과 최소 해결책을 확인한 역사적 라운드를 기록
+- 두 환경의 JSON 응답 10개·대응 지도 자산, API·원본 XLSX·정제 전이 JSON SHA 동일성을 반영
+- raw·evidence 읽기 전용 마운트와 curated 별도 복사본을 기록하고, Kemenhut·중첩·독립 정확도·결과 registry 상태는 그대로 유지
+
 ## 2026-11-27 — GeoLLM 반텐 토지피복 질의응답
 
 - `V42_LCLUC_GEOLLM_QUERY.md` 신규 작성

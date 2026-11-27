@@ -4,7 +4,8 @@
 
 - `VERIFIED_REAL` 기존 GeoLLM Assistant에 문서 RAG와 반텐 정량 GIS를 연결했다. MapBiomas 면적·산림 총전환·순변화·전이 및 Esri 면적·전이 응답에 단위와 제품·버전·출처를 표시한다. 정량 단독 질의는 RAG를 호출하지 않는다. [질의 계약](docs/lcluc/GEOLLM_QUERY.md)
 - `BLOCKED` MapBiomas 4.1 분류·전이 위치 지도, 산림부 기준 지도와 공간 중첩은 해당 원본 접수가 필요하다. MapBiomas 발행 통계에는 One Map/BIG의 위치 참고 경계를 표시하고 Esri에는 질의한 전이 지도도 표시한다. [검증 기록](artifacts/lcluc/geollm-edge.log)
-- `IMPLEMENTED_UNVERIFIED` 최신 GeoLLM의 Docker·Kubernetes 런타임 재검증은 Docker Linux 엔진과 Kubernetes 컨텍스트 가용성이 필요하다. 기존 API·React 연결과 GeoLLM 원본 읽기 전용 마운트는 구성에서 확인했다. [배포 계약](docs/lcluc/GEOLLM_QUERY.md#docker와-kubernetes)
+- `VERIFIED_REAL` 기본 Dockerfile에 `libexpat1`을 포함해 Compose 5180과 로컬 kind 5181에서 다시 구동했다. 두 환경에서 실자료 Data Lake와 세 언어 Edge 시험, API 응답 10건 및 지도 해시 대조를 통과했다. [기본 이미지 재검증](docs/lcluc/GEOLLM_QUERY.md#기본-이미지-재검증)
+- `VERIFIED_REAL` `b471bb3`의 GeoLLM 소스를 Compose 5180과 로컬 kind 5181에서 실제 구동했다. 원본·증거는 읽기 전용, 정제 자료는 검증용 복사본을 연결했다. 두 환경의 Edge 3개 언어 시험과 JSON 10건·지도 자산 대조를 통과했다. `b471bb3` 기본 API 이미지는 두 환경에서 `libexpat.so.1` 누락으로 실패했고, 검증에는 `libexpat1`만 추가한 이미지를 사용했다. [배포 계약](docs/lcluc/GEOLLM_QUERY.md#docker와-kubernetes) · [교차 검증](artifacts/deploy/geollm-b471bb3/cross-environment.log)
 
 ## 2026-11-26 반텐 집계 재검토와 LANDY 자료 현황
 

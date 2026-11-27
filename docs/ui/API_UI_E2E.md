@@ -4,6 +4,10 @@
 
 ## 상태와 실행
 
+2026-11-27 `libexpat1`을 포함한 기본 Dockerfile 이미지로 Compose 5180과 kind 5181의 GeoLLM 화면을 재검증했다. 두 환경에서 실자료 Data Lake, 한국어·인도네시아어·영어 문서 인용, 다섯 GIS 결과의 수치·지도·출처·버전·SHA-256, 미지원 자료 보류를 확인했다. 결과 10건과 해당 지도 자산이 일치했다. [기본 이미지 실행과 검증 근거](../lcluc/GEOLLM_QUERY.md#기본-이미지-재검증)
+
+2026-11-27 `b471bb3`의 React와 API를 Docker Compose 5180 및 로컬 kind 5181에서 연결해 GeoLLM 3개 언어 브라우저 시험을 통과했다. 기본 API 이미지의 `libexpat.so.1` 누락을 재현한 후, 애플리케이션 소스가 동일한 `b471bb3-expat`로 실자료를 조회했다. Edge에서 다섯 정량 결과의 값·지도·출처·제품 버전을 확인했고, 두 환경의 질의 10개 응답과 지도 자산은 일치했다. [Compose 검사](../../artifacts/deploy/geollm-b471bb3/compose-geollm-edge-final.log) · [kind 검사](../../artifacts/deploy/geollm-b471bb3/kube-geollm-edge.log) · [컨테이너 계약](../lcluc/GEOLLM_QUERY.md#docker와-kubernetes)
+
 2026-11-27 기존 **GeoLLM Assistant → GeoLLM 토지피복 질의응답**에서 한국어·인도네시아어·영어 RAG 원문 인용과 정량 GIS 응답을 클릭 검증했다. 반텐 논 면적, 산림 총전환·순변화, MapBiomas 산림→시가지와 Esri 수목→시가지를 조회했다. Edge에서 수치·단위·출처·버전·SHA, One Map 위치 참고 경계, Esri 실제 전이 미리보기를 확인했다. 산림부 원본이나 요청 버전이 미확보인 경우 수치는 보류했다. [API와 상태 계약](../lcluc/GEOLLM_QUERY.md) · [Edge 실행 기록](../../artifacts/lcluc/geollm-edge.log)
 
 2026-11-26 Edge 5175의 **연차 토지피복도 → Esri·MapBiomas 원본별 면적**에서 Esri 9행과 MapBiomas 11행, 차이 열 제거, 2020·2024 연도 전환을 확인했다. API에서 2024년 경계·분류 유효·발행 합계와 비공통연도 422를 확인했다. [Edge 시험](../../artifacts/lcluc/banten-native-area-edge.log) · [면적 계약과 공식 참조 조건](../lcluc/BANTEN_MAPBIOMAS_AREA_COMPARISON.md)

@@ -24,7 +24,7 @@
 16. [반텐 모델 시험과 특화 분류 계층 통합](V42_LCLUC_MODEL_TRIALS_AND_SPECIALISTS.md) — RF·Tiny·Siamese 실자료 비교, Spatial Filter, 동년 특화층 접수·우선순위 계약
 17. [반텐 원본별 면적과 공식 비교 기준](V42_BANTEN_ESRI_MAPBIOMAS_AREA_COMPARISON.md) — Esri 9행·MapBiomas 11행 별도 표시, Kemenhut 동년 23클래스와 독립 조사 표본 Gate
 18. [MapBiomas Indonesia GeoLLM 지식 검색](V42_MAPBIOMAS_GEOLLM_KNOWLEDGE.md) — 공식 원문 14건, SHA·페이지 인용, 286청크와 로컬 교차언어 검색
-19. [GeoLLM 반텐 토지피복 질의응답](V42_LCLUC_GEOLLM_QUERY.md) — 3개 언어 RAG·GIS 라우팅, MapBiomas 총전환·순변화, Esri 실제 전이 지도와 차단 Gate
+19. [GeoLLM 반텐 토지피복 질의응답](V42_LCLUC_GEOLLM_QUERY.md) — 3개 언어 RAG·GIS, 기본 Dockerfile의 Compose·kind 재현성과 차단 Gate
 20. [용어집](GLOSSARY_KO_EN.md) — 한글/영문/약어와 이 프로젝트의 정확한 의미
 21. [1분·5분 발표 대본](presentations/1MIN_5MIN_SCRIPT.md)
 22. [발표 FAQ](presentations/FAQ.md)
@@ -97,6 +97,9 @@
 | GeoLLM 다국어 RAG·GIS | `VERIFIED_REAL` | 한국어·인도네시아어·영어, 문서 인용과 MapBiomas·Esri 고정 수치 도구 Edge 검증 |
 | MapBiomas 총전환·순변화 | `VERIFIED_REAL` | 2023→2024 산림→비산림 3,146.85ha, 산림면적 순변화 −1,265.58ha를 별도 지표로 제공 |
 | GeoLLM Esri 전이 지도 | `VERIFIED_REAL` | 2023→2024 수목→시가지 3,561.79ha와 실제 v003 전이 PNG |
+| GeoLLM 기본 컨테이너 이식 | `VERIFIED_REAL` | 기본 Dockerfile `libexpat1` 새 빌드로 Compose 5180·kind 5181 다국어 RAG·GIS 통과, 파생 런타임 이미지 없음 |
+| GeoLLM 실행 pin·마운트 | `VERIFIED_REAL` | JSON 10개·지도 자산 해시와 API·XLSX·정제 JSON SHA 동일, 양쪽 raw·evidence `ro`·curated `rw` |
+| GeoLLM 보완 전 API 이미지 | `BLOCKED` | Dockerfile 보완 전 `b471bb3`은 양쪽에서 `libexpat.so.1` 누락으로 시작 실패, 파생 이미지 검증은 역사로 보존 |
 | GeoLLM Kemenhut·overlay | `BLOCKED` | 승인 동년 원본과 중첩 대상 자산 미입고 |
 | GeoLLM 독립 정확도·결과 ID | `BLOCKED` | 독립 표본 미연결, 읽기 전용 `result_id=null` |
 | Sentinel-2 Explore 방향 전이 | `VERIFIED_REAL` | AOI 전이 합계와 선택 클래스쌍 PNG를 같은 사각형·반텐 경계로 절단; 방향·AOI fixture는 `TESTED_SYNTHETIC` |

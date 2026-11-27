@@ -32,7 +32,30 @@ GeoLLM은 기존 FastAPI와 React 이미지에서 동작하는 읽기 전용 질
 
 배포 전에 MapBiomas 원본 XLSX와 문서, Esri 원본 COG, 경계 증거 및 고정한 반텐 파생 집계 파일을 해당 볼륨에 배치한다. 이미지와 Git 저장소에는 이 원본들이 포함되지 않는다. 실자료를 연결하지 못하거나 해시가 다르면 질의가 보류된다.
 
-이번 GeoLLM 변경의 Compose 렌더링과 Kubernetes 매니페스트의 마운트·Pod 연결을 확인했다. 최신 이미지의 컨테이너 통합시험은 Docker Linux 엔진과 Kubernetes 컨텍스트가 가용한 환경에서 수행한다. 기존 Edge 검증은 로컬 React 5175와 FastAPI 8014를 사용했다.
+### 기본 이미지 재검증
+
+기본 API `Dockerfile`에서 Debian `libexpat1`을 설치한다. `python:3.12-slim`에서 Rasterio가 사용하는 `libexpat.so.1`이 기본 빌드에 포함된다. API 시작 명령과 React 빌드 정의는 기존과 같다.
+
+```powershell
+docker build -t sdss-platform2-api:local .
+docker build -f deploy/frontend/Dockerfile -t sdss-platform2-web:local .
+```
+
+Compose에는 이 API·Web 이미지를 연결하고, kind에서는 같은 이미지를 노드에 로드한 뒤 검증 Deployment에 지정한다. Data Lake는 기존 읽기 전용 원본·증거와 쓰기 가능한 검증용 정제 볼륨을 사용한다. Kubernetes에서는 원본·증거·정제 PVC 세 개를 연결한다.
+
+2026-11-27 `b471bb3` 소스에 이 Dockerfile 변경만 더해 기본 API와 Web 이미지를 빌드했다. API 이미지 OCI 인덱스는 `sha256:f3607f88d4eb8f23ef231bbf58c3500084d07e0b361785c969f99f2164c3a756`이다. 두 컨테이너에서 Rasterio 1.5.2와 `libexpat.so.1` 로딩을 확인했다. Kubernetes API·Web은 같은 Pod에서 2/2 Ready였고 세 PVC는 모두 Bound였다.
+
+두 Data Lake에서 MapBiomas 공식 XLSX, MapBiomas 전이 JSON, Esri 면적·변화 JSON의 SHA-256이 각각 일치했다. Edge에서 한국어·인도네시아어·영어 문서 인용과 아래 다섯 GIS 결과의 수치·단위·지도·출처·버전·SHA-256을 다시 확인했다. 양 환경에서 10건의 API 응답과 해당 지도 자산 해시가 일치했다. 산림부 원본·MapBiomas 구버전 미확보 및 RAG 정량 차단도 다시 확인했다. 화면 접속은 Compose `127.0.0.1:5180/#/view/7`과 로컬 kind 포트포워드 `127.0.0.1:5181/#/view/7`을 사용했다.
+
+실행 호스트의 증거 폴더는 `artifacts/deploy/geollm-default-build/`이다. `docker-api-build.log`, `compose-edge.log`, `kube-edge.log`, `compose-data-lake.log`, `kube-data-lake.log`와 `cross-environment-results.json`을 보관했다. 교차 검증 JSON의 SHA-256은 `7b507fb25b61c70ce8b341182de556cebb7ab6b7be8f68ba1d6d13d555e292b8`이다.
+
+### 이전 검증 기록 · `b471bb3`
+
+2026-11-27에 커밋에서 직접 추출한 소스로 API와 React 이미지를 빌드했다. 원래 API 이미지는 두 환경 모두 `libexpat.so.1` 누락으로 Rasterio import 단계에서 종료됐다. 원래 이미지를 기반으로 Debian `libexpat1`만 추가한 `sdss-platform2-api:b471bb3-expat`를 사용했다. 실행된 API 소스의 SHA-256을 커밋 추출본과 대조했다. [Compose 시작 오류](../../artifacts/deploy/geollm-b471bb3/compose-api-original-error.log) · [Kubernetes 시작 오류](../../artifacts/deploy/geollm-b471bb3/kube-api-original-error.log) · [런타임 보완 빌드](../../artifacts/deploy/geollm-b471bb3/api-runtime-addon.log)
+
+Compose의 격리 프로젝트와 kind의 `sdss-geollm-b471bb3` 네임스페이스에서 원본과 증거를 읽기 전용으로 마운트했다. 정제 볼륨은 검증용 복사본을 사용하고 공식 XLSX와 정제 전이 JSON의 SHA-256을 두 환경에서 확인했다. Esri 전이 미리보기를 재현하려면 두 연도의 정제 분류 래스터와 연차 지도 인덱스, 기준 표시 격자로 쓰는 `esri-2020.png`가 필요하다. [Compose 파일 검증](../../artifacts/deploy/geollm-b471bb3/compose-pins.log) · [Kubernetes 파일 검증](../../artifacts/deploy/geollm-b471bb3/kube-pins.log)
+
+Docker Desktop 재시작 후 Compose `127.0.0.1:5180`과 kind 포트포워드 `127.0.0.1:5181`에서 기존 React 화면을 열었다. Edge에서 한국어·인도네시아어·영어 문서 인용, 아래 다섯 GIS 결과의 수치·지도·출처·버전·SHA-256을 각각 확인했다. 미보유 산림부 자료와 지원하지 않는 판은 수치가 보류됐고, RAG 전용 경로의 정량 질의도 차단됐다. 환경 간 JSON 응답 10개와 해당 지도 자산의 SHA-256이 일치했다. [Compose 브라우저 로그](../../artifacts/deploy/geollm-b471bb3/compose-geollm-edge-final.log) · [Kubernetes 브라우저 로그](../../artifacts/deploy/geollm-b471bb3/kube-geollm-edge.log) · [응답·지도 대조](../../artifacts/deploy/geollm-b471bb3/cross-environment-results.json)
 
 ## 실제 확인 질의
 

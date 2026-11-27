@@ -1,13 +1,22 @@
 # GeoLLM 반텐 토지피복 질의응답 이해자료
 
 - updated_at: 2026-11-27 KST
-- source_commit: `UNCOMMITTED_WORKTREE`
+- source_commit: `b471bb3bf889315144625a57fa56fce4da7e9d0e`
 - evidence_paths:
   - `docs/lcluc/GEOLLM_QUERY.md`
   - `services/api/lcluc_geollm.py`
   - `services/lcluc/question.py`
   - `tests/lcluc/test_geollm_query.py`
   - `artifacts/lcluc/geollm-edge.log`
+  - `artifacts/deploy/geollm-b471bb3/compose-geollm-edge-final.log`
+  - `artifacts/deploy/geollm-b471bb3/kube-geollm-edge.log`
+  - `artifacts/deploy/geollm-b471bb3/cross-environment.log`
+  - `artifacts/deploy/geollm-b471bb3/{compose,kube}-pins.log`
+  - `artifacts/deploy/geollm-b471bb3/{compose,kube}-api-original-error.log`
+  - `artifacts/deploy/geollm-default-build/compose-edge.log`
+  - `artifacts/deploy/geollm-default-build/kube-edge.log`
+  - `artifacts/deploy/geollm-default-build/cross-environment.log`
+  - `artifacts/deploy/geollm-default-build/{compose,kube}-data-lake.log`
 - overall_status: `VERIFIED_REAL`
 
 ## 1. 쉬운 설명
@@ -22,6 +31,10 @@ GeoLLM 토지피복 질의응답은 한국어·인도네시아어·영어 질문
 - `VERIFIED_REAL`: MapBiomas 면적·순변화는 `COVERAGE`, 두 시점 전이·산림 총전환은 `TRANSITION` 발행 자료에서 계산한다.
 - `VERIFIED_REAL`: Esri 면적·전이는 고정 v003 COG와 반텐 등적 격자 집계를 사용하고 실제 전이 PNG를 표시한다.
 - `VERIFIED_REAL`: Edge에서 한국어·인도네시아어·영어 문서·수치 질의, 지도·출처·버전·SHA를 확인했다.
+- `VERIFIED_REAL`: 기본 Dockerfile이 Debian `libexpat1`을 설치하도록 수정됐다. 보관된 `b471bb3` 소스와 이 Dockerfile 변경만으로 `sdss-platform2-api:geollm-libexpat1`을 새로 빌드했으며 파생 런타임 이미지를 사용하지 않았다.
+- `VERIFIED_REAL`: 새 기본 이미지로 Compose 5180과 로컬 kind Kubernetes 5181에서 같은 다국어 RAG와 GIS 결과 5건을 확인했다. 두 환경의 JSON 응답 10개와 대응 지도 자산 해시가 일치했다.
+- `VERIFIED_REAL`: 원본·evidence는 읽기 전용으로 마운트하고 정제 자료는 별도 복사본을 사용했다. API 소스, 원본 XLSX, 정제 전이 JSON의 SHA도 두 환경에서 같았다.
+- `BLOCKED`: Dockerfile 보완 전 원본 `b471bb3` API 이미지는 Compose와 Kubernetes 모두 `libexpat.so.1` 누락으로 시작되지 않았다. 이전 `b471bb3-expat` 파생 이미지 검증은 원인과 해결책을 확인한 역사적 라운드다.
 - `BLOCKED`: Kemenhut 동년 Penutupan Lahan 원본과 승인된 중첩 대상 자산은 미입고 상태다. 해당 질문은 수치를 만들지 않고 이유를 반환한다.
 - `BLOCKED`: 독립 정확도는 미측정이다. 현재 제품 안의 면적·전이 조회는 독립 표본 평가와 별도다.
 - `BLOCKED`: 조회 응답의 `result_id`는 `null`이다. 공통 결과 registry 등록·검토 흐름은 연결되지 않았다.
@@ -82,6 +95,17 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 - Esri 방향 전이 질의는 실제 기준 클래스→비교 클래스 전이 PNG를 표시한다.
 - 현재 응답은 읽기 전용이며 `result_id=null`이다.
 
+### 3.4 Compose·Kubernetes 실행 경로
+
+1. Dockerfile 보완 전 `b471bb3` API 이미지는 Rasterio import 단계에서 `libexpat.so.1`을 찾지 못해 Compose와 Kubernetes에서 같은 오류로 중단됐다.
+2. 첫 검증에서는 애플리케이션 소스를 바꾸지 않고 `libexpat1`만 추가한 `b471bb3-expat` 파생 이미지를 사용했다. 이 라운드는 역사적 원인 검증으로 보존한다.
+3. 현재 기본 Dockerfile에 Debian `libexpat1` 설치 단계를 넣었다. 보관된 `b471bb3` 소스와 정확히 이 Dockerfile 변경만으로 `sdss-platform2-api:geollm-libexpat1`을 새로 빌드했으며 별도 파생 런타임 이미지는 없다.
+4. Compose는 5180, 로컬 kind Kubernetes는 5181에서 새 기본 이미지와 같은 소스·자료 pin을 사용했다.
+5. 원본과 evidence는 읽기 전용이며 정제 자료는 별도 쓰기 가능 복사본으로 공급했다. 두 환경 모두 `evidence ro`, `raw ro`, `curated rw`를 확인했다.
+6. 두 환경에서 한국어·인도네시아어·영어 Edge 질의를 수행했다. RAG와 GIS 결과 5건, JSON 응답 10개, 대응 지도 자산 해시의 동일성을 확인했다.
+
+이 검증은 컨테이너 런타임 이식성과 재현성을 확인한 것이다. Kemenhut 원본, 중첩 자료, 독립 정확도, 결과 registry의 과학·운영 Gate 상태는 바뀌지 않는다.
+
 ## 4. 시험 증거와 상태
 
 | 항목 | 상태 | 증거와 범위 |
@@ -92,6 +116,11 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 | 산림 순변화 | `VERIFIED_REAL` | 2023→2024 −1,265.58ha, `COVERAGE` 종료−시작 |
 | MapBiomas 산림→시가지 | `VERIFIED_REAL` | 2023→2024 102.63ha |
 | Esri 수목→시가지 | `VERIFIED_REAL` | 2023→2024 3,561.79ha, v003 실제 전이 PNG |
+| 기본 Dockerfile 빌드 | `VERIFIED_REAL` | 보관 `b471bb3` 소스+`libexpat1` Dockerfile 변경만으로 `geollm-libexpat1` 새 빌드, 파생 런타임 이미지 없음 |
+| Compose·kind 실행 | `VERIFIED_REAL` | 새 기본 이미지로 Compose 5180·kind 5181, 양쪽 다국어 RAG와 GIS 5건 Edge 통과 |
+| 환경 간 동일성 | `VERIFIED_REAL` | JSON 응답 10개와 대응 지도 자산 해시 일치, API·XLSX·정제 JSON SHA 동일 |
+| 자료 마운트 | `VERIFIED_REAL` | 양쪽 raw·evidence `ro`, curated 별도 복사본 `rw` |
+| 보완 전 원본 이미지 | `BLOCKED` | Dockerfile 보완 전 `b471bb3`이 양쪽에서 `libexpat.so.1` 누락으로 시작 실패. 파생 이미지 검증은 역사로 보존 |
 | 질문 계약시험 | `TESTED_SYNTHETIC` | 다국어 intent, 총전환·순변화 분리, margin 불일치·미발행 값·기간 차단 |
 | Kemenhut 질의 | `BLOCKED` | `KEMENHUT_ASSET_NOT_READY` |
 | 중첩 질의 | `BLOCKED` | `OVERLAY_ASSET_NOT_READY` |
@@ -102,7 +131,7 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 
 ### 1분
 
-“GeoLLM 토지피복 질의응답은 한국어·인도네시아어·영어 질문을 문서 근거 검색과 고정 수치·공간 도구로 나눕니다. MapBiomas 방법론은 원문 페이지를 인용하고, 면적과 전이는 Collection 4.1 XLSX의 SHA를 확인한 뒤 계산합니다. 2023→2024 산림 총전환은 3,146.85헥타르이고 산림 순변화는 마이너스 1,265.58헥타르로 서로 다른 지표입니다. Esri 수목→시가지 3,561.79헥타르는 실제 전이 PNG와 함께 확인했습니다. MapBiomas 화면 경계는 위치 맥락이고 발행 통계의 지리 범위와 구분합니다. Kemenhut·중첩·독립 정확도·결과 등록은 아직 차단 상태입니다.”
+“GeoLLM 토지피복 질의응답은 한국어·인도네시아어·영어 질문을 문서 근거 검색과 고정 수치·공간 도구로 나눕니다. MapBiomas 방법론은 원문 페이지를 인용하고, 면적과 전이는 Collection 4.1 XLSX의 SHA를 확인한 뒤 계산합니다. 2023→2024 산림 총전환은 3,146.85헥타르이고 산림 순변화는 마이너스 1,265.58헥타르로 서로 다른 지표입니다. Esri 수목→시가지 3,561.79헥타르는 실제 전이 PNG와 함께 확인했습니다. 기본 Dockerfile에 `libexpat1`을 포함한 새 이미지로 Compose와 Kubernetes의 다국어 RAG, GIS 결과 5건, JSON 10개와 지도 자산 해시 동일성도 확인했습니다. Kemenhut·중첩·독립 정확도·결과 등록은 아직 차단 상태입니다.”
 
 ### 5분 핵심 순서
 
@@ -114,6 +143,7 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 6. Esri는 실제 COG·등적 격자·전이 PNG를 사용한다.
 7. MapBiomas의 발행 경계와 One Map 맥락 경계를 구분한다.
 8. Kemenhut·중첩·독립 정확도·result registry는 증거가 생길 때까지 차단한다.
+9. 보완 전 이미지의 `libexpat.so.1` 누락, 역사적 파생 이미지 검증, 기본 Dockerfile `libexpat1` 반영을 구분하고 Compose·Kubernetes의 응답·지도 자산 동일성을 제시한다.
 
 ## 6. Q&A
 
@@ -136,3 +166,15 @@ One Map/BIG 경계는 위치 맥락 지도다. 수치는 MapBiomas 발행 반텐
 **Q. 조회 결과가 공통 결과 registry에 저장됩니까?**
 
 현재 읽기 전용 응답의 `result_id`는 `null`이다. 증거 패키지 등록·검토 흐름은 아직 연결되지 않았다.
+
+**Q. 현재도 `b471bb3-expat` 파생 이미지를 사용합니까?**
+
+현재 기본 경로는 파생 이미지가 아니다. 기본 Dockerfile이 Debian `libexpat1`을 설치하며, 보관 `b471bb3` 소스와 이 Dockerfile 변경만으로 `sdss-platform2-api:geollm-libexpat1`을 새로 빌드했다. 이전 `b471bb3-expat` 검증은 원인과 최소 해결책을 확인한 역사적 라운드다.
+
+**Q. Compose와 Kubernetes 결과가 같다는 근거는 무엇입니까?**
+
+API 소스·원본 XLSX·정제 전이 JSON의 SHA가 같고, 실제 질의 JSON 10개와 대응 지도 자산 해시도 일치했다. Compose와 Kubernetes 모두 raw·evidence는 읽기 전용, curated 복사본은 쓰기 가능 상태였다.
+
+**Q. 컨테이너 이식 검증이 독립 정확도나 운영 승인을 의미합니까?**
+
+컨테이너 이식성과 응답 재현성을 검증한 결과다. Kemenhut 동년 원본, 승인 중첩 자료, 독립 표본 정확도, 공통 결과 등록은 기존 `BLOCKED` 상태를 유지한다.
