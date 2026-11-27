@@ -90,3 +90,45 @@ SQLite 패키지 원본 문자열의 SHA-256과 보존한 라이선스 파일의
 - `VERIFIED_REAL` 검산 JSON 1건을 manifest와 함께 백업했고, 새로 구동한 별도 S3 서비스(loopback 59084)의 빈 버킷으로 복원해 본문 크기·SHA-256을 확인했다. 이 시험은 고정한 기관 인벤토리 1건을 사용했다. PostgreSQL 복원과 실제 기관 권한 검증은 별도로 대기한다.
 - `TESTED_SYNTHETIC` 단일 기관 식별자·객체 키·TLS endpoint 및 768차원 검증 시험 2건이 통과했다.
 - `IMPLEMENTED_UNVERIFIED` Docker 개발 스택 PostgreSQL 컨테이너 생성 대기와 loopback 연결 timeout을 관찰했다. DB의 라이브 이관 및 `pg_restore` 통합 여부는 별도 확인이 필요하다.
+
+## 2026-11-27 STEP 01 격리 Staging
+
+`fc596cb`의 기존 저장소 Compose를 `sdss-storage-staging` 프로젝트로 구동했다. API·Web은 별도 `sdss-lake-staging` 프로젝트에서 저장소 네트워크에 연결했다. DB 55486, S3 59086, SDSS 5280은 호스트 loopback으로 제한했다. 비밀은 저장소 외부에 둔다.
+
+| 확인 | 결과 |
+| --- | --- |
+| PostgreSQL/PostGIS | `VERIFIED_REAL`. PostGIS 3.4.3, 반텐 One Map/BIG geometry SRID 4326·유효성 확인, 다른 기관 범위에서 동일 레코드 조회 차단. |
+| pgvector | `TESTED_SYNTHETIC`. 0.8.6에서 앱 저장소의 768차원 시험 벡터 2건 등록과 코사인 검색(거리 0·1)을 확인하고 시험 자료를 롤백했다. GeoLLM 문서 원본 임베딩은 아직 게시되지 않았다. |
+| SeaweedFS | `VERIFIED_REAL`. 비공개 버킷에서 원본 One Map 스냅샷 5,255,501바이트의 SHA-256 일치. 무서명 GET은 403. |
+| SDSS | `VERIFIED_REAL`. 토큰이 있는 저장소 API는 `VERIFIED_PROJECT_STORAGE`, 기관 계보 및 서명 다운로드가 동작했다. 무인증 상태 확인은 403. |
+
+증거는 실행 호스트 `artifacts/deploy/sdss-storage-staging/`의 `backend-readback.log`, `api-readback.json`, `pgvector-roundtrip.log`에 있다. STEP 01의 범위는 Docker 저장소와 SDSS의 저장소·계보 API 연결이다. GeoLLM 본 질의의 데이터 소스 전환과 Kubernetes Staging 연결은 별도 검증 경로다.
+
+## 2026-11-27 STEP 02 Staging 접속 설정
+
+저장소 Docker 프로젝트는 `sdss-storage-staging`, SDSS 프로젝트와 kind 검증 네임스페이스는 `sdss-lake-staging`이다. Compose API는 격리 Compose 디렉터리의 `deploy/api.local.env`에서 값을 받는다. kind의 `storage-api-validation` API는 같은 네임스페이스의 Secret `sdss-api-local`을 필수로 읽는다. 두 API 모두 같은 PostgreSQL·SeaweedFS Staging 인스턴스를 조회한다.
+
+| 설정 | Compose 컨테이너 | kind 검증 Pod |
+| --- | --- | --- |
+| SDSS 화면 접속 | `http://127.0.0.1:5280` | 포트포워드 `http://127.0.0.1:5281` |
+| `SDSS_STORAGE_DSN` | `postgres:5432/sdss` | `postgres:55486/sdss` |
+| DB 로그인·기관 | `sdss_storage_app`, `staging-cckp` | 동일 |
+| `SDSS_STORAGE_S3_ENDPOINT` | `http://objects:8333` | `http://objects:59086` |
+| `SDSS_STORAGE_BUCKET`·`AWS_DEFAULT_REGION` | `sdss-storage-staging`, `us-east-1` | 동일 |
+| `SDSS_STORAGE_S3_SIGN_ENDPOINT` | 검증 호스트에서 여는 `http://127.0.0.1:59086` | 동일 |
+
+kind의 `postgres`와 `objects`는 Docker Desktop의 Staging 포트로 연결하는 `ExternalName` Service다. 호스트에서 DB를 관리할 때는 `127.0.0.1:55486`을 사용한다. 서명 주소는 브라우저가 파일을 받을 때 사용하는 주소다. API에서 객체를 조회할 때는 각 환경의 S3 Service 주소를 사용한다. 다른 클러스터에 배포할 때는 해당 인프라의 실제 DB·객체 저장소 Service와 HTTPS 서명 주소를 지정한다.
+
+DSN 비밀번호, `SDSS_STORAGE_READ_TOKEN`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`는 로컬 비밀 파일과 Kubernetes Secret에 보관한다. Secret을 만들 때는 비밀 파일을 직접 읽는 `kubectl create secret generic ... --from-env-file=...` 방식을 사용한다. 로컬 환경 파일과 Secret 값은 Git에 포함하지 않는다.
+
+두 환경에서 토큰을 넣은 저장소 상태 확인은 `VERIFIED_PROJECT_STORAGE`였다. 같은 반텐 원본 5,255,501바이트를 서명 다운로드해 일치하는 SHA-256을 검증했다. 토큰 없는 API와 서명 없는 객체 요청은 각각 HTTP 403이었다. 증거는 실행 호스트 `artifacts/deploy/sdss-storage-staging/step02-api-readback.json`에 있다. 이 검증은 저장소·계보 API 경로에 적용된다. GeoLLM 정량 결과와 pgvector 문서 검색의 Staging 자료 전환은 별도 작업이다.
+
+## 2026-11-27 STEP 03 GeoLLM Staging 자료 전환
+
+`VERIFIED_REAL` STEP 02의 동일 Staging에서 `banten-geollm-20261127-v1`을 게시했다. 정량 및 경계·미리보기 API와 실제 pgvector 문서 검색을 기존 GeoLLM UI에 연결했다. 운영 승인 범위는 기존 계약을 따른다. [릴리스·검증 근거](../lcluc/GEOLLM_QUERY.md#step-03-반텐-geollm-staging-릴리스)
+
+## 2026-11-27 STEP 04 GeoLLM 운영 조회 경로
+
+Compose의 API 환경 파일과 Kubernetes의 API 컨테이너 환경에 `SDSS_GEOLLM_STORAGE_MODE=lake`와 승인된 `SDSS_GEOLLM_LAKE_RELEASE`를 명시한다. Staging 릴리스는 `banten-geollm-20261127-v1`이다. API 런타임에는 `SDSS_STORAGE_DSN`, `SDSS_STORAGE_INSTITUTION`, `SDSS_STORAGE_BUCKET`, 실제 저장소 서비스 접속 주소 및 읽기 자격 증명을 제공한다. 개발 환경에서 로컬 원본을 읽을 때는 `SDSS_GEOLLM_STORAGE_MODE=local`을 설정한다.
+
+GeoLLM 어댑터는 플랫폼의 기관 범위 RLS와 객체 해시 계약을 사용한다. `SDSS_STORAGE_READ_TOKEN`은 기관 계보 HTTP API의 조회 인증 설정이다. GeoLLM의 데이터 접근에는 서버가 보유한 읽기 권한을 사용한다. API가 임베딩 모델과 지도에 쓰는 `/tmp`는 쓰기 가능한 임시 공간으로 연결한다. 운영 모드 연결 실패 시 GeoLLM은 해당 질의를 `BLOCKED`로 반환한다. [모드·오류 계약](../lcluc/GEOLLM_QUERY.md#step-04-geollm-저장소-모드)

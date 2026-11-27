@@ -1,6 +1,8 @@
 """Loopback evidence API, catalog, and authority-gated execution interfaces."""
 
+import asyncio
 import sqlite3
+from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Literal
@@ -9,6 +11,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from starlette.concurrency import run_in_threadpool
 
 from services.climate_query.models import ClimateQueryRequest, tool_contract
 from services.climate_query.numeric import climate_query
@@ -16,17 +19,16 @@ from services.datahub.institution_sources import build_inventory, public_summary
 from services.lcluc.question import parse_question
 from services.mlops.gates import MLOpsPolicy
 from services.orchestration import WorkflowState
-from services.rag.mapbiomas import catalog as mapbiomas_catalog
-from services.rag.mapbiomas import search as mapbiomas_search
 from services.rag.retrieval import SearchQuery
 from services.rag.routing import route_question
 
 from .collection_progress import snapshot as collection_snapshot
 from .evidence import LOCK_PATH, ROOT, EvidenceBlocked, EvidenceStore
+from .geollm_storage import DataLakeGeoLLMStorage, StorageBlocked, select_geollm_storage
 from .jobs_api import mount_jobs
 from .lcluc_annual import mount_lcluc_annual
 from .lcluc_cases import mount_lcluc_cases
-from .lcluc_geollm import mount_lcluc_geollm
+from .lcluc_geollm import mount_lcluc_geollm, search_documents
 from .lcluc_landsat_explorer import mount_landsat_explorer
 from .lcluc_postprocess import mount_postprocess
 from .lcluc_sentinel_explorer import mount_sentinel_explorer
@@ -50,9 +52,23 @@ def blocked(code, **extra):
     return dict(status="BLOCKED", blockers=[code], value=None, execution_started=False, **extra)
 
 
-def create_app(store=None, curated_index=None, *, result_registry=None):
+def create_app(store=None, curated_index=None, *, result_registry=None, geollm_lake=None):
     store = store or EvidenceStore(ROOT, LOCK_PATH, LOCK_SHA256)
-    app = FastAPI(title="SDSS Platform2 · Evidence API", version="0.1.0")
+    geollm_storage = select_geollm_storage(store, geollm_lake)
+
+    @asynccontextmanager
+    async def lifespan(app):
+        warmup = None
+        if isinstance(geollm_storage, DataLakeGeoLLMStorage) and not geollm_storage.config_issue and geollm_lake is None:
+            geollm_storage.warming_documents.set()
+            warmup = asyncio.create_task(run_in_threadpool(geollm_storage.warm_documents))
+        try:
+            yield
+        finally:
+            if warmup is not None and not warmup.done():
+                warmup.cancel()
+
+    app = FastAPI(title="SDSS Platform2 · Evidence API", version="0.1.0", lifespan=lifespan)
     app.state.store = store
 
     @app.middleware("http")
@@ -81,7 +97,7 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
     mount_model_releases(app, store, result_registry)
     mount_jobs(app, store, result_registry)
     mount_lcluc_cases(app, store, result_registry)
-    mount_lcluc_geollm(app, store)
+    mount_lcluc_geollm(app, geollm_storage)
     mount_sentinel_explorer(app, store)
     mount_landsat_explorer(app, store)
     mount_postprocess(app, store)
@@ -201,7 +217,10 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
     @app.get("/api/rag/mapbiomas/catalog")
     def mapbiomas_sources(request: Request):
         check_local(request)
-        return mapbiomas_catalog(store)
+        try:
+            return geollm_storage.catalog()
+        except StorageBlocked as error:
+            return blocked(str(error), documents=[], structured_counts={})
 
     @app.post("/api/rag/mapbiomas/search")
     def mapbiomas_evidence(request: Request, body: RagRequest):
@@ -211,7 +230,7 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
     def mapbiomas_document_answer(question):
         if parse_question(question).metric not in ("document", "unknown"):
             return blocked("NUMERIC_TOOL_REQUIRED", route="/api/lcluc/geollm/query", answer=None, citations=[])
-        return mapbiomas_search(store, question)
+        return search_documents(geollm_storage, question)
 
     @app.get("/api/vector")
     def vector():

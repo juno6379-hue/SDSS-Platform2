@@ -1,5 +1,33 @@
 # 이해자료 변경 이력
 
+## 2026-11-27 — STEP 04 GeoLLM 저장소 어댑터 1차 검증
+
+- `SDSS_GEOLLM_STORAGE_MODE=lake|local` 어댑터와 운영 `lake` 연결 실패 fail-closed·SeaweedFS attestation을 설명
+- 저장소 모드·필수 구성·attestation·차단 계약 17 PASS와 Ruff PASS를 `TESTED_SYNTHETIC`으로 기록
+- Compose 5280 실제 원격 RAG 한국어·인도네시아어·영어와 반텐 2024 논 195,653.67ha Edge를 `VERIFIED_REAL`로 기록
+- 읽기 전용 격리 복사본 27파일의 명시 local GIS 3·문서 3과 실제 DB/S3 장애의 GIS/RAG 차단·지도 503·빈 evidence URL·fallback 0을 `VERIFIED_REAL`로 기록
+- kind 5281 warm Edge의 세 언어 RAG·GIS와 Compose 대비 API 13개·지도 SHA 동등성을 `VERIFIED_REAL`로 기록
+- 최초 kind E5 cold 재시도 nginx 504를 관측 실패로 보존하고, R2 단일 background 재초기화의 중간 상태를 최종 증거와 구분
+- BIG 운영 환경은 `BLOCKED`로 유지
+- R2 최종 Edge 5280·5281, API 13개·지도 SHA 동등, 첫 RAG 1.95초·1.39초 `FOUND`, local 6건·DB/S3 장애 각 6건을 `VERIFIED_REAL`로 갱신
+- 단일 background 재초기화 순서는 18 PASS·Ruff PASS의 `TESTED_SYNTHETIC`으로 확정하고 최초 R1 504를 역사적 실패로 유지
+- [검증 Master Prompt](../../SDSS_Platform2_CODEX_Accuracy_Validation_Master_Prompt.md) 개정은 검증 명세 변경이며 실제 독립 검증·기능 완료 증거로 분류하지 않음
+
+## 2026-11-27 — STEP 03 GeoLLM Staging source 전환
+
+- release `banten-geollm-20261127-v1`의 RLS PostgreSQL dataset 4개와 SeaweedFS binding 47개·1,143,310,094B를 `VERIFIED_REAL`로 기록
+- LANDY 공식 14문서·286 passage를 고정 E5 INT8 ONNX 768차원 pgvector 검색에 연결한 실제 corpus 경로를 반영
+- Compose 5280·kind 5281 Edge에서 3개 언어 인용과 고정 GIS 수치를 확인하고 3 RAG·8 GIS·2 차단 API 응답 13개·경계·지도 해시 동등성을 기록
+- kind source mount 부재와 E5 warmer를 기록하고 Kemenhut·독립 정확도·결과 registry·기관 운영 승인은 기존 Gate 유지
+- 단위 회귀 14 PASS와 optional live storage 1 skip을 실제 Staging Edge 증거와 분리
+
+## 2026-11-27 — STEP 02 Compose·kind Staging 구성
+
+- Compose 5280의 격리 `deploy/api.local.env`와 kind 5281 `sdss-api-local` Secret·ExternalName Service 구성을 `VERIFIED_REAL`로 기록
+- 두 환경의 필수 변수 9개, DB `sdss`·role `sdss_storage_app`, bucket `sdss-storage-staging`, institution `staging-cckp` 일치를 반영
+- 양쪽 `VERIFIED_PROJECT_STORAGE`, 동일 5,255,501B 객체·SHA, unsigned·anonymous 403을 확인하고 kind Staging을 완료 상태로 갱신
+- 실제 문서 embedding 적재와 GeoLLM source switch는 `BLOCKED`로 유지
+
 ## 2026-11-27 — GeoLLM 기본 Dockerfile 재빌드 검증
 
 - 기본 Dockerfile에 Debian `libexpat1` 설치 단계를 반영하고, 보관 `b471bb3` 소스와 정확히 이 변경만으로 `sdss-platform2-api:geollm-libexpat1`을 새로 빌드한 증거를 기록

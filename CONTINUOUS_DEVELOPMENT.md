@@ -1,5 +1,22 @@
 # SDSS-Platform2 지속 개발 원장
 
+## 2026-11-27 LCLUC 정확도 검증 실행 명세 보완
+
+- 마스터 프롬프트에 현행 반텐 증거, 결과 ID 연결, 등면적 층화 확률표본, 독립 판독과 가중 면적·CI 검산, 승인 분리 및 저장소 장애 시험을 반영했다. 실제 독립 평가의 완료 상태는 종전 증거를 따른다. [개정 명세](SDSS_Platform2_CODEX_Accuracy_Validation_Master_Prompt.md)
+
+## 2026-11-27 STEP 04 GeoLLM 저장소 어댑터
+
+- `VERIFIED_REAL` 명시적 `lake`와 `local` 모드를 적용했다. 최종 Compose·kind API 13건과 지도 해시가 일치했다. Compose에서 동일 로컬 원본을 연결한 채 PostgreSQL·SeaweedFS를 각각 끊었을 때 세 언어의 GIS·RAG가 차단됐다. 초기화 실패 후 백그라운드 재시도 회귀를 포함한 단위·계약 시험 18건을 통과했다. [저장소 모드와 증거](docs/lcluc/GEOLLM_QUERY.md#step-04-geollm-저장소-모드)
+
+## 2026-11-27 STEP 03 반텐 GeoLLM Staging 전환
+
+- `VERIFIED_REAL` 릴리스 `banten-geollm-20261127-v1`의 데이터셋 4개·SeaweedFS 파일 바인딩 47개를 등록했다. 반텐 고정 통계는 PostgreSQL, 경계는 PostGIS, Esri 지도는 SeaweedFS 원본과 파생 자료에서 읽는다.
+- `VERIFIED_REAL` LANDY 14건의 본문 286개를 실제 다국어 E5-base 임베딩으로 등록했다. Compose·kind의 기존 Edge 화면에서 세 언어 RAG 및 GIS의 수치·지도·출처·제품 버전을 확인했다. 양 환경 API 응답 13건과 해당 지도 해시가 같고, kind는 로컬 원본·정제·증거 볼륨 없이 검증했다. [Staging 릴리스 계약과 근거](docs/lcluc/GEOLLM_QUERY.md#step-03-반텐-geollm-staging-릴리스)
+
+## 2026-11-27 STEP 02 Staging 저장소 접속 설정
+
+- `VERIFIED_REAL` Compose 5280의 로컬 환경 파일과 kind 5281의 Secret·Service로 같은 Staging DB와 비공개 버킷을 조회했다. 반텐 경계 원본의 SHA-256이 일치했고 무인증 API와 무서명 객체는 403이었다. [Staging 접속 설정](docs/architecture/PRODUCTION_STORAGE.md#2026-11-27-step-02-staging-접속-설정)
+
 ## 2026-11-27 GeoLLM 반텐 질의응답
 
 - `VERIFIED_REAL` 기존 GeoLLM Assistant에 문서 RAG와 반텐 정량 GIS를 연결했다. MapBiomas 면적·산림 총전환·순변화·전이 및 Esri 면적·전이 응답에 단위와 제품·버전·출처를 표시한다. 정량 단독 질의는 RAG를 호출하지 않는다. [질의 계약](docs/lcluc/GEOLLM_QUERY.md)

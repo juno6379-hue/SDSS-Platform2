@@ -92,7 +92,10 @@ def transition_counts(left, right):
 
 @lru_cache(maxsize=24)
 def transition_preview(root, first, second, _first_sha256, _second_sha256, from_class, to_class, bounds):
-    grid = display_grid(root)
+    return render_transition(display_grid(root), first, second, from_class, to_class, bounds)
+
+
+def render_transition(grid, first, second, from_class, to_class, bounds):
     with ExitStack() as stack:
         rasters = (stack.enter_context(rasterio.open(path)) for path in (first, second))
         left, right = (stack.enter_context(WarpedVRT(raster, **grid, nodata=0, resampling=Resampling.nearest)).read(1)

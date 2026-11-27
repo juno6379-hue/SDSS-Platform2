@@ -209,8 +209,10 @@ class LineageTransaction:
         if not stored or not stored["same"]:
             raise StorageError("STORAGE_IMMUTABLE_VECTOR_CONFLICT")
 
-    def search_vectors(self, model, components, *, limit=10):
+    def search_vectors(self, model, components, *, limit=10, dataset_key=None):
         checked(NODE_KEY, model)
+        if dataset_key is not None:
+            checked(NODE_KEY, dataset_key)
         if type(limit) is not int or not 1 <= limit <= 50:
             raise StorageError("STORAGE_VECTOR_LIMIT_INVALID")
         return self.connection.execute(
@@ -218,7 +220,8 @@ class LineageTransaction:
             SELECT node_key, chunk_key, embedding OPERATOR(public.<=>) %s::public.vector AS cosine_distance
               FROM sdss_storage.document_vector
              WHERE institution = %s AND embedding_model = %s
+               AND (%s::text IS NULL OR node_key = %s)
              ORDER BY cosine_distance, node_key, chunk_key LIMIT %s
             """,
-            (vector_text(components), self.institution, model, limit),
+            (vector_text(components), self.institution, model, dataset_key, dataset_key, limit),
         ).fetchall()

@@ -59,6 +59,35 @@ const REASONS: Record<string, string> = {
   SOURCE_INTEGRITY_FAILURE: '원본 또는 파생 자료의 무결성 검증에 실패했습니다.',
   FOREST_TRANSITION_COVERAGE_MISMATCH: '산림 전이 합계가 출발 연도의 발행 면적과 맞지 않습니다.',
 };
+const STORAGE_REASONS: Record<string, Record<Lang, string>> = {
+  GEOLLM_STORAGE_UNAVAILABLE: {
+    ko: 'Data Lake 조회가 차단되었습니다. 저장소 연결 또는 요청한 자료의 상태를 확인한 뒤 다시 조회하세요.',
+    id: 'Akses Data Lake diblokir. Periksa koneksi penyimpanan atau data yang diminta, lalu coba lagi.',
+    en: 'Data Lake access is blocked. Check the storage connection or requested data, then try again.',
+  },
+  GEOLLM_STORAGE_CONFIG_REQUIRED: {
+    ko: 'Data Lake 접속 설정이 누락되어 조회가 차단되었습니다.',
+    id: 'Kueri diblokir karena konfigurasi koneksi Data Lake belum lengkap.',
+    en: 'The query is blocked because the Data Lake connection settings are incomplete.',
+  },
+  GEOLLM_STORAGE_MODE_INVALID: {
+    ko: 'GeoLLM 저장소 모드 설정이 올바르지 않아 조회가 차단되었습니다.',
+    id: 'Kueri diblokir karena mode penyimpanan GeoLLM tidak valid.',
+    en: 'The query is blocked because the GeoLLM storage mode is invalid.',
+  },
+  GEOLLM_STORAGE_INITIALIZING: {
+    ko: 'Data Lake 문서 검색을 준비 중입니다. 잠시 뒤 다시 조회하세요.',
+    id: 'Pencarian dokumen Data Lake sedang disiapkan. Coba lagi sebentar.',
+    en: 'Data Lake document search is warming up. Try again shortly.',
+  },
+};
+
+function BlockedAnswer({reason, lang}: {reason?: string; lang: Lang}) {
+  const code = reason ?? '';
+  return <p role="status" data-testid="geollm-blocked">
+    {STORAGE_REASONS[code]?.[lang] ?? REASONS[code] ?? '해당 질의를 확인할 수 없습니다.'}
+  </p>;
+}
 
 function language(text: string): Lang {
   if (/[가-힣]/.test(text)) return 'ko';
@@ -128,9 +157,6 @@ function QuantitativeAnswer({result, lang}: {result: Answer; lang: Lang}) {
   const localizedNumber = new Intl.NumberFormat({ko: 'ko-KR', id: 'id-ID', en: 'en-US'}[lang],
     {minimumFractionDigits: 2, maximumFractionDigits: 2});
   const classes = (codes: number[]) => codes.map(code => `${result.class_names?.[code] ?? ''} (${code})`).join(' · ');
-  if (result.status === 'BLOCKED') return <p role="status" data-testid="geollm-blocked">
-    {REASONS[result.reason ?? ''] ?? '해당 질의를 확인할 수 없습니다.'}
-  </p>;
   return <section aria-label={labels[0]} data-testid="geollm-gis-answer">
     <h3>{labels[0]}</h3>
     <p>{labels[3]} · Banten · {result.query?.years.join(' → ')}</p>
@@ -180,7 +206,8 @@ export default function MapbiomasKnowledge() {
       <button type="submit" disabled={busy || !question.trim()}>{busy ? '조회 중…' : '질의 실행'}</button>
     </form>
     {error && <p role="alert">GeoLLM API에 연결하지 못했습니다.</p>}
-    {result?.route === 'gis' && <QuantitativeAnswer result={result} lang={language(submitted)}/>}
+    {result?.status === 'BLOCKED' && <BlockedAnswer reason={result.reason} lang={language(submitted)}/>}
+    {result?.route === 'gis' && result.status !== 'BLOCKED' && <QuantitativeAnswer result={result} lang={language(submitted)}/>}
     {result?.status === 'KNOWLEDGE_CORPUS_PENDING' && <p role="status">문서 색인 구축 중입니다.</p>}
     {result?.status === 'NO_MATCH' && <p role="status">관련 문서 근거를 찾지 못했습니다.</p>}
     {!!result?.citations.length && <div aria-label="MapBiomas 출처 결과">

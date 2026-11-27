@@ -21,6 +21,63 @@ py -3.11 -m services.lcluc.banten_historical_trend data/raw/explorer/banten/mapb
 
 공식 XLSX 및 파생 결과의 해시가 플랫폼에 고정한 값과 일치할 때 정량 응답을 제공한다. 파일을 변경하거나 새 판을 받을 경우 별도의 자료 검증과 버전 등록이 필요하다.
 
+## STEP 03 반텐 GeoLLM Staging 릴리스
+
+`SDSS_GEOLLM_LAKE_RELEASE=banten-geollm-20261127-v1`을 설정하면 기존 GeoLLM 화면과 LANDY 문서 API가 Staging 릴리스를 읽는다. 설정 없는 기존 환경은 로컬 검증 경로를 사용한다. 릴리스 설정이 있는 환경에서 자료나 저장소 검증이 실패하면 결과를 보류한다.
+
+| 경로 | 읽는 자료와 책임 |
+| --- | --- |
+| PostgreSQL/PostGIS | 기관 RLS가 적용된 고정 릴리스의 MapBiomas 4.1 발행 `COVERAGE`·`TRANSITION`, Esri v003 반텐 10m 검증 집계와 PostGIS SRID 4326 반텐 위치 경계. 정량 계산 규칙과 제품별 정답 범위는 위의 도구 표를 따른다. |
+| SeaweedFS | 비공개 버킷의 SHA-256 주소 객체. 원본 XLSX와 COG, 파생 검증 통계, Esri 6개년 미리보기·정합 TIFF, 경계 스냅샷, LANDY 원문·색인, 임베딩 모델과 토크나이저를 보존한다. Esri 전이는 두 해의 고정 TIFF에서 기존 미리보기 알고리즘으로 생성한다. |
+| pgvector | LANDY 문서 14건의 본문 286개를 E5-base ONNX로 임베딩한다. 동일 모델로 질의 벡터를 생성하고 768차원 코사인 검색을 수행한다. 결과는 원문의 페이지·버전·SHA-256을 인용한다. |
+| 기존 화면 | 같은 출처의 API에서 결과와 지도 파일을 조회한다. MapBiomas는 One Map/BIG 위치 경계를 제공하며, Esri는 연차 분류 또는 전이 지도를 제공한다. |
+
+모델은 `intfloat/multilingual-e5-base`의 고정 리비전 `d128750597153bb5987e10b1c3493a34e5a4502a` CPU INT8 ONNX다. 모델·토크나이저를 배포자 SHA-256으로 검증한다. 문서에는 `passage: `, 질의에는 `query: `를 적용한 뒤 attention-mask 평균과 L2 정규화로 768차원 벡터를 얻는다. [모델 카드](https://huggingface.co/intfloat/multilingual-e5-base/tree/d128750597153bb5987e10b1c3493a34e5a4502a)
+
+신규 릴리스 발행 환경은 Python `.[geo,storage,inference]` 의존성을 사용한다. 프로젝트 원본·정제·증거 폴더를 읽기 전용으로 묶은 Staging 일회 실행에서 다음 명령을 사용한다. 원본과 파생물 일치 및 객체 읽기 해시 확인 이후 4개 데이터셋·47개 파일 바인딩·문서 벡터를 하나의 PostgreSQL 트랜잭션에서 등록한다. `--staging`은 이 릴리스의 기관과 버킷을 확인한 후 이관한다.
+
+```powershell
+python -m services.lcluc.geollm_migrate --staging --model-dir data/raw/knowledge/models/multilingual-e5-base-d128750
+```
+
+Compose 5280과 로컬 kind 5281은 동일한 릴리스를 사용한다. API의 `/tmp`는 원격 다운로드를 검증한 후 사용하는 임시 캐시다. Staging API는 시작할 때 두 임베딩 파일을 내려받아 해시를 검증하고 세션을 준비한 뒤 HTTP를 수신한다. Compose 시작 유예는 180초다. kind의 API Pod에는 원본·정제·증거 볼륨이 없으며 1GiB 임시 공간만 연결한다. Staging API 이미지 `sdss-platform2-api:geollm-step03-r3`는 이전에 검증한 런타임에 토크나이저와 STEP 03 서비스 파일을 포함한다. 검증 근거는 실행 호스트의 `artifacts/deploy/geollm-step03/`에 있다.
+
+2026-11-27 Staging 검증은 `VERIFIED_REAL`이다. Docker와 kind의 Edge에서 한국어·인도네시아어·영어 문서 인용과 정량 결과의 수치·단위·지도·출처·제품 버전을 확인했다. 양쪽 API 응답 13건(문서 3, 정량 8, 보류 2)과 대응 지도 자산의 SHA-256이 일치했다. 동등한 세 언어의 2024년 반텐 논 면적은 195,653.67ha였다. MapBiomas·Esri 수치와 제품 버전을 이전에 저장한 검증 기록과 대조했고 Esri 전이·배경 PNG는 기존 해시와도 일치했다. SQL 재조회에서 실제 벡터 286개가 모두 768차원이며 반텐 경계가 SRID 4326에서 유효함을 확인했다. 객체 바인딩 47개는 총 1,143,310,094바이트다.
+
+호스트 기록은 `migration.log`, `sql-readback.log`, `kind-remote-source.log`, `edge-5280-final.log`, `edge-5281-final.log`, `cross-environment-results.json`이다. 검증 범위는 반텐의 지정 자료와 로컬 Staging이다.
+
+## STEP 04 GeoLLM 저장소 모드
+
+GeoLLM이 질문에서 지역·연도·클래스·제품을 판별하고, 앱 시작 시 정한 저장소 어댑터로 자료를 읽는다. GIS 수치 계산, 출처 필드와 제품 버전은 두 모드에서 같은 계약을 따른다. 기존 GeoLLM 화면의 GIS·RAG 제출, LANDY 목록 및 검색 API에도 같은 선택이 적용된다.
+
+| `SDSS_GEOLLM_STORAGE_MODE` | 동작 |
+| --- | --- |
+| `local` | 개발 환경의 고정 원본·정제 파일과 기존 지도 API를 사용한다. LANDY 검색은 로컬 어휘 색인을 사용한다. |
+| `lake` | `SDSS_GEOLLM_LAKE_RELEASE`의 발행 통계·PostGIS 경계, SeaweedFS 지도와 근거 파일, 같은 릴리스의 pgvector와 E5로 조회한다. 구성과 연결에 실패하면 해당 요청을 차단한다. |
+| 미설정 | 기존 개발 배포의 호환 동작이다. 릴리스 변수가 없으면 `local`, 릴리스 변수가 존재하면 `lake`를 선택한다. 운영 배포에는 `lake`를 명시한다. |
+
+GIS의 성공 응답은 기존 수치·단위·출처·제품 버전과 Data Lake 릴리스 식별자를 반환한다. 오류 메시지에는 접속 문자열 및 비밀값을 포함하지 않는다.
+
+| 상황 | 질의 API 및 기존 화면 |
+| --- | --- |
+| 모드 오타 또는 필수 접속값 누락 | `BLOCKED`와 `GEOLLM_STORAGE_MODE_INVALID` 또는 `GEOLLM_STORAGE_CONFIG_REQUIRED` |
+| PostgreSQL, pgvector, SeaweedFS 또는 요청한 릴리스 자료 접근 실패 | `BLOCKED`와 `GEOLLM_STORAGE_UNAVAILABLE`. 수치·출처·인용·지도 주소를 비운다. GeoLLM의 지도 파일·경계 자체 요청은 HTTP 503으로 응답한다. |
+| 시작 직후 E5 초기화 중 | 문서 조회를 잠시 `GEOLLM_STORAGE_INITIALIZING`으로 표시한다. HTTP와 GIS 시작은 문서 모델을 기다리지 않는다. |
+
+`lake`는 임시 캐시를 재사용할 때에도 지도·모델 객체의 SeaweedFS 바인딩을 확인한다. 저장소 오류를 로컬 파일 조회로 대체하지 않는다. GIS와 지도는 다음 요청에서 같은 릴리스를 다시 읽는다. 문서 모델 준비가 실패한 경우 다음 문서 요청이 같은 릴리스에서 백그라운드 재시도를 시작한다. 준비 중 요청은 상태를 그대로 표시한다. 기존 제품의 자료 미확보, 기간 및 분류 제한은 동일하게 적용한다.
+
+2026-11-27 STEP 04 1차 실자료 시험에서 Compose 5280과 kind 5281의 한국어·인도네시아어·영어 화면을 확인했다. 두 환경의 API 13건과 조회한 경계·Esri 이미지의 해시가 일치했다. MapBiomas Collection 4.1의 2024년 반텐 논 면적은 세 언어 모두 195,653.67ha였다. Compose 별도 인스턴스에서는 동일한 로컬 원본을 읽기 전용으로 유지하며 `local` 정상 조회와 `lake` DB·S3 장애를 각각 시험했다. 장애마다 세 언어의 GIS 3건과 문서 3건이 차단됐고, 경계는 HTTP 503을 반환했다. [교차 검증](../../artifacts/deploy/geollm-step04/api-compare-warm.log) · [DB 장애](../../artifacts/deploy/geollm-step04/db-outage.log) · [S3 장애](../../artifacts/deploy/geollm-step04/s3-outage.log)
+
+Docker Desktop의 E: 호스트 마운트가 실패해 정상 Staging의 GeoLLM은 애플리케이션의 로컬 원본 볼륨 없이 검증했다. 로컬·장애 비교에는 C:의 격리 복사본을 사용했다. 첫 kind 문서 시험 중 모델 다운로드가 게이트웨이 제한을 넘겼다. 어댑터에 원격 모델 초기화 실패 후 단일 백그라운드 재시도를 추가했다.
+
+최종 API 이미지 `sdss-platform2-api:geollm-step04-r2`의 실자료 API 13건과 경계·지도 해시는 Compose 5280 및 kind 5281에서 일치했다. 양쪽 Edge에서 세 언어의 문서 인용과 GIS 7건의 수치·출처·버전·지도를 재검증했다. 로컬 모드 6건과 PostgreSQL·SeaweedFS 장애별 6건도 최종 이미지에서 확인했다. 어댑터 구성·재시도·기관 계보의 회귀시험은 18개를 통과했다. [최종 API 비교](../../artifacts/deploy/geollm-step04/api-compare-r2.log) · [Compose 화면](../../artifacts/deploy/geollm-step04/edge-5280-r2.log) · [kind 화면](../../artifacts/deploy/geollm-step04/edge-5281-r2.log) · [로컬](../../artifacts/deploy/geollm-step04/local-r2.log) · [DB 장애](../../artifacts/deploy/geollm-step04/db-outage-r2.log) · [S3 장애](../../artifacts/deploy/geollm-step04/s3-outage-r2.log)
+
+## 운영 Data Lake 전환 상태
+
+2026-11-27 사전 점검 당시 개발 Compose 5180과 로컬 Kubernetes 5181은 `PROJECT_STORAGE_AUTHORITY_NOT_CONFIGURED`였고 문서 질의는 `local_lexical_evidence`였다. [사전 점검 기록](../../artifacts/deploy/geollm-operational-preflight/cross-environment-results.json)
+
+운영 배포에는 읽기 전용 데이터베이스 접속 정보, 기관 범위, 객체 저장소와 승인된 GeoLLM 릴리스가 필요하다. BIG 운영 연결과 운영 자료의 기관 검증은 `BLOCKED`다. 격리 Staging에서 사용할 값은 저장소 문서를 따른다. [접속 정보와 검증 범위](../architecture/PRODUCTION_STORAGE.md#2026-11-27-step-02-staging-접속-설정)
+
 ## Docker와 Kubernetes
 
 GeoLLM은 기존 FastAPI와 React 이미지에서 동작하는 읽기 전용 질의 경로다. Nginx는 화면과 같은 출처의 `/api/lcluc/geollm/query`, 경계·전이 이미지 및 RAG API를 내부 `127.0.0.1:8014`로 전달한다. Docker Compose는 API와 Web에 같은 네트워크를, Kubernetes는 같은 Pod를 사용한다. 질의 처리는 별도 학습·수집 워커를 호출하지 않는다.

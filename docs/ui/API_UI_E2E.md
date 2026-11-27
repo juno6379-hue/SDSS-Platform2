@@ -4,6 +4,10 @@
 
 ## 상태와 실행
 
+2026-11-27 STEP 04에서 기존 GeoLLM에 저장소 상태 표시를 연결했다. UI는 GIS와 RAG의 `BLOCKED` 응답에 대해 저장소 설정 오류, 연결 실패, 모델 준비 중을 한국어·인도네시아어·영어로 표시한다. Compose와 kind의 실자료 시험, 별도 Compose에서 로컬 원본을 연결한 DB·S3 장애 시험으로 수치·지도·출처·버전과 차단을 확인했다. [상태 계약·검증 기록](../lcluc/GEOLLM_QUERY.md#step-04-geollm-저장소-모드)
+
+2026-11-27 STEP 03에서 기존 GeoLLM 화면을 Staging의 PostgreSQL/PostGIS·SeaweedFS·pgvector에 연결했다. Docker 5280과 kind 5281의 Edge로 한국어·인도네시아어·영어의 문서 인용과 정량 결과의 수치·지도·출처·버전·SHA-256을 확인했다. API 13건과 지도 자산 해시가 일치했다. Staging 시험 기록은 `artifacts/deploy/geollm-step03/`에 보관한다. [검증 자료 및 실행 계약](../lcluc/GEOLLM_QUERY.md#step-03-반텐-geollm-staging-릴리스)
+
 2026-11-27 `libexpat1`을 포함한 기본 Dockerfile 이미지로 Compose 5180과 kind 5181의 GeoLLM 화면을 재검증했다. 두 환경에서 실자료 Data Lake, 한국어·인도네시아어·영어 문서 인용, 다섯 GIS 결과의 수치·지도·출처·버전·SHA-256, 미지원 자료 보류를 확인했다. 결과 10건과 해당 지도 자산이 일치했다. [기본 이미지 실행과 검증 근거](../lcluc/GEOLLM_QUERY.md#기본-이미지-재검증)
 
 2026-11-27 `b471bb3`의 React와 API를 Docker Compose 5180 및 로컬 kind 5181에서 연결해 GeoLLM 3개 언어 브라우저 시험을 통과했다. 기본 API 이미지의 `libexpat.so.1` 누락을 재현한 후, 애플리케이션 소스가 동일한 `b471bb3-expat`로 실자료를 조회했다. Edge에서 다섯 정량 결과의 값·지도·출처·제품 버전을 확인했고, 두 환경의 질의 10개 응답과 지도 자산은 일치했다. [Compose 검사](../../artifacts/deploy/geollm-b471bb3/compose-geollm-edge-final.log) · [kind 검사](../../artifacts/deploy/geollm-b471bb3/kube-geollm-edge.log) · [컨테이너 계약](../lcluc/GEOLLM_QUERY.md#docker와-kubernetes)

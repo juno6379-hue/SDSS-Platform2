@@ -17,6 +17,20 @@
   - `artifacts/deploy/geollm-default-build/kube-edge.log`
   - `artifacts/deploy/geollm-default-build/cross-environment.log`
   - `artifacts/deploy/geollm-default-build/{compose,kube}-data-lake.log`
+  - `artifacts/deploy/geollm-step03/edge-5280-final.log`
+  - `artifacts/deploy/geollm-step03/edge-5281-final.log`
+  - `artifacts/deploy/geollm-step03/api-compare.log`
+  - `artifacts/deploy/geollm-step03/kind-remote-source.log`
+  - `artifacts/deploy/geollm-step04/edge-5280.log`
+  - `artifacts/deploy/geollm-step04/local.log`
+  - `artifacts/deploy/geollm-step04/db-outage.log`
+  - `artifacts/deploy/geollm-step04/s3-outage.log`
+  - `artifacts/deploy/geollm-step04/api-compare-warm.log`
+  - `artifacts/deploy/geollm-step04/edge-5281-warm.log`
+  - `artifacts/deploy/geollm-step04/api-compare-r2.log`
+  - `artifacts/deploy/geollm-step04/edge-5280-r2.log`
+  - `artifacts/deploy/geollm-step04/edge-5281-r2.log`
+  - `artifacts/deploy/geollm-step04/{local,db-outage,s3-outage}-r2.log`
 - overall_status: `VERIFIED_REAL`
 
 ## 1. 쉬운 설명
@@ -34,6 +48,19 @@ GeoLLM 토지피복 질의응답은 한국어·인도네시아어·영어 질문
 - `VERIFIED_REAL`: 기본 Dockerfile이 Debian `libexpat1`을 설치하도록 수정됐다. 보관된 `b471bb3` 소스와 이 Dockerfile 변경만으로 `sdss-platform2-api:geollm-libexpat1`을 새로 빌드했으며 파생 런타임 이미지를 사용하지 않았다.
 - `VERIFIED_REAL`: 새 기본 이미지로 Compose 5180과 로컬 kind Kubernetes 5181에서 같은 다국어 RAG와 GIS 결과 5건을 확인했다. 두 환경의 JSON 응답 10개와 대응 지도 자산 해시가 일치했다.
 - `VERIFIED_REAL`: 원본·evidence는 읽기 전용으로 마운트하고 정제 자료는 별도 복사본을 사용했다. API 소스, 원본 XLSX, 정제 전이 JSON의 SHA도 두 환경에서 같았다.
+- `VERIFIED_REAL`: STEP 03 release `banten-geollm-20261127-v1`은 RLS 범위의 불변 PostgreSQL dataset 4개와 SeaweedFS binding 47개·1,143,310,094B를 실제 GeoLLM 출처로 사용한다.
+- `VERIFIED_REAL`: LANDY 공식 문서 14건의 실제 passage 286개를 고정 `intfloat/multilingual-e5-base` INT8 ONNX로 768차원화해 pgvector dataset 범위 cosine 검색에 연결했다.
+- `VERIFIED_REAL`: Compose 5280과 kind 5281의 기존 React 화면에서 3개 언어 인용과 GIS 결과를 확인했다. 3 RAG·8 GIS·2 차단 응답 13개와 PostGIS 경계·S3 지도 자산 해시가 일치했다.
+- `VERIFIED_REAL`: kind는 raw·curated·evidence 또는 로컬 GeoLLM source mount 없이 PostGIS·SeaweedFS·pgvector에서 제공했다.
+- `VERIFIED_REAL`: STEP 04의 Compose 5280 `lake` 모드에서 기존 React 화면의 한국어·인도네시아어·영어 원격 RAG와 반텐 2024 논 195,653.67ha를 확인했다.
+- `VERIFIED_REAL`: 격리 복사본 27파일을 읽기 전용으로 연결한 명시 `local` 모드에서 GIS 3건·문서 3건을 확인했다.
+- `VERIFIED_REAL`: 실제 PostgreSQL 또는 SeaweedFS 장애에서 GIS 3건·RAG 3건이 모두 차단되고 지도 HTTP 503, 빈 수치·출처·인용·지도 URL, 일반 health 유지를 확인했다. 같은 local 자료는 장애 fallback에 사용되지 않았다.
+- `TESTED_SYNTHETIC`: 저장소 모드·필수 구성·S3 attestation·연결 실패 차단 계약 17건과 Ruff를 통과했다.
+- `VERIFIED_REAL`: kind 5281 warm 경로에서 3개 언어 RAG와 GIS 화면, Compose와 같은 API 13개·지도 SHA를 확인했다.
+- `VERIFIED_REAL`: 최초 kind E5 냉시작 재시도에서 nginx 504가 발생했다. warm 성공과 별개인 관측 실패로 보존한다.
+- `VERIFIED_REAL`: R2에서 Compose 5280·kind 5281 Edge 전체와 API 13개·지도 SHA 동등성을 다시 확인했다. 정상화 뒤 첫 RAG는 각각 1.95초·1.39초에 `FOUND`였다.
+- `TESTED_SYNTHETIC`: R2의 실패 뒤 단일 백그라운드 원격 초기화 재시작 순서는 재초기화 회귀를 포함한 18 PASS와 Ruff PASS로 확인했다.
+- `BLOCKED`: BIG 운영 환경의 저장소 연결과 기관 검증은 미확인이다.
 - `BLOCKED`: Dockerfile 보완 전 원본 `b471bb3` API 이미지는 Compose와 Kubernetes 모두 `libexpat.so.1` 누락으로 시작되지 않았다. 이전 `b471bb3-expat` 파생 이미지 검증은 원인과 해결책을 확인한 역사적 라운드다.
 - `BLOCKED`: Kemenhut 동년 Penutupan Lahan 원본과 승인된 중첩 대상 자산은 미입고 상태다. 해당 질문은 수치를 만들지 않고 이유를 반환한다.
 - `BLOCKED`: 독립 정확도는 미측정이다. 현재 제품 안의 면적·전이 조회는 독립 표본 평가와 별도다.
@@ -106,6 +133,30 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 
 이 검증은 컨테이너 런타임 이식성과 재현성을 확인한 것이다. Kemenhut 원본, 중첩 자료, 독립 정확도, 결과 registry의 과학·운영 Gate 상태는 바뀌지 않는다.
 
+### 3.5 STEP 03 Staging source 전환
+
+1. release `banten-geollm-20261127-v1`이 MapBiomas `COVERAGE`·`TRANSITION`, Esri audit, 반텐 경계와 LANDY corpus를 PostgreSQL dataset 4개로 고정한다.
+2. PostGIS 반텐 경계는 SRID 4326 valid이며 dataset·기관 RLS 범위로 조회한다.
+3. SeaweedFS binding 47개·1,143,310,094B에는 Esri COG·preview·clipped raster, 모델, corpus가 포함된다.
+4. LANDY 공식 문서 14건의 passage 286개를 로컬 pin `intfloat/multilingual-e5-base` `d128750` INT8 ONNX로 768차원화하고 pgvector dataset 범위 cosine 검색에 사용한다.
+5. E5 warmer가 cold proxy 504를 방지한다. kind는 원본·정제·evidence mount와 로컬 GeoLLM source file 없이 PostGIS·SeaweedFS·pgvector에서 응답한다.
+6. Compose 5280과 kind 5281에서 한국어·인도네시아어·영어 RAG, 2024 논 195,653.67ha, 2023→2024 산림 총전환 3,146.85ha, Esri 수목→시가지 3,561.79ha를 확인했다.
+7. 최종 API 비교는 3 RAG·8 GIS·2 차단 응답 13개와 경계·지도 자산 해시가 두 환경에서 같음을 확인했다.
+
+Staging source 전환은 실제 저장소·vector 검색 경로의 재현성 증거다. 공식 Kemenhut 동년 원본, 독립 정확도, 결과 registry와 기관 운영 승인은 별도 Gate다.
+
+### 3.6 STEP 04 저장소 어댑터
+
+`SDSS_GEOLLM_STORAGE_MODE`는 앱 시작 시 자료 경로를 선택한다.
+
+| 모드 | 동작 |
+|---|---|
+| `lake` | 고정 release의 PostgreSQL/PostGIS·pgvector·SeaweedFS에서 GIS·지도·문서 근거를 읽는다. 운영 모드 연결 실패는 로컬로 우회하지 않고 차단한다. |
+| `local` | 개발용 고정 파일과 기존 어휘 검색을 사용한다. |
+| 미설정 | release 변수가 있으면 `lake`, 없으면 `local` 호환 동작을 사용한다. 운영 배포는 `lake`를 명시한다. |
+
+두 모드는 같은 질문 해석, GIS 수치·단위·출처·제품 버전 계약을 사용한다. 원격 모델이 임시 cache에 있어도 SeaweedFS binding과 SHA attestation을 다시 확인한다. 연결 실패는 `GEOLLM_STORAGE_UNAVAILABLE`, 구성 누락은 `GEOLLM_STORAGE_CONFIG_REQUIRED`, 잘못된 모드는 `GEOLLM_STORAGE_MODE_INVALID`로 차단하며 비밀값을 응답에 포함하지 않는다. E5 초기화 중 문서 질의는 `GEOLLM_STORAGE_INITIALIZING`으로 표시하고 GIS 시작은 계속 허용한다.
+
 ## 4. 시험 증거와 상태
 
 | 항목 | 상태 | 증거와 범위 |
@@ -121,6 +172,21 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 | 환경 간 동일성 | `VERIFIED_REAL` | JSON 응답 10개와 대응 지도 자산 해시 일치, API·XLSX·정제 JSON SHA 동일 |
 | 자료 마운트 | `VERIFIED_REAL` | 양쪽 raw·evidence `ro`, curated 별도 복사본 `rw` |
 | 보완 전 원본 이미지 | `BLOCKED` | Dockerfile 보완 전 `b471bb3`이 양쪽에서 `libexpat.so.1` 누락으로 시작 실패. 파생 이미지 검증은 역사로 보존 |
+| STEP 03 release | `VERIFIED_REAL` | `banten-geollm-20261127-v1`, RLS dataset 4개, SeaweedFS 47 bindings·1,143,310,094B |
+| 실제 E5·pgvector RAG | `VERIFIED_REAL` | LANDY 14문서·286 passage, 고정 E5 INT8 ONNX·768D dataset-scoped cosine |
+| STEP 03 Compose·kind Edge | `VERIFIED_REAL` | 5280·5281의 3개 언어 RAG·GIS, API 13개·경계·지도 자산 동등 |
+| kind 원격 source | `VERIFIED_REAL` | source mount 없이 PostGIS 경계·SeaweedFS 자산 제공 |
+| STEP 03 단위 회귀 | `TESTED_SYNTHETIC` | 14 PASS, optional live storage 1건 skip. live Staging은 별도 Edge로 검증 |
+| STEP 04 어댑터 계약 | `TESTED_SYNTHETIC` | `lake|local`, 구성·attestation·fail-closed 17 PASS와 Ruff PASS |
+| STEP 04 Compose lake Edge | `VERIFIED_REAL` | 5280 원격 RAG 3개 언어와 반텐 2024 논 195,653.67ha |
+| STEP 04 local Edge | `VERIFIED_REAL` | 읽기 전용 격리 복사본 27파일, GIS 3건·문서 3건 정상 |
+| STEP 04 DB/S3 장애 Edge | `VERIFIED_REAL` | 각 GIS 3·RAG 3 차단, 지도 503·빈 evidence URL, health 유지·local fallback 0 |
+| STEP 04 kind warm Edge | `VERIFIED_REAL` | 5281 세 언어 RAG·GIS 화면, Compose와 API 13개·지도 SHA 동등 |
+| 최초 kind cold 재시도 | `VERIFIED_REAL` | nginx 504 관측. warm 정상 경로와 분리해 실패 기록 보존 |
+| STEP 04 R2 Edge/API | `VERIFIED_REAL` | 5280·5281 전체 Edge, API 3 RAG·8 GIS·2 보류 13개·지도 SHA 동등 |
+| STEP 04 R2 첫 RAG | `VERIFIED_REAL` | 정상화 뒤 5280 1.95초·5281 1.39초 `FOUND` |
+| STEP 04 R2 재초기화 계약 | `TESTED_SYNTHETIC` | 단일 background 원격 초기화 순서, 재초기화 포함 18 PASS·Ruff PASS |
+| BIG 운영 저장소 | `BLOCKED` | 운영 연결·기관 검증 미수행 |
 | 질문 계약시험 | `TESTED_SYNTHETIC` | 다국어 intent, 총전환·순변화 분리, margin 불일치·미발행 값·기간 차단 |
 | Kemenhut 질의 | `BLOCKED` | `KEMENHUT_ASSET_NOT_READY` |
 | 중첩 질의 | `BLOCKED` | `OVERLAY_ASSET_NOT_READY` |
@@ -131,7 +197,7 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 
 ### 1분
 
-“GeoLLM 토지피복 질의응답은 한국어·인도네시아어·영어 질문을 문서 근거 검색과 고정 수치·공간 도구로 나눕니다. MapBiomas 방법론은 원문 페이지를 인용하고, 면적과 전이는 Collection 4.1 XLSX의 SHA를 확인한 뒤 계산합니다. 2023→2024 산림 총전환은 3,146.85헥타르이고 산림 순변화는 마이너스 1,265.58헥타르로 서로 다른 지표입니다. Esri 수목→시가지 3,561.79헥타르는 실제 전이 PNG와 함께 확인했습니다. 기본 Dockerfile에 `libexpat1`을 포함한 새 이미지로 Compose와 Kubernetes의 다국어 RAG, GIS 결과 5건, JSON 10개와 지도 자산 해시 동일성도 확인했습니다. Kemenhut·중첩·독립 정확도·결과 등록은 아직 차단 상태입니다.”
+“STEP 04 R2는 Compose 5280과 kind 5281 전체 Edge, API 13개와 지도 SHA 동등성을 확인했습니다. 정상화 뒤 첫 RAG는 1.95초와 1.39초에 응답했습니다. 격리 local과 실제 DB/S3 장애 차단도 재검증했습니다. 최초 R1 kind 냉시작 재시도의 nginx 504는 실패 기록으로 보존합니다. 단일 백그라운드 재초기화 순서는 18개 합성 회귀로 확인했고 BIG 운영 연결은 남아 있습니다.”
 
 ### 5분 핵심 순서
 
@@ -144,6 +210,8 @@ MapBiomas 수치는 발행자가 정의한 반텐 주 통계다. XLSX에는 그 
 7. MapBiomas의 발행 경계와 One Map 맥락 경계를 구분한다.
 8. Kemenhut·중첩·독립 정확도·result registry는 증거가 생길 때까지 차단한다.
 9. 보완 전 이미지의 `libexpat.so.1` 누락, 역사적 파생 이미지 검증, 기본 Dockerfile `libexpat1` 반영을 구분하고 Compose·Kubernetes의 응답·지도 자산 동일성을 제시한다.
+10. STEP 03의 PostgreSQL dataset·SeaweedFS binding·E5 pgvector 검색을 설명하고 kind 무마운트 source 증거를 제시한다.
+11. STEP 04 `lake|local` 선택과 운영 모드 fail-closed·S3 attestation을 설명하고 검증 완료 환경을 구분한다.
 
 ## 6. Q&A
 
@@ -178,3 +246,27 @@ API 소스·원본 XLSX·정제 전이 JSON의 SHA가 같고, 실제 질의 JSON
 **Q. 컨테이너 이식 검증이 독립 정확도나 운영 승인을 의미합니까?**
 
 컨테이너 이식성과 응답 재현성을 검증한 결과다. Kemenhut 동년 원본, 승인 중첩 자료, 독립 표본 정확도, 공통 결과 등록은 기존 `BLOCKED` 상태를 유지한다.
+
+**Q. STEP 03은 실제 문서 embedding을 사용합니까?**
+
+LANDY 공식 문서 14건의 실제 passage 286개를 고정 E5 INT8 ONNX로 768차원화해 pgvector에서 dataset 범위로 검색한다. 합성 fixture가 아니라 Staging release의 실제 corpus 경로다.
+
+**Q. kind가 로컬 파일을 읽은 것은 아닙니까?**
+
+`kind-remote-source.log`에서 source mount 없이 PostGIS 경계가 제공됨을 확인했다. 지도·문서·모델은 고정 PostgreSQL·SeaweedFS binding으로 조회한다.
+
+**Q. Compose와 kind 결과는 몇 개까지 비교했습니까?**
+
+3 RAG·8 GIS·2 차단 응답 13개, PostGIS 경계, S3 지도 자산 해시를 비교해 모두 일치했다.
+
+**Q. STEP 04의 `lake` 연결이 끊기면 자동으로 local 파일을 읽습니까?**
+
+운영 `lake` 모드는 연결 실패를 `GEOLLM_STORAGE_UNAVAILABLE`로 차단하고 수치·인용·지도 주소를 비운다. 로컬 fallback으로 오류를 숨기지 않는다.
+
+**Q. 원격 E5 모델이 cache에 있으면 S3 검증을 생략합니까?**
+
+생략하지 않는다. 검증된 cache를 재사용할 때도 release의 SeaweedFS binding과 SHA attestation을 확인한다.
+
+**Q. STEP 04는 어디까지 실제 화면에서 확인했습니까?**
+
+R2의 Compose 5280·kind 5281 전체 Edge와 API 13개·지도 SHA 동등성, 격리 local 6건, 실제 DB/S3 장애 각 6건 차단을 확인했다. 최초 R1 kind cold 재시도 504는 관측 실패로 보존하며 재초기화 순서는 18 PASS의 `TESTED_SYNTHETIC` 범위다.

@@ -1,27 +1,19 @@
 """Serve provenance-backed GeoLLM land-cover answers and contextual maps."""
 
-import json
 from math import fsum, isclose
 
-from fastapi import Request
+from fastapi import HTTPException, Request, Response
 from pydantic import BaseModel, ConfigDict, Field
 
-from services.lcluc.banten_historical_trend import (
-    OUTPUT,
-    TRANSITIONS,
-    WORKBOOK,
-    WORKBOOK_SHA256,
-)
+from services.lcluc.banten_historical_trend import WORKBOOK_SHA256
+from services.lcluc.geollm_lake import BASE as LAKE_MAP
+from services.lcluc.geollm_lake import PRODUCT_YEARS
 from services.lcluc.province_esri import SNAPSHOT_SHA256
 from services.lcluc.question import parse_question
-from services.rag.mapbiomas import search as document_search
 
-from .lcluc_sentinel_explorer import PREFIX, PROVINCE, _digest
+from .geollm_storage import DataLakeGeoLLMStorage, StorageBlocked, Unavailable
 from .results import check_local
 
-COVERAGE_SHA256 = "55314ca9ec7b8340811355a8016d89506634e8752d302a7071ccf6c9f7c84e82"
-TRANSITIONS_SHA256 = "0f02a4e05d9628ef57770a3e631888898be6084dcbf8bb2f97c93098b1e9402c"
-ESRI_AUDIT_SHA256 = "495c94ec9859e9c6b26f75a7592cc41004a2163fc35a87050ab59e358c2c621c"
 FOREST = {3, 5, 76}
 MAPBIOMAS = {
     "forest": FOREST, "forest_formation": {3}, "mangrove": {5}, "peat_forest": {76},
@@ -36,18 +28,6 @@ NAMES_ESRI = {1: "Water", 2: "Trees", 4: "Flooded vegetation", 5: "Crops", 7: "B
 class Question(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
     question: str = Field(min_length=1, max_length=400)
-
-
-class Unavailable(ValueError):
-    """A valid query whose evidence or spatial scope is unavailable."""
-
-
-def checked(store, path, expected):
-    file = store.safe_path(path)
-    stamp = file.stat()
-    if _digest(file, stamp.st_size, stamp.st_mtime_ns, stamp.st_ctime_ns) != expected:
-        raise Unavailable("SOURCE_INTEGRITY_FAILURE")
-    return file
 
 
 def codes_for(concept, product, available):
@@ -133,11 +113,8 @@ def mapbiomas_values(intent, cover, transitions=None):
     return [metric(intent.metric, value, source_codes=origin, destination_codes=target)], names, "TRANSITION", limitations, source_rows
 
 
-def mapbiomas_answer(store, intent):
-    checked(store, WORKBOOK, WORKBOOK_SHA256)
-    cover = json.loads(checked(store, OUTPUT, COVERAGE_SHA256).read_bytes())
-    table = (json.loads(checked(store, TRANSITIONS, TRANSITIONS_SHA256).read_bytes())
-             if intent.metric in ("transition", "forest_loss") else None)
+def mapbiomas_answer(storage, intent):
+    cover, table = storage.mapbiomas(intent.metric in ("transition", "forest_loss"))
     values, names, sheet, limitations, rows = mapbiomas_values(intent, cover, table)
     source = {"name": "MapBiomas Indonesia", "version": "Collection 4.1", "url": cover["source_url"],
               "download_url": cover["workbook_url"], "sha256": WORKBOOK_SHA256, "sheet": sheet,
@@ -145,10 +122,10 @@ def mapbiomas_answer(store, intent):
     return values, names, [source], limitations, None
 
 
-def esri_answer(store, intent):
+def esri_answer(storage, intent):
     if intent.metric.startswith("forest_"):
         raise Unavailable("ESRI_TREES_NOT_FOREST_DEFINITION")
-    audit = json.loads(checked(store, f"{PROVINCE}/esri-coverage-and-change.json", ESRI_AUDIT_SHA256).read_bytes())
+    audit = storage.esri_audit()
     if audit["boundary_sha256"] != SNAPSHOT_SHA256:
         raise Unavailable("SOURCE_INTEGRITY_FAILURE")
     annual = {row["year"]: row for row in audit["annual"]}
@@ -157,7 +134,7 @@ def esri_answer(store, intent):
     sources = []
     for year in intent.years:
         pin = annual[year]["source_pin"]
-        checked(store, pin["path"], pin["sha256"])
+        storage.attest_esri(year, pin)
         sources.append({"name": "Esri / Impact Observatory", "version": "v003", "year": year,
                         "url": pin["uri"], "sha256": pin["sha256"], "grid": "EPSG:6933 · 10 m"})
     codes = codes_for(intent.classes[0], "esri", NAMES_ESRI.keys())
@@ -167,7 +144,7 @@ def esri_answer(store, intent):
         cover = annual[start]["area_ha_by_source_code"]
         values = [metric("area", cover[str(code)], source_codes={code}, name=NAMES_ESRI[code])
                   for code in sorted(codes)]
-        image = f"/api/lcluc/banten-province-display/{start}"
+        image = f"{storage.cover_url}/{start}"
     else:
         end = intent.years[1]
         pair = next((row for row in audit["pairs"] if (row["from_year"], row["to_year"]) == (start, end)), None)
@@ -179,21 +156,26 @@ def esri_answer(store, intent):
             raise Unavailable("TRANSITION_CLASSES_OVERLAP")
         value = pair["transition_matrix_ha"][audit["classes"].index(origin)][audit["classes"].index(target)]
         values = [metric("transition", value, source_codes={origin}, destination_codes={target})]
-        image = f"{PREFIX}/transition/{start}/{end}?from_class={origin}&to_class={target}"
+        image = f"{storage.transition_url}/{start}/{end}?from_class={origin}&to_class={target}"
         limitations.append("ESRI_TRANSITION_DISPLAY_GRID")
     return values, NAMES_ESRI, sources, limitations, image
 
 
-def answer_question(store, question):
+def search_documents(storage, question):
+    try:
+        return storage.search(question)
+    except StorageBlocked as error:
+        return {"status": "BLOCKED", "reason": str(error), "citations": [], "answer": None}
+
+
+def answer_question(storage, question):
     intent = parse_question(question)
     if intent.metric == "document":
-        return {"route": "rag", **document_search(store, question)}
+        return {"route": "rag", **search_documents(storage, question)}
 
     response = {"route": "gis", "query": {"intent": intent.metric, "region": intent.region,
                                          "years": intent.years, "product": intent.product, "classes": intent.classes},
                 "metrics": [], "sources": [], "citations": []}
-    if intent.document:
-        response["citations"] = document_search(store, question)["citations"]
     issue = intent.issue
     if not issue and not intent.region:
         issue = "REGION_REQUIRED"
@@ -208,26 +190,62 @@ def answer_question(store, question):
 
     try:
         run = mapbiomas_answer if intent.product == "mapbiomas" else esri_answer
-        values, names, sources, limitations, image = run(store, intent)
+        values, names, sources, limitations, image = run(storage, intent)
+        if intent.document:
+            response["citations"] = storage.search(question)["citations"]
     except Unavailable as error:
         return response | {"status": "BLOCKED", "reason": str(error)}
     except FileNotFoundError:
         return response | {"status": "BLOCKED", "reason": "EVIDENCE_NOT_READY"}
     except (KeyError, OSError, ValueError):
         return response | {"status": "BLOCKED", "reason": "SOURCE_INTEGRITY_FAILURE"}
+    response |= storage.provenance
     return response | {"status": "VERIFIED_REAL", "metrics": values, "sources": sources,
                        "class_names": names, "limitations": [*limitations, "INDEPENDENT_ACCURACY_UNMEASURED"],
                        "result_id": None, "independent_accuracy_measured": False,
-                       "map": {"boundary_url": "/api/lcluc/boundaries/banten", "boundary_sha256": SNAPSHOT_SHA256,
+                       "map": {"boundary_url": storage.boundary_url, "boundary_sha256": SNAPSHOT_SHA256,
                                 "boundary_source": "One Map / BIG", "image_url": image,
-                                "background_url": f"/api/lcluc/banten-province-display/{intent.years[-1]}"
+                                "background_url": f"{storage.cover_url}/{intent.years[-1]}"
                                 if image and intent.metric == "transition" else None,
                                 "kind": "cover" if image and intent.metric == "area" else
                                 "transition" if image else "boundary"}}
 
 
-def mount_lcluc_geollm(app, store):
+def mount_lcluc_geollm(app, storage):
     @app.post("/api/lcluc/geollm/query")
     def query_lcluc(request: Request, body: Question):
         check_local(request)
-        return answer_question(store, body.question)
+        return answer_question(storage, body.question)
+
+
+    if not isinstance(storage, DataLakeGeoLLMStorage):
+        return
+
+    @app.get(LAKE_MAP + "/boundary")
+    def lake_boundary(request: Request):
+        check_local(request)
+        try:
+            return storage.boundary()
+        except StorageBlocked as error:
+            raise HTTPException(503, detail=str(error)) from None
+
+    @app.get(LAKE_MAP + "/cover/{year}")
+    def lake_cover(request: Request, year: int):
+        check_local(request)
+        if year not in PRODUCT_YEARS:
+            raise HTTPException(404, detail="GEOLLM_MAP_YEAR_UNAVAILABLE")
+        try:
+            return Response(storage.cover(year), media_type="image/png")
+        except StorageBlocked as error:
+            raise HTTPException(503, detail=str(error)) from None
+
+    @app.get(LAKE_MAP + "/transition/{start}/{end}")
+    def lake_transition(request: Request, start: int, end: int, from_class: int, to_class: int):
+        check_local(request)
+        if (start not in PRODUCT_YEARS or end not in PRODUCT_YEARS or start >= end
+                or from_class == to_class or not {from_class, to_class} <= NAMES_ESRI.keys()):
+            raise HTTPException(422, detail="GEOLLM_TRANSITION_INPUT_INVALID")
+        try:
+            return Response(storage.transition(start, end, from_class, to_class), media_type="image/png")
+        except StorageBlocked as error:
+            raise HTTPException(503, detail=str(error)) from None
