@@ -1,10 +1,11 @@
 # v4.2 운영 경로 2~8: 기관 작업·원천·모델·저장소
 
-- updated_at: 2026-11-25 KST
+- updated_at: 2026-11-26 KST
 - source_commit: `UNCOMMITTED_WORKTREE` — 1번 결과 카탈로그 기준 커밋은 `c4a3954`
 - 목표: 결과 카탈로그 다음 단계인 기관 작업, UI 연결, 기관 원천, 모델 버전 실행, 운영 저장소를 하나의 증거 경로로 설명한다.
 - 실제 기관 endpoint·자격증명·승인 원본·학습 모델·운영 DB/버킷: `BLOCKED`
-- 8번 SeaweedFS S3 객체 경로: `VERIFIED_REAL`; PostgreSQL RLS·복구와 Kubernetes 인수: `BLOCKED`
+- Docker Compose 5180·로컬 Kubernetes 5181·개발 PostGIS/pgvector·S3 readback: `VERIFIED_REAL`
+- 기관 운영 인프라·IAM/SSO·복구 인수와 반텐 과학 인수: `BLOCKED`
 - 3번 API/Vite HTTP·build·실제 Edge 조회: `VERIFIED_REAL`
 
 ## 1. 쉬운 설명
@@ -31,7 +32,7 @@
 | 5 | CCKP 원본과 CDD bbox 수치를 고정했지만 국가 행정평균·전체 catalog는 아님 | 제한 범위 `VERIFIED_REAL`, 확대 사용 `BLOCKED` |
 | 6 | KLHK·비공개 문서 색인의 파일·행 수를 확인했지만 native 23·권리·공개 검색은 미확인 | 로컬 무결성 `VERIFIED_REAL`, 공개 `BLOCKED` |
 | 7 | 실제 후보의 scene 누출은 제거했고 합성 ONNX 버전·롤백을 시험함 | 후보 `VERIFIED_REAL`, 실행계약 `TESTED_SYNTHETIC`, 실제 학습·배포 `BLOCKED` |
-| 8 | 별도 SeaweedFS에 실제 검산 JSON을 저장·서명 조회했지만 PostgreSQL과 Kubernetes는 미확인 | S3 경로 `VERIFIED_REAL`, DB/클러스터 `BLOCKED` |
+| 8 | Compose의 실제 PostGIS/pgvector·S3 readback과 로컬 Kubernetes 이식을 확인했지만 기관 인수는 별도 | 개발 이식 `VERIFIED_REAL`, 기관 운영 `BLOCKED` |
 
 이 표에서 `VERIFIED_REAL`은 **해당 범위의 로컬 파일·수치가 실제였다는 뜻**이다. 기관 공개 승인, 현재 법적 효력, 독립 정확도 또는 운영 배포를 뜻하지 않는다.
 
@@ -152,9 +153,21 @@
 - CCKP 결과에서 명시적으로 선택한 보고서만 이관
 - 객체 export/restore와 manifest 재검증
 
-별도 개발 SeaweedFS 4.04 S3에는 실제 CCKP 검산 JSON **3,295B**를 저장했다. 업로드 원본 SHA가 유지되고 같은 입력 재시도가 기존 객체를 검증·재사용하는지 확인했다. 버킷 원주소의 익명 GET은 HTTP 403으로 거절됐고, 45초 presigned URL은 본문을 반환했으며 만료 뒤 HTTP 403이 됐다.
+Compose 개발 저장소에서 실제 PostgreSQL/PostGIS·pgvector schema를 연결하고 S3 객체 projection을 확인했다. 기존 CCKP 검산 보고서 **3,295B**를 서명 URL로 다시 읽어 원본 SHA와 대조했고, 인증 없는 API 요청은 HTTP 403으로 거절됐다. 이 증거는 `compose-storage-readback.log`의 `VERIFIED_REAL` 개발 이식 범위다.
 
-반면 PostgreSQL fixture는 TCP timeout으로 연결되지 않아 실제 RLS·PostGIS·pgvector·lineage transaction·`pg_restore`를 검증하지 못했다. Kubernetes context도 없어 클러스터 인수시험은 실행하지 않았다. 따라서 **S3 객체·링크 경로만 `VERIFIED_REAL`**이며 기관 저장소 전체나 운영 cutover로 확대하면 안 된다.
+PostgreSQL 작업 큐는 실제 개발 DB를 사용해 모의 기관 응답 기반 회귀 10건을 통과했다. 이는 DB journal·lock·상태 전이가 실제 PostgreSQL에서 동작했다는 뜻이지만 실제 기관 endpoint·token·승인 응답을 검증한 것은 아니다. 같은 패키지의 Worker를 `--once`로 실행했을 때 승인된 대기 작업이 없어 `jobs_checked=0`으로 안전 종료했다.
+
+### 3.6 Docker Compose와 로컬 Kubernetes 이식
+
+`services/apps/api.py`는 기존 FastAPI를 내부 loopback 8014로, `services/apps/worker.py`는 기존 승인형 Worker를 그대로 실행한다. `deploy/compose.yaml`은 API와 React를 같은 network namespace에 두고 호스트 loopback 5180으로 노출한다. evidence와 raw 원본은 read-only bind, curated는 별도 쓰기 경로이며 컨테이너는 read-only root filesystem, capability drop, no-new-privileges를 사용한다.
+
+Compose 5180에서 `/`, `/api/health`, 공통 결과, jobs, 기존 GeoAI health, 반텐 collection API와 실제 광학 레이어 12개를 HTTP로 확인했다. 이어 `compose-portable-browser.log`가 실제 Edge 전체 흐름 PASS를 기록했다. 광학 레이어, 10m 명시 재계산, 연차 면적·추세, 변화지도·hotspot 20개, 수집·KPI, 두 Esri 전역층 비교, 기존 evidence ID `0c62…dab6`의 HTML·CSV 보고서를 확인했다. 기존 비컨테이너 5175는 계속 별도 실행이다.
+
+`deploy/kubernetes/local-validation.yaml`은 같은 이미지의 API·React를 한 Pod에 두고 evidence·raw·curated 3개 PVC를 결속한다. evidence와 raw는 read-only이며, service-account token 자동 mount를 끄고 non-root·read-only root filesystem·capability drop을 적용한다. 로컬 Kubernetes 5181에서 경계, 2020~2025 결과, 공통 결과·jobs, 실제 12개 광학 레이어와 해시를 확인했다. `kube-http.log`가 HTTP 범위를, `kube-browser.log`가 기존 LCLUC UI에서 Sentinel-2와 Landsat 두 센서 swipe를 실제 Edge로 확인해 PASS를 기록한다.
+
+Windows 기준 감사의 2020→2025 변화면적은 `78,998.91ha`, Linux 컨테이너 명시 재계산은 `78,998.94ha`다. 둘은 같은 원본에서 산출했지만 전환행렬 차이를 감지했으므로 기존 값을 덮어쓰지 않고 환경별 결과를 함께 표시한다. Rasterio/GDAL 버전은 같아도 PROJ wheel 차이가 남아 있으며, 이 검증의 수치 동등성은 과학적 의미와 허용 범위 수준이지 bit-for-bit 또는 소수 둘째 자리 완전 동일성을 뜻하지 않는다.
+
+이식 성공은 로컬 개발 Compose/Kubernetes에서 같은 이미지·원본·API 계약이 재현됐다는 뜻이다. 반텐의 `COVERAGE_GAPS`, 독립 정확도, 실제 기관 provider·권한, 운영 클러스터의 IAM/SSO·백업·복구·가용성 인수는 별도 `BLOCKED`다.
 
 ## 4. 테스트·증거
 
@@ -173,8 +186,12 @@
 | React API/Vite 연결 | API 8014·Vite 5175의 세 운영 경로 HTTP 200, 합성 계약·138 modules build | `VERIFIED_REAL` 연결 범위 |
 | React 실제 Edge 클릭 | 작업·모델·기관 자료 6종 조회, 결과 ID로 CCKP 재조회 | `VERIFIED_REAL` |
 | SeaweedFS S3 | CCKP 검산 JSON 3,295B, SHA·재시도, 익명 403, 45초 presigned GET·만료 403 | `VERIFIED_REAL` 개발 격리환경 |
-| PostgreSQL 저장소 | fixture TCP timeout으로 RLS·PostGIS·pgvector·lineage·restore 실검증 실패 | `BLOCKED` |
-| Kubernetes | context 없음, 클러스터 인수시험 0 | `BLOCKED` |
+| Docker Compose 5180 | HTTP 및 Edge 전체 PASS: 광학 12 layer, 10m 재계산, 연차 추세, 변화지도·20 hotspot, KPI·비교·HTML/CSV | `VERIFIED_REAL` |
+| PostgreSQL/PostGIS·pgvector | 실제 개발 DB schema와 S3 projection·3,295B signed SHA readback·무인증 403 | `VERIFIED_REAL` 개발 이식 |
+| PostgreSQL jobs | 실제 DB + 모의 기관 응답 10 PASS | DB 경로 `VERIFIED_REAL`, 기관 응답 `TESTED_SYNTHETIC` |
+| 패키지 Worker `--once` | 승인 대기 작업 0, `jobs_checked=0` 안전 종료 | `VERIFIED_REAL` no-op |
+| 로컬 Kubernetes 5181 | 같은 이미지, read-only 원본, 3 PVC, 경계·결과·광학 12 layer 해시 및 Edge 두 센서 swipe PASS | `VERIFIED_REAL` 로컬 이식 |
+| Windows/Linux 재계산 | 같은 원본에서 78,998.91ha / 78,998.94ha를 별도 보존; 전환행렬 차이·PROJ wheel 차이 기록 | `VERIFIED_REAL` 환경별 결과 |
 | 운영 저장소 | 기관 DB·버킷·IAM·SSO·RPO/RTO 인수 없음 | `BLOCKED` |
 
 WorldCover 2021은 다른 연도의 정답으로 쓰지 않는다. Esri IO 또는 KLHK/WorldCover와의 weak agreement도 independent accuracy로 보고하지 않는다.
@@ -183,7 +200,7 @@ WorldCover 2021은 다른 연도의 정답으로 쓰지 않는다. Esri IO 또�
 
 ### 1분
 
-“Platform2의 운영 경로는 고정 기관 승인으로 작업을 접수하고, 로컬 원천 증거를 확인하고, 승인된 모델 버전을 실행해 같은 결과 ID로 돌아오는 구조입니다. 기관 작업 계약은 합성시험 8건을 통과했지만 실제 서버는 공급자 설정이 없어 HTTP 200 응답 안에서 차단 상태를 보고합니다. 실제 원천 6종의 로컬 해시는 확인했지만 모두 공개 차단입니다. Sentinel 후보는 누출 scene을 격리해 1,779행에서 1,751행, 적격 1,382행, scene 충돌 0으로 만들었지만 학습 허용은 false입니다. 별도 SeaweedFS에서 3,295바이트 객체 저장·복원과 서명 링크를 검증했습니다. Edge에서 운영 화면을 눌러 결과 ID로 다시 열었습니다. PostgreSQL과 Kubernetes 운영 시험은 대기합니다.”
+“Platform2는 기존 React와 API를 Docker 5180과 로컬 Kubernetes 5181에 같은 이미지로 이식했습니다. 두 환경에서 공통 결과·jobs·반텐 경계와 결과·실제 Sentinel/Landsat 광학 레이어 12개를 확인했습니다. 개발 Compose의 PostGIS·pgvector와 S3에서 CCKP 보고서 3,295바이트의 서명 SHA readback도 검증했고, 실제 PostgreSQL 작업 큐의 모의 기관 응답 시험 10건과 승인 작업 0건 Worker 안전 종료를 확인했습니다. 그러나 5175는 별도 실행이며, 기관 endpoint·권한·운영 복구 인수와 반텐 과학 인수·독립 정확도는 별도 차단 상태입니다.”
 
 ### 5분
 
@@ -196,8 +213,8 @@ WorldCover 2021은 다른 연도의 정답으로 쓰지 않는다. Esri IO 또�
 7. 실제 manifest에서 누출 scene 전체를 격리해 1,751행·적격 1,382행·scene 충돌 0 후보를 만들었다.
 8. 지리 중첩·피복·독립 라벨이 남아 있어 후보의 학습·배포는 허용하지 않았다.
 9. 합성 ONNX는 11→12→11 rollback과 과학 승인 철회 후 실행 차단을 검증했다.
-10. 별도 SeaweedFS의 실제 객체·45초 서명 링크는 검증했지만 PostgreSQL RLS·복구와 Kubernetes는 차단됐다.
-11. 기관 인프라·권한·복구 인수 뒤에만 전체 저장소를 실운영으로 승격한다.
+10. Docker 5180과 Kubernetes 5181에서 같은 이미지·API·읽기전용 원본·광학 12개 레이어를 확인했다.
+11. 개발 PostGIS/pgvector·S3·PostgreSQL jobs는 실증했지만 기관 인프라·권한·복구·과학 인수 뒤에만 실운영으로 승격한다.
 
 ## 6. Q&A
 
@@ -226,7 +243,19 @@ WorldCover 2021은 다른 연도의 정답으로 쓰지 않는다. Esri IO 또�
 HTTP와 빌드 시험은 서버 연결과 컴파일을 확인한다. 실제 Edge 검증에서는 작업·모델·기관 자료 화면과 같은 결과 ID CCKP 조회를 추가로 확인했다.
 
 **Q. SeaweedFS 검산 JSON을 읽었으니 운영 Lake cutover가 끝난 것입니까?**
-아니다. 3,295B 객체의 SHA·재시도·익명 403·45초 서명 링크만 실제 검증했다. PostgreSQL fixture는 TCP timeout, Kubernetes context는 없음이므로 RLS·lineage·복구·클러스터 인수는 `BLOCKED`다.
+아니다. 이제 개발 Compose의 PostGIS·pgvector schema, S3 projection과 3,295B 서명 SHA readback, 실제 PostgreSQL 작업 큐까지 검증했지만 기관 DB·버킷·IAM/SSO·백업·복구·RPO/RTO 인수는 없다. 개발 이식과 운영 cutover를 분리한다.
+
+**Q. Docker 5180과 Kubernetes 5181이 PASS면 기관 운영 배포입니까?**
+아니다. 같은 이미지와 읽기전용 원본, 3 PVC, API와 광학 12개 레이어를 로컬 환경에서 재현한 이식 증거다. 실제 기관 provider·비밀값·운영 클러스터 인수와 과학 승인은 별도다. 기존 5175도 독립적으로 계속 실행된다.
+
+**Q. PostgreSQL jobs 10 PASS는 실제 기관 작업 10건입니까?**
+아니다. 실제 개발 PostgreSQL을 사용했지만 기관 응답은 모의였다. Worker `--once`도 무승인 작업을 실행한 것이 아니라 승인된 대기 작업 0건을 확인하고 `jobs_checked=0`으로 종료했다.
+
+**Q. Compose와 Kubernetes에서도 실제 브라우저 기능을 확인했습니까?**
+예. Compose Edge는 10m 재계산, 연차 추세, 변화지도·hotspot 20개, KPI, 비교와 기존 ID의 HTML·CSV까지 PASS했다. Kubernetes Edge는 기존 UI의 Sentinel-2·Landsat swipe를 PASS했다. 이 검증은 로컬 이식 범위이며 기관 운영·과학 인수와는 별도다.
+
+**Q. 78,998.91ha와 78,998.94ha 중 어느 값을 지워야 합니까?**
+둘 다 지우지 않는다. 전자는 Windows 감사값, 후자는 Linux 컨테이너 재계산값이다. 같은 원본이지만 전환행렬 차이가 감지됐고 동일 Rasterio/GDAL에서도 PROJ wheel 차이가 남아 있으므로 환경별 provenance와 함께 표시한다. 수치가 가깝다는 사실이 bit-for-bit 재현성을 뜻하지 않는다.
 
 **Q. WorldCover 2021과 맞으면 독립 정확도입니까?**
 아니다. 약한 참조 일치도다. 다른 연도의 정답으로 쓰지 않으며 독립 현장·전문가 라벨로 별도 평가해야 한다.

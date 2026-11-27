@@ -1,7 +1,7 @@
 # v4.2 결과 카탈로그와 이중 승인 Gate
 
 - updated_at: 2026-11-25 KST
-- source_commit: 이 문서와 함께 기록된 구현
+- source_commit: `c4a3954` — GitHub push 확인
 - Gate 목표: 기존 공통 결과 ID에 출처·수치·공간 산출물·보고서·불확실성을 해시 고정 패키지로 연결하고, 과학 검토와 기관 게시 결정을 분리한다.
 - 실제 CCKP·BIG seed와 로컬 패키지 재검증: `VERIFIED_REAL`
 - 카탈로그·자산·이중 승인 계약시험 6건: `TESTED_SYNTHETIC`
@@ -115,6 +115,7 @@ BIG adapter는 보존한 반텐 역사 GeoJSON과 receipt의 feature 수·속성
 | CCKP 실제 seed | `40.91221481742199 days`, 12,765 Point GeoJSON, 보고서 2개, 원본 replay·SHA 재확인 | `VERIFIED_REAL` |
 | BIG 실제 seed | 반텐 역사 폴리곤 1개, receipt 보고서, 현행 조례 불일치와 기간 미확인 보존 | `VERIFIED_REAL` |
 | 실제 승인 상태 | 두 결과 모두 scientific/publication `PENDING`; 불확실성 모두 `NOT_REPORTED` | `VERIFIED_REAL` 현재 상태 |
+| 실제 Edge 카탈로그 | 실제 seed 2건, 지도 layer 2개, 보고서 3개 조회 | `VERIFIED_REAL` — `c4a3954` 기준 |
 | `tests/api_ui/test_result_catalog.py` | 같은 ID 결속, 멱등 attach, asset hash, 404, authority 분리, 과학 선승인, revision·release 취소, drift 차단 | `TESTED_SYNTHETIC` 6 PASS |
 | 형식 fail-closed | 기간 역전, CRS 불일치, vector nodata 오류, 허용되지 않은 단위, SHA drift 거절 | `TESTED_SYNTHETIC` |
 | 실제 기관 과학·게시 승인 | 기관 인증·권리 근거 미확보 | `BLOCKED` |

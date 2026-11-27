@@ -4,6 +4,7 @@
 - pilot_status: `VERIFIED_REAL`
 - 전체 수집·학습 상태: `BLOCKED`
 - 대상: East Java 2023, 고정 Sentinel-2 scene 한 건
+- 후속 상태: 2026-11-25 36셀 재감사 완료; 상세는 `V42_SENTINEL_POST_PILOT_REAUDIT.md`
 
 ## 1. 쉬운 설명
 
@@ -21,7 +22,7 @@
 
 따라서 단일 pilot용 reservation·pin·bounded Range·정산 경로는 `VERIFIED_REAL`이다. 그러나 이 한 패치는 전체 공간 수집 완료나 학습 준비를 뜻하지 않는다.
 
-특히 pilot 관측값은 36셀 coverage aggregate에 아직 반영·재감사되지 않았다. **0.976741% paired-present와 0.889803% clear coverage는 pilot 이전 snapshot**이다. 남은 잔액만으로 전체 수집 예산이 충분하다고 말할 수도 없다.
+pilot 완료 시점에는 관측값이 36셀 aggregate에 아직 반영되지 않았고 **0.976741% paired-present와 0.889803% clear coverage는 pilot 이전 snapshot**이었다. 이후 2026-11-25 exact geometry 재감사를 완료해 현재값은 0.9773249834093871%와 0.890386955270514%다. 남은 잔액만으로 전체 수집 예산이 충분하다고 말할 수 없다는 판단은 그대로다.
 
 ## 2. 이론적 배경
 
@@ -71,7 +72,8 @@
 | 원장 정산 | before/after SHA 고정, 잔액 1,678,521,030B | `VERIFIED_REAL` |
 | postflight | 후속 pilot 0, collector 0, locks 0, 기존 batch 불변 | `VERIFIED_REAL` |
 | pilot 계약시험 | 26 PASS | `TESTED_SYNTHETIC` |
-| 36셀 aggregate 재감사 | 수행하지 않음 | `BLOCKED` |
+| 36셀 aggregate 재감사 | 후속 exact geometry 재감사 완료 | `VERIFIED_REAL`; 별도 이해자료 참조 |
+| 재감사 API/UI | 로컬 API와 실제 Edge에서 36행·6후보·42.75MiB 확인 | `VERIFIED_REAL` |
 | 전체 수집 예산·승인 | 잔액만 확인; 충분성·BIG 승인 미확인 | `BLOCKED` |
 | 독립 정확도·학습·배포 | 측정/실행 0 | `BLOCKED` |
 
@@ -81,7 +83,7 @@ WorldCover 2021은 다른 연도의 ground truth가 아니다. 이번 SCL qualit
 
 ### 1분
 
-“East Java 2023의 고정 Sentinel-2 scene 한 건으로 실제 pilot을 완료했습니다. 같은 scene의 6개 band와 SCL을 정렬했고 65,536개 pixel이 모두 clear였습니다. 28개 원격 요청에서 본문 7,471,506바이트를 읽었고 오류와 429는 없었습니다. 예약 원장은 실측 byte로 정산되어 잔액 1,678,521,030바이트를 남겼으며 후속 pilot, collector, lock은 모두 0입니다. 다만 이 pilot은 36셀 coverage aggregate에 아직 반영되지 않았으므로 기존 0.976741%는 이전 snapshot입니다. 전체 공간 완료, 예산 충분성, BIG 승인, 독립 정확도, 학습·배포는 여전히 차단 상태입니다.”
+“East Java 2023의 고정 Sentinel-2 scene 한 건으로 실제 pilot을 완료했습니다. 같은 scene의 6개 band와 SCL을 정렬했고 65,536개 pixel이 모두 clear였습니다. 28개 원격 요청에서 본문 7,471,506바이트를 읽었고 오류와 429는 없었습니다. 이후 exact geometry 재감사에서 피복률은 0.977325%와 0.890387%가 됐습니다. 전체 공간 완료, 예산 충분성, BIG 승인, 독립 정확도, 학습·배포는 여전히 차단 상태입니다.”
 
 ### 5분
 
@@ -103,7 +105,7 @@ WorldCover 2021은 다른 연도의 ground truth가 아니다. 이번 SCL qualit
 아니다. 고정된 256×256 window 한 곳의 65,536 pixel에만 해당한다.
 
 **Q. 기존 0.976741%가 증가했습니까?**  
-알 수 없다. pilot 관측값은 `used_in_aggregate_coverage=false`이며 36셀 aggregate를 재감사하지 않았다. 0.976741%는 pilot 이전 snapshot이다.
+그렇다. 후속 exact geometry 재감사에서 0.9773249834093871%로 계산됐다. 0.976741%는 pilot 이전 snapshot이다.
 
 **Q. 잔액 1.678GB면 전체 수집에 충분합니까?**  
 확정할 수 없다. 남은 byte budget은 확인됐지만 전체 gap을 채우는 비용 추정과 승인 결과가 없다.

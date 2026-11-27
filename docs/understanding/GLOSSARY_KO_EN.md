@@ -1,6 +1,6 @@
 # v4.2 기후·RAG 용어집
 
-- updated_at: 2026-11-25 KST
+- updated_at: 2026-11-26 KST
 - status: `IMPLEMENTED_UNVERIFIED` 문서; 코드 계약과 용어를 대조했다.
 
 | 한글 | 영문/약어 | 프로젝트 적용 의미 |
@@ -77,3 +77,42 @@
 | 모델 release | Model release | model/version과 ONNX·dataset·training·evaluation·환경·보안·rollback·승인을 SHA로 결속한 실행 후보 |
 | 기관별 행 보안 | Row-Level Security, RLS | 인증한 서버 세션의 기관 범위만 DB 행을 읽고 쓰게 하는 PostgreSQL 정책. 요청 본문의 기관명은 신뢰하지 않음 |
 | 서명 다운로드 링크 | Presigned download URL | 등록 자산을 짧은 TTL 동안 읽는 URL. 링크 보유자는 만료 전 접근 가능하므로 로그·공유 금지 |
+| 기술 이식 | Technical portability validation | 같은 이미지·API·고정 원본을 Docker 또는 Kubernetes 환경에서 재현하는 검증. 기관 운영 승인·과학 인수·독립 정확도와 별도 |
+| 기관 운영 인수 | Institutional production acceptance | 기관 provider·권한·IAM/SSO·백업/복구·RPO/RTO·가용성을 승인하는 절차. 로컬 Compose/Kubernetes PASS가 자동 대체하지 않음 |
+| 토지피복·토지이용 변화 | Land Cover/Land Use Change, LCLUC | 서로 다른 시점의 분류지도를 같은 분류·공간 지지집합에서 비교하는 분석. 합성 계산 성공이 실제 변화 검증은 아님 |
+| 분류사전 | Taxonomy | 코드·명칭·주제/품질 역할·NoData·버전·출처 SHA를 고정한 정의. 특정 연차 자산의 승인과 별도 |
+| 주제 클래스 | Thematic class | 모델 출력과 토지피복 통계의 대상. KLHK 23코드 중 22개이며 구름 품질코드는 제외 |
+| 품질 코드 | Quality/QA code | 관측 품질을 표시하는 공식 코드. KLHK `2500 Awan`은 사전에 보존하지만 변화·학습 주제에서 제외 |
+| 분류 대응표 | Crosswalk | 서로 다른 분류체계의 코드를 대응시키는 규칙. 의미 손실·제외를 기록하며 기관 승인 없이는 공식 변환이 아님 |
+| 공통 유효 지지집합 | Common valid support | 두 시점 모두 NoData·구름·mask가 아닌 픽셀의 교집합. 변화율과 전이면적의 분모 |
+| 전이행렬 | Transition matrix | 행은 이전 클래스, 열은 이후 클래스인 면적/픽셀 표. 대각선은 유지, 비대각선은 변화 |
+| 변화 집중지역 | Change hotspot | 인접 변화 픽셀을 연결하고 최소 면적으로 거른 공간 객체. 독립 정확도나 원인 판정은 아님 |
+| 보정되지 않은 불확실성 | Uncalibrated uncertainty | 최대확률·entropy가 실제 오류확률과 일치하도록 calibration되지 않은 상태. 확률을 독립 정확도로 해석하지 않음 |
+| 연차 입고 번들 | Annual intake bundle | 지역·연도·revision별 원본 경로, byte, SHA, 출처, 분류사전과 두 센서 필수 밴드·QA를 고정한 `lcluc-annual-input/1` manifest 묶음 |
+| 연차 run ID | Annual run ID | `bundle.json` 원본 byte의 SHA-256으로 만든 반복 가능한 식별자. 과학 승인이나 모델 release ID는 아님 |
+| 물리 피복률 | Physical coverage fraction | 경계 안 픽셀 중 센서의 여섯 밴드가 모두 실제 존재하는 비율. clear 비율·분류 정확도와 다름 |
+| 동년 센서 간 지도 일치도 | Same-year cross-sensor map agreement | 같은 해 Sentinel-2 RF 후보와 Landsat RF 후보의 공통 격자 분류 일치. 두 모델이 같은 오류를 낼 수 있어 독립 정확도가 아님 |
+| 약한 지도 참조 일치도 | Weak-map reference agreement | WorldCover·Esri 같은 보조 지도와 후보 지도의 일치. 동년 진단값이며 독립 현장 정확도나 타연도 정답이 아님 |
+| 방향 전이 | Directed transition | 기준 연도 클래스→비교 연도 클래스의 순서를 보존한 전이. 역방향과 다른 셀·지도임 |
+| 발행자 주 통계 | Publisher province statistics | 공급자가 주 단위로 발행한 집계표. 사용자 AOI로 재계산한 통계나 다른 제품의 픽셀 집계가 아님 |
+| 제품 간 지도 일치도 | Cross-product map agreement | 같은 연도·공통 격자·공통 crosswalk에서 두 지도 제품의 분류가 같은 비율. 독립 정확도가 아님 |
+| 후보 RF | Candidate Random Forest | 승인된 동년 라벨로 센서별 생성하는 재현 가능한 후보 모델. production release·운영 활성화·보정된 확률을 뜻하지 않음 |
+| 독립 검증 제외 완충 | Independent validation exclusion buffer | 학습 표본 위치와 인접 1셀을 독립 평가에서 제외해 공간 누출을 줄이는 규칙 |
+| native 해상도 | Native resolution | 공급 원본 자체의 픽셀 크기. Sentinel-2 B02·B03·B04·B08은 10m, B11·B12·SCL은 20m이며 30m 분석격자와 구분 |
+| 연차 광학 합성 | Annual optical composite | 같은 연도의 승인 장면을 날짜·scene ID 순서로 읽어 여섯 band와 QA를 만족하는 첫 유효 픽셀을 선택한 결정적 영상 |
+| 화면용 PNG | Display PNG | Web Mercator에서 빠르게 보여 주는 파생 layer. 분석 GeoTIFF의 격자·band를 대신하지 않음 |
+| 사각형-경계 교차 AOI | Rectangle-boundary intersection AOI | 사용자가 그린 bbox 중 반텐 경계와 겹치는 부분만 equal-area 픽셀 중심으로 집계하는 범위 |
+| 맑은 관측 수 | Clear observations | QA와 경계·밴드 유효성 검사를 통과한 픽셀별 관측 횟수. 분류 정확도와 별도 |
+| 공간 블록 홀드아웃 | Spatial block holdout | 인접 픽셀 누출을 줄이기 위해 공간 블록 전체를 학습 또는 평가 중 한쪽에 배정하는 분리 방식 |
+| 변화 발생시점 | Change timing | 픽셀 시계열에서 변화가 시작되거나 확정된 시점을 추정한 값. 주 단위 연차 면적 차이와 별도 |
+| 공간 sieve | Spatial sieve | 같은 값의 연결 성분 중 최소 픽셀보다 작은 패치를 주변 분류로 보정하는 공간 필터 |
+| 보정 위치 면적 | Correction footprint area | 후처리 때문에 분류 값이 바뀐 픽셀의 면적 합계. 연차 토지피복 변화면적과 별도 |
+| 쌍대 공간 홀드아웃 | Paired spatial holdout | 같은 고정 공간 평가 표본으로 처리 전후 지표를 계산해 표본 변경 효과를 차단하는 비교 방식 |
+| Siamese U-Net | Siamese U-Net | 두 시점 입력을 공유 encoder로 처리하고 특징 차이에서 변화 후보를 분류하는 신경망. 이번 값은 Esri 연차 차이 약한 참조 기반 |
+| 변화 클래스 F1 | Change-class F1 | 변화 클래스의 precision과 recall 조화평균. 전체 일치도와 독립 정확도와 별도 |
+| 특화 분류층 | Specialist classification layer | 해안·논·플랜테이션처럼 특정 주제를 동년 승인 라벨로 분류한 mask와 provenance 묶음 |
+| 계층 통합 | Hierarchical integration | 기본 분류 위에 승인된 특화층을 우선순위·적격 클래스·NoData 보호 규칙으로 합치는 절차 |
+| 원문 pin 인용 | Source-pinned citation | 문서 byte·SHA·버전·페이지가 고정된 원문만 검색 결과에 인용하는 방식 |
+| 로컬 어휘 근거 검색 | Local lexical evidence retrieval | 질의 token과 교차언어 alias로 원문 청크를 찾는 검색. embedding과 생성 답변을 사용하지 않음 |
+| 경량 DeepLabv3+ | Compact DeepLabv3+ | 여섯 밴드 encoder, ASPP와 저수준 특징 decoder를 사용하는 CPU 시험 분류기. 이번 구현은 사전학습 가중치 없이 학습 |
+| 원본별 면적 집계 | Native product area tabulation | 서로 다른 경계·격자·분류체계의 각 제품을 원래 클래스 표와 총계로 별도 표시하는 집계. 클래스 차이·전이·독립 정확도와 별도 |

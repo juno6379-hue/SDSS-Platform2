@@ -1,5 +1,7 @@
 # SDSS-Platform2 지속 개발 원장
 
+다음 접속의 첫 작업은 [GeoLLM 토지피복 질의응답 인계](docs/lcluc/GEOLLM_NEXT_SESSION.md)다. 기존 문서 검색과 GIS 정량 도구 경로를 확인한 뒤, 반텐 면적·전이의 실제 수치와 출처를 한 응답에 연결한다.
+
 ## 2026-11-26 반텐 집계 재검토와 LANDY 자료 현황
 
 - `VERIFIED_REAL` 반텐 제품 면적 화면은 Esri 원본 9클래스와 MapBiomas 발행 11클래스를 각각 표시한다. 이전 클래스 대응 차이 열은 제거했다. 2024년 Esri TIFF를 재집계해 경계 격자 935,602.88ha, 분류 유효 935,224.83ha·구름 378.05ha·NoData 0ha를 확인했다. [집계 계약](docs/lcluc/BANTEN_MAPBIOMAS_AREA_COMPARISON.md) · [Edge 실행](artifacts/lcluc/banten-native-area-edge.log)
