@@ -116,3 +116,7 @@
 | 로컬 어휘 근거 검색 | Local lexical evidence retrieval | 질의 token과 교차언어 alias로 원문 청크를 찾는 검색. embedding과 생성 답변을 사용하지 않음 |
 | 경량 DeepLabv3+ | Compact DeepLabv3+ | 여섯 밴드 encoder, ASPP와 저수준 특징 decoder를 사용하는 CPU 시험 분류기. 이번 구현은 사전학습 가중치 없이 학습 |
 | 원본별 면적 집계 | Native product area tabulation | 서로 다른 경계·격자·분류체계의 각 제품을 원래 클래스 표와 총계로 별도 표시하는 집계. 클래스 차이·전이·독립 정확도와 별도 |
+| 산림 총전환 | Gross forest outflow | 지정 기간 전이표에서 산림 범주가 비산림 범주로 이동한 발행 면적의 합. 산림 순변화와 별도 |
+| 산림 순변화 | Net forest area change | 종료 연도 산림면적에서 시작 연도 산림면적을 뺀 값. 산림 유입과 유출의 최종 차이 |
+| 맥락 경계 | Contextual boundary | 수치의 집계 경계를 대신하지 않고 위치 이해를 돕는 지도 경계. MapBiomas 답변의 One Map/BIG 반텐 경계가 해당 |
+| 정형 GIS 도구 | Structured GIS tool | 고정된 제품·버전·연도·클래스 계약과 SHA 검사를 거쳐 면적·전이·지도를 조회하는 실행 경로 |

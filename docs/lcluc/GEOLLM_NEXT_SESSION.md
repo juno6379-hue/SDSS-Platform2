@@ -2,6 +2,8 @@
 
 작업 위치는 `E:/SDSS-Platform2`, GitHub 브랜치는 `codex/next-gates-onemap-climate-klhk`입니다. 다음 접속에서 이 문서와 `CONTINUOUS_DEVELOPMENT.md`를 먼저 읽고 기존 React의 **GeoLLM Assistant**부터 확인합니다.
 
+2026-11-27에 아래 첫 구현 단위의 반텐 면적·산림 총전환·순변화·전이와 브라우저 확인을 완료했다. 최신 사용법과 검증 수치는 [현행 질의 계약](GEOLLM_QUERY.md)에 있다. 원본 수집과 공간 중첩은 접수 상태에 따라 이어간다.
+
 ## 확인된 출발점
 
 | 항목 | 상태와 확인 방법 |

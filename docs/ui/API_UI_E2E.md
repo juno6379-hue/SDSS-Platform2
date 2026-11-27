@@ -4,6 +4,8 @@
 
 ## 상태와 실행
 
+2026-11-27 기존 **GeoLLM Assistant → GeoLLM 토지피복 질의응답**에서 한국어·인도네시아어·영어 RAG 원문 인용과 정량 GIS 응답을 클릭 검증했다. 반텐 논 면적, 산림 총전환·순변화, MapBiomas 산림→시가지와 Esri 수목→시가지를 조회했다. Edge에서 수치·단위·출처·버전·SHA, One Map 위치 참고 경계, Esri 실제 전이 미리보기를 확인했다. 산림부 원본이나 요청 버전이 미확보인 경우 수치는 보류했다. [API와 상태 계약](../lcluc/GEOLLM_QUERY.md) · [Edge 실행 기록](../../artifacts/lcluc/geollm-edge.log)
+
 2026-11-26 Edge 5175의 **연차 토지피복도 → Esri·MapBiomas 원본별 면적**에서 Esri 9행과 MapBiomas 11행, 차이 열 제거, 2020·2024 연도 전환을 확인했다. API에서 2024년 경계·분류 유효·발행 합계와 비공통연도 422를 확인했다. [Edge 시험](../../artifacts/lcluc/banten-native-area-edge.log) · [면적 계약과 공식 참조 조건](../lcluc/BANTEN_MAPBIOMAS_AREA_COMPARISON.md)
 
 2026-11-26 Edge 5175에서 LCLUC 반텐의 **Landsat → AI 모델 비교**, **Sentinel-2 → AI 신규 분류**로 전환했다. 센서별 세 모델의 약한 참조 지표와 GeoTIFF 6개를 확인했다. Toolbox에서 두 DeepLabv3+ 후보의 후처리를 실행했고 각각 동일한 전·후 평가 표본을 확인했다. [Edge 시험](../../artifacts/lcluc/banten-deeplab-area-edge.log) · [모델 계약](../lcluc/BANTEN_MODEL_TRIALS.md)

@@ -1,5 +1,15 @@
 # 이해자료 변경 이력
 
+## 2026-11-27 — GeoLLM 반텐 토지피복 질의응답
+
+- `V42_LCLUC_GEOLLM_QUERY.md` 신규 작성
+- 한국어·인도네시아어·영어 질문을 공식 문서 RAG 또는 MapBiomas·Esri 정형 GIS 도구로 라우팅하는 흐름을 설명
+- MapBiomas 2023→2024 산림 총전환 3,146.85ha와 산림 순변화 −1,265.58ha를 `TRANSITION`·`COVERAGE`의 서로 다른 지표로 기록
+- MapBiomas 수치는 발행자 반텐 통계이며 One Map/BIG 경계는 위치 맥락임을 명시
+- Esri 2023→2024 수목→시가지 3,561.79ha와 실제 v003 전이 PNG를 `VERIFIED_REAL`로 기록
+- Kemenhut 원본·overlay·독립 정확도를 `BLOCKED`, 읽기 전용 `result_id=null`을 결과 registry 미연결로 구분
+- 다국어 intent·총전환/순변화·margin·미발행 값·기간 차단 계약시험과 Edge RAG·GIS·출처·SHA 증거를 반영
+
 ## 2026-11-26 — 두 센서 3모델 비교와 토지피복 원본별 집계
 
 - 기존 모델 시험 이해자료에 경량 DeepLabv3+와 센서별 RF·Tiny U-Net·DeepLabv3+ 동일 표본 비교를 추가
@@ -9,7 +19,7 @@
 - 공통 연도 2020~2024에서 Esri 원본 9행과 MapBiomas 발행 11행을 별도로 표시하고 Edge 2020·2024 선택을 `VERIFIED_REAL`로 기록
 - 2024 Esri 935,602.88ha를 유효 935,224.83ha·구름 378.05ha·NoData 0ha로 분해하고 MapBiomas 발행 935,005.55ha와 클래스 차이·전이 수치를 만들지 않도록 정정
 - Kemenhut 동년 Penutupan Lahan 23클래스를 공식 비교 기준 `BLOCKED`, 독립 조사 표본 정확도를 별도 `BLOCKED`로 분리
-- LANDY R01~R14 문서, 4.1 통계 XLSX·반텐 35년 11클래스는 `VERIFIED_REAL`로 유지. XLSX의 `TRANSITION`·`PT_TRANSITION` 시트는 물리적으로 확인했고 반텐 정제·API 연결을 `IMPLEMENTED_UNVERIFIED`로 기록
+- LANDY R01~R14 문서, 4.1 통계 XLSX·반텐 35년 11클래스와 `TRANSITION` 반텐 113행의 GeoLLM 정량 연결을 `VERIFIED_REAL`로 유지. 반텐 연차 분류·전이 GeoTIFF와 발행 집계 경계 도형은 `BLOCKED`로 분리
 
 ## 2026-11-26 — 반텐 모델 시험·특화 분류와 MapBiomas GeoLLM 지식
 

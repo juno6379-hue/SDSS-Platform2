@@ -599,3 +599,27 @@ Esri 원본 9행과 MapBiomas 발행 11행을 별도 표로 표시한다. 2024 E
 검색 전에 원문 byte와 SHA를 index pin과 대조한다. 값이 달라진 문서의 인용은 반환하지 않는다.
 
 추가 근거: [MapBiomas Indonesia GeoLLM 지식 검색](../V42_MAPBIOMAS_GEOLLM_KNOWLEDGE.md)
+
+## GeoLLM 반텐 토지피복 질의응답
+
+**Q. 산림 총전환 3,146.85ha와 순변화 −1,265.58ha가 왜 다릅니까?**
+
+총전환은 `TRANSITION`에서 산림이 비산림으로 나간 흐름의 합이다. 순변화는 `COVERAGE`의 종료 산림면적에서 시작 산림면적을 뺀 값으로 유입과 유출의 최종 차이를 반영한다.
+
+**Q. MapBiomas 답변의 반텐 경계가 수치 계산 경계입니까?**
+
+One Map/BIG 경계는 위치 맥락 지도다. 수치는 발행자 기준 반텐 통계이며 XLSX에 집계 경계 도형이 포함되지 않아 두 경계가 동일하다고 확정하지 않는다.
+
+**Q. Esri 전이 질문은 실제 지도를 보여 줍니까?**
+
+보여 준다. 2023→2024 수목→시가지 3,561.79ha 응답에서 v003 실제 전이 PNG를 Edge로 확인했다.
+
+**Q. Kemenhut 또는 중첩 질문은 어떻게 처리합니까?**
+
+동년 Penutupan Lahan 원본은 `KEMENHUT_ASSET_NOT_READY`, 승인된 중첩 자산은 `OVERLAY_ASSET_NOT_READY`로 차단한다.
+
+**Q. GeoLLM 조회가 결과 registry에 저장됩니까?**
+
+현재 읽기 전용 응답의 `result_id`는 `null`이다. 공통 결과 등록·검토 흐름은 연결되지 않았다.
+
+추가 근거: [GeoLLM 반텐 토지피복 질의응답](../V42_LCLUC_GEOLLM_QUERY.md)

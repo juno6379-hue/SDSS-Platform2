@@ -50,6 +50,7 @@ spec:
             limits: {cpu: "1", memory: "1Gi"}
           volumeMounts:
             - {name: evidence, mountPath: /srv/sdss/evidence, readOnly: true}
+            - {name: raw, mountPath: /srv/sdss/data/raw, readOnly: true}
             - {name: curated, mountPath: /srv/sdss/data/curated}
             - {name: api-tmp, mountPath: /tmp}
         - name: react-web
@@ -71,6 +72,8 @@ spec:
       volumes:
         - name: evidence
           persistentVolumeClaim: {claimName: sdss-evidence, readOnly: true}
+        - name: raw
+          persistentVolumeClaim: {claimName: sdss-raw, readOnly: true}
         - name: curated
           persistentVolumeClaim: {claimName: sdss-curated}
         - name: api-tmp

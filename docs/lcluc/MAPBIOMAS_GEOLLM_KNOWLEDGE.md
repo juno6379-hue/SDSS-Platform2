@@ -23,7 +23,7 @@ R04는 공식 4.1 메뉴가 연결하는 Collection 4 표이므로 파일 자체
 | 유형 | 확보·연결 범위 | 추가 확보 또는 확인 범위 |
 | --- | --- | --- |
 | 문서형 지식자료 | R01~R14 원본과 286개 청크. GeoLLM에서 원문과 인용을 검색한다. | 인포그래픽 이미지 자체와 OCR, 정확도 사이트의 동적 위젯 수치, Reference Maps에 열거한 원본 지도는 별도다. |
-| 정량 통계자료 | Collection 4.1 공식 XLSX 1개에 `COVERAGE` 면적과 `TRANSITION` 전이 원본 시트가 있다. 정제 API와 LCLUC에는 반텐주 1990~2024·11개 클래스 면적을 연결했다. `TRANSITION`의 반텐주 레코드 113행과 출발·도착 클래스, 2023→2024 등 발행 구간을 확인했다. | 4.1 전이 시트의 정제·API·화면 연결과 4.1 정확도 통계 자료 확보가 남았다. |
+| 정량 통계자료 | Collection 4.1 공식 XLSX에 `COVERAGE` 면적과 `TRANSITION` 전이 원본이 있다. 반텐주 1990~2024·11개 클래스 면적을 LCLUC에 연결했다. GeoLLM은 반텐주 전이 레코드 113행과 발행 기간을 정형 GIS 도구로 조회한다. | 4.1 정확도 통계와 픽셀 원본 확보가 남았다. |
 | 공간 분석자료 | Collection 4.1 지도, Landsat 모자이크, 전이 제품의 공식 안내 경로를 확보했다. | 반텐 4.1 연차 분류 GeoTIFF·전이 래스터·모자이크는 로컬 미확보다. 확인한 직접 GeoTIFF 링크는 3.0/2.0이며, 4.1 픽셀은 GEE 자산을 통해 필요한 영역을 확보한다. |
 
-XLSX 원본은 `data/raw/explorer/banten/mapbiomas/4.1/statistics_lulc_indonesia.xlsx`, 반텐 추이는 `data/curated/explorer/banten-province/mapbiomas-4.1-trend.json`에 보존한다. 지도·전이 분석에서 LANDY 발행 통계와 프로젝트가 보유한 Esri·USGS 원본의 역할을 구분한다. [공식 통계](https://landy.mapbiomas.id/en/statistics) · [지도 다운로드 안내](https://landy.mapbiomas.id/en/collectionmap) · [GEE 접근 조건](https://landy.mapbiomas.id/en/gee) · [반텐 집계와 비교 기준](BANTEN_MAPBIOMAS_AREA_COMPARISON.md)
+XLSX 원본은 `data/raw/explorer/banten/mapbiomas/4.1/statistics_lulc_indonesia.xlsx`, 반텐 추이와 전이는 `data/curated/explorer/banten-province/mapbiomas-4.1-trend.json`과 `mapbiomas-4.1-transitions.json`에 보존한다. 정량 질의 API와 브라우저 확인은 [GeoLLM 질의 계약](GEOLLM_QUERY.md)에 있다. [공식 통계](https://landy.mapbiomas.id/en/statistics) · [지도 다운로드 안내](https://landy.mapbiomas.id/en/collectionmap) · [GEE 접근 조건](https://landy.mapbiomas.id/en/gee) · [반텐 집계와 비교 기준](BANTEN_MAPBIOMAS_AREA_COMPARISON.md)

@@ -1,6 +1,10 @@
 # SDSS-Platform2 지속 개발 원장
 
-다음 접속의 첫 작업은 [GeoLLM 토지피복 질의응답 인계](docs/lcluc/GEOLLM_NEXT_SESSION.md)다. 기존 문서 검색과 GIS 정량 도구 경로를 확인한 뒤, 반텐 면적·전이의 실제 수치와 출처를 한 응답에 연결한다.
+## 2026-11-27 GeoLLM 반텐 질의응답
+
+- `VERIFIED_REAL` 기존 GeoLLM Assistant에 문서 RAG와 반텐 정량 GIS를 연결했다. MapBiomas 면적·산림 총전환·순변화·전이 및 Esri 면적·전이 응답에 단위와 제품·버전·출처를 표시한다. 정량 단독 질의는 RAG를 호출하지 않는다. [질의 계약](docs/lcluc/GEOLLM_QUERY.md)
+- `BLOCKED` MapBiomas 4.1 분류·전이 위치 지도, 산림부 기준 지도와 공간 중첩은 해당 원본 접수가 필요하다. MapBiomas 발행 통계에는 One Map/BIG의 위치 참고 경계를 표시하고 Esri에는 질의한 전이 지도도 표시한다. [검증 기록](artifacts/lcluc/geollm-edge.log)
+- `IMPLEMENTED_UNVERIFIED` 최신 GeoLLM의 Docker·Kubernetes 런타임 재검증은 Docker Linux 엔진과 Kubernetes 컨텍스트 가용성이 필요하다. 기존 API·React 연결과 GeoLLM 원본 읽기 전용 마운트는 구성에서 확인했다. [배포 계약](docs/lcluc/GEOLLM_QUERY.md#docker와-kubernetes)
 
 ## 2026-11-26 반텐 집계 재검토와 LANDY 자료 현황
 

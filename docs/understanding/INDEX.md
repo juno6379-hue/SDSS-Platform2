@@ -24,10 +24,11 @@
 16. [반텐 모델 시험과 특화 분류 계층 통합](V42_LCLUC_MODEL_TRIALS_AND_SPECIALISTS.md) — RF·Tiny·Siamese 실자료 비교, Spatial Filter, 동년 특화층 접수·우선순위 계약
 17. [반텐 원본별 면적과 공식 비교 기준](V42_BANTEN_ESRI_MAPBIOMAS_AREA_COMPARISON.md) — Esri 9행·MapBiomas 11행 별도 표시, Kemenhut 동년 23클래스와 독립 조사 표본 Gate
 18. [MapBiomas Indonesia GeoLLM 지식 검색](V42_MAPBIOMAS_GEOLLM_KNOWLEDGE.md) — 공식 원문 14건, SHA·페이지 인용, 286청크와 로컬 교차언어 검색
-19. [용어집](GLOSSARY_KO_EN.md) — 한글/영문/약어와 이 프로젝트의 정확한 의미
-20. [1분·5분 발표 대본](presentations/1MIN_5MIN_SCRIPT.md)
-21. [발표 FAQ](presentations/FAQ.md)
-22. [변경 이력](CHANGELOG.md)
+19. [GeoLLM 반텐 토지피복 질의응답](V42_LCLUC_GEOLLM_QUERY.md) — 3개 언어 RAG·GIS 라우팅, MapBiomas 총전환·순변화, Esri 실제 전이 지도와 차단 Gate
+20. [용어집](GLOSSARY_KO_EN.md) — 한글/영문/약어와 이 프로젝트의 정확한 의미
+21. [1분·5분 발표 대본](presentations/1MIN_5MIN_SCRIPT.md)
+22. [발표 FAQ](presentations/FAQ.md)
+23. [변경 이력](CHANGELOG.md)
 
 ## 현재 상태 요약
 
@@ -91,7 +92,13 @@
 | 2024 Esri 피복 구성 | `VERIFIED_REAL` | 경계 935,602.88ha = 유효 935,224.83ha + 구름 378.05ha + NoData 0ha |
 | Kemenhut 공식 비교 기준 | `BLOCKED` | 동년 Penutupan Lahan 23클래스 원본·APL 범위·발행판·권리·SHA 입고 대기 |
 | 독립 정확도 | `BLOCKED` | Kemenhut 공식 참조와 분리한 현장·전문가 판독 표본 필요 |
-| LANDY 4.1 전이 연결 | `IMPLEMENTED_UNVERIFIED` | 원본 XLSX의 TRANSITION·PT_TRANSITION 시트를 확인했으며 반텐 범위·버전 정제와 API 연결 미완료 |
+| LANDY 4.1 전이 연결 | `VERIFIED_REAL` | 원본 XLSX TRANSITION 반텐 113행을 정제하고 GeoLLM 총전환·방향 전이에 연결 |
+| LANDY 4.1 공간 raster | `BLOCKED` | 반텐 연차 분류·전이 GeoTIFF와 발행 집계 경계 도형 미확보 |
+| GeoLLM 다국어 RAG·GIS | `VERIFIED_REAL` | 한국어·인도네시아어·영어, 문서 인용과 MapBiomas·Esri 고정 수치 도구 Edge 검증 |
+| MapBiomas 총전환·순변화 | `VERIFIED_REAL` | 2023→2024 산림→비산림 3,146.85ha, 산림면적 순변화 −1,265.58ha를 별도 지표로 제공 |
+| GeoLLM Esri 전이 지도 | `VERIFIED_REAL` | 2023→2024 수목→시가지 3,561.79ha와 실제 v003 전이 PNG |
+| GeoLLM Kemenhut·overlay | `BLOCKED` | 승인 동년 원본과 중첩 대상 자산 미입고 |
+| GeoLLM 독립 정확도·결과 ID | `BLOCKED` | 독립 표본 미연결, 읽기 전용 `result_id=null` |
 | Sentinel-2 Explore 방향 전이 | `VERIFIED_REAL` | AOI 전이 합계와 선택 클래스쌍 PNG를 같은 사각형·반텐 경계로 절단; 방향·AOI fixture는 `TESTED_SYNTHETIC` |
 | MapBiomas 반텐 장기 추세 | `VERIFIED_REAL` | 발행자 주 통계 1990~2024 35년·11클래스; 사용자 AOI·Esri 통계와 별도 |
 | Esri↔WorldCover 2021 지도 일치 | `VERIFIED_REAL` | 10m·6대분류, 926,628.52ha, 80.9456760515%; 독립 정확도 미측정, 적용 연도 2021 |

@@ -26,7 +26,8 @@ MapBiomas Indonesia 공식 기술자료 14건을 원문 SHA와 페이지로 고�
 - `BLOCKED`: 현재 mode는 로컬 어휘 근거 검색이다. 음성, embedding 의미검색, 생성형 답변과 공개 운영 색인은 제공 대기다.
 - `BLOCKED`: R11은 인포그래픽 목록 HTML만 보존됐다. 동적 인포그래픽 내용과 OCR 해석은 미수집 범위다.
 - `VERIFIED_REAL`: Collection 4.1 통계 XLSX와 반텐 1990~2024 35년·11클래스 발행 통계를 연결했다.
-- `VERIFIED_REAL`: Collection 4.1 XLSX의 `TRANSITION`에서 반텐 레코드 113행과 2023→2024 등 발행 기간 열을 확인했다. 반텐 전이 정제와 API 발행은 작업 대기다.
+- `VERIFIED_REAL`: Collection 4.1 XLSX의 `TRANSITION`에서 반텐 레코드 113행과 2023→2024 등 발행 기간 열을 확인했다.
+- `VERIFIED_REAL`: 정제된 전이 자료는 [GeoLLM 정형 GIS 질의](V42_LCLUC_GEOLLM_QUERY.md)의 산림 총전환과 방향 전이 수치 도구에 연결됐다.
 
 ## 2. 이론적 배경
 
@@ -63,7 +64,7 @@ MapBiomas Indonesia 공식 기술자료 14건을 원문 SHA와 페이지로 고�
 |---|---|---|
 | 문서형 지식자료 | `VERIFIED_REAL` | R01~R14 원문·286청크와 GeoLLM 인용 검색 |
 | 정량 통계자료 | `VERIFIED_REAL` | Collection 4.1 원본 XLSX, 반텐 1990~2024·11클래스 연차 통계 |
-| 발행 전이 원본 | `VERIFIED_REAL` | XLSX의 `TRANSITION`에서 반텐 113행 확인. 반텐 정제와 API 연결 대기 |
+| 발행 전이 원본 | `VERIFIED_REAL` | XLSX의 `TRANSITION` 반텐 113행을 정제해 GeoLLM 총전환·방향 전이 도구에 연결 |
 | 4.1 공간 원본 | `BLOCKED` | 반텐 분류·전이 GeoTIFF와 모자이크 미확보 |
 
 ## 4. 시험 증거와 상태
@@ -78,7 +79,7 @@ MapBiomas Indonesia 공식 기술자료 14건을 원문 SHA와 페이지로 고�
 | 음성·embedding·생성 답변 | `BLOCKED` | 현재 로컬 어휘 근거 모드, `answer=null` |
 | R11 인포그래픽 내용 | `BLOCKED` | 목록 HTML만 보존, 동적 내용·OCR 미확보 |
 | 4.1 연차 통계 | `VERIFIED_REAL` | 원본 XLSX와 반텐 35년·11클래스 연결 |
-| 4.1 전이 API 연결 | `PLANNED` | 공식 XLSX의 반텐 원본을 검증한 코드·기간으로 조회하도록 연결한다. [GeoLLM 인계](../lcluc/GEOLLM_NEXT_SESSION.md) |
+| 4.1 전이 수치 도구 | `VERIFIED_REAL` | 공식 XLSX의 반텐 코드·기간과 SHA를 검사해 총전환·방향 전이를 조회. [GeoLLM 질의](V42_LCLUC_GEOLLM_QUERY.md) |
 
 ## 5. 발표 스크립트
 

@@ -13,6 +13,7 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from services.climate_query.models import ClimateQueryRequest, tool_contract
 from services.climate_query.numeric import climate_query
 from services.datahub.institution_sources import build_inventory, public_summary
+from services.lcluc.question import parse_question
 from services.mlops.gates import MLOpsPolicy
 from services.orchestration import WorkflowState
 from services.rag.mapbiomas import catalog as mapbiomas_catalog
@@ -25,6 +26,7 @@ from .evidence import LOCK_PATH, ROOT, EvidenceBlocked, EvidenceStore
 from .jobs_api import mount_jobs
 from .lcluc_annual import mount_lcluc_annual
 from .lcluc_cases import mount_lcluc_cases
+from .lcluc_geollm import mount_lcluc_geollm
 from .lcluc_landsat_explorer import mount_landsat_explorer
 from .lcluc_postprocess import mount_postprocess
 from .lcluc_sentinel_explorer import mount_sentinel_explorer
@@ -79,6 +81,7 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
     mount_model_releases(app, store, result_registry)
     mount_jobs(app, store, result_registry)
     mount_lcluc_cases(app, store, result_registry)
+    mount_lcluc_geollm(app, store)
     mount_sentinel_explorer(app, store)
     mount_landsat_explorer(app, store)
     mount_postprocess(app, store)
@@ -169,7 +172,7 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
         decision = route_question(body.question)
         if body.scope == "mapbiomas-indonesia":
             check_local(request)
-            return mapbiomas_search(store, body.question)
+            return mapbiomas_document_answer(body.question)
         if decision.kind == "structured_climate_tool":
             return blocked(
                 "NUMERIC_TOOL_REQUIRED",
@@ -203,7 +206,12 @@ def create_app(store=None, curated_index=None, *, result_registry=None):
     @app.post("/api/rag/mapbiomas/search")
     def mapbiomas_evidence(request: Request, body: RagRequest):
         check_local(request)
-        return mapbiomas_search(store, body.question)
+        return mapbiomas_document_answer(body.question)
+
+    def mapbiomas_document_answer(question):
+        if parse_question(question).metric not in ("document", "unknown"):
+            return blocked("NUMERIC_TOOL_REQUIRED", route="/api/lcluc/geollm/query", answer=None, citations=[])
+        return mapbiomas_search(store, question)
 
     @app.get("/api/vector")
     def vector():

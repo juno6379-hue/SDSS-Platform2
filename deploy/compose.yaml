@@ -13,6 +13,11 @@ services:
       - "127.0.0.1:${SDSS_WEB_PORT:-5180}:8080"
     volumes:
       - ../evidence:/srv/sdss/evidence:ro
+      - type: bind
+        source: ${SDSS_RAW_DIR:-../data/raw}
+        target: /srv/sdss/data/raw
+        read_only: true
+        bind: {create_host_path: false}
       - ../data/curated:/srv/sdss/data/curated
     read_only: true
     tmpfs: [/tmp]

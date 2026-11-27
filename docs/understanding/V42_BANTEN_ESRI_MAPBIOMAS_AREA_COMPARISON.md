@@ -66,7 +66,7 @@ MapBiomas 935,005.55ha는 발행 XLSX의 11개 클래스 합계다. 두 총계�
 |---|---|---|
 | 문서형 지식자료 | `VERIFIED_REAL` | R01~R14 원문, P0 9건, 286청크, 원문 SHA·페이지 인용 |
 | 정량 통계자료 | `VERIFIED_REAL` | Collection 4.1 원본 XLSX와 반텐 1990~2024 35년·11클래스 연결 |
-| 발행 전이 원본 | `VERIFIED_REAL` | Collection 4.1 XLSX의 `TRANSITION`에서 반텐 113행과 발행 기간 열을 확인했다. 정제·API 연결은 다음 작업이다. |
+| 발행 전이 원본 | `VERIFIED_REAL` | Collection 4.1 XLSX의 `TRANSITION` 반텐 113행을 정제해 GeoLLM 총전환·방향 전이 질의에 연결했다. |
 | 공간 분석자료 | `BLOCKED` | 반텐 4.1 분류·전이 GeoTIFF와 모자이크는 미입고다. |
 
 ### 기능별 증거
