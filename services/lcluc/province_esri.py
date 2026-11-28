@@ -35,8 +35,8 @@ def digest(path):
         return file_digest(stream, "sha256").hexdigest()
 
 
-def plan(province=None):
-    raw = SOURCE.read_bytes()
+def plan(province=None, *, root=Path(".")):
+    raw = (root / SOURCE).read_bytes()
     if sha256(raw).hexdigest() != SNAPSHOT_SHA256:
         raise ValueError("Pinned One Map snapshot mismatch")
     provinces = {
@@ -156,13 +156,17 @@ def acquire(tile, year, tax_sha):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--province", choices=("banten",))
+    parser.add_argument("--province", choices=("banten", "west_java"))
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
     tiles, pairs = plan(args.province)
     print(json.dumps({"province_tiles": tiles, "requested_rasters": len(pairs)}), flush=True)
     if not args.execute:
         return
+    if args.province == "west_java":
+        parser.error(
+            "West Java Esri sources are audited through the held data inventory. New transfers require a sealed approval."
+        )
     DEST.mkdir(parents=True, exist_ok=True)
     taxonomy = load_taxonomy("esri-io-v003")
     # Exclusive creation also prevents a second worker from re-requesting the same tile.
@@ -177,11 +181,17 @@ def main():
                 except HTTPError as error:
                     if not delay or error.code not in (408, 500, 502, 503, 504):
                         raise
-                    print(f"{tile} {year} attempt {attempt}: HTTP {error.code}; retry in {delay}s", flush=True)
+                    print(
+                        f"{tile} {year} attempt {attempt}: HTTP {error.code}; retry in {delay}s",
+                        flush=True,
+                    )
                 except (ConnectionError, TimeoutError, IncompleteRead, URLError) as error:
                     if not delay:
                         raise
-                    print(f"{tile} {year} attempt {attempt}: {type(error).__name__}; retry in {delay}s", flush=True)
+                    print(
+                        f"{tile} {year} attempt {attempt}: {type(error).__name__}; retry in {delay}s",
+                        flush=True,
+                    )
                 else:
                     break
                 time.sleep(delay)

@@ -10,14 +10,14 @@ from re import fullmatch
 from services.lcluc.province_esri import write_json
 
 SOURCE = "https://landy.mapbiomas.id/en/statistics"
-WORKBOOK_URL = (
-    "https://landy.mapbiomas.id/storage/files/statistics_lulc_indonesia_col4-1%20%281%29%20%281%29.xlsx"
-)
+WORKBOOK_URL = "https://landy.mapbiomas.id/storage/files/statistics_lulc_indonesia_col4-1%20%281%29%20%281%29.xlsx"
 WORKBOOK_SHA256 = "f6951577d1abb29c44b198a8772965313d739a65e6c98fdb1202b97fb3e80837"
 OUTPUT = Path("data/curated/explorer/banten-province/mapbiomas-4.1-trend.json")
 TRANSITIONS = OUTPUT.with_name("mapbiomas-4.1-transitions.json")
 WORKBOOK = Path("data/raw/explorer/banten/mapbiomas/4.1/statistics_lulc_indonesia.xlsx")
 YEARS = list(range(1990, 2025))
+PUBLISHER_TERRITORIES = {"banten": "Banten", "west_java": "Jawa Barat"}
+PUBLISHED_TRANSITION_PAIRS = {"banten": 113, "west_java": 112}
 
 
 def verified_workbook(workbook):
@@ -30,7 +30,8 @@ def verified_workbook(workbook):
     return load_workbook(workbook, read_only=True, data_only=True)
 
 
-def import_trend(workbook, acquired_on):
+def import_trend(workbook, acquired_on, *, region="banten"):
+    territory_name = PUBLISHER_TERRITORIES[region]
     book = verified_workbook(workbook)
     try:
         legend = {row[4]: (row[2], row[5]) for row in book["LEGEND"].values if type(row[4]) is int}
@@ -41,22 +42,24 @@ def import_trend(workbook, acquired_on):
         code_index = header.index("class")
         by_code = {}
         for row in rows:
-            if tuple(row[index] for index in territory) != ("Indonesia", "Jawa", "Banten"):
+            if tuple(row[index] for index in territory) != ("Indonesia", "Jawa", territory_name):
                 continue
             code = row[code_index]
             values = [row[index] for index in year_indices]
-            if code in by_code or any(type(value) not in (int, float) or not isfinite(value) or value < 0
-                                      for value in values):
-                raise ValueError(f"invalid MapBiomas Banten row for class {code}")
+            if code in by_code or any(
+                type(value) not in (int, float) or not isfinite(value) or value < 0
+                for value in values
+            ):
+                raise ValueError(f"invalid MapBiomas {region} row for class {code}")
             name, color = legend[code]
             by_code[code] = {"code": code, "name": name, "color": color, "areas_ha": values}
         if len(by_code) != 11:
-            raise ValueError("expected 11 published MapBiomas Banten classes")
+            raise ValueError(f"expected 11 published MapBiomas {region} classes")
     finally:
         book.close()
     return {
         "scope": "publisher_province_statistics",
-        "region": "banten",
+        "region": region,
         "source": "MapBiomas Indonesia Collection 4.1",
         "source_url": SOURCE,
         "workbook_url": WORKBOOK_URL,
@@ -70,46 +73,68 @@ def import_trend(workbook, acquired_on):
     }
 
 
-def import_transitions(workbook):
+def import_transitions(workbook, *, region="banten"):
+    territory_name = PUBLISHER_TERRITORIES[region]
     book = verified_workbook(workbook)
     try:
         rows = iter(book["TRANSITION"].values)
         header = next(rows)
         columns = {name: index for index, name in enumerate(header) if isinstance(name, str)}
-        periods = {name[1:].replace("_", "-"): index for name, index in columns.items()
-                   if fullmatch(r"p\d{4}_\d{4}", name)}
+        periods = {
+            name[1:].replace("_", "-"): index
+            for name, index in columns.items()
+            if fullmatch(r"p\d{4}_\d{4}", name)
+        }
         territory = [columns[f"territory_level_{level}_3"] for level in (1, 2, 3)]
         pairs = {}
         for row_no, row in enumerate(rows, start=2):
             location = tuple(row[index] for index in territory)
-            if location != ("Indonesia", "Jawa", "Banten"):
+            if location != ("Indonesia", "Jawa", territory_name):
                 continue
             origin, destination = (row[columns[key]] for key in ("class_from", "class_to"))
             key = f"{origin}:{destination}"
             if type(origin) is not int or type(destination) is not int or key in pairs:
                 raise ValueError("Invalid or duplicate MapBiomas transition pair")
             values = [row[column] for column in periods.values()]
-            if any(value is not None and (type(value) not in (int, float) or not isfinite(value) or value < 0)
-                   for value in values):
+            if any(
+                value is not None
+                and (type(value) not in (int, float) or not isfinite(value) or value < 0)
+                for value in values
+            ):
                 raise ValueError("Invalid MapBiomas transition area")
             pairs[key] = {"row": row_no, "areas_ha": values}
     finally:
         book.close()
-    if len(pairs) != 113 or len(periods) != 50:
-        raise ValueError("Unexpected Banten MapBiomas transition coverage")
-    return {"region": "banten", "source_sheet": "TRANSITION", "sha256": WORKBOOK_SHA256,
-            "periods": list(periods), "pairs": pairs}
+    if len(pairs) != PUBLISHED_TRANSITION_PAIRS[region] or len(periods) != 50:
+        raise ValueError(f"Unexpected {region} MapBiomas transition coverage")
+    return {
+        "region": region,
+        "source_sheet": "TRANSITION",
+        "sha256": WORKBOOK_SHA256,
+        "periods": list(periods),
+        "pairs": pairs,
+    }
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("workbook", type=Path)
     parser.add_argument("--acquired-on", required=True, type=date.fromisoformat)
+    parser.add_argument("--region", choices=PUBLISHER_TERRITORIES, default="banten")
     parser.add_argument("--include-transitions", action="store_true")
     args = parser.parse_args()
-    write_json(OUTPUT, import_trend(args.workbook, args.acquired_on))
+    output = (
+        OUTPUT
+        if args.region == "banten"
+        else OUTPUT.parent.with_name("west-java-province") / OUTPUT.name
+    )
+    output.parent.mkdir(parents=True, exist_ok=True)
+    write_json(output, import_trend(args.workbook, args.acquired_on, region=args.region))
     if args.include_transitions:
-        write_json(TRANSITIONS, import_transitions(args.workbook))
+        write_json(
+            output.with_name(TRANSITIONS.name),
+            import_transitions(args.workbook, region=args.region),
+        )
 
 
 if __name__ == "__main__":

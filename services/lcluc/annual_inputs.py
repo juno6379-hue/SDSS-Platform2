@@ -16,6 +16,8 @@ Bands = {
     "landsat": ("SR_B2", "SR_B3", "SR_B4", "SR_B5", "SR_B6", "SR_B7"),
 }
 Quality = {"sentinel-2": "SCL", "landsat": "QA_PIXEL"}
+REGIONAL_OUTPUT = "data/curated/lcluc/regional-v1"
+REGIONAL_RUN_SCHEMA = "sdss-regional-optical-run/1"
 
 
 class Input(BaseModel):

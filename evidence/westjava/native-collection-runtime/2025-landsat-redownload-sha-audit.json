@@ -1,0 +1,7 @@
+{
+  "assets_per_batch": 24,
+  "independent_local_sha_recomputations": 48,
+  "matched_bytes_each": 1507487085,
+  "fresh_archive_path": "data/raw/explorer/province/west-java-optical/landsat-2025-redownload",
+  "qa_radsat_assets": 3
+}

@@ -158,6 +158,7 @@
 | MLOps scene 격리 후보 | `VERIFIED_REAL` | 1,779→1,751행, 적격 1,382행, 원본 scene 충돌 1→0; 학습 허용은 false |
 | 모델 release·rollback | `TESTED_SYNTHETIC` | 합성 ONNX 입력 10의 출력 11→12→11, 과학 승인 철회 뒤 실행 차단 |
 | 실제 모델 학습·배포 | `BLOCKED` | 지리 중첩·피복·독립 라벨 미검증, 실제 학습·평가·실모델 배포 0 |
+| [서자바 2025 Landsat 재다운로드](V42_WEST_JAVA_OPTICAL_VALIDATION_GATE.md) | `VERIFIED_REAL` | 같은 3장면·24자산·1,507,487,085B 재전송, 기존↔신규 24쌍·48회 SHA 일치, 30m RF 예측·원장 SHA 불변 |
 | SeaweedFS S3 개발 경로 | `VERIFIED_REAL` | 실제 CCKP 검산 JSON 3,295B, SHA·재시도, 익명 403, 45초 presigned GET·만료 403 |
 | Docker Compose 5180 | `VERIFIED_REAL` | health·공통 결과·jobs·기존 GeoAI·반텐 원본 count·실제 광학 12 layer HTTP 확인 |
 | 로컬 Kubernetes 5181 | `VERIFIED_REAL` | 같은 이미지, 읽기전용 원본, 3 PVC, 경계·2020~2025 결과·광학 12 layer 해시 확인 |

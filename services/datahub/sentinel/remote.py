@@ -1,14 +1,14 @@
 """고정 COG의 HEAD/ETag/Range를 검증하는 제한 전송기. GDAL 직접 network는 사용하지 않는다."""
-from collections import OrderedDict
-from datetime import datetime, timezone
-from http.client import IncompleteRead
 import io
 import json
 import re
 import time
+from collections import OrderedDict
+from datetime import datetime, timezone
+from http.client import IncompleteRead
 from urllib.error import HTTPError
 from urllib.parse import urlsplit
-from urllib.request import Request, HTTPRedirectHandler, build_opener
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from .pin_planner import asset_uri, canonical_sha
 

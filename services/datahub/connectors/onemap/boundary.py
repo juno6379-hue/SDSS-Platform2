@@ -1,7 +1,7 @@
 """기존 BIG snapshot의 hash를 검증해 새 저장소에 불변 복사한다."""
-from datetime import datetime, timezone
 import hashlib
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
 

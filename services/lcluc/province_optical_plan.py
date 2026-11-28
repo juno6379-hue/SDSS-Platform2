@@ -1,5 +1,6 @@
-"""Seal Banten optical candidates against the held province polygon and exact year."""
+"""Seal optical candidates against the held province polygon and exact year."""
 
+import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,21 +26,22 @@ PROVIDERS = {
     ),
 }
 DEST = Path("data/raw/explorer/province/banten-optical")
+WEST_JAVA_PLAN = Path("data/staging/explorer/west-java-optical/held-catalog-plan.json")
 PROJECT = Transformer.from_crs(4326, 6933, always_xy=True).transform
 
 
-def boundary(root=Path(".")):
+def boundary(root=Path("."), *, province="banten"):
     source = root / SOURCE
     if digest(source) != SNAPSHOT_SHA256:
         raise ValueError("Pinned One Map snapshot mismatch")
     features = json.loads(source.read_text(encoding="utf-8"))["features"]
     return shape(
-        next(row["geometry"] for row in features if row["properties"]["province_id"] == "banten")
+        next(row["geometry"] for row in features if row["properties"]["province_id"] == province)
     )
 
 
 def catalog_search(provider, year, bbox):
-    server, collection, assets = PROVIDERS[provider]
+    server, collection, _ = PROVIDERS[provider]
     params = {
         "collections": collection,
         "bbox": ",".join(map(str, bbox)),
@@ -60,7 +62,12 @@ def catalog_search(provider, year, bbox):
             target.write(raw)
     else:
         page = json.loads(path.read_text(encoding="utf-8"))
-    candidates = [
+    return uri, path, optical_candidates(page, provider, year)
+
+
+def optical_candidates(page, provider, year):
+    _, collection, assets = PROVIDERS[provider]
+    return [
         item
         for item in page["features"]
         if item["collection"] == collection
@@ -69,7 +76,44 @@ def catalog_search(provider, year, bbox):
         and item["properties"].get("platform")
         in ("sentinel-2a", "sentinel-2b", "sentinel-2c", "landsat-8", "landsat-9")
     ]
-    return uri, path, candidates
+
+
+def held_catalog_plan(province, root=Path(".")):
+    """Reproject held metadata to another AOI, retaining its original search scope."""
+    pinned_plan = json.loads((root / DEST / "scene-plan.json").read_bytes())
+    if pinned_plan["region"] != "banten" or pinned_plan["boundary_sha256"] != SNAPSHOT_SHA256:
+        raise ValueError("Held optical catalog scope changed")
+    area = transform(PROJECT, boundary(root, province=province))
+    entries = []
+    for row in pinned_plan["entries"]:
+        pin = row["pinned_stac"]
+        provider, year = row["sensor"], row["year"]
+        path = root / DEST / f"{provider}-{year}.stac.json"
+        if path.stat().st_size != pin["bytes"] or digest(path) != pin["sha256"]:
+            raise ValueError("Held optical catalog checksum changed")
+        candidates = optical_candidates(json.loads(path.read_bytes()), provider, year)
+        selected, missing = pick_items(candidates, area)
+        entries.append(
+            {
+                "sensor": provider,
+                "year": year,
+                "pinned_stac": pin,
+                "selected": selected,
+                "covered_footprint_m2": area.area - missing,
+                "missing_footprint_m2": missing,
+                "required_assets": list(PROVIDERS[provider][2]),
+            }
+        )
+    return {
+        "region": province,
+        "original_catalog_search_region": "banten",
+        "boundary_sha256": SNAPSHOT_SHA256,
+        "province_area_m2": area.area,
+        "scope": "held_catalog_metadata_candidates_not_receipted_assets",
+        "new_transfer_authorized": False,
+        "remote_requests": 0,
+        "entries": entries,
+    }
 
 
 def pick_items(candidates, geometry):
@@ -108,6 +152,13 @@ def pick_items(candidates, geometry):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--province", choices=("banten", "west_java"), default="banten")
+    args = parser.parse_args()
+    if args.province == "west_java":
+        WEST_JAVA_PLAN.parent.mkdir(parents=True, exist_ok=True)
+        write_json(WEST_JAVA_PLAN, held_catalog_plan(args.province))
+        return
     DEST.mkdir(parents=True, exist_ok=True)
     aoi = boundary()
     area = transform(PROJECT, aoi)

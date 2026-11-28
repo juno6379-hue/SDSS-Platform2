@@ -3,16 +3,16 @@
 명시 writable 모드의 원장 JSON/동일 디렉터리 temp·lock만 수정한다.
 과거 원장·RAW·CAS 객체·기존 pending을 초기화하거나 환불하지 않는다.
 """
-from contextlib import contextmanager
-from datetime import datetime, timezone
 import hashlib
 import json
 import os
-from pathlib import Path
 import re
 import shutil
 import subprocess
 import uuid
+from contextlib import contextmanager
+from datetime import datetime, timezone
+from pathlib import Path
 
 from services.datahub.connectors.onemap.boundary import sha256
 
@@ -32,7 +32,9 @@ def _integer(value, low, high, name):
 
 def active_collectors():
     """현재 PID를 제외하고 알려진 수집 entrypoint를 실제 OS에서 확인한다."""
-    pattern=r'collect_samples|collect_training|collect_first_group|run_guarded_full_tile|run_provisional_full_tile|sentinel\.pilot'
+    pattern=(r'collect_samples|collect_training|collect_first_group|run_guarded_full_tile|'
+             r'run_provisional_full_tile|sentinel\.(?:pilot|coverage_batch)|'
+             r'services\.(?:datahub\.westjava_native|lcluc\.banten_sentinel_native)')
     if os.name=='nt':
         command="Get-CimInstance Win32_Process | Where-Object {$_.Name -match 'python'} | Select-Object ProcessId,CommandLine | ConvertTo-Json -Compress"
         result=subprocess.run(['powershell','-NoProfile','-Command',command],capture_output=True,text=True,

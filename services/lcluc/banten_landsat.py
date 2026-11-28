@@ -88,7 +88,7 @@ def acquisition_plan():
             yield row["year"], item, row["required_assets"], pin
 
 
-def get_asset(pc, metadata, path):
+def get_asset(pc, metadata, path, *, expected=None):
     uri = metadata["href"]
     check_uri(uri)
     receipt = path.with_suffix(".receipt.json")
@@ -98,6 +98,7 @@ def get_asset(pc, metadata, path):
             document["bytes"] != path.stat().st_size
             or document["sha256"] != digest(path)
             or document["uri"] != uri
+            or (expected is not None and (document["bytes"], document["etag"]) != expected)
         ):
             raise ValueError(f"Prior Landsat TIFF verification failed: {path}")
         return document
@@ -108,6 +109,8 @@ def get_asset(pc, metadata, path):
         etag = response.headers["ETag"]
     if not 0 < size <= 300_000_000:
         raise ValueError(f"Unexpected Landsat asset size: {size}")
+    if expected is not None and (size, etag) != expected:
+        raise ValueError("Landsat planned HEAD length or ETag changed")
     checksum = sha256()
     total = 0
     pending = None

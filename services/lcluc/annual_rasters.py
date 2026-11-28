@@ -56,15 +56,19 @@ def annual_grid(bundle, folder):
     ):
         raise ValueError("BOUNDARY_INVALID_FOR_INDONESIA")
     projected = project(Transformer.from_crs(4326, 6933, always_xy=True).transform, boundary)
+    return equal_area_grid(projected, RESOLUTION), mapping(projected)
+
+
+def equal_area_grid(projected, resolution):
     xmin, ymin, xmax, ymax = projected.bounds
-    west, north = RESOLUTION * floor(xmin / RESOLUTION), RESOLUTION * ceil(ymax / RESOLUTION)
-    width, height = ceil((xmax - west) / RESOLUTION), ceil((north - ymin) / RESOLUTION)
+    west, north = resolution * floor(xmin / resolution), resolution * ceil(ymax / resolution)
+    width, height = ceil((xmax - west) / resolution), ceil((north - ymin) / resolution)
     if width * height > 200_000_000:
         raise ValueError("BOUNDARY_GRID_TOO_LARGE")
     return {
-        "crs": "EPSG:6933", "transform": from_origin(west, north, RESOLUTION, RESOLUTION),
+        "crs": "EPSG:6933", "transform": from_origin(west, north, resolution, resolution),
         "width": width, "height": height,
-    }, mapping(projected)
+    }
 
 
 def windows(grid):
@@ -81,7 +85,7 @@ def raster_profile(grid, count, dtype, nodata):
     }
 
 
-def warp(stack, path, grid, *, quality=False, nodata=0):
+def warp(stack, path, grid, *, quality=False, nodata=0, resampling=Resampling.nearest):
     source = stack.enter_context(rasterio.open(path))
     if source.count != 1 or not source.crs or np.dtype(source.dtypes[0]).kind not in "ui":
         raise ValueError("INTEGER_SINGLE_BAND_RASTER_WITH_CRS_REQUIRED")
@@ -89,8 +93,9 @@ def warp(stack, path, grid, *, quality=False, nodata=0):
         raise ValueError("UNEXPECTED_RASTER_NODATA")
     if quality and np.dtype(source.dtypes[0]).itemsize > 2:
         raise ValueError("QUALITY_DTYPE_INVALID")
+    options = {"dtype": "float32"} if resampling != Resampling.nearest else {}
     return stack.enter_context(WarpedVRT(
-        source, **grid, src_nodata=nodata, nodata=nodata, resampling=Resampling.nearest,
+        source, **grid, src_nodata=nodata, nodata=nodata, resampling=resampling, **options,
     ))
 
 

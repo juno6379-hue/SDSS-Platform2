@@ -3,16 +3,17 @@ import hashlib
 import json
 import math
 from pathlib import Path
-from urllib.parse import urlsplit, unquote
+from urllib.parse import unquote, urlsplit
 
 import numpy as np
+import shapely
 from affine import Affine
 from pyproj import Transformer
 from rasterio.windows import from_bounds
-import shapely
-from shapely.geometry import Polygon, shape, mapping
+from shapely.geometry import Polygon, mapping, shape
 
 from services.datahub.connectors.onemap.boundary import sha256, write_json_new
+
 from .completeness import BANDS, _project
 
 
@@ -35,15 +36,16 @@ def _window_polygon(affine,window,crs):
     col,row,width,height=window
     pts=[]
     corners=[(col,row),(col+width,row),(col+width,row+height),(col,row+height),(col,row)]
-    for a,b in zip(corners[:-1],corners[1:]):
+    for a,b in zip(corners[:-1],corners[1:], strict=True):
         for t in np.linspace(0,1,33)[:-1]:
             pts.append(affine@(a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t))
     return _project(Polygon(pts),crs)
 
 
-def build_single_pilot_plan(*,queue_path,queue_sha,queue_size,boundary_path,boundary_sha,
-                            scenes_path,scenes_sha,native_checkpoints,expected_ledger_sha,
-                            output,existing_keys=(),expected_features=72):
+def select_window_plans(*,queue_path,queue_sha,queue_size,boundary_path,boundary_sha,
+                        scenes_path,scenes_sha,native_checkpoints,expected_ledger_sha,
+                        existing_keys=(),expected_features=72,priority_cells=None,maximum=1,
+                        previously_attempted=None):
     queue_path,boundary_path,scenes_path=map(Path,(queue_path,boundary_path,scenes_path))
     if (queue_path.stat().st_size!=queue_size or queue_size>512*1024**2 or sha256(queue_path)!=queue_sha
             or sha256(boundary_path)!=boundary_sha or sha256(scenes_path)!=scenes_sha):
@@ -67,7 +69,16 @@ def build_single_pilot_plan(*,queue_path,queue_sha,queue_size,boundary_path,boun
         physical.setdefault((cached['province'],cached['year']),[]).append(shapely.from_wkb(Path(ref['path']).read_bytes()))
     features=[(i,f) for i,f in enumerate(queue['features'])
               if f['properties']['reason']=='MISSING_SIMULTANEOUS_SIX_BANDS_SCL']
-    features.sort(key=lambda v:(-v[1]['properties']['missing_area_m2'],v[1]['properties']['province'],v[1]['properties']['year']))
+    if priority_cells is None:
+        features.sort(key=lambda v:(-v[1]['properties']['missing_area_m2'],v[1]['properties']['province'],v[1]['properties']['year']))
+    else:
+        order={key:index for index,key in enumerate(priority_cells)}
+        def key_of(value):
+            p=value[1]['properties']
+            return p['province'],int(p['year'])
+        features=sorted((v for v in features if key_of(v) in order),key=lambda v:order[key_of(v)])
+    plans=[]
+    attempted=previously_attempted or {}
     rejection=[]
     for feature_index,feature in features:
         props=feature['properties']
@@ -75,7 +86,7 @@ def build_single_pilot_plan(*,queue_path,queue_sha,queue_size,boundary_path,boun
         if props['required_bands']!=list(BANDS)+['SCL'] or props['source_pins']['boundary']!=boundary_sha:
             raise ValueError('QUEUE_ASSETS_OR_BOUNDARY_PROOF_MISMATCH')
         missing=shape(feature['geometry'])
-        held=shapely.union_all(physical.get((province,year),[]))
+        held=shapely.union_all([*physical.get((province,year),[]),*attempted.get((province,year),[])])
         source_rows=[r for (p,y,s),r in groups.items() if (p,y)==(province,year)]
         source_rows.sort(key=lambda r:r['scene_id'])
         for source_row in source_rows:
@@ -143,6 +154,16 @@ def build_single_pilot_plan(*,queue_path,queue_sha,queue_size,boundary_path,boun
                 'acceptance_blockers':['BIG_AUTHORITY_APPROVAL_PENDING','FULL_SPATIAL_COVERAGE_FALSE',
                                        'INDEPENDENT_GROUND_TRUTH_UNVERIFIED'],
                 'rejected_candidates':rejection,'remote_downloads':0}
-            write_json_new(Path(output),result)
-            return result
-    raise ValueError('NO_LOCAL_PINNED_SCENE_FOR_EXACT_MISSING_WINDOW')
+            plans.append(result)
+            if len(plans)==maximum:
+                return plans
+            break
+    return plans
+
+
+def build_single_pilot_plan(*,output,**inputs):
+    plans=select_window_plans(**inputs)
+    if not plans:
+        raise ValueError('NO_LOCAL_PINNED_SCENE_FOR_EXACT_MISSING_WINDOW')
+    write_json_new(Path(output),plans[0])
+    return plans[0]

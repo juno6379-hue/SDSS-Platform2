@@ -1,0 +1,36 @@
+{
+  "scenes": 3,
+  "source_assets": 24,
+  "raw_bytes": 1507487085,
+  "qa_radsat_by_scene": true,
+  "output_artifacts": 26,
+  "batch_finished": "2026-11-28T08:25:20.551786+00:00",
+  "pipeline_finished": "2026-11-28T08:27:19.349625+00:00",
+  "publication": {
+    "run_id": "95e8e1c62c592cb47a07aa2a707bfc64d82ac6cbec20f23029c0dacfb08af5bb",
+    "batch_sha256": "8d2edefd95fbaff572488c99a86ae0ac1bb8327984823dedcf0182fa2c3aefd9",
+    "candidate_id": "c-6102d2dc041c8821392c6f22153558562cd053d25edf9a3a7813e99d72ce8f",
+    "state": "VALIDATED",
+    "production_release": "BLOCKED"
+  },
+  "candidate_version": "2025-e2-0e7bfcf99aaa",
+  "revision": 4,
+  "active": false,
+  "blockers": [
+    "pilot-window-only",
+    "INDEPENDENT_SCIENTIFIC_EVALUATION_REQUIRED"
+  ],
+  "training_pixels": 5437,
+  "evaluations": [
+    {
+      "split": "test",
+      "pixels": 6400,
+      "agreement": 0.5034375
+    },
+    {
+      "split": "validation",
+      "pixels": 4729,
+      "agreement": 0.27828293508141255
+    }
+  ]
+}

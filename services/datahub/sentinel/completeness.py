@@ -1,19 +1,19 @@
 """읽기 전용 원본 감사와 exact polygon 누락 큐. 원격 수집·원장 쓰기는 없다."""
+import json
+import math
+import shutil
 from collections import defaultdict
 from datetime import datetime, timezone
 from functools import lru_cache
-import json
-import math
 from pathlib import Path
-import shutil
 
 import numpy as np
-from pyproj import Transformer
 import rasterio
+import shapely
+from pyproj import Transformer
 from rasterio.features import rasterize, shapes
 from rasterio.transform import from_origin
-from rasterio.warp import reproject, Resampling
-import shapely
+from rasterio.warp import Resampling, reproject
 from shapely.geometry import Polygon, box, mapping, shape
 
 from services.datahub.connectors.onemap.boundary import PROVINCES, read_pin, sha256, write_json_new
@@ -101,7 +101,7 @@ def grid_completeness(boundary, present, clear, resolution=1000):
         touched = rasterize([(mapping(geometry), 1)], out_shape=(height, width), transform=transform,
                             all_touched=True, dtype="uint8") & required
         bins = defaultdict(list)
-        for row, col in zip(*np.nonzero(touched)):
+        for row, col in zip(*np.nonzero(touched), strict=True):
             bins[(int(row) // 8, int(col) // 8)].append((int(row), int(col)))
         parts = list(shapely.get_parts(geometry))
         tree = shapely.STRtree(parts)

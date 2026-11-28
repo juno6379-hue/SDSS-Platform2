@@ -1,5 +1,12 @@
 # 이해자료 변경 이력
 
+## 2026-11-28 — 서자바 2025 Landsat 재다운로드 검증
+
+- 같은 3장면·24개 자산·1,507,487,085B를 격리 경로로 실제 재전송한 범위를 `VERIFIED_REAL`로 기록
+- 기존 원본과 새 원본 24쌍의 독립 로컬 SHA 재계산 48회 일치, 전 장면 `QA_RADSAT`와 30m 창·RF 예측 동일을 반영
+- test 6,400픽셀 50.34%와 validation 4,729픽셀 27.83%가 유지되고 공유 원장 SHA가 불변임을 기록
+- 재다운로드는 전송·재현 무결성 증거이며 Esri 약한 참조, 독립 정확도·운영 배포는 `BLOCKED`로 유지
+
 ## 2026-11-27 — STEP 04 GeoLLM 저장소 어댑터 1차 검증
 
 - `SDSS_GEOLLM_STORAGE_MODE=lake|local` 어댑터와 운영 `lake` 연결 실패 fail-closed·SeaweedFS attestation을 설명
